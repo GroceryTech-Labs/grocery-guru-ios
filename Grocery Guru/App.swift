@@ -1,10 +1,3 @@
-//
-//  Grocery_GuruApp.swift
-//  Grocery Guru
-//
-//  Created by Max Maetze on 23.05.24.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -13,6 +6,7 @@ struct Grocery_GuruApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
+            CustomItemCategoryConfig.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

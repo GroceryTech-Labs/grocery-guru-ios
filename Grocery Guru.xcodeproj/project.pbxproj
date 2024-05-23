@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5639A5362BFF95930086857F /* Grocery_GuruApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5352BFF95930086857F /* Grocery_GuruApp.swift */; };
-		5639A5382BFF95930086857F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5372BFF95930086857F /* ContentView.swift */; };
-		5639A53A2BFF95930086857F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5392BFF95930086857F /* Item.swift */; };
-		5639A53C2BFF95940086857F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639A53B2BFF95940086857F /* Assets.xcassets */; };
-		5639A53F2BFF95940086857F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639A53E2BFF95940086857F /* Preview Assets.xcassets */; };
 		5639A5492BFF95940086857F /* Grocery_GuruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5482BFF95940086857F /* Grocery_GuruTests.swift */; };
 		5639A5532BFF95940086857F /* Grocery_GuruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5522BFF95940086857F /* Grocery_GuruUITests.swift */; };
 		5639A5552BFF95940086857F /* Grocery_GuruUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5542BFF95940086857F /* Grocery_GuruUITestsLaunchTests.swift */; };
+		5639A5702BFF97BD0086857F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639A5612BFF97BD0086857F /* Assets.xcassets */; };
+		5639A5712BFF97BD0086857F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5632BFF97BD0086857F /* App.swift */; };
+		5639A5722BFF97BD0086857F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639A5652BFF97BD0086857F /* Preview Assets.xcassets */; };
+		5639A5732BFF97BD0086857F /* CustomItemCategoryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5672BFF97BD0086857F /* CustomItemCategoryConfig.swift */; };
+		5639A5742BFF97BD0086857F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5682BFF97BD0086857F /* Item.swift */; };
+		5639A5752BFF97BD0086857F /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5692BFF97BD0086857F /* ItemCategory.swift */; };
+		5639A5762BFF97BD0086857F /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56B2BFF97BD0086857F /* AddItemView.swift */; };
+		5639A5772BFF97BD0086857F /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56C2BFF97BD0086857F /* AddItemViewModel.swift */; };
+		5639A5782BFF97BD0086857F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56E2BFF97BD0086857F /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,16 +40,20 @@
 
 /* Begin PBXFileReference section */
 		5639A5322BFF95930086857F /* Grocery Guru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Guru.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5639A5352BFF95930086857F /* Grocery_GuruApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery_GuruApp.swift; sourceTree = "<group>"; };
-		5639A5372BFF95930086857F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5639A5392BFF95930086857F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		5639A53B2BFF95940086857F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5639A53E2BFF95940086857F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5639A5442BFF95940086857F /* Grocery GuruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery GuruTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5482BFF95940086857F /* Grocery_GuruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery_GuruTests.swift; sourceTree = "<group>"; };
 		5639A54E2BFF95940086857F /* Grocery GuruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery GuruUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5522BFF95940086857F /* Grocery_GuruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery_GuruUITests.swift; sourceTree = "<group>"; };
 		5639A5542BFF95940086857F /* Grocery_GuruUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery_GuruUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5639A5612BFF97BD0086857F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5639A5632BFF97BD0086857F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		5639A5652BFF97BD0086857F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5639A5672BFF97BD0086857F /* CustomItemCategoryConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomItemCategoryConfig.swift; sourceTree = "<group>"; };
+		5639A5682BFF97BD0086857F /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		5639A5692BFF97BD0086857F /* ItemCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
+		5639A56B2BFF97BD0086857F /* AddItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		5639A56C2BFF97BD0086857F /* AddItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
+		5639A56E2BFF97BD0086857F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,21 +104,14 @@
 		5639A5342BFF95930086857F /* Grocery Guru */ = {
 			isa = PBXGroup;
 			children = (
-				5639A5352BFF95930086857F /* Grocery_GuruApp.swift */,
-				5639A5372BFF95930086857F /* ContentView.swift */,
-				5639A5392BFF95930086857F /* Item.swift */,
-				5639A53B2BFF95940086857F /* Assets.xcassets */,
-				5639A53D2BFF95940086857F /* Preview Content */,
+				5639A5632BFF97BD0086857F /* App.swift */,
+				5639A5622BFF97BD0086857F /* Assets */,
+				5639A56A2BFF97BD0086857F /* Models */,
+				5639A5662BFF97BD0086857F /* Preview Content */,
+				5639A5642BFF97BD0086857F /* Services */,
+				5639A56F2BFF97BD0086857F /* Views */,
 			);
 			path = "Grocery Guru";
-			sourceTree = "<group>";
-		};
-		5639A53D2BFF95940086857F /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				5639A53E2BFF95940086857F /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		5639A5472BFF95940086857F /* Grocery GuruTests */ = {
@@ -128,6 +129,57 @@
 				5639A5542BFF95940086857F /* Grocery_GuruUITestsLaunchTests.swift */,
 			);
 			path = "Grocery GuruUITests";
+			sourceTree = "<group>";
+		};
+		5639A5622BFF97BD0086857F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5639A5612BFF97BD0086857F /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5639A5642BFF97BD0086857F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5639A5662BFF97BD0086857F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5639A5652BFF97BD0086857F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5639A56A2BFF97BD0086857F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5639A5672BFF97BD0086857F /* CustomItemCategoryConfig.swift */,
+				5639A5682BFF97BD0086857F /* Item.swift */,
+				5639A5692BFF97BD0086857F /* ItemCategory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5639A56D2BFF97BD0086857F /* AddItem */ = {
+			isa = PBXGroup;
+			children = (
+				5639A56B2BFF97BD0086857F /* AddItemView.swift */,
+				5639A56C2BFF97BD0086857F /* AddItemViewModel.swift */,
+			);
+			path = AddItem;
+			sourceTree = "<group>";
+		};
+		5639A56F2BFF97BD0086857F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5639A56D2BFF97BD0086857F /* AddItem */,
+				5639A56E2BFF97BD0086857F /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +250,7 @@
 				TargetAttributes = {
 					5639A5312BFF95930086857F = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 					};
 					5639A5432BFF95940086857F = {
 						CreatedOnToolsVersion = 15.3;
@@ -234,8 +287,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5639A53F2BFF95940086857F /* Preview Assets.xcassets in Resources */,
-				5639A53C2BFF95940086857F /* Assets.xcassets in Resources */,
+				5639A5722BFF97BD0086857F /* Preview Assets.xcassets in Resources */,
+				5639A5702BFF97BD0086857F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,9 +313,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5639A5382BFF95930086857F /* ContentView.swift in Sources */,
-				5639A53A2BFF95930086857F /* Item.swift in Sources */,
-				5639A5362BFF95930086857F /* Grocery_GuruApp.swift in Sources */,
+				5639A5712BFF97BD0086857F /* App.swift in Sources */,
+				5639A5772BFF97BD0086857F /* AddItemViewModel.swift in Sources */,
+				5639A5782BFF97BD0086857F /* ContentView.swift in Sources */,
+				5639A5742BFF97BD0086857F /* Item.swift in Sources */,
+				5639A5752BFF97BD0086857F /* ItemCategory.swift in Sources */,
+				5639A5732BFF97BD0086857F /* CustomItemCategoryConfig.swift in Sources */,
+				5639A5762BFF97BD0086857F /* AddItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +480,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Grocery Guru/Preview Content\"";
@@ -442,6 +500,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.grocerytech-labs.Grocery-Guru";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,6 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Grocery Guru/Preview Content\"";
