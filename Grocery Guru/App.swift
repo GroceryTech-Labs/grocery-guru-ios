@@ -3,24 +3,39 @@ import SwiftData
 
 @main
 struct Grocery_GuruApp: App {
-    var sharedModelContainer: ModelContainer = {
+    let container: ModelContainer
+
+    var body: some Scene {
+        WindowGroup {
+            HomeView(
+                viewModel: HomeViewModel(
+                    repository: LocalStorageItemRepository(
+                        modelContext: container.mainContext
+                    )
+                )
+            )
+        }
+        .modelContainer(container)
+    }
+    
+    init() {
         let schema = Schema([
             Item.self,
             CustomItemCategoryConfig.self,
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        
+        let modelConfiguration = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false
+        )
 
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            container = try ModelContainer(
+                for: schema,
+                configurations: [modelConfiguration]
+            )
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
-    }()
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-        .modelContainer(sharedModelContainer)
     }
 }

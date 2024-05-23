@@ -1,18 +1,46 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+@Observable
+class HomeViewModel {
+    let repository: ItemRepository
+    var items: [Item] = []
+    
+    init(repository: ItemRepository) {
+        self.repository = repository
+    }
+    
+    @MainActor
+    func fetchItems() {
+        items = repository.fetchAllItems()
+    }
+    
+    @MainActor
+    func deleteItem(offsets: IndexSet) {
+        withAnimation {
+            for index in offsets {
+                repository.deleteItem(items[index])
+            }
+        }
+        
+        fetchItems()
+    }
+}
 
+struct HomeView: View {
     @State private var shouldShowAddSheet: Bool = false
+    @State private var viewModel: HomeViewModel
+    
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         NavigationSplitView {
             List {
                 ForEach(ItemCategory.allCases) { category in
                     Section(category.title) {
-                        ForEach(items.filter { $0.category.title == category.title } ) { item in
+                        ForEach(viewModel.items.filter { $0.category.title == category.title } ) { item in
                             NavigationLink {
                                 Text("You have \(item.amount, format: .number) of \(item.name) in your fridge")
                                     .navigationTitle(item.name)
@@ -20,7 +48,9 @@ struct ContentView: View {
                                 Text(item.name)
                             }
                         }
-                        .onDelete(perform: deleteItems)
+                        .onDelete { offsets in
+                            viewModel.deleteItem(offsets: offsets)
+                        }
                     }
                 }
             }
@@ -37,29 +67,29 @@ struct ContentView: View {
             .sheet(isPresented: $shouldShowAddSheet) {
                 AddItemView(
                     isShown: $shouldShowAddSheet,
-                    modelContext: modelContext
-                )
+                    itemRepository: viewModel.repository
+                ) {
+                    viewModel.fetchItems()
+                }
             }
             .navigationTitle("Home")
         } detail: {
             Text("Select an item")
+        }
+        .task {
+            viewModel.fetchItems()
         }
     }
 
     private func toggleAddSheet() {
         shouldShowAddSheet.toggle()
     }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+    HomeView(
+        viewModel: HomeViewModel(
+            repository: MockItemRepository.preview
+        )
+    )
 }
