@@ -4,6 +4,8 @@ import SwiftData
 struct AddItemView: View {
     @Binding var isShown: Bool
     @State private var viewModel: AddItemViewModel
+    
+    let onAdd: () -> ()
 
     var body: some View {
         Form {
@@ -50,6 +52,7 @@ struct AddItemView: View {
             // Submit Button
             Button {
                 viewModel.addItem(toggleSheet: $isShown)
+                onAdd()
             } label: {
                 Label("Add to inventory", systemImage: "shippingbox")
             }
@@ -57,9 +60,10 @@ struct AddItemView: View {
         .formStyle(.grouped)
     }
 
-    init(isShown: Binding<Bool>, itemRepository: ItemRepository)  {
+    init(isShown: Binding<Bool>, itemRepository: ItemRepository, onAdd: @escaping () -> ())  {
         self._isShown = isShown
         let viewModel = AddItemViewModel(itemRepository: itemRepository)
         self._viewModel = State(initialValue: viewModel)
+        self.onAdd = onAdd
     }
 }

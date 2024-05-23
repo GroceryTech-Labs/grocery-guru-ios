@@ -68,16 +68,13 @@ struct HomeView: View {
                 AddItemView(
                     isShown: $shouldShowAddSheet,
                     itemRepository: viewModel.repository
-                )
+                ) {
+                    viewModel.fetchItems()
+                }
             }
             .navigationTitle("Home")
         } detail: {
             Text("Select an item")
-        }
-        .onChange(of: shouldShowAddSheet) {
-            if !shouldShowAddSheet {
-                viewModel.fetchItems()
-            }
         }
         .task {
             viewModel.fetchItems()
