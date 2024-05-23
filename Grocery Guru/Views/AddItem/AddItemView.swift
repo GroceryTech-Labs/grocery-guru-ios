@@ -11,25 +11,18 @@ struct AddItemView: View {
             Text("Add Item")
                 .font(.largeTitle)
                 .listRowBackground(Color.clear)
-
+            
             // Name Input
             Section {
-                TextField(
-                    "Name",
-                    text: $viewModel.name,
-                    prompt: Text("e.g. Tomato")
-                )
-
-                if let error = viewModel.error, case .emptyInput = error {
-                    Text(error.localizedDescription)
-                        .foregroundStyle(.red)
-                        .listRowBackground(Color.clear)
+                VStack {
+                    TextField(
+                        "Name",
+                        text: $viewModel.name,
+                        prompt: Text("e.g. Tomato")
+                    )
                 }
             } header: {
-                Text("*Fill in the name of the item")
-            }
-            .onChange(of: viewModel.name) {
-                viewModel.error = nil
+                Text("Fill in the name of the item")
             }
 
             // Amount Control
@@ -58,10 +51,10 @@ struct AddItemView: View {
             Button {
                 viewModel.addItem(toggleSheet: $isShown)
             } label: {
-                Label("Add Item", systemImage: "plus")
+                Label("Add to inventory", systemImage: "shippingbox")
             }
         }
-        .animation(.bouncy, value: viewModel.error)
+        .formStyle(.grouped)
     }
 
     init(isShown: Binding<Bool>, modelContext: ModelContext)  {
