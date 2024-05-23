@@ -57,9 +57,9 @@ struct AddItemView: View {
         .formStyle(.grouped)
     }
 
-    init(isShown: Binding<Bool>, modelContext: ModelContext)  {
+    init(isShown: Binding<Bool>, itemRepository: ItemRepository)  {
         self._isShown = isShown
-        let viewModel = AddItemViewModel(modelContext: modelContext)
+        let viewModel = AddItemViewModel(itemRepository: itemRepository)
         self._viewModel = State(initialValue: viewModel)
     }
 }
