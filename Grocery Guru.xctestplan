@@ -23,15 +23,6 @@
         "identifier" : "5639A5432BFF95940086857F",
         "name" : "Grocery GuruTests"
       }
-    },
-    {
-      "enabled" : false,
-      "parallelizable" : true,
-      "target" : {
-        "containerPath" : "container:Grocery Guru.xcodeproj",
-        "identifier" : "5639A54D2BFF95940086857F",
-        "name" : "Grocery GuruUITests"
-      }
     }
   ],
   "version" : 1
