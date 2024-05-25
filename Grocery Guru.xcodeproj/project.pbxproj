@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560AA7CF2C02627C00365B1F /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7CE2C02627C00365B1F /* ScannerView.swift */; };
+		560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */; };
+		560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D22C026C9D00365B1F /* HomeViewModel.swift */; };
+		560AA7D62C02756600365B1F /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560AA7D52C02756600365B1F /* TestAssets.xcassets */; };
 		5639A5492BFF95940086857F /* Grocery_GuruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5482BFF95940086857F /* Grocery_GuruTests.swift */; };
-		5639A5532BFF95940086857F /* Grocery_GuruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5522BFF95940086857F /* Grocery_GuruUITests.swift */; };
-		5639A5552BFF95940086857F /* Grocery_GuruUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5542BFF95940086857F /* Grocery_GuruUITestsLaunchTests.swift */; };
 		5639A5702BFF97BD0086857F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639A5612BFF97BD0086857F /* Assets.xcassets */; };
 		5639A5712BFF97BD0086857F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5632BFF97BD0086857F /* App.swift */; };
 		5639A5722BFF97BD0086857F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639A5652BFF97BD0086857F /* Preview Assets.xcassets */; };
-		5639A5732BFF97BD0086857F /* CustomItemCategoryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5672BFF97BD0086857F /* CustomItemCategoryConfig.swift */; };
-		5639A5742BFF97BD0086857F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5682BFF97BD0086857F /* Item.swift */; };
-		5639A5752BFF97BD0086857F /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5692BFF97BD0086857F /* ItemCategory.swift */; };
-		5639A5762BFF97BD0086857F /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56B2BFF97BD0086857F /* AddItemView.swift */; };
-		5639A5772BFF97BD0086857F /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56C2BFF97BD0086857F /* AddItemViewModel.swift */; };
+		5639A5732BFF97BD0086857F /* CustomInvoiceItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5672BFF97BD0086857F /* CustomInvoiceItemCategory.swift */; };
+		5639A5742BFF97BD0086857F /* InvoiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5682BFF97BD0086857F /* InvoiceItem.swift */; };
+		5639A5752BFF97BD0086857F /* InvoiceItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5692BFF97BD0086857F /* InvoiceItemCategory.swift */; };
+		5639A5762BFF97BD0086857F /* AddInvoiceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56B2BFF97BD0086857F /* AddInvoiceItemView.swift */; };
+		5639A5772BFF97BD0086857F /* AddInvoiceItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56C2BFF97BD0086857F /* AddInvoiceItemViewModel.swift */; };
 		5639A5782BFF97BD0086857F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56E2BFF97BD0086857F /* HomeView.swift */; };
-		56E964342BFFABA70099ED2F /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* ItemRepository.swift */; };
+		56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,32 +32,27 @@
 			remoteGlobalIDString = 5639A5312BFF95930086857F;
 			remoteInfo = "Grocery Guru";
 		};
-		5639A54F2BFF95940086857F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5639A52A2BFF95930086857F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5639A5312BFF95930086857F;
-			remoteInfo = "Grocery Guru";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		560AA7CE2C02627C00365B1F /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizerService.swift; sourceTree = "<group>"; };
+		560AA7D22C026C9D00365B1F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		560AA7D52C02756600365B1F /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
+		560AA7D72C02796B00365B1F /* Grocery Guru.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Grocery Guru.xctestplan"; sourceTree = "<group>"; };
 		5639A5322BFF95930086857F /* Grocery Guru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Guru.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5442BFF95940086857F /* Grocery GuruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery GuruTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5482BFF95940086857F /* Grocery_GuruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery_GuruTests.swift; sourceTree = "<group>"; };
-		5639A54E2BFF95940086857F /* Grocery GuruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery GuruUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5639A5522BFF95940086857F /* Grocery_GuruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery_GuruUITests.swift; sourceTree = "<group>"; };
-		5639A5542BFF95940086857F /* Grocery_GuruUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery_GuruUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5639A5612BFF97BD0086857F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5639A5632BFF97BD0086857F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5639A5652BFF97BD0086857F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5639A5672BFF97BD0086857F /* CustomItemCategoryConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomItemCategoryConfig.swift; sourceTree = "<group>"; };
-		5639A5682BFF97BD0086857F /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		5639A5692BFF97BD0086857F /* ItemCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
-		5639A56B2BFF97BD0086857F /* AddItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
-		5639A56C2BFF97BD0086857F /* AddItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
+		5639A5672BFF97BD0086857F /* CustomInvoiceItemCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInvoiceItemCategory.swift; sourceTree = "<group>"; };
+		5639A5682BFF97BD0086857F /* InvoiceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceItem.swift; sourceTree = "<group>"; };
+		5639A5692BFF97BD0086857F /* InvoiceItemCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceItemCategory.swift; sourceTree = "<group>"; };
+		5639A56B2BFF97BD0086857F /* AddInvoiceItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInvoiceItemView.swift; sourceTree = "<group>"; };
+		5639A56C2BFF97BD0086857F /* AddInvoiceItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInvoiceItemViewModel.swift; sourceTree = "<group>"; };
 		5639A56E2BFF97BD0086857F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		56E964332BFFABA70099ED2F /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
+		56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,22 +70,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5639A54B2BFF95940086857F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		560AA7D42C026E5B00365B1F /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				560AA7CE2C02627C00365B1F /* ScannerView.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
 		5639A5292BFF95930086857F = {
 			isa = PBXGroup;
 			children = (
+				560AA7D72C02796B00365B1F /* Grocery Guru.xctestplan */,
 				5639A5342BFF95930086857F /* Grocery Guru */,
 				5639A5472BFF95940086857F /* Grocery GuruTests */,
-				5639A5512BFF95940086857F /* Grocery GuruUITests */,
 				5639A5332BFF95930086857F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,7 +96,6 @@
 			children = (
 				5639A5322BFF95930086857F /* Grocery Guru.app */,
 				5639A5442BFF95940086857F /* Grocery GuruTests.xctest */,
-				5639A54E2BFF95940086857F /* Grocery GuruUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,8 +107,8 @@
 				5639A5622BFF97BD0086857F /* Assets */,
 				5639A56A2BFF97BD0086857F /* Models */,
 				5639A5662BFF97BD0086857F /* Preview Content */,
-				5639A5642BFF97BD0086857F /* Services */,
 				5639A5792BFFAB390086857F /* Repositories */,
+				5639A5642BFF97BD0086857F /* Services */,
 				5639A56F2BFF97BD0086857F /* Views */,
 			);
 			path = "Grocery Guru";
@@ -121,17 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				5639A5482BFF95940086857F /* Grocery_GuruTests.swift */,
+				560AA7D52C02756600365B1F /* TestAssets.xcassets */,
 			);
 			path = "Grocery GuruTests";
-			sourceTree = "<group>";
-		};
-		5639A5512BFF95940086857F /* Grocery GuruUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5639A5522BFF95940086857F /* Grocery_GuruUITests.swift */,
-				5639A5542BFF95940086857F /* Grocery_GuruUITestsLaunchTests.swift */,
-			);
-			path = "Grocery GuruUITests";
 			sourceTree = "<group>";
 		};
 		5639A5622BFF97BD0086857F /* Assets */ = {
@@ -145,6 +134,7 @@
 		5639A5642BFF97BD0086857F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -160,9 +150,9 @@
 		5639A56A2BFF97BD0086857F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5639A5672BFF97BD0086857F /* CustomItemCategoryConfig.swift */,
-				5639A5682BFF97BD0086857F /* Item.swift */,
-				5639A5692BFF97BD0086857F /* ItemCategory.swift */,
+				5639A5672BFF97BD0086857F /* CustomInvoiceItemCategory.swift */,
+				5639A5682BFF97BD0086857F /* InvoiceItem.swift */,
+				5639A5692BFF97BD0086857F /* InvoiceItemCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,8 +160,8 @@
 		5639A56D2BFF97BD0086857F /* AddItem */ = {
 			isa = PBXGroup;
 			children = (
-				5639A56B2BFF97BD0086857F /* AddItemView.swift */,
-				5639A56C2BFF97BD0086857F /* AddItemViewModel.swift */,
+				5639A56B2BFF97BD0086857F /* AddInvoiceItemView.swift */,
+				5639A56C2BFF97BD0086857F /* AddInvoiceItemViewModel.swift */,
 			);
 			path = AddItem;
 			sourceTree = "<group>";
@@ -179,6 +169,7 @@
 		5639A56F2BFF97BD0086857F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				560AA7D42C026E5B00365B1F /* Scanner */,
 				56E964352BFFAFF40099ED2F /* Home */,
 			);
 			path = Views;
@@ -187,7 +178,7 @@
 		5639A5792BFFAB390086857F /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				56E964332BFFABA70099ED2F /* ItemRepository.swift */,
+				56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -196,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				5639A56E2BFF97BD0086857F /* HomeView.swift */,
+				560AA7D22C026C9D00365B1F /* HomeViewModel.swift */,
 				5639A56D2BFF97BD0086857F /* AddItem */,
 			);
 			path = Home;
@@ -239,24 +231,6 @@
 			productReference = 5639A5442BFF95940086857F /* Grocery GuruTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5639A54D2BFF95940086857F /* Grocery GuruUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5639A55E2BFF95940086857F /* Build configuration list for PBXNativeTarget "Grocery GuruUITests" */;
-			buildPhases = (
-				5639A54A2BFF95940086857F /* Sources */,
-				5639A54B2BFF95940086857F /* Frameworks */,
-				5639A54C2BFF95940086857F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5639A5502BFF95940086857F /* PBXTargetDependency */,
-			);
-			name = "Grocery GuruUITests";
-			productName = "Grocery GuruUITests";
-			productReference = 5639A54E2BFF95940086857F /* Grocery GuruUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -272,10 +246,6 @@
 						LastSwiftMigration = 1530;
 					};
 					5639A5432BFF95940086857F = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 5639A5312BFF95930086857F;
-					};
-					5639A54D2BFF95940086857F = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 5639A5312BFF95930086857F;
 					};
@@ -296,7 +266,6 @@
 			targets = (
 				5639A5312BFF95930086857F /* Grocery Guru */,
 				5639A5432BFF95940086857F /* Grocery GuruTests */,
-				5639A54D2BFF95940086857F /* Grocery GuruUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -315,13 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5639A54C2BFF95940086857F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				560AA7D62C02756600365B1F /* TestAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,14 +295,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				560AA7CF2C02627C00365B1F /* ScannerView.swift in Sources */,
+				560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */,
 				5639A5712BFF97BD0086857F /* App.swift in Sources */,
-				5639A5772BFF97BD0086857F /* AddItemViewModel.swift in Sources */,
+				560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */,
+				5639A5772BFF97BD0086857F /* AddInvoiceItemViewModel.swift in Sources */,
 				5639A5782BFF97BD0086857F /* HomeView.swift in Sources */,
-				5639A5742BFF97BD0086857F /* Item.swift in Sources */,
-				5639A5752BFF97BD0086857F /* ItemCategory.swift in Sources */,
-				5639A5732BFF97BD0086857F /* CustomItemCategoryConfig.swift in Sources */,
-				56E964342BFFABA70099ED2F /* ItemRepository.swift in Sources */,
-				5639A5762BFF97BD0086857F /* AddItemView.swift in Sources */,
+				5639A5742BFF97BD0086857F /* InvoiceItem.swift in Sources */,
+				5639A5752BFF97BD0086857F /* InvoiceItemCategory.swift in Sources */,
+				5639A5732BFF97BD0086857F /* CustomInvoiceItemCategory.swift in Sources */,
+				56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */,
+				5639A5762BFF97BD0086857F /* AddInvoiceItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,15 +317,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5639A54A2BFF95940086857F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5639A5532BFF95940086857F /* Grocery_GuruUITests.swift in Sources */,
-				5639A5552BFF95940086857F /* Grocery_GuruUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -367,11 +324,6 @@
 			isa = PBXTargetDependency;
 			target = 5639A5312BFF95930086857F /* Grocery Guru */;
 			targetProxy = 5639A5452BFF95940086857F /* PBXContainerItemProxy */;
-		};
-		5639A5502BFF95940086857F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5639A5312BFF95930086857F /* Grocery Guru */;
-			targetProxy = 5639A54F2BFF95940086857F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -507,6 +459,7 @@
 				DEVELOPMENT_TEAM = KLXF66UW7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "By approving you'll allow us to scan your invoices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -538,6 +491,7 @@
 				DEVELOPMENT_TEAM = KLXF66UW7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "By approving you'll allow us to scan your invoices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -596,42 +550,6 @@
 			};
 			name = Release;
 		};
-		5639A55F2BFF95940086857F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KLXF66UW7Z;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.grocerytech-labs.Grocery-GuruUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Grocery Guru";
-			};
-			name = Debug;
-		};
-		5639A5602BFF95940086857F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KLXF66UW7Z;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.grocerytech-labs.Grocery-GuruUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Grocery Guru";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -658,15 +576,6 @@
 			buildConfigurations = (
 				5639A55C2BFF95940086857F /* Debug */,
 				5639A55D2BFF95940086857F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5639A55E2BFF95940086857F /* Build configuration list for PBXNativeTarget "Grocery GuruUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5639A55F2BFF95940086857F /* Debug */,
-				5639A5602BFF95940086857F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

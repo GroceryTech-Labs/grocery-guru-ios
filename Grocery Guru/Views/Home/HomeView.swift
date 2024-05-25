@@ -1,34 +1,7 @@
 import SwiftUI
 import SwiftData
 
-@Observable
-class HomeViewModel {
-    let repository: ItemRepository
-    var items: [Item] = []
-    
-    init(repository: ItemRepository) {
-        self.repository = repository
-    }
-    
-    @MainActor
-    func fetchItems() {
-        items = repository.fetchAllItems()
-    }
-    
-    @MainActor
-    func deleteItem(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                repository.deleteItem(items[index])
-            }
-        }
-        
-        fetchItems()
-    }
-}
-
 struct HomeView: View {
-    @State private var shouldShowAddSheet: Bool = false
     @State private var viewModel: HomeViewModel
     
     init(viewModel: HomeViewModel) {
@@ -37,8 +10,53 @@ struct HomeView: View {
 
     var body: some View {
         NavigationSplitView {
+            HomeViewList(viewModel: viewModel)
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: viewModel.toggleDocScan) {
+                            Label("Scan", systemImage: "doc.viewfinder")
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+                    ToolbarItem {
+                        Button(action: viewModel.toggleAddSheet) {
+                            Label("Add Item", systemImage: "plus")
+                        }
+                    }
+                }
+                .fullScreenCover(isPresented: $viewModel.shouldShowDocScan) {
+                    ScannerView { scanStrings in
+                        viewModel.addItemsFromScanStrings(scanStrings)
+                    }
+                    .ignoresSafeArea(.all)
+                }
+                .sheet(isPresented: $viewModel.shouldShowAddSheet) {
+                    AddInvoiceItemView(
+                        isShown: $viewModel.shouldShowAddSheet,
+                        itemRepository: viewModel.repository
+                    ) {
+                        viewModel.fetchItems()
+                    }
+                }
+                .navigationTitle("Home")
+        } detail: {
+            Text("Select an item")
+        }
+        .task {
+            viewModel.fetchItems()
+        }
+    }
+}
+
+extension HomeView {
+    private struct HomeViewList: View {
+        @State var viewModel: HomeViewModel
+        
+        var body: some View {
             List {
-                ForEach(ItemCategory.allCases) { category in
+                ForEach(InvoiceItemCategory.allCases) { category in
                     Section(category.title) {
                         ForEach(viewModel.items.filter { $0.category.title == category.title } ) { item in
                             NavigationLink {
@@ -54,35 +72,7 @@ struct HomeView: View {
                     }
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: toggleAddSheet) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            .sheet(isPresented: $shouldShowAddSheet) {
-                AddItemView(
-                    isShown: $shouldShowAddSheet,
-                    itemRepository: viewModel.repository
-                ) {
-                    viewModel.fetchItems()
-                }
-            }
-            .navigationTitle("Home")
-        } detail: {
-            Text("Select an item")
         }
-        .task {
-            viewModel.fetchItems()
-        }
-    }
-
-    private func toggleAddSheet() {
-        shouldShowAddSheet.toggle()
     }
 }
 

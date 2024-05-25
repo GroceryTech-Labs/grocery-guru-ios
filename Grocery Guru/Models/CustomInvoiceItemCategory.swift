@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class CustomItemCategoryConfig {
+final class CustomInvoiceItemCategory {
     let name: String
     let emoji: String
 

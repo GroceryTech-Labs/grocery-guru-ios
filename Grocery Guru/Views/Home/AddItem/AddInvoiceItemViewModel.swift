@@ -2,19 +2,19 @@ import SwiftUI
 import SwiftData
 
 @Observable
-class AddItemViewModel {
-    let itemRepository: ItemRepository
+class AddInvoiceItemViewModel {
+    let itemRepository: InvoiceItemRepository
      
     var name: String = ""
     var amount: Int = 1
-    var category: ItemCategory = .fruits
+    var category: InvoiceItemCategory = .fruits
     
-    init(itemRepository: ItemRepository) {
+    init(itemRepository: InvoiceItemRepository) {
         self.itemRepository = itemRepository
     }
 
     func addItem(toggleSheet: Binding<Bool>) {
-        let newItem = Item(
+        let newItem = InvoiceItem(
             name: name,
             amount: amount,
             category: category

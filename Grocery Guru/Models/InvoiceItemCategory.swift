@@ -1,6 +1,6 @@
 import Foundation
 
-enum ItemCategory: Codable, CaseIterable, Identifiable {
+enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
     case custom
     case fruits
     case meat
@@ -9,7 +9,7 @@ enum ItemCategory: Codable, CaseIterable, Identifiable {
     
     var id: UUID { UUID() }
 
-    static var allCases: [ItemCategory] {
+    static var allCases: [InvoiceItemCategory] {
         [.fruits, .meat, .milk, .vegetables]
     }
 
