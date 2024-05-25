@@ -3,7 +3,9 @@ import SwiftUI
 @Observable
 class HomeViewModel {
     let repository: InvoiceItemRepository
+    
     var items: [InvoiceItem] = []
+    var scannedItems: [String]? = nil
     
     var shouldShowDocScan: Bool = false
     var shouldShowAddSheet: Bool = false
@@ -23,9 +25,16 @@ class HomeViewModel {
             for index in offsets {
                 repository.deleteItem(items[index])
             }
+            fetchItems()
         }
-        
-        fetchItems()
+    }
+    
+    @MainActor
+    func addScannedItem(_ item: InvoiceItem) {
+        withAnimation {
+            repository.addItem(item)
+            fetchItems()
+        }
     }
     
     func toggleDocScan() {
@@ -36,14 +45,16 @@ class HomeViewModel {
         shouldShowAddSheet.toggle()
     }
     
+    @MainActor
     func addItemsFromScanStrings(_ strings: [String]?) {
         guard let strings else {
+            scannedItems = nil
             shouldShowDocScan = false
             return
         }
         
         for string in strings {
-            items.append(
+            addScannedItem(
                 InvoiceItem(
                     name: string,
                     amount: 1,
@@ -51,6 +62,8 @@ class HomeViewModel {
                 )
             )
         }
-        toggleDocScan()
+        
+        scannedItems = nil
+        shouldShowDocScan = false
     }
 }

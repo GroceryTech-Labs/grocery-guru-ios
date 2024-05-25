@@ -26,9 +26,15 @@ struct HomeView: View {
                         }
                     }
                 }
+                .sheet(item: $viewModel.scannedItems) { scannedItems in
+                    ScannedItemsList(
+                        viewModel: viewModel,
+                        scannedItems: scannedItems
+                    )
+                }
                 .fullScreenCover(isPresented: $viewModel.shouldShowDocScan) {
                     ScannerView { scanStrings in
-                        viewModel.addItemsFromScanStrings(scanStrings)
+                        viewModel.scannedItems = scanStrings
                     }
                     .ignoresSafeArea(.all)
                 }
@@ -74,6 +80,59 @@ extension HomeView {
             }
         }
     }
+    
+    private struct ScannedItemsList: View {
+        @State var viewModel: HomeViewModel
+        @State var scannedItems: [String]
+        
+        var body: some View {
+            NavigationView {
+                List {
+                    Section {
+                        ForEach(scannedItems, id: \.self) { item in
+                            Text(item)
+                        }
+                        .onDelete(perform: deleteScannedItem)
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        Button("Add invoice") {
+                            viewModel.addItemsFromScanStrings(scannedItems)
+                        }
+                        .buttonStyle(.borderedProminent)
+                    }
+                    .listRowBackground(Color.clear)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        EditButton()
+                    }
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(role: .destructive) {
+                            viewModel.scannedItems = nil
+                        } label: {
+                            Label("Cancel", systemImage: "xmark")
+                        }
+                        .tint(.red)
+                    }
+                }
+            }
+        }
+        
+        @MainActor
+        func deleteScannedItem(offsets: IndexSet) {
+            withAnimation {
+                for index in offsets {
+                    scannedItems.remove(at: index)
+                }
+            }
+        }
+    }
+}
+
+extension Array<String>: Identifiable {
+    public var id: UUID { UUID() }
 }
 
 #Preview {
