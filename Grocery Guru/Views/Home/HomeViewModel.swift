@@ -49,7 +49,6 @@ class HomeViewModel {
     func addItemsFromScanStrings(_ strings: [String]?) {
         guard let strings else {
             scannedItems = nil
-            shouldShowDocScan = false
             return
         }
         
@@ -64,6 +63,5 @@ class HomeViewModel {
         }
         
         scannedItems = nil
-        shouldShowDocScan = false
     }
 }
