@@ -6,6 +6,8 @@ class HomeViewModel {
     let repository: ItemRepository
     var items: [Item] = []
     
+    var shouldShowDocScan: Bool = false
+    
     init(repository: ItemRepository) {
         self.repository = repository
     }
@@ -24,6 +26,10 @@ class HomeViewModel {
         }
         
         fetchItems()
+    }
+    
+    func toggleDocScan() {
+        shouldShowDocScan.toggle()
     }
 }
 
@@ -55,6 +61,11 @@ struct HomeView: View {
                 }
             }
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: viewModel.toggleDocScan) {
+                        Label("Scan", systemImage: "doc.viewfinder")
+                    }
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
@@ -63,6 +74,25 @@ struct HomeView: View {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
+            }
+            .fullScreenCover(isPresented: $viewModel.shouldShowDocScan) {
+                ScannerView { strings in
+                    guard let strings else {
+                        viewModel.toggleDocScan()
+                        return
+                    }
+                    for string in strings {
+                        viewModel.items.append(
+                            Item(
+                                name: string,
+                                amount: 1,
+                                category: .fruits
+                            )
+                        )
+                    }
+                    viewModel.toggleDocScan()
+                }
+                
             }
             .sheet(isPresented: $shouldShowAddSheet) {
                 AddItemView(

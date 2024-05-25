@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560AA7CF2C02627C00365B1F /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7CE2C02627C00365B1F /* ScannerView.swift */; };
+		560AA7D12C0262BA00365B1F /* TextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D02C0262BA00365B1F /* TextRecognizer.swift */; };
 		5639A5492BFF95940086857F /* Grocery_GuruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5482BFF95940086857F /* Grocery_GuruTests.swift */; };
 		5639A5532BFF95940086857F /* Grocery_GuruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5522BFF95940086857F /* Grocery_GuruUITests.swift */; };
 		5639A5552BFF95940086857F /* Grocery_GuruUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5542BFF95940086857F /* Grocery_GuruUITestsLaunchTests.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		560AA7CE2C02627C00365B1F /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		560AA7D02C0262BA00365B1F /* TextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizer.swift; sourceTree = "<group>"; };
 		5639A5322BFF95930086857F /* Grocery Guru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Guru.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5442BFF95940086857F /* Grocery GuruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery GuruTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5482BFF95940086857F /* Grocery_GuruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery_GuruTests.swift; sourceTree = "<group>"; };
@@ -83,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		560AA7CD2C02624A00365B1F /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				560AA7CE2C02627C00365B1F /* ScannerView.swift */,
+				560AA7D02C0262BA00365B1F /* TextRecognizer.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
 		5639A5292BFF95930086857F = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +119,7 @@
 		5639A5342BFF95930086857F /* Grocery Guru */ = {
 			isa = PBXGroup;
 			children = (
+				560AA7CD2C02624A00365B1F /* UI Components */,
 				5639A5632BFF97BD0086857F /* App.swift */,
 				5639A5622BFF97BD0086857F /* Assets */,
 				5639A56A2BFF97BD0086857F /* Models */,
@@ -332,7 +346,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				560AA7CF2C02627C00365B1F /* ScannerView.swift in Sources */,
 				5639A5712BFF97BD0086857F /* App.swift in Sources */,
+				560AA7D12C0262BA00365B1F /* TextRecognizer.swift in Sources */,
 				5639A5772BFF97BD0086857F /* AddItemViewModel.swift in Sources */,
 				5639A5782BFF97BD0086857F /* HomeView.swift in Sources */,
 				5639A5742BFF97BD0086857F /* Item.swift in Sources */,
