@@ -2,15 +2,16 @@ import Foundation
 import Vision
 import VisionKit
 
-final class TextRecognizer{
+final class TextRecognizerService {
     let cameraScan: VNDocumentCameraScan
     
-    init(cameraScan:VNDocumentCameraScan) {
+    init(cameraScan: VNDocumentCameraScan) {
         self.cameraScan = cameraScan
     }
     
+    // Own thread for handling the scan
     private let queue = DispatchQueue(
-        label: "scan-codes",
+        label: "document-scan",
         qos: .default,
         attributes: [],
         autoreleaseFrequency: .workItem

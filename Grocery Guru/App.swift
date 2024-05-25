@@ -20,8 +20,8 @@ struct Grocery_GuruApp: App {
     
     init() {
         let schema = Schema([
-            Item.self,
-            CustomItemCategoryConfig.self,
+            InvoiceItem.self,
+            CustomInvoiceItemCategory.self,
         ])
         
         let modelConfiguration = ModelConfiguration(

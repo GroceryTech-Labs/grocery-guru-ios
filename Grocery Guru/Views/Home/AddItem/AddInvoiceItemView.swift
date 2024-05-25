@@ -1,9 +1,9 @@
 import SwiftUI
 import SwiftData
 
-struct AddItemView: View {
+struct AddInvoiceItemView: View {
     @Binding var isShown: Bool
-    @State private var viewModel: AddItemViewModel
+    @State private var viewModel: AddInvoiceItemViewModel
     
     let onAdd: () -> ()
 
@@ -40,7 +40,7 @@ struct AddItemView: View {
             // Category Selection
             Section {
                 Picker("Category", selection: $viewModel.category) {
-                    ForEach(ItemCategory.allCases) { category in
+                    ForEach(InvoiceItemCategory.allCases) { category in
                         Text(category.title)
                             .tag(category)
                     }
@@ -60,9 +60,9 @@ struct AddItemView: View {
         .formStyle(.grouped)
     }
 
-    init(isShown: Binding<Bool>, itemRepository: ItemRepository, onAdd: @escaping () -> ())  {
+    init(isShown: Binding<Bool>, itemRepository: InvoiceItemRepository, onAdd: @escaping () -> ())  {
         self._isShown = isShown
-        let viewModel = AddItemViewModel(itemRepository: itemRepository)
+        let viewModel = AddInvoiceItemViewModel(itemRepository: itemRepository)
         self._viewModel = State(initialValue: viewModel)
         self.onAdd = onAdd
     }

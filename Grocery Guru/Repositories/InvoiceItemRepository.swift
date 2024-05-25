@@ -1,24 +1,24 @@
 import Foundation
 import SwiftData
 
-protocol ItemRepository {
-    func fetchAllItems() -> [Item]
-    func addItem(_ item: Item)
-    func deleteItem(_ item: Item)
+protocol InvoiceItemRepository {
+    func fetchAllItems() -> [InvoiceItem]
+    func addItem(_ item: InvoiceItem)
+    func deleteItem(_ item: InvoiceItem)
 }
 
 // MARK: LOCAL STORAGE
-final class LocalStorageItemRepository: ItemRepository {
-    var items: [Item] = [Item]()
+final class LocalStorageItemRepository: InvoiceItemRepository {
+    var items: [InvoiceItem] = [InvoiceItem]()
     var modelContext: ModelContext
     
     init(modelContext: ModelContext) {
         self.modelContext = modelContext
     }
     
-    func fetchAllItems() -> [Item] {
+    func fetchAllItems() -> [InvoiceItem] {
         do {
-            let descriptor = FetchDescriptor<Item>()
+            let descriptor = FetchDescriptor<InvoiceItem>()
             items = try modelContext.fetch(descriptor)
         } catch {
             print("Fetch failed")
@@ -27,32 +27,32 @@ final class LocalStorageItemRepository: ItemRepository {
         return items
     }
     
-    func addItem(_ item: Item) {
+    func addItem(_ item: InvoiceItem) {
         modelContext.insert(item)
     }
     
-    func deleteItem(_ item: Item) {
+    func deleteItem(_ item: InvoiceItem) {
         modelContext.delete(item)
     }
 }
 
 // MARK: MOCK STORAGE
-final class MockItemRepository: ItemRepository {
-    var items: [Item]
+final class MockItemRepository: InvoiceItemRepository {
+    var items: [InvoiceItem]
     
-    init(items: [Item]) {
+    init(items: [InvoiceItem]) {
         self.items = items
     }
     
-    func fetchAllItems() -> [Item] {
+    func fetchAllItems() -> [InvoiceItem] {
         return items
     }
     
-    func addItem(_ item: Item) {
+    func addItem(_ item: InvoiceItem) {
         items.append(item)
     }
     
-    func updateItem(_ item: Item) {
+    func updateItem(_ item: InvoiceItem) {
         guard let index = items.firstIndex(of: item) else {
             return
         }
@@ -60,7 +60,7 @@ final class MockItemRepository: ItemRepository {
         items[index] = item
     }
     
-    func deleteItem(_ item: Item) {
+    func deleteItem(_ item: InvoiceItem) {
         guard let index = items.firstIndex(of: item) else {
             return
         }
@@ -74,7 +74,7 @@ extension MockItemRepository {
         return MockItemRepository(
             items: Array(
                 repeating:
-                    Item(
+                    InvoiceItem(
                         name: "Cheddar Cheese",
                         amount: 3,
                         category: .milk
