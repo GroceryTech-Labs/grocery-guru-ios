@@ -38,7 +38,7 @@ class HomeViewModel {
     
     func addItemsFromScanStrings(_ strings: [String]?) {
         guard let strings else {
-            toggleDocScan()
+            shouldShowDocScan = false
             return
         }
         

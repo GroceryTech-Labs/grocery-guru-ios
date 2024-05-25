@@ -27,8 +27,8 @@ struct HomeView: View {
                     }
                 }
                 .fullScreenCover(isPresented: $viewModel.shouldShowDocScan) {
-                    ScannerView { strings in
-                        viewModel.addItemsFromScanStrings(strings)
+                    ScannerView { scanStrings in
+                        viewModel.addItemsFromScanStrings(scanStrings)
                     }
                     .ignoresSafeArea(.all)
                 }
