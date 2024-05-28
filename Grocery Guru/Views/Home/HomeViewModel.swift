@@ -5,7 +5,9 @@ class HomeViewModel {
     let repository: InvoiceItemRepository
     
     var items: [InvoiceItem] = []
-    var scannedItems: [String]? = nil
+    
+    var scannedItems: [ScannedString]? = nil
+    var selectedScannedItems: Set<ScannedString> = Set()
     
     var shouldShowDocScan: Bool = false
     var shouldShowAddSheet: Bool = false
@@ -46,16 +48,16 @@ class HomeViewModel {
     }
     
     @MainActor
-    func addItemsFromScanStrings(_ strings: [String]?) {
+    func addItemsFromScanStrings(_ strings: [ScannedString]?) {
         guard let strings else {
             scannedItems = nil
             return
         }
         
-        for string in strings {
+        for scannedString in strings {
             addScannedItem(
                 InvoiceItem(
-                    name: string,
+                    name: scannedString.value,
                     amount: 1,
                     category: .fruits
                 )

@@ -21,6 +21,7 @@
 		5639A5762BFF97BD0086857F /* AddInvoiceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56B2BFF97BD0086857F /* AddInvoiceItemView.swift */; };
 		5639A5772BFF97BD0086857F /* AddInvoiceItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56C2BFF97BD0086857F /* AddInvoiceItemViewModel.swift */; };
 		5639A5782BFF97BD0086857F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56E2BFF97BD0086857F /* HomeView.swift */; };
+		56D08A332C060F7300D585AA /* ScannedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D08A322C060F7300D585AA /* ScannedString.swift */; };
 		56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		5639A56C2BFF97BD0086857F /* AddInvoiceItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInvoiceItemViewModel.swift; sourceTree = "<group>"; };
 		5639A56E2BFF97BD0086857F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		567D8FE12C0288DD007C4076 /* Grocery-Guru-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Grocery-Guru-Info.plist"; sourceTree = SOURCE_ROOT; };
+		56D08A322C060F7300D585AA /* ScannedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedString.swift; sourceTree = "<group>"; };
 		56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +157,7 @@
 				5639A5672BFF97BD0086857F /* CustomInvoiceItemCategory.swift */,
 				5639A5682BFF97BD0086857F /* InvoiceItem.swift */,
 				5639A5692BFF97BD0086857F /* InvoiceItemCategory.swift */,
+				56D08A322C060F7300D585AA /* ScannedString.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				5639A5712BFF97BD0086857F /* App.swift in Sources */,
 				560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */,
 				5639A5772BFF97BD0086857F /* AddInvoiceItemViewModel.swift in Sources */,
+				56D08A332C060F7300D585AA /* ScannedString.swift in Sources */,
 				5639A5782BFF97BD0086857F /* HomeView.swift in Sources */,
 				5639A5742BFF97BD0086857F /* InvoiceItem.swift in Sources */,
 				5639A5752BFF97BD0086857F /* InvoiceItemCategory.swift in Sources */,

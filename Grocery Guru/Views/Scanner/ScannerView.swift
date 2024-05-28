@@ -2,11 +2,11 @@ import VisionKit
 import SwiftUI
 
 struct ScannerView: UIViewControllerRepresentable {
-    private let completionHandler: ([String]?) -> Void
+    private let completionHandler: ([ScannedString]?) -> Void
     
     @Environment(\.presentationMode) private var presentationMode
      
-    init(completion: @escaping ([String]?) -> Void) {
+    init(completion: @escaping ([ScannedString]?) -> Void) {
         self.completionHandler = completion
     }
      
@@ -38,12 +38,12 @@ struct ScannerView: UIViewControllerRepresentable {
      
     final class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         /// Result of the saved scan scans
-        private let completionHandler: ([String]?) -> Void
+        private let completionHandler: ([ScannedString]?) -> Void
         
         /// Handling action on dismissing the view in any way
         private let onDismiss: () -> Void
          
-        init(onDismiss: @escaping () -> Void, completion: @escaping ([String]?) -> Void) {
+        init(onDismiss: @escaping () -> Void, completion: @escaping ([ScannedString]?) -> Void) {
             self.completionHandler = completion
             self.onDismiss = onDismiss
         }

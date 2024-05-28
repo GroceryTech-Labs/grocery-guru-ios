@@ -84,14 +84,15 @@ extension HomeView {
     
     private struct ScannedItemsList: View {
         @State var viewModel: HomeViewModel
-        @State var scannedItems: [String]
+        @State var scannedItems: [ScannedString]
         
         var body: some View {
             NavigationView {
-                List {
+                List(selection: $viewModel.selectedScannedItems) {
                     Section {
-                        ForEach(scannedItems, id: \.self) { item in
-                            Text(item)
+                        ForEach(scannedItems, id: \.id) { item in
+                            Text(item.value)
+                                .tag(item)
                         }
                         .onDelete(perform: deleteScannedItem)
                     }
@@ -106,9 +107,6 @@ extension HomeView {
                     .listRowBackground(Color.clear)
                 }
                 .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        EditButton()
-                    }
                     ToolbarItem(placement: .topBarLeading) {
                         Button(role: .destructive) {
                             viewModel.scannedItems = nil
@@ -117,7 +115,21 @@ extension HomeView {
                         }
                         .tint(.red)
                     }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+                    if !viewModel.selectedScannedItems.isEmpty {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button {
+                                removeSelectedScannedItems()
+                            } label: {
+                                Image(systemName: "trash")
+                            }
+                            .tint(.red)
+                        }
+                    }
                 }
+                .navigationTitle("Scanned Invoices")
             }
         }
         
@@ -129,11 +141,20 @@ extension HomeView {
                 }
             }
         }
+        
+        @MainActor
+        func removeSelectedScannedItems() {
+            for selection in viewModel.selectedScannedItems {
+                guard let index = scannedItems.firstIndex(of: selection) else {
+                    return
+                }
+                scannedItems.remove(at: index)
+            }
+            
+            // 
+            viewModel.selectedScannedItems = Set()
+        }
     }
-}
-
-extension Array<String>: Identifiable {
-    public var id: UUID { UUID() }
 }
 
 #Preview {

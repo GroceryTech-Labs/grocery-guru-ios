@@ -17,7 +17,7 @@ final class TextRecognizerService {
         autoreleaseFrequency: .workItem
     )
     
-    func recognizeText(withCompletionHandler completionHandler: @escaping ([String]) -> Void) {
+    func recognizeText(withCompletionHandler completionHandler: @escaping ([ScannedString]) -> Void) {
         queue.async {
             let images = (0..<self.cameraScan.pageCount).compactMap {
                 self.cameraScan.imageOfPage(at: $0).cgImage
@@ -27,7 +27,7 @@ final class TextRecognizerService {
                 (image: $0, request: VNRecognizeTextRequest())
             }
             
-            var strings: [String] = []
+            var strings: [ScannedString] = []
             
             for (image, request) in imagesAndRequests {
                 let handler = VNImageRequestHandler(cgImage: image, options: [:])
@@ -41,7 +41,7 @@ final class TextRecognizerService {
                     
                     for observation in observations {
                         if let string = observation.topCandidates(1).first?.string {
-                            strings.append(string)
+                            strings.append(ScannedString(value: string))
                         }
                     }
                     
