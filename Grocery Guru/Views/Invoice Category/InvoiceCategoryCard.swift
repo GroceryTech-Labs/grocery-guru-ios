@@ -1,18 +1,29 @@
-//
-//  InvoiceCategoryCard.swift
-//  Grocery Guru
-//
-//  Created by Max Maetze on 02.06.24.
-//
-
 import SwiftUI
 
 struct InvoiceCategoryCard: View {
+    let category: InvoiceItemCategory
+    let items: [InvoiceItem]
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: Constants.Padding.M) {
+            category.emoji.text
+                .font(.system(size: 64))
+
+            VStack(spacing: Constants.Padding.X) {
+                Text(category.title)
+                Text("\(items.filter { $0.category == category }.count) items")
+                    .font(.caption)
+            }
+        }
+        .foregroundStyle(Color(.labelPrimary))
+        .frame(maxWidth: .infinity)
+        .padding(Constants.Padding.L)
+        .background(Color(.secondary))
+        .clipShape(.rect(cornerRadius: 8))
+        .shadow(radius: 1, y: 1)
     }
 }
 
-#Preview {
-    InvoiceCategoryCard()
+#Preview(traits: .sizeThatFitsLayout) {
+    InvoiceCategoryCard(category: .milkEgg, items: MockItemRepository.preview.items)
 }

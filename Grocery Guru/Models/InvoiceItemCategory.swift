@@ -4,7 +4,7 @@ enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
     case custom
     case fruits
     case meat
-    case cheeseEggDiary
+    case milkEgg
     case vegetables
     case fish
     case canned
@@ -14,28 +14,24 @@ enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
 
 
     var title: String {
-        var name: String {
-            switch self {
-            case .custom:
-                ""
-            case .fruits:
-                "Fruits"
-            case .meat:
-                "Meat"
-            case .cheeseEggDiary:
-                "Cheese, eggs & diary"
-            case .vegetables:
-                "Vegetables"
-            case .bakery:
-                "Bakery"
-            case .fish:
-                "Fish"
-            case .canned:
-                "Canned"
-            }
+        switch self {
+        case .custom:
+            "Custom"
+        case .fruits:
+            "Fruits"
+        case .meat:
+            "Meat"
+        case .milkEgg:
+            "Milk & Egg"
+        case .vegetables:
+            "Vegetables"
+        case .bakery:
+            "Bakery"
+        case .fish:
+            "Fish"
+        case .canned:
+            "Canned"
         }
-
-        return "\(name) \(self.emoji)"
     }
 
     var emoji: Emoji {
@@ -46,8 +42,8 @@ enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
                 .fruit
         case .meat:
                 .meat
-        case .cheeseEggDiary:
-                .cheeseEggDiary
+        case .milkEgg:
+                .milkEgg
         case .vegetables:
                 .vegetable
         case .bakery:

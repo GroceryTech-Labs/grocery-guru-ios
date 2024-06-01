@@ -1,10 +1,10 @@
 import Foundation
 
 enum Constants {
-    enum Padding: CGFloat {
-        case X = 4.0
-        case S = 8.0
-        case M = 12.0
-        case L = 16.0
+    enum Padding {
+        static let X: CGFloat = 4.0
+        static let S: CGFloat = 8.0
+        static let M: CGFloat = 12.0
+        static let L: CGFloat = 16.0
     }
 }

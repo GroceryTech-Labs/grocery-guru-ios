@@ -3,7 +3,7 @@ import SwiftData
 
 struct HomeView: View {
     @State private var viewModel: HomeViewModel
-    
+
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
     }
@@ -53,25 +53,23 @@ struct HomeView: View {
 extension HomeView {
     private struct HomeViewList: View {
         @State var viewModel: HomeViewModel
-        
+
         var body: some View {
-            List {
-                ForEach(InvoiceItemCategory.allCases) { category in
-                    Section(category.title) {
-                        ForEach(viewModel.items.filter { $0.category.title == category.title } ) { item in
-                            NavigationLink {
-                                Text("You have \(item.amount, format: .number) of \(item.name) in your fridge")
-                                    .navigationTitle(item.name)
-                            } label: {
-                                Text(item.name)
-                            }
-                        }
-                        .onDelete { offsets in
-                            viewModel.deleteItem(offsets: offsets)
-                        }
+            ScrollView {
+                LazyVGrid(
+                    columns: [GridItem(.flexible()), GridItem(.flexible())],
+                    spacing: Constants.Padding.M
+                ) {
+                    ForEach(InvoiceItemCategory.allCases) { category in
+                        InvoiceCategoryCard(
+                            category: category,
+                            items: viewModel.items
+                        )
                     }
                 }
+                .padding(Constants.Padding.L)
             }
+            .background(Color(.primary), ignoresSafeAreaEdges: .all)
         }
     }
 }
