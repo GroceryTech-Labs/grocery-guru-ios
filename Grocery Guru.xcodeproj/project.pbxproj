@@ -22,6 +22,9 @@
 		5639A5772BFF97BD0086857F /* AddInvoiceItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56C2BFF97BD0086857F /* AddInvoiceItemViewModel.swift */; };
 		5639A5782BFF97BD0086857F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56E2BFF97BD0086857F /* HomeView.swift */; };
 		56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */; };
+		56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5A2C0BD75900370D7F /* Emoji.swift */; };
+		56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5C2C0BDA8900370D7F /* Constants.swift */; };
+		56FAFB602C0BDB1200370D7F /* InvoiceCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5F2C0BDB1200370D7F /* InvoiceCategoryCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		5639A56E2BFF97BD0086857F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		567D8FE12C0288DD007C4076 /* Grocery-Guru-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Grocery-Guru-Info.plist"; sourceTree = SOURCE_ROOT; };
 		56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemRepository.swift; sourceTree = "<group>"; };
+		56FAFB5A2C0BD75900370D7F /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		56FAFB5C2C0BDA8900370D7F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		56FAFB5F2C0BDB1200370D7F /* InvoiceCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCategoryCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				5639A5612BFF97BD0086857F /* Assets.xcassets */,
+				56FAFB5A2C0BD75900370D7F /* Emoji.swift */,
+				56FAFB5C2C0BDA8900370D7F /* Constants.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -171,6 +179,7 @@
 		5639A56F2BFF97BD0086857F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				56FAFB5E2C0BDAE400370D7F /* Invoice Category */,
 				560AA7D42C026E5B00365B1F /* Scanner */,
 				56E964352BFFAFF40099ED2F /* Home */,
 			);
@@ -193,6 +202,14 @@
 				5639A56D2BFF97BD0086857F /* AddItem */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		56FAFB5E2C0BDAE400370D7F /* Invoice Category */ = {
+			isa = PBXGroup;
+			children = (
+				56FAFB5F2C0BDB1200370D7F /* InvoiceCategoryCard.swift */,
+			);
+			path = "Invoice Category";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,11 +320,14 @@
 				560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */,
 				5639A5772BFF97BD0086857F /* AddInvoiceItemViewModel.swift in Sources */,
 				5639A5782BFF97BD0086857F /* HomeView.swift in Sources */,
+				56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */,
+				56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */,
 				5639A5742BFF97BD0086857F /* InvoiceItem.swift in Sources */,
 				5639A5752BFF97BD0086857F /* InvoiceItemCategory.swift in Sources */,
 				5639A5732BFF97BD0086857F /* CustomInvoiceItemCategory.swift in Sources */,
 				56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */,
 				5639A5762BFF97BD0086857F /* AddInvoiceItemView.swift in Sources */,
+				56FAFB602C0BDB1200370D7F /* InvoiceCategoryCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,14 +4,14 @@ enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
     case custom
     case fruits
     case meat
-    case milk
+    case cheeseEggDiary
     case vegetables
-    
+    case fish
+    case canned
+    case bakery
+
     var id: UUID { UUID() }
 
-    static var allCases: [InvoiceItemCategory] {
-        [.fruits, .meat, .milk, .vegetables]
-    }
 
     var title: String {
         var name: String {
@@ -22,28 +22,40 @@ enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
                 "Fruits"
             case .meat:
                 "Meat"
-            case .milk:
-                "Milk"
+            case .cheeseEggDiary:
+                "Cheese, eggs & diary"
             case .vegetables:
                 "Vegetables"
+            case .bakery:
+                "Bakery"
+            case .fish:
+                "Fish"
+            case .canned:
+                "Canned"
             }
         }
 
         return "\(name) \(self.emoji)"
     }
 
-    var emoji: String {
+    var emoji: Emoji {
         return switch self {
         case .custom:
-            ""
+                .vegetable
         case .fruits:
-            "🍎"
+                .fruit
         case .meat:
-            "🥩"
-        case .milk:
-            "🥛"
+                .meat
+        case .cheeseEggDiary:
+                .cheeseEggDiary
         case .vegetables:
-            "🥦"
+                .vegetable
+        case .bakery:
+                .bakery
+        case .fish:
+                .fish
+        case .canned:
+                .canned
         }
     }
 }
