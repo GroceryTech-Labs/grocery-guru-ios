@@ -4,22 +4,20 @@ import SwiftData
 struct HomeView: View {
     @State private var viewModel: HomeViewModel
 
-    init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
-    }
-
     var body: some View {
         NavigationView {
             HomeViewList(viewModel: viewModel)
                 .overlay(alignment: .bottom) {
-                    ScannerButton {
-                        
-                    }
+                    ScannerButton { }
                 }
         }
         .task {
             await viewModel.fetchItems()
         }
+    }
+
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
     }
 }
 

@@ -10,7 +10,7 @@ class HomeViewModel {
     init(repository: InvoiceItemRepository) {
         self.repository = repository
     }
-    
+
     @MainActor
     func fetchItems() async {
         error = nil

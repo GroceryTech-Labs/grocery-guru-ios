@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeViewList: View {
-    @State var viewModel: HomeViewModel
+    @State private var viewModel: HomeViewModel
 
     var body: some View {
         ScrollView {
@@ -24,6 +24,10 @@ struct HomeViewList: View {
             ignoresSafeAreaEdges: .all
         )
         .scrollIndicators(.hidden)
+    }
+
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
     }
 }
 

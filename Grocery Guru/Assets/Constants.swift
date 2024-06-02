@@ -1,6 +1,11 @@
 import Foundation
 
 enum Constants {
+    enum Radius {
+        /// Size of 8px
+        static let Normal: CGFloat = 8.0
+    }
+
     enum Padding {
         /// Size of 4px
         static let sizeX: CGFloat = 4.0

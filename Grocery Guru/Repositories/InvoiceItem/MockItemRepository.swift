@@ -2,6 +2,22 @@ import Foundation
 import SwiftData
 
 final class MockItemRepository: InvoiceItemRepository {
+    static var preview: MockItemRepository {
+        let amount = 3
+        let count = 10
+        return MockItemRepository(
+            items: Array(
+                repeating:
+                    InvoiceItem(
+                        name: "Cheddar Cheese",
+                        amount: amount,
+                        category: .milkEgg
+                    ),
+                count: count
+            )
+        )
+    }
+
     var items: [InvoiceItem]
 
     init(items: [InvoiceItem]) {
@@ -9,7 +25,7 @@ final class MockItemRepository: InvoiceItemRepository {
     }
 
     func fetchAllItems() -> [InvoiceItem] {
-        return items
+        items
     }
 
     func addItem(_ item: InvoiceItem) {
@@ -30,21 +46,5 @@ final class MockItemRepository: InvoiceItemRepository {
         }
 
         items.remove(at: index)
-    }
-}
-
-extension MockItemRepository {
-    static var preview: MockItemRepository {
-        return MockItemRepository(
-            items: Array(
-                repeating:
-                    InvoiceItem(
-                        name: "Cheddar Cheese",
-                        amount: 3,
-                        category: .milkEgg
-                    ),
-                count: 10
-            )
-        )
     }
 }

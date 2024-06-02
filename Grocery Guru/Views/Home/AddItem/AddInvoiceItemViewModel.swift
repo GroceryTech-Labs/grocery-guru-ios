@@ -4,11 +4,11 @@ import SwiftData
 @Observable
 class AddInvoiceItemViewModel {
     let itemRepository: InvoiceItemRepository
-     
+
     var name: String = ""
     var amount: Int = 1
     var category: InvoiceItemCategory = .fruits
-    
+
     init(itemRepository: InvoiceItemRepository) {
         self.itemRepository = itemRepository
     }
@@ -20,6 +20,6 @@ class AddInvoiceItemViewModel {
             category: category
         )
         itemRepository.addItem(newItem)
-        return toggleSheet.wrappedValue.toggle()
+        toggleSheet.wrappedValue.toggle()
     }
 }

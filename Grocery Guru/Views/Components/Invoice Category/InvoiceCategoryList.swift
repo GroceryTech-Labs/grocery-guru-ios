@@ -1,12 +1,7 @@
 import SwiftUI
 
 struct InvoiceCategoryList: View {
-
     private let invoiceItems: [InvoiceItem]
-
-    init(invoiceItems: [InvoiceItem]) {
-        self.invoiceItems = invoiceItems
-    }
 
     var body: some View {
         LazyVGrid(
@@ -20,6 +15,10 @@ struct InvoiceCategoryList: View {
                 )
             }
         }
+    }
+
+    init(invoiceItems: [InvoiceItem]) {
+        self.invoiceItems = invoiceItems
     }
 }
 

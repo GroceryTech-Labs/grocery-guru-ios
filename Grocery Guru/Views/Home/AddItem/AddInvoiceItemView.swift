@@ -4,8 +4,8 @@ import SwiftData
 struct AddInvoiceItemView: View {
     @Binding var isShown: Bool
     @State private var viewModel: AddInvoiceItemViewModel
-    
-    let onAdd: () -> ()
+
+    let onAdd: () -> Void
 
     var body: some View {
         Form {
@@ -13,7 +13,7 @@ struct AddInvoiceItemView: View {
             Text("Add Item")
                 .font(.largeTitle)
                 .listRowBackground(Color.clear)
-            
+
             // Name Input
             Section {
                 VStack {
@@ -60,7 +60,7 @@ struct AddInvoiceItemView: View {
         .formStyle(.grouped)
     }
 
-    init(isShown: Binding<Bool>, itemRepository: InvoiceItemRepository, onAdd: @escaping () -> ())  {
+    init(isShown: Binding<Bool>, itemRepository: InvoiceItemRepository, onAdd: @escaping () -> Void) {
         self._isShown = isShown
         let viewModel = AddInvoiceItemViewModel(itemRepository: itemRepository)
         self._viewModel = State(initialValue: viewModel)
