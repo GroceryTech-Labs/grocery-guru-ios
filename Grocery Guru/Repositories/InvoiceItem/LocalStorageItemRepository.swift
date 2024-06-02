@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 final class LocalStorageItemRepository: InvoiceItemRepository {
-    var items: [InvoiceItem] = [InvoiceItem]()
+    var items = [InvoiceItem]()
     var modelContext: ModelContext
 
     init(modelContext: ModelContext) {

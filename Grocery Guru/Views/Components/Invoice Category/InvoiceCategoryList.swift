@@ -11,7 +11,7 @@ struct InvoiceCategoryList: View {
     var body: some View {
         LazyVGrid(
             columns: [GridItem(.flexible()), GridItem(.flexible())],
-            spacing: Constants.Padding.M
+            spacing: Constants.Padding.sizeM
         ) {
             ForEach(InvoiceItemCategory.allCases) { category in
                 InvoiceCategoryCard(

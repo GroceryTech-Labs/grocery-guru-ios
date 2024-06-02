@@ -14,11 +14,11 @@ struct InvoiceCategoryCard: View {
     }
 
     var body: some View {
-        VStack(spacing: Constants.Padding.M) {
+        VStack(spacing: Constants.Padding.sizeM) {
             category.emoji.text
                 .font(.system(size: 64))
 
-            VStack(spacing: Constants.Padding.X) {
+            VStack(spacing: Constants.Padding.sizeX) {
                 Text(category.rawValue)
                 Text("\(itemsCount, format: .number) Items")
                     .font(.caption)
@@ -26,7 +26,7 @@ struct InvoiceCategoryCard: View {
         }
         .foregroundStyle(.labelPrimary)
         .frame(maxWidth: .infinity)
-        .padding(Constants.Padding.L)
+        .padding(Constants.Padding.sizeL)
         .background(Color.surfaceSecondary)
         .clipShape(.rect(cornerRadius: 8))
         .shadow(radius: 1, y: 1)

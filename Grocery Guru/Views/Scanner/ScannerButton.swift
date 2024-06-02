@@ -12,7 +12,7 @@ struct ScannerButton: View {
             Image(systemName: "doc.viewfinder")
                 .font(.largeTitle)
                 .foregroundStyle(.labelPrimary)
-                .padding(Constants.Padding.L)
+                .padding(Constants.Padding.sizeL)
                 .background {
                     Circle()
                         .fill(.accent.opacity(0.75))

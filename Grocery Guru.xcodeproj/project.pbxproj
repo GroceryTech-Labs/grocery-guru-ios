@@ -20,6 +20,7 @@
 		5639A5762BFF97BD0086857F /* AddInvoiceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56B2BFF97BD0086857F /* AddInvoiceItemView.swift */; };
 		5639A5772BFF97BD0086857F /* AddInvoiceItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56C2BFF97BD0086857F /* AddInvoiceItemViewModel.swift */; };
 		5639A5782BFF97BD0086857F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56E2BFF97BD0086857F /* HomeView.swift */; };
+		56415D012C0CCAE100C58D4E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56415D002C0CCAE100C58D4E /* .swiftlint.yml */; };
 		56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */; };
 		56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5A2C0BD75900370D7F /* Emoji.swift */; };
 		56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5C2C0BDA8900370D7F /* Constants.swift */; };
@@ -31,6 +32,7 @@
 		56FFAC7B2C0C8B9B00D2D965 /* ScannerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC7A2C0C8B9B00D2D965 /* ScannerButton.swift */; };
 		56FFAC7E2C0C902800D2D965 /* LocalStorageItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC7D2C0C902800D2D965 /* LocalStorageItemRepository.swift */; };
 		56FFAC802C0C904F00D2D965 /* MockItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC7F2C0C904F00D2D965 /* MockItemRepository.swift */; };
+		56FFAC822C0CC82300D2D965 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +58,11 @@
 		5639A5632BFF97BD0086857F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5639A5652BFF97BD0086857F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5639A5682BFF97BD0086857F /* InvoiceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceItem.swift; sourceTree = "<group>"; };
-		5639A5692BFF97BD0086857F /* InvoiceItemCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceItemCategory.swift; sourceTree = "<group>"; };
+		5639A5692BFF97BD0086857F /* InvoiceItemCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceItemCategory.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
 		5639A56B2BFF97BD0086857F /* AddInvoiceItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInvoiceItemView.swift; sourceTree = "<group>"; };
 		5639A56C2BFF97BD0086857F /* AddInvoiceItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInvoiceItemViewModel.swift; sourceTree = "<group>"; };
 		5639A56E2BFF97BD0086857F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		56415D002C0CCAE100C58D4E /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		567D8FE12C0288DD007C4076 /* Grocery-Guru-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Grocery-Guru-Info.plist"; sourceTree = SOURCE_ROOT; };
 		56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemRepository.swift; sourceTree = "<group>"; };
 		56FAFB5A2C0BD75900370D7F /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		56FFAC7A2C0C8B9B00D2D965 /* ScannerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerButton.swift; sourceTree = "<group>"; };
 		56FFAC7D2C0C902800D2D965 /* LocalStorageItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageItemRepository.swift; sourceTree = "<group>"; };
 		56FFAC7F2C0C904F00D2D965 /* MockItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemRepository.swift; sourceTree = "<group>"; };
+		56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 		560AA7D42C026E5B00365B1F /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
+				56FFAC7A2C0C8B9B00D2D965 /* ScannerButton.swift */,
 				560AA7CE2C02627C00365B1F /* ScannerView.swift */,
 			);
 			path = Scanner;
@@ -122,6 +127,7 @@
 		5639A5342BFF95930086857F /* Grocery Guru */ = {
 			isa = PBXGroup;
 			children = (
+				56415D002C0CCAE100C58D4E /* .swiftlint.yml */,
 				567D8FE12C0288DD007C4076 /* Grocery-Guru-Info.plist */,
 				5639A5632BFF97BD0086857F /* App.swift */,
 				5639A5622BFF97BD0086857F /* Assets */,
@@ -148,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				5639A5612BFF97BD0086857F /* Assets.xcassets */,
+				56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */,
 				56FAFB5A2C0BD75900370D7F /* Emoji.swift */,
 				56FAFB5C2C0BDA8900370D7F /* Constants.swift */,
 			);
@@ -231,7 +238,6 @@
 			children = (
 				56FFAC692C0BF13200D2D965 /* SectionHeader.swift */,
 				56FAFB5E2C0BDAE400370D7F /* Invoice Category */,
-				56FFAC7A2C0C8B9B00D2D965 /* ScannerButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 			buildConfigurationList = 5639A5582BFF95940086857F /* Build configuration list for PBXNativeTarget "Grocery Guru" */;
 			buildPhases = (
 				5639A52E2BFF95930086857F /* Sources */,
+				56415D022C0CCBC700C58D4E /* ShellScript */,
 				5639A52F2BFF95930086857F /* Frameworks */,
 				5639A5302BFF95930086857F /* Resources */,
 			);
@@ -335,6 +342,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 5639A5292BFF95930086857F;
 			productRefGroup = 5639A5332BFF95930086857F /* Products */;
@@ -352,8 +360,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56415D012C0CCAE100C58D4E /* .swiftlint.yml in Resources */,
 				5639A5722BFF97BD0086857F /* Preview Assets.xcassets in Resources */,
 				5639A5702BFF97BD0086857F /* Assets.xcassets in Resources */,
+				56FFAC822C0CC82300D2D965 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +376,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56415D022C0CCBC700C58D4E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5639A52E2BFF95930086857F /* Sources */ = {
@@ -544,6 +575,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Grocery Guru/Preview Content\"";
 				DEVELOPMENT_TEAM = KLXF66UW7Z;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Grocery-Guru-Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "By approving you'll allow us to scan your invoices.";
@@ -577,6 +609,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Grocery Guru/Preview Content\"";
 				DEVELOPMENT_TEAM = KLXF66UW7Z;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Grocery-Guru-Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "By approving you'll allow us to scan your invoices.";

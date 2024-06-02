@@ -1,14 +1,14 @@
 import SwiftUI
 
 enum Emoji: String, CaseIterable {
-    case fruit = "🍎"
-    case vegetable = "🥕"
     case bakery = "🥖"
-    case milkEgg = "🥛"
-    case meat = "🥩"
-    case fish = "🐟"
     case canned = "🥫"
+    case fish = "🐟"
+    case fruit = "🍎"
     case gear = "⚙️"
+    case meat = "🥩"
+    case milkEgg = "🥛"
+    case vegetable = "🥕"
 
     var text: Text {
         Text(self.rawValue)

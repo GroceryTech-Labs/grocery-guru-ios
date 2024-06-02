@@ -2,9 +2,6 @@ import XCTest
 import Vision
 @testable import Grocery_Guru
 
-final class Grocery_GuruTests: XCTestCase {
-    
-    func test_FirstTestCase() {
-        
-    }
+final class GroceryGuruTests: XCTestCase {
+    func test_FirstTestCase() { }
 }

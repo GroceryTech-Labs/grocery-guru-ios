@@ -12,4 +12,6 @@ final class InvoiceItem {
         self.amount = amount
         self.category = category
     }
+
+    deinit { }
 }
