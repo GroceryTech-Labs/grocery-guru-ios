@@ -18,7 +18,7 @@ struct HomeView: View {
                 }
         }
         .task {
-            viewModel.fetchItems()
+            await viewModel.fetchItems()
         }
     }
 }

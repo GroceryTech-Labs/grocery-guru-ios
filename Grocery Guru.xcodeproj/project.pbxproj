@@ -29,6 +29,8 @@
 		56FFAC772C0C888200D2D965 /* InvoiceCategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC762C0C888200D2D965 /* InvoiceCategoryList.swift */; };
 		56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC782C0C89E800D2D965 /* HomeViewList.swift */; };
 		56FFAC7B2C0C8B9B00D2D965 /* ScannerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC7A2C0C8B9B00D2D965 /* ScannerButton.swift */; };
+		56FFAC7E2C0C902800D2D965 /* LocalStorageItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC7D2C0C902800D2D965 /* LocalStorageItemRepository.swift */; };
+		56FFAC802C0C904F00D2D965 /* MockItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC7F2C0C904F00D2D965 /* MockItemRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		56FFAC762C0C888200D2D965 /* InvoiceCategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCategoryList.swift; sourceTree = "<group>"; };
 		56FFAC782C0C89E800D2D965 /* HomeViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewList.swift; sourceTree = "<group>"; };
 		56FFAC7A2C0C8B9B00D2D965 /* ScannerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerButton.swift; sourceTree = "<group>"; };
+		56FFAC7D2C0C902800D2D965 /* LocalStorageItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageItemRepository.swift; sourceTree = "<group>"; };
+		56FFAC7F2C0C904F00D2D965 /* MockItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +201,7 @@
 		5639A5792BFFAB390086857F /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */,
+				56FFAC7C2C0C901400D2D965 /* InvoiceItem */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -254,6 +258,16 @@
 				56FFAC712C0BF34900D2D965 /* DateFormatters.swift */,
 			);
 			path = Date;
+			sourceTree = "<group>";
+		};
+		56FFAC7C2C0C901400D2D965 /* InvoiceItem */ = {
+			isa = PBXGroup;
+			children = (
+				56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */,
+				56FFAC7D2C0C902800D2D965 /* LocalStorageItemRepository.swift */,
+				56FFAC7F2C0C904F00D2D965 /* MockItemRepository.swift */,
+			);
+			path = InvoiceItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +380,7 @@
 				56FFAC722C0BF34900D2D965 /* DateFormatters.swift in Sources */,
 				560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */,
 				5639A5772BFF97BD0086857F /* AddInvoiceItemViewModel.swift in Sources */,
+				56FFAC802C0C904F00D2D965 /* MockItemRepository.swift in Sources */,
 				5639A5782BFF97BD0086857F /* HomeView.swift in Sources */,
 				56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */,
 				56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */,
@@ -376,6 +391,7 @@
 				56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */,
 				5639A5762BFF97BD0086857F /* AddInvoiceItemView.swift in Sources */,
 				56FAFB602C0BDB1200370D7F /* InvoiceCategoryCard.swift in Sources */,
+				56FFAC7E2C0C902800D2D965 /* LocalStorageItemRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,7 +540,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Grocery Guru/Preview Content\"";
 				DEVELOPMENT_TEAM = KLXF66UW7Z;
 				ENABLE_PREVIEWS = YES;
@@ -557,7 +573,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Grocery Guru/Preview Content\"";
 				DEVELOPMENT_TEAM = KLXF66UW7Z;
 				ENABLE_PREVIEWS = YES;
