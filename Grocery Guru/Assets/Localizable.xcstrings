@@ -1,0 +1,36 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ Items" : {
+
+    },
+    "Add Item" : {
+
+    },
+    "Add to inventory" : {
+
+    },
+    "Amount" : {
+
+    },
+    "Category" : {
+
+    },
+    "e.g. Tomato" : {
+
+    },
+    "Fill in the name of the item" : {
+
+    },
+    "Name" : {
+
+    },
+    "Select the amount of the item" : {
+
+    },
+    "Select the category of the item" : {
+
+    }
+  },
+  "version" : "1.0"
+}

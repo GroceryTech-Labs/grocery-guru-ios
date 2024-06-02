@@ -1,38 +1,18 @@
 import Foundation
 
-enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
-    case fruits
-    case meat
-    case milkEgg
-    case vegetables
-    case fish
-    case canned
-    case bakery
+enum InvoiceItemCategory: String, Codable, CaseIterable, Identifiable {
+    case fruits = "Fruits"
+    case meat = "Meat"
+    case milkEgg = "Milk & Egg"
+    case vegetables = "Vegetables"
+    case fish = "Fish"
+    case canned = "Canned"
+    case bakery = "Bakery"
 
     var id: UUID { UUID() }
 
-
-    var title: String {
-        switch self {
-        case .fruits:
-            "Fruits"
-        case .meat:
-            "Meat"
-        case .milkEgg:
-            "Milk & Egg"
-        case .vegetables:
-            "Vegetables"
-        case .bakery:
-            "Bakery"
-        case .fish:
-            "Fish"
-        case .canned:
-            "Canned"
-        }
-    }
-
     var emoji: Emoji {
-        return switch self {
+        switch self {
         case .fruits:
                 .fruit
         case .meat:

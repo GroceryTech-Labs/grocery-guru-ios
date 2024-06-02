@@ -19,7 +19,7 @@ struct InvoiceCategoryCard: View {
                 .font(.system(size: 64))
 
             VStack(spacing: Constants.Padding.X) {
-                Text(category.title)
+                Text(category.rawValue)
                 Text("\(itemsCount, format: .number) Items")
                     .font(.caption)
             }

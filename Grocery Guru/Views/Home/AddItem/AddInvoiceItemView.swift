@@ -41,8 +41,8 @@ struct AddInvoiceItemView: View {
             Section {
                 Picker("Category", selection: $viewModel.category) {
                     ForEach(InvoiceItemCategory.allCases) { category in
-                        Text(category.title)
-                            .tag(category)
+                        Text(category.rawValue)
+                            .tag(category.rawValue)
                     }
                 }
             } header: {
