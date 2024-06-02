@@ -30,14 +30,7 @@ struct InvoiceCategoryCard: View {
         .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
         .shadow(radius: 1, y: 1)
         .onTapGesture {
-            navigator.push(
-                .invoiceList(
-                    type: .byCategory(
-                        category: category,
-                        items: items
-                    )
-                )
-            )
+            navigator.push(.invoiceList(items: items))
         }
         .accessibilityAddTraits(.isButton)
     }
