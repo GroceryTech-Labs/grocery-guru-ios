@@ -3,17 +3,17 @@ import SwiftData
 
 struct HomeView: View {
     @State private var viewModel: HomeViewModel
+    @Environment(\.navigationService)
+    private var navigator
 
     var body: some View {
-        NavigationView {
-            HomeViewList(viewModel: viewModel)
-                .overlay(alignment: .bottom) {
-                    ScannerButton { }
-                }
-        }
-        .task {
-            await viewModel.fetchItems()
-        }
+        HomeViewList(viewModel: viewModel)
+            .overlay(alignment: .bottom) {
+                ScannerButton { }
+            }
+            .task {
+                await viewModel.fetchItems()
+            }
     }
 
     init(viewModel: HomeViewModel) {

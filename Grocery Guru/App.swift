@@ -4,16 +4,22 @@ import SwiftData
 @main
 struct Grocery_GuruApp: App {
     private let container: ModelContainer
+    @State private var navigationService = NavigationService.shared
 
     var body: some Scene {
         WindowGroup {
-            HomeView(
-                viewModel: HomeViewModel(
-                    repository: LocalStorageItemRepository(
-                        modelContext: container.mainContext
+            NavigationStack(path: $navigationService.path) {
+                HomeView(
+                    viewModel: HomeViewModel(
+                        repository: LocalStorageItemRepository(
+                            modelContext: container.mainContext
+                        )
                     )
                 )
-            )
+                .navigationDestination(for: NavigationDestination.self) { destination in
+                    destination.view
+                }
+            }
         }
         .modelContainer(container)
     }

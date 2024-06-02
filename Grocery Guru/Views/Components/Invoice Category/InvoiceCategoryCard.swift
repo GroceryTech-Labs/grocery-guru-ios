@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct InvoiceCategoryCard: View {
+    @Environment(\.navigationService)
+    private var navigator
+
     private let category: InvoiceItemCategory
     private let items: [InvoiceItem]
     private let emojiSize: CGFloat = 64
@@ -26,6 +29,10 @@ struct InvoiceCategoryCard: View {
         .background(Color.surfaceSecondary)
         .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
         .shadow(radius: 1, y: 1)
+        .onTapGesture {
+            navigator.push(.invoiceList(items: items))
+        }
+        .accessibilityAddTraits(.isButton)
     }
 
     init(category: InvoiceItemCategory, items: [InvoiceItem]) {
