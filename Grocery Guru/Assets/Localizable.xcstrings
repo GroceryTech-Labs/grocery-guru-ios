@@ -2,37 +2,114 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@ Items" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Gegenstände"
+          }
+        }
+      }
     },
-    "Add Item" : {
-
+    "Bakery" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebäck"
+          }
+        }
+      }
     },
-    "Add to inventory" : {
-
+    "Canned" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konserven"
+          }
+        }
+      }
     },
-    "Amount" : {
-
-    },
-    "Category" : {
-
+    "Categories" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategorien"
+          }
+        }
+      }
     },
     "Document Scan" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dokumentenscan"
+          }
+        }
+      }
     },
-    "e.g. Tomato" : {
-
+    "Fish" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fisch"
+          }
+        }
+      }
     },
-    "Fill in the name of the item" : {
-
+    "Fruits" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obst"
+          }
+        }
+      }
     },
-    "Name" : {
-
+    "Meat" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fleisch"
+          }
+        }
+      }
     },
-    "Select the amount of the item" : {
-
+    "Milk & Egg" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Milch & Eier"
+          }
+        }
+      }
     },
-    "Select the category of the item" : {
-
+    "Vegetables" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemüse"
+          }
+        }
+      }
+    },
+    "Welcome back!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Willkommen zurück!"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

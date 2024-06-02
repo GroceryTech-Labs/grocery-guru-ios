@@ -15,7 +15,7 @@ struct InvoiceCategoryCard: View {
                 .font(.system(size: emojiSize))
 
             VStack(spacing: Constants.Padding.sizeX) {
-                Text(category.rawValue)
+                Text(category.localized)
                 Text("\(itemsCount, format: .number) Items")
                     .font(.caption)
             }

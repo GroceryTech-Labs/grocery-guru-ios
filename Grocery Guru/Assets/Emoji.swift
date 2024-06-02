@@ -15,6 +15,7 @@ enum Emoji: String, CaseIterable {
     }
 }
 
+// swiftlint:disable all
 private struct EmojiPreview: View {
     var body: some View {
         VStack {
@@ -25,6 +26,7 @@ private struct EmojiPreview: View {
         }
     }
 }
+// swiftlint:enable all
 
 #Preview {
     EmojiPreview()
