@@ -3,7 +3,7 @@ import SwiftData
 
 @main
 struct Grocery_GuruApp: App {
-    let container: ModelContainer
+    private let container: ModelContainer
 
     var body: some Scene {
         WindowGroup {
@@ -17,12 +17,10 @@ struct Grocery_GuruApp: App {
         }
         .modelContainer(container)
     }
-    
+
     init() {
-        let schema = Schema([
-            InvoiceItem.self,
-        ])
-        
+        let schema = Schema([InvoiceItem.self])
+
         let modelConfiguration = ModelConfiguration(
             schema: schema,
             isStoredInMemoryOnly: false

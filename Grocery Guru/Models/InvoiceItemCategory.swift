@@ -1,19 +1,22 @@
-import Foundation
+import SwiftUI
 
 enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
+    case bakery
+    case canned
+    case fish
     case fruits
     case meat
     case milkEgg
     case vegetables
-    case fish
-    case canned
-    case bakery
 
-    var id: UUID { UUID() }
-
-
-    var title: String {
+    var localized: LocalizedStringKey {
         switch self {
+        case .bakery:
+            "Bakery"
+        case .canned:
+            "Canned"
+        case .fish:
+            "Fish"
         case .fruits:
             "Fruits"
         case .meat:
@@ -22,31 +25,33 @@ enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
             "Milk & Egg"
         case .vegetables:
             "Vegetables"
-        case .bakery:
-            "Bakery"
-        case .fish:
-            "Fish"
-        case .canned:
-            "Canned"
         }
     }
 
+    var id: UUID { UUID() }
+
     var emoji: Emoji {
-        return switch self {
-        case .fruits:
-                .fruit
-        case .meat:
-                .meat
-        case .milkEgg:
-                .milkEgg
-        case .vegetables:
-                .vegetable
+        switch self {
         case .bakery:
-                .bakery
-        case .fish:
-                .fish
+            .bakery
+
         case .canned:
-                .canned
+            .canned
+
+        case .fish:
+            .fish
+
+        case .fruits:
+            .fruit
+
+        case .meat:
+            .meat
+
+        case .milkEgg:
+            .milkEgg
+
+        case .vegetables:
+            .vegetable
         }
     }
 }

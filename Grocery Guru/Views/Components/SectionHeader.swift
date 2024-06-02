@@ -1,13 +1,8 @@
 import SwiftUI
 
 struct SectionHeader: View {
-    private let text: String
+    private let text: LocalizedStringKey
     private let font: Font
-
-    init(_ text: String, font: Font = .title) {
-        self.text = text
-        self.font = font
-    }
 
     var body: some View {
         Text(text)
@@ -15,8 +10,13 @@ struct SectionHeader: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .foregroundStyle(.labelPrimary)
     }
+
+    init(_ text: LocalizedStringKey, font: Font = .title) {
+        self.text = text
+        self.font = font
+    }
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    SectionHeader("Invoices")
+    SectionHeader("Categories")
 }

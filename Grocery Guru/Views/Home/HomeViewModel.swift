@@ -4,13 +4,21 @@ import SwiftUI
 class HomeViewModel {
     let repository: InvoiceItemRepository
     var items: [InvoiceItem] = []
-    
+
+    var error: Error?
+
     init(repository: InvoiceItemRepository) {
         self.repository = repository
     }
-    
+
     @MainActor
-    func fetchItems() {
-        items = repository.fetchAllItems()
+    func fetchItems() async {
+        error = nil
+
+        do {
+            items = try await repository.fetchAllItems()
+        } catch {
+            self.error = error
+        }
     }
 }
