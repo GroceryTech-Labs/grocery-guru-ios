@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
+enum InvoiceItemCategory: Codable, CaseIterable, Identifiable, Hashable {
     case bakery
     case canned
     case fish
