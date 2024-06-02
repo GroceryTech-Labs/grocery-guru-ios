@@ -6,9 +6,7 @@ struct InvoiceItemList: View {
     var body: some View {
         VStack {
             if items.isEmpty {
-                Text("No items found!")
-                    .font(.title)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                ErrorView(text: "No items found!")
             } else {
                 LazyVStack(spacing: Constants.Padding.sizeM) {
                     SectionHeader("Invoice Items")
