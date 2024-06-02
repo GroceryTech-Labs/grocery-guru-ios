@@ -1,8 +1,17 @@
 import SwiftUI
 
 struct InvoiceCategoryCard: View {
-    let category: InvoiceItemCategory
-    let items: [InvoiceItem]
+    private let category: InvoiceItemCategory
+    private let items: [InvoiceItem]
+
+    private var itemsCount: Int {
+        items.filter { $0.category == category }.count
+    }
+
+    init(category: InvoiceItemCategory, items: [InvoiceItem]) {
+        self.category = category
+        self.items = items
+    }
 
     var body: some View {
         VStack(spacing: Constants.Padding.M) {
@@ -11,11 +20,11 @@ struct InvoiceCategoryCard: View {
 
             VStack(spacing: Constants.Padding.X) {
                 Text(category.title)
-                Text("\(items.filter { $0.category == category }.count) items")
+                Text("\(itemsCount, format: .number) Items")
                     .font(.caption)
             }
         }
-        .foregroundStyle(Color.labelPrimary)
+        .foregroundStyle(.labelPrimary)
         .frame(maxWidth: .infinity)
         .padding(Constants.Padding.L)
         .background(Color.surfaceSecondary)
@@ -25,5 +34,8 @@ struct InvoiceCategoryCard: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    InvoiceCategoryCard(category: .milkEgg, items: MockItemRepository.preview.items)
+    InvoiceCategoryCard(
+        category: .milkEgg,
+        items: MockItemRepository.preview.items
+    )
 }

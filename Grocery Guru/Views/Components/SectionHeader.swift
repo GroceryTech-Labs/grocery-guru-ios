@@ -13,7 +13,7 @@ struct SectionHeader: View {
         Text(text)
             .font(font)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .foregroundStyle(Color.labelPrimary)
+            .foregroundStyle(.labelPrimary)
     }
 }
 
