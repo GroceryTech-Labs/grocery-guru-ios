@@ -15,10 +15,10 @@ struct InvoiceCategoryCard: View {
                     .font(.caption)
             }
         }
-        .foregroundStyle(Color(.labelPrimary))
+        .foregroundStyle(Color.labelPrimary)
         .frame(maxWidth: .infinity)
         .padding(Constants.Padding.L)
-        .background(Color(.secondary))
+        .background(Color.surfaceSecondary)
         .clipShape(.rect(cornerRadius: 8))
         .shadow(radius: 1, y: 1)
     }

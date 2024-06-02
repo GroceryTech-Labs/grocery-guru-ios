@@ -1,7 +1,6 @@
 import Foundation
 
 enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
-    case custom
     case fruits
     case meat
     case milkEgg
@@ -15,8 +14,6 @@ enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .custom:
-            "Custom"
         case .fruits:
             "Fruits"
         case .meat:
@@ -36,8 +33,6 @@ enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
 
     var emoji: Emoji {
         return switch self {
-        case .custom:
-                .vegetable
         case .fruits:
                 .fruit
         case .meat:

@@ -21,7 +21,6 @@ struct Grocery_GuruApp: App {
     init() {
         let schema = Schema([
             InvoiceItem.self,
-            CustomInvoiceItemCategory.self,
         ])
         
         let modelConfiguration = ModelConfiguration(

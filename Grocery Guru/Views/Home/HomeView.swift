@@ -35,52 +35,29 @@ extension HomeView {
     private struct HomeViewList: View {
         @State var viewModel: HomeViewModel
 
-        private var dateFormatter: DateFormatter {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .full
-            return formatter
-        }
-
         var body: some View {
             ScrollView {
                 VStack(spacing: Constants.Padding.L) {
-                    Text("Welcome back!")
-                        .font(.largeTitle)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    SectionHeader("Welcome back!", font: .largeTitle)
 
                     VStack(spacing: Constants.Padding.S) {
-                        Text("Last shopping trips")
-                            .font(.largeTitle)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        SectionHeader("Last shopping trips")
 
-                        ForEach(0..<3) { num in
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text(dateFormatter.string(from: .now))
-                                    Text("@ items")
-                                        .font(.caption)
-                                }
-
-                                Spacer()
-
-                                Button {
-
-                                } label: {
-                                    Image(systemName: "chevron.right")
-                                }
+                        HStack {
+                            ForEach(23..<28) { num in
+                                Circle()
+                                    .overlay {
+                                        Text(num, format: .number)
+                                            .foregroundStyle(.white)
+                                    }
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(Constants.Padding.M)
-                            .background(Color(.secondary))
-                            .clipShape(.rect(cornerRadius: Constants.Padding.S))
-                            .shadow(radius: 1, y: 1)
                         }
+
+//                        ShoppingTripList([.init(date: .now, items: MockItemRepository.preview.items)])
                     }
 
                     VStack(spacing: Constants.Padding.S) {
-                        Text("Categories")
-                            .font(.largeTitle)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        SectionHeader("Categories")
 
                         LazyVGrid(
                             columns: [GridItem(.flexible()), GridItem(.flexible())],
@@ -95,10 +72,11 @@ extension HomeView {
                         }
                     }
                 }
+                .foregroundStyle(Color.labelPrimary)
+                .padding(Constants.Padding.L)
             }
-            .padding(Constants.Padding.L)
-            .background(Color(.primary), ignoresSafeAreaEdges: .all)
-            .foregroundStyle(Color(.labelPrimary))
+            .background(Color.surfacePrimary, ignoresSafeAreaEdges: .all)
+            .scrollIndicators(.hidden)
         }
     }
 }
