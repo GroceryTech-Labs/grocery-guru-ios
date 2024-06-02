@@ -20,7 +20,7 @@ final class MockItemRepository: InvoiceItemRepository {
 
     var items: [InvoiceItem]
 
-    init(items: [InvoiceItem]) {
+    init(items: [InvoiceItem] = []) {
         self.items = items
     }
 
@@ -30,14 +30,6 @@ final class MockItemRepository: InvoiceItemRepository {
 
     func addItem(_ item: InvoiceItem) {
         items.append(item)
-    }
-
-    func updateItem(_ item: InvoiceItem) {
-        guard let index = items.firstIndex(of: item) else {
-            return
-        }
-
-        items[index] = item
     }
 
     func deleteItem(_ item: InvoiceItem) {
