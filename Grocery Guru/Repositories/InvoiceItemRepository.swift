@@ -77,7 +77,7 @@ extension MockItemRepository {
                     InvoiceItem(
                         name: "Cheddar Cheese",
                         amount: 3,
-                        category: .milk
+                        category: .milkEgg
                     ),
                 count: 10
             )
