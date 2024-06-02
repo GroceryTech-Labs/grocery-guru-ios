@@ -179,7 +179,6 @@
 		5639A56F2BFF97BD0086857F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				56FAFB5E2C0BDAE400370D7F /* Invoice Category */,
 				560AA7D42C026E5B00365B1F /* Scanner */,
 				56E964352BFFAFF40099ED2F /* Home */,
 			);
@@ -197,6 +196,7 @@
 		56E964352BFFAFF40099ED2F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				56FAFB5E2C0BDAE400370D7F /* Invoice Category */,
 				5639A56E2BFF97BD0086857F /* HomeView.swift */,
 				560AA7D22C026C9D00365B1F /* HomeViewModel.swift */,
 				5639A56D2BFF97BD0086857F /* AddItem */,
