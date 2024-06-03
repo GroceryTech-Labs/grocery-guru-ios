@@ -21,6 +21,16 @@
         }
       }
     },
+    "Add Invoice" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einkauf hinzufügen"
+          }
+        }
+      }
+    },
     "Bakery" : {
       "localizations" : {
         "de" : {
@@ -47,16 +57,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kategorien"
-          }
-        }
-      }
-    },
-    "Document Scan" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dokumentenscan"
           }
         }
       }

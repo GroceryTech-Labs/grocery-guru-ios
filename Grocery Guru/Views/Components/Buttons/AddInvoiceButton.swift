@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ScannerButton: View {
+struct AddInvoiceButton: View {
     private let opacity: CGFloat
     private let action: () -> Void
 
@@ -8,15 +8,16 @@ struct ScannerButton: View {
         Button {
             action()
         } label: {
-            Image(systemName: "doc.viewfinder")
-                .accessibilityLabel("Document Scan")
+            Image(systemName: "plus")
+                .accessibilityLabel("Add Invoice")
                 .font(.largeTitle)
                 .foregroundStyle(.labelPrimary)
                 .padding(Constants.Padding.sizeL)
-                .background {
-                    Circle()
-                        .fill(.accent.opacity(opacity))
-                }
+        }
+        .buttonBorderShape(.circle)
+        .background {
+            Circle()
+                .fill(.accent.opacity(opacity))
         }
     }
 
@@ -30,7 +31,7 @@ struct ScannerButton: View {
 }
 
 #Preview {
-    ScannerButton {
+    AddInvoiceButton {
         print("Preview Button Test")
     }
 }
