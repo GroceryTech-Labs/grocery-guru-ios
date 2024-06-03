@@ -10,7 +10,7 @@ struct HomeView: View {
         HomeViewList(viewModel: viewModel)
             .overlay(alignment: .bottom) {
                 AddInvoiceButton {
-                    navigator.sheet(.invoiceList(items: []))
+                    navigator.sheet(.addInvoice())
                 }
             }
             .task {

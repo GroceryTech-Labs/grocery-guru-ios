@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%@ g" : {
       "localizations" : {
         "de" : {
@@ -30,6 +33,25 @@
           }
         }
       }
+    },
+    "Add Invoice Item" : {
+
+    },
+    "Add Invoice Option" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Option zum Hinzufügen"
+          }
+        }
+      }
+    },
+    "Add Item" : {
+
+    },
+    "Amount" : {
+
     },
     "Bakery" : {
       "localizations" : {
@@ -91,6 +113,22 @@
         }
       }
     },
+    "Manual" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manuell"
+          }
+        }
+      }
+    },
+    "Market" : {
+
+    },
+    "Measure Unit" : {
+
+    },
     "Meat" : {
       "localizations" : {
         "de" : {
@@ -111,6 +149,9 @@
         }
       }
     },
+    "Name" : {
+
+    },
     "No items found!" : {
       "localizations" : {
         "de" : {
@@ -127,6 +168,27 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gegenstand öffnen"
+          }
+        }
+      }
+    },
+    "Scan" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan"
+          }
+        }
+      }
+    },
+    "Test" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test"
           }
         }
       }
