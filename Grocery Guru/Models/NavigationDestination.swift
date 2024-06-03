@@ -1,7 +1,11 @@
 import SwiftUI
 
-enum NavigationDestination: Hashable {
+enum NavigationDestination: Hashable, Identifiable {
     case invoiceList(items: [InvoiceItem])
+
+    var id: UUID {
+        UUID()
+    }
 
     var view: some View {
         switch self {

@@ -9,7 +9,9 @@ struct HomeView: View {
     var body: some View {
         HomeViewList(viewModel: viewModel)
             .overlay(alignment: .bottom) {
-                ScannerButton { }
+                ScannerButton {
+                    navigator.sheet(.invoiceList(items: []))
+                }
             }
             .task {
                 await viewModel.fetchItems()

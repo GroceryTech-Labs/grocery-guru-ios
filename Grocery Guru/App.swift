@@ -19,6 +19,9 @@ struct Grocery_GuruApp: App {
                 .navigationDestination(for: NavigationDestination.self) { destination in
                     destination.view
                 }
+                .sheet(item: $navigationService.sheet) { destination in
+                    destination.view
+                }
             }
         }
         .modelContainer(container)
