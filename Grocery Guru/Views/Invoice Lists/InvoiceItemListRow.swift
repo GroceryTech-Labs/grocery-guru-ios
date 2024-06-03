@@ -18,6 +18,7 @@ struct InvoiceItemListRow: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(Constants.Padding.sizeL)
+        .foregroundStyle(.labelPrimary)
         .background(Color.surfaceSecondary)
         .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
         .shadow(radius: 1, y: 1)

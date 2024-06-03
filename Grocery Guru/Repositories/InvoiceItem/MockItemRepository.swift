@@ -6,15 +6,28 @@ final class MockItemRepository: InvoiceItemRepository {
         let amount = 3
         let count = 10
         return MockItemRepository(
-            items: Array(
-                repeating:
-                    InvoiceItem(
-                        name: "Cheddar Cheese",
-                        amount: amount,
-                        category: .milkEgg
-                    ),
-                count: count
-            )
+            items: [
+                InvoiceItem(
+                    name: "Cheddar Cheese",
+                    amount: amount,
+                    category: .milkEgg
+                ),
+                InvoiceItem(
+                    name: "Cheddar Cheese",
+                    amount: amount,
+                    category: .milkEgg
+                ),
+                InvoiceItem(
+                    name: "Cheddar Cheese",
+                    amount: amount,
+                    category: .milkEgg
+                ),
+                InvoiceItem(
+                    name: "Cheddar Cheese",
+                    amount: amount,
+                    category: .milkEgg
+                )
+            ]
         )
     }
 
@@ -25,7 +38,8 @@ final class MockItemRepository: InvoiceItemRepository {
     }
 
     func fetchAllItems() -> [InvoiceItem] {
-        items
+        print("loop")
+        return items
     }
 
     func addItem(_ item: InvoiceItem) {

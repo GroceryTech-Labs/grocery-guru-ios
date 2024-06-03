@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
+enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
     case bakery
     case canned
     case fish
@@ -27,8 +27,6 @@ enum InvoiceItemCategory: Codable, CaseIterable, Identifiable {
             "Vegetables"
         }
     }
-
-    var id: UUID { UUID() }
 
     var emoji: Emoji {
         switch self {

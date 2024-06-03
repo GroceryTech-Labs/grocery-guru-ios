@@ -8,8 +8,12 @@ struct InvoiceCategoryCard: View {
     private let items: [InvoiceItem]
     private let emojiSize: CGFloat = 64
 
+    private var filteredItems: [InvoiceItem] {
+        items.filter { $0.category == category }
+    }
+
     private var itemsCount: Int {
-        items.filter { $0.category == category }.count
+        filteredItems.count
     }
 
     var body: some View {
@@ -30,7 +34,7 @@ struct InvoiceCategoryCard: View {
         .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
         .shadow(radius: 1, y: 1)
         .onTapGesture {
-            navigator.push(.invoiceList(items: items))
+            navigator.push(.invoiceList(items: filteredItems))
         }
         .accessibilityAddTraits(.isButton)
     }

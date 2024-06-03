@@ -8,7 +8,7 @@ struct InvoiceCategoryList: View {
             columns: [GridItem(.flexible()), GridItem(.flexible())],
             spacing: Constants.Padding.sizeM
         ) {
-            ForEach(InvoiceItemCategory.allCases) { category in
+            ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
                 InvoiceCategoryCard(
                     category: category,
                     items: invoiceItems
