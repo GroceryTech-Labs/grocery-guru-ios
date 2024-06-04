@@ -13,9 +13,7 @@ struct HomeView: View {
                     navigator.sheet(.addInvoice())
                 }
             }
-            .task {
-                await viewModel.fetchItems()
-            }
+            .modelContext(viewModel.repository.modelContext)
     }
 
     init(viewModel: HomeViewModel) {

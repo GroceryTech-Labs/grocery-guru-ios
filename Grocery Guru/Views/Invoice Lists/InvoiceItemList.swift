@@ -35,17 +35,20 @@ struct InvoiceItemList: View {
         InvoiceItem(
             name: "Cheddar Cheese",
             amount: 1,
-            category: .milkEgg
+            category: .milkEgg,
+            measureUnit: .whole
         ),
         InvoiceItem(
             name: "asd sda",
             amount: 2,
-            category: .milkEgg
+            category: .milkEgg,
+            measureUnit: .whole
         ),
         InvoiceItem(
             name: "asd sda",
             amount: 3,
-            category: .milkEgg
+            category: .milkEgg,
+            measureUnit: .whole
         )
     ])
 }

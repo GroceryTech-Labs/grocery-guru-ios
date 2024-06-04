@@ -7,8 +7,10 @@ struct InvoiceItemListRow: View {
         HStack {
             VStack(alignment: .leading, spacing: Constants.Padding.sizeX) {
                 Text(item.name)
-                Text("\(item.amount, format: .number) g")
-                    .font(.caption)
+                Group {
+                    Text("\(item.amount, format: .number) ") + Text(item.measureUnit.localized)
+                }
+                .font(.caption)
             }
 
             Spacer()
@@ -35,7 +37,8 @@ struct InvoiceItemListRow: View {
         item: InvoiceItem(
             name: "Cheese",
             amount: 200,
-            category: .milkEgg
+            category: .milkEgg,
+            measureUnit: .whole
         )
     )
 }

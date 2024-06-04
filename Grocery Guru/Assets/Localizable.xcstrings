@@ -1,18 +1,8 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
+    "%@ " : {
 
-    },
-    "%@ g" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ g"
-          }
-        }
-      }
     },
     "%@ Items" : {
       "localizations" : {
@@ -20,6 +10,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Gegenstände"
+          }
+        }
+      }
+    },
+    "200" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "200"
           }
         }
       }
@@ -34,9 +34,6 @@
         }
       }
     },
-    "Add Invoice Item" : {
-
-    },
     "Add Invoice Option" : {
       "localizations" : {
         "de" : {
@@ -48,10 +45,34 @@
       }
     },
     "Add Item" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gegenstand hinzufügen"
+          }
+        }
+      }
+    },
+    "Add to inventory" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum Inventar hinzufügen"
+          }
+        }
+      }
     },
     "Amount" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anzahl"
+          }
+        }
+      }
     },
     "Bakery" : {
       "localizations" : {
@@ -103,6 +124,16 @@
         }
       }
     },
+    "g" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "g"
+          }
+        }
+      }
+    },
     "Invoice Items" : {
       "localizations" : {
         "de" : {
@@ -124,10 +155,24 @@
       }
     },
     "Market" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markt"
+          }
+        }
+      }
     },
     "Measure Unit" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maßeinheit"
+          }
+        }
+      }
     },
     "Meat" : {
       "localizations" : {
@@ -150,7 +195,14 @@
       }
     },
     "Name" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        }
+      }
     },
     "No items found!" : {
       "localizations" : {
@@ -172,23 +224,22 @@
         }
       }
     },
+    "Pringles" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pringles"
+          }
+        }
+      }
+    },
     "Scan" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scan"
-          }
-        }
-      }
-    },
-    "Test" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Test"
           }
         }
       }
@@ -209,6 +260,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Willkommen zurück!"
+          }
+        }
+      }
+    },
+    "Whole" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stück"
           }
         }
       }

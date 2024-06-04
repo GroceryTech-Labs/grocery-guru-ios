@@ -1,7 +1,9 @@
 import SwiftUI
+import SwiftData
 
 struct HomeViewList: View {
     @State private var viewModel: HomeViewModel
+    @Query private var items: [InvoiceItem]
 
     var body: some View {
         ScrollView {
@@ -13,7 +15,7 @@ struct HomeViewList: View {
 
                 VStack(spacing: Constants.Padding.sizeS) {
                     SectionHeader("Categories")
-                    InvoiceCategoryList(invoiceItems: viewModel.items)
+                    InvoiceCategoryList(invoiceItems: items)
                 }
             }
             .foregroundStyle(.labelPrimary)

@@ -17,8 +17,8 @@ class LocalItemRepositoryTests: XCTestCase {
 
     @MainActor func testGetAllItems() async {
         // Given
-        let item1 = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg)
-        let item2 = InvoiceItem(name: "Rumpsteak", amount: 400, category: .meat)
+        let item1 = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg, measureUnit: .gram)
+        let item2 = InvoiceItem(name: "Rumpsteak", amount: 400, category: .meat, measureUnit: .gram)
         do {
             try repository.addItem(item1)
             try repository.addItem(item2)
@@ -43,7 +43,7 @@ class LocalItemRepositoryTests: XCTestCase {
 
     @MainActor func testAddItem() async {
         // Given
-        let item = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg)
+        let item = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg, measureUnit: .gram)
 
         // When
         do {
@@ -66,8 +66,8 @@ class LocalItemRepositoryTests: XCTestCase {
 
     @MainActor func testRemoveItem() async {
         // Given
-        let item = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg)
-        let item2 = InvoiceItem(name: "Bread", amount: 1, category: .bakery)
+        let item = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg, measureUnit: .gram)
+        let item2 = InvoiceItem(name: "Bread", amount: 1, category: .bakery, measureUnit: .gram)
 
         // When
         do {
@@ -101,8 +101,8 @@ class LocalItemRepositoryTests: XCTestCase {
 
     @MainActor func testRemoveWrongItem() async {
         // Given
-        let item = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg)
-        let item2 = InvoiceItem(name: "Bread", amount: 1, category: .bakery)
+        let item = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg, measureUnit: .gram)
+        let item2 = InvoiceItem(name: "Bread", amount: 1, category: .bakery, measureUnit: .gram)
 
         // When
         do {

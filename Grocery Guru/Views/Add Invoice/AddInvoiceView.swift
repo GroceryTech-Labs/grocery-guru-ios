@@ -6,77 +6,11 @@ struct AddInvoiceView: View {
 
     var body: some View {
         VStack(spacing: Constants.Padding.sizeL) {
-            Picker("Add Invoice Option", selection: $selectedOption) {
-                ForEach(AddInvoiceOption.allCases, id: \.hashValue) { option in
-                    Text(option.rawValue)
-                        .tag(option)
-                }
-            }
-            .pickerStyle(.segmented)
-            .preferredColorScheme(.light)
-            .padding(.horizontal, Constants.Padding.sizeL)
+            AddInvoiceOption.Picker(selection: $selectedOption)
 
             switch selectedOption {
             case .manual:
-                VStack(alignment: .leading, spacing: Constants.Padding.sizeL) {
-                    SectionHeader("Add Item")
-                    Group {
-                        VStack(alignment: .leading, spacing: Constants.Padding.sizeX) {
-                            Text("Name")
-                                .font(.headline)
-
-                            TextField("", text: .constant("Pringles"))
-                        }
-
-                        VStack(alignment: .leading, spacing: Constants.Padding.sizeX) {
-                            Text("Amount")
-                                .font(.headline)
-
-                            TextField("", text: .constant("1,49"))
-                        }
-
-                        VStack(alignment: .leading, spacing: Constants.Padding.sizeX) {
-                            Text("Measure Unit")
-                                .font(.headline)
-
-                            TextField("", text: .constant("Whole Item"))
-                        }
-
-                        VStack(alignment: .leading, spacing: Constants.Padding.sizeX) {
-                            Text("Market")
-                                .font(.headline)
-
-                            TextField("", text: .constant("REWE"))
-                        }
-                    }
-                    .tint(.labelPrimary)
-                    .colorMultiply(.surfaceSecondary)
-
-                    Spacer()
-
-                    Button {
-                        Task {
-                            do {
-                                try LocalStorageItemRepository.shared.addItem(
-                                    .init(
-                                        name: "Test",
-                                        amount: 23,
-                                        category: .fruits
-                                    )
-                                )
-                            } catch {
-                                print(error.localizedDescription)
-                            }
-                        }
-                    } label: {
-                        Text("Add Invoice Item")
-                            .foregroundStyle(.white)
-                            .frame(maxWidth: .infinity)
-                    }
-                    .buttonStyle(.borderedProminent)
-                }
-                .textFieldStyle(.roundedBorder)
-                .padding(.horizontal, Constants.Padding.sizeL)
+                AddInvoiceForm()
 
             case .scan:
                 ScannerView { _ in }
