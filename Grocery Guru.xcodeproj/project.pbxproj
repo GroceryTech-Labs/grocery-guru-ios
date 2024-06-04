@@ -131,8 +131,8 @@
 		56346D492C0E670200454E17 /* Add Invoice */ = {
 			isa = PBXGroup;
 			children = (
-				560AA7D42C026E5B00365B1F /* Scanner */,
 				56346D4A2C0E671200454E17 /* AddInvoiceView.swift */,
+				560AA7D42C026E5B00365B1F /* Scanner */,
 			);
 			path = "Add Invoice";
 			sourceTree = "<group>";

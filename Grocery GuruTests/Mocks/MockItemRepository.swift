@@ -1,7 +1,7 @@
 import Foundation
 import SwiftData
 
-class MockLocalStorageItemRepository: LocalStorageItemRepository {
+final class MockLocalStorageItemRepository: LocalStorageItemRepository {
     // swiftlint:disable force_try
     @MainActor
     override init() {

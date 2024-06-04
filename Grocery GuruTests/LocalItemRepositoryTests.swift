@@ -7,7 +7,7 @@ class LocalItemRepositoryTests: XCTestCase {
     @MainActor
     override func setUp() {
         super.setUp()
-        repository = MockItemRepository()
+        repository = MockLocalStorageItemRepository()
     }
 
     override func tearDown() {
