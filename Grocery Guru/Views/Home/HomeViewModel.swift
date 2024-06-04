@@ -1,12 +1,14 @@
 import SwiftUI
 
 @Observable
-class HomeViewModel {
-    let repository: InvoiceItemRepository
+final class HomeViewModel {
+    @ObservationIgnored private let repository: InvoiceItemRepository
+
     var items: [InvoiceItem] = []
 
     var error: Error?
 
+    @MainActor
     init(repository: InvoiceItemRepository) {
         self.repository = repository
     }

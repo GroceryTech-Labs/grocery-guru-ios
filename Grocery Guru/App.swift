@@ -3,7 +3,6 @@ import SwiftData
 
 @main
 struct Grocery_GuruApp: App {
-    private let container: ModelContainer
     @State private var navigationService = NavigationService.shared
 
     var body: some Scene {
@@ -11,9 +10,7 @@ struct Grocery_GuruApp: App {
             NavigationStack(path: $navigationService.path) {
                 HomeView(
                     viewModel: HomeViewModel(
-                        repository: LocalStorageItemRepository(
-                            modelContext: container.mainContext
-                        )
+                        repository: LocalStorageItemRepository.shared
                     )
                 )
                 .navigationDestination(for: NavigationDestination.self) { destination in
@@ -23,25 +20,6 @@ struct Grocery_GuruApp: App {
                     destination.view
                 }
             }
-        }
-        .modelContainer(container)
-    }
-
-    init() {
-        let schema = Schema([InvoiceItem.self])
-
-        let modelConfiguration = ModelConfiguration(
-            schema: schema,
-            isStoredInMemoryOnly: false
-        )
-
-        do {
-            container = try ModelContainer(
-                for: schema,
-                configurations: [modelConfiguration]
-            )
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
         }
     }
 }

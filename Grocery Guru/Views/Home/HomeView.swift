@@ -25,8 +25,6 @@ struct HomeView: View {
 
 #Preview {
     HomeView(
-        viewModel: HomeViewModel(
-            repository: MockItemRepository.preview
-        )
+        viewModel: HomeViewModel(repository: LocalStorageItemRepository.shared)
     )
 }

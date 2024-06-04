@@ -11,7 +11,9 @@ enum NavigationDestination: Hashable, Identifiable {
     var view: some View {
         switch self {
         case let .addInvoice(option):
-            AnyView(AddInvoiceView(selectedOption: option))
+            AnyView(
+                AddInvoiceView(selectedOption: option)
+            )
 
         case let .invoiceList(items):
             AnyView(

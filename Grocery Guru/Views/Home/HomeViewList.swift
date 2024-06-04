@@ -34,7 +34,7 @@ struct HomeViewList: View {
 #Preview {
     HomeViewList(
         viewModel: HomeViewModel(
-            repository: MockItemRepository.preview
+            repository: MockLocalStorageItemRepository()
         )
     )
 }

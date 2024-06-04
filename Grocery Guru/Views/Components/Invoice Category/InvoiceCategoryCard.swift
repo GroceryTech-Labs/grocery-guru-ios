@@ -48,6 +48,6 @@ struct InvoiceCategoryCard: View {
 #Preview(traits: .sizeThatFitsLayout) {
     InvoiceCategoryCard(
         category: .milkEgg,
-        items: MockItemRepository.preview.items
+        items: []
     )
 }

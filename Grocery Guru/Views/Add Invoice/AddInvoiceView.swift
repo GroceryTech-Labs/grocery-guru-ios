@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 struct AddInvoiceView: View {
     @State private var selectedOption: AddInvoiceOption
@@ -53,7 +54,21 @@ struct AddInvoiceView: View {
 
                     Spacer()
 
-                    Button { } label: {
+                    Button {
+                        Task {
+                            do {
+                                try LocalStorageItemRepository.shared.addItem(
+                                    .init(
+                                        name: "Test",
+                                        amount: 23,
+                                        category: .fruits
+                                    )
+                                )
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                        }
+                    } label: {
                         Text("Add Invoice Item")
                             .foregroundStyle(.white)
                             .frame(maxWidth: .infinity)
@@ -77,7 +92,7 @@ struct AddInvoiceView: View {
         .foregroundStyle(.labelPrimary)
     }
 
-    init(selectedOption: AddInvoiceOption = .scan) {
+    init(selectedOption: AddInvoiceOption) {
         self.selectedOption = selectedOption
     }
 }
