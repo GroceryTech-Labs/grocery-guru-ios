@@ -223,10 +223,10 @@
 				56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */,
 				5639A5682BFF97BD0086857F /* InvoiceItem.swift */,
 				5639A5692BFF97BD0086857F /* InvoiceItemCategory.swift */,
+				563F2F692C0FC8EA005BA713 /* MeasureUnit.swift */,
 				5655F7092C0D2D6F00C80708 /* NavigationDestination.swift */,
 				563F2F662C0F5F8E005BA713 /* Errors */,
 				5655F7062C0D2CF900C80708 /* Environment */,
-				563F2F692C0FC8EA005BA713 /* MeasureUnit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

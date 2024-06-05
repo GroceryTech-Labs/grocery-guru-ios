@@ -4,11 +4,13 @@ struct AddInvoiceForm: View {
     enum Field: Hashable {
         case amount
         case name
+        case market
     }
 
     @State private var name = ""
     @State private var amount = ""
     @State private var measureUnit: MeasureUnit = .gram
+    @State private var category: InvoiceItemCategory = .bakery
     @FocusState private var focusedField: Field?
 
     @Environment(\.dismiss)
@@ -24,7 +26,9 @@ struct AddInvoiceForm: View {
 
                     amountAndMeasureUnitRow
 
-                    marketRow
+                    //                    marketRow
+
+                    categoryRow
                 }
                 .tint(.labelPrimary)
                 .colorMultiply(.surfaceSecondary)
@@ -48,15 +52,23 @@ struct AddInvoiceForm: View {
 
     private var addInvoiceButton: some View {
         Button {
+            guard !name.isEmpty else {
+                focusedField = .name
+                return
+            }
+
+            guard !amount.isEmpty else {
+                focusedField = .amount
+                return
+            }
+
             Task {
                 do {
                     try await LocalStorageItemRepository.shared.addItem(
                         InvoiceItem(
                             name: name,
                             amount: Int(amount) ?? 0,
-                            category: InvoiceItemCategory.allCases[
-                                Int.random(in: 0..<InvoiceItemCategory.allCases.count)
-                            ],
+                            category: category,
                             measureUnit: measureUnit
                         )
                     )
@@ -79,7 +91,7 @@ struct AddInvoiceForm: View {
                 .font(.headline)
 
             HStack {
-                TextField("Amount", text: $amount, prompt: Text("200"))
+                TextField("Amount", text: $amount, prompt: Text(measureUnit == .gram ? "200" : "2"))
                     .keyboardType(.numberPad)
                     .focused($focusedField, equals: .amount)
                     .submitLabel(.next)
@@ -108,6 +120,15 @@ struct AddInvoiceForm: View {
                 .onSubmit {
                     focusedField = .amount
                 }
+        }
+    }
+
+    private var categoryRow: some View {
+        VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
+            Text("Category")
+                .font(.headline)
+
+            InvoiceItemCategory.Picker(selection: $category)
         }
     }
 

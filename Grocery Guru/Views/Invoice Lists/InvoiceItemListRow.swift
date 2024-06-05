@@ -10,6 +10,7 @@ struct InvoiceItemListRow: View {
                 Group {
                     Text("\(item.amount, format: .number) ") + Text(item.measureUnit.localized)
                 }
+                .foregroundStyle(.labelSecondary)
                 .font(.caption)
             }
 

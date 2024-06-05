@@ -26,6 +26,7 @@ struct InvoiceCategoryCard: View {
                 Text("\(itemsCount, format: .number) Items")
                     .font(.caption)
             }
+            .foregroundStyle(.labelSecondary)
         }
         .foregroundStyle(.labelPrimary)
         .frame(maxWidth: .infinity)

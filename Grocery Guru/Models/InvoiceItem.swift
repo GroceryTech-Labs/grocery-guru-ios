@@ -8,7 +8,12 @@ final class InvoiceItem {
     var category: InvoiceItemCategory
     var measureUnit: MeasureUnit
 
-    init(name: String, amount: Int, category: InvoiceItemCategory, measureUnit: MeasureUnit) {
+    init(
+        name: String,
+        amount: Int,
+        category: InvoiceItemCategory,
+        measureUnit: MeasureUnit
+    ) {
         self.name = name
         self.amount = amount
         self.category = category
