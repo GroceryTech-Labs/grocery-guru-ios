@@ -5,9 +5,14 @@ class NavigationService: NavigationServiceProtocol {
     static var shared = NavigationService()
 
     var path = [NavigationDestination]()
+    var sheet: NavigationDestination?
 
     func push(_ destination: NavigationDestination) {
         path.append(destination)
+    }
+
+    func sheet(_ destination: NavigationDestination) {
+        sheet = destination
     }
 
     func drop() {

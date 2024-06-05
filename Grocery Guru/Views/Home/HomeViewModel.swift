@@ -1,24 +1,11 @@
 import SwiftUI
 
 @Observable
-class HomeViewModel {
-    let repository: InvoiceItemRepository
-    var items: [InvoiceItem] = []
-
-    var error: Error?
-
-    init(repository: InvoiceItemRepository) {
-        self.repository = repository
-    }
+final class HomeViewModel {
+    @ObservationIgnored let repository: InvoiceItemRepository
 
     @MainActor
-    func fetchItems() async {
-        error = nil
-
-        do {
-            items = try await repository.fetchAllItems()
-        } catch {
-            self.error = error
-        }
+    init(repository: InvoiceItemRepository) {
+        self.repository = repository
     }
 }

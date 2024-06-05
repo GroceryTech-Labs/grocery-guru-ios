@@ -25,7 +25,7 @@ struct InvoiceCategoryList: View {
 #Preview {
     ScrollView {
         InvoiceCategoryList(
-            invoiceItems: MockItemRepository.preview.items
+            invoiceItems: []
         )
     }
 }

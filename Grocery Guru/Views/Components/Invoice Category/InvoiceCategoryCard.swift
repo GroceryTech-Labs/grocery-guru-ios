@@ -26,6 +26,7 @@ struct InvoiceCategoryCard: View {
                 Text("\(itemsCount, format: .number) Items")
                     .font(.caption)
             }
+            .foregroundStyle(.labelSecondary)
         }
         .foregroundStyle(.labelPrimary)
         .frame(maxWidth: .infinity)
@@ -48,6 +49,6 @@ struct InvoiceCategoryCard: View {
 #Preview(traits: .sizeThatFitsLayout) {
     InvoiceCategoryCard(
         category: .milkEgg,
-        items: MockItemRepository.preview.items
+        items: []
     )
 }

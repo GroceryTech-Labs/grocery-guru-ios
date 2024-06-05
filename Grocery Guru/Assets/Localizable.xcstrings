@@ -1,12 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@ g" : {
+    "%@ " : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ g"
+            "value" : "%@"
           }
         }
       }
@@ -17,6 +17,76 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Gegenstände"
+          }
+        }
+      }
+    },
+    "2" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2"
+          }
+        }
+      }
+    },
+    "200" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "200"
+          }
+        }
+      }
+    },
+    "Add Invoice" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einkauf hinzufügen"
+          }
+        }
+      }
+    },
+    "Add Invoice Option" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Option zum Hinzufügen"
+          }
+        }
+      }
+    },
+    "Add Item" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gegenstand hinzufügen"
+          }
+        }
+      }
+    },
+    "Add to inventory" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum Inventar hinzufügen"
+          }
+        }
+      }
+    },
+    "Amount" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anzahl"
           }
         }
       }
@@ -51,12 +121,12 @@
         }
       }
     },
-    "Document Scan" : {
+    "Category" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dokumentenscan"
+            "value" : "Kategorie"
           }
         }
       }
@@ -81,12 +151,52 @@
         }
       }
     },
+    "g" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "g"
+          }
+        }
+      }
+    },
     "Invoice Items" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Einkaufsgegenstände"
+          }
+        }
+      }
+    },
+    "Manual" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manuell"
+          }
+        }
+      }
+    },
+    "Market" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markt"
+          }
+        }
+      }
+    },
+    "Measure Unit" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maßeinheit"
           }
         }
       }
@@ -111,6 +221,16 @@
         }
       }
     },
+    "Name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        }
+      }
+    },
     "No items found!" : {
       "localizations" : {
         "de" : {
@@ -131,6 +251,26 @@
         }
       }
     },
+    "Pringles" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pringles"
+          }
+        }
+      }
+    },
+    "Scan" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan"
+          }
+        }
+      }
+    },
     "Vegetables" : {
       "localizations" : {
         "de" : {
@@ -147,6 +287,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Willkommen zurück!"
+          }
+        }
+      }
+    },
+    "Whole" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stück"
           }
         }
       }

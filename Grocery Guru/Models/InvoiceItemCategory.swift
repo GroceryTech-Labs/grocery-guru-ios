@@ -9,6 +9,33 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
     case milkEgg
     case vegetables
 
+    struct Picker: View {
+        @Binding var selection: InvoiceItemCategory
+
+        let columnAmount = 5
+
+        var body: some View {
+            LazyVGrid(
+                columns: Array(repeating: GridItem(.flexible()), count: columnAmount),
+                spacing: Constants.Padding.sizeS
+            ) {
+                ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
+                    category.emoji.text
+                        .padding(Constants.Padding.sizeL)
+                        .background(
+                            selection == category ? Color.accentColor : Color.surfaceSecondary,
+                            in: .circle,
+                            fillStyle: .init()
+                        )
+                        .onTapGesture {
+                            selection = category
+                        }
+                        .accessibilityAddTraits(.isButton)
+                }
+            }
+        }
+    }
+
     var localized: LocalizedStringKey {
         switch self {
         case .bakery:

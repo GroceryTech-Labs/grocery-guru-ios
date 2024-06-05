@@ -1,29 +1,39 @@
 import Foundation
 import SwiftData
 
-final class LocalStorageItemRepository: InvoiceItemRepository {
-    var items = [InvoiceItem]()
-    var modelContext: ModelContext
+class LocalStorageItemRepository: InvoiceItemRepository {
+    @MainActor static let shared = LocalStorageItemRepository()
 
-    init(modelContext: ModelContext) {
-        self.modelContext = modelContext
+    var modelContext: ModelContext
+    var modelContainer: ModelContainer
+
+    // swiftlint:disable force_try
+    @MainActor
+    init() {
+        self.modelContainer = try! ModelContainer(for: InvoiceItem.self)
+        self.modelContext = modelContainer.mainContext
     }
+    // swiftlint:enable force_try
 
     func fetchAllItems() async throws -> [InvoiceItem] {
         do {
-            let descriptor = FetchDescriptor<InvoiceItem>()
-            items = try modelContext.fetch(descriptor)
+            return try modelContext.fetch(FetchDescriptor<InvoiceItem>())
         } catch {
-            throw error
+            throw RepositoryError.fetch
         }
-
-        return items
     }
 
-    func addItem(_ item: InvoiceItem) {
+    @MainActor
+    func addItem(_ item: InvoiceItem) throws {
         modelContext.insert(item)
+        do {
+            try modelContext.save()
+        } catch {
+            throw RepositoryError.adding
+        }
     }
 
+    @MainActor
     func deleteItem(_ item: InvoiceItem) {
         modelContext.delete(item)
     }

@@ -9,11 +9,11 @@ struct HomeView: View {
     var body: some View {
         HomeViewList(viewModel: viewModel)
             .overlay(alignment: .bottom) {
-                ScannerButton { }
+                AddInvoiceButton {
+                    navigator.sheet(.addInvoice())
+                }
             }
-            .task {
-                await viewModel.fetchItems()
-            }
+            .modelContext(viewModel.repository.modelContext)
     }
 
     init(viewModel: HomeViewModel) {
@@ -23,8 +23,6 @@ struct HomeView: View {
 
 #Preview {
     HomeView(
-        viewModel: HomeViewModel(
-            repository: MockItemRepository.preview
-        )
+        viewModel: HomeViewModel(repository: LocalStorageItemRepository.shared)
     )
 }
