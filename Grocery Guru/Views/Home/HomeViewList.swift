@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct HomeViewList: View {
-    @State private var viewModel: HomeViewModel
+    @State var viewModel: HomeViewModel
     @Query private var items: [InvoiceItem]
 
     var body: some View {
@@ -26,10 +26,6 @@ struct HomeViewList: View {
             ignoresSafeAreaEdges: .all
         )
         .scrollIndicators(.hidden)
-    }
-
-    init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
     }
 }
 

@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
-    @State private var viewModel: HomeViewModel
+    @State var viewModel: HomeViewModel
     @Environment(\.navigationService)
     private var navigator
 
@@ -14,10 +14,6 @@ struct HomeView: View {
                 }
             }
             .modelContext(viewModel.repository.modelContext)
-    }
-
-    init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
     }
 }
 
