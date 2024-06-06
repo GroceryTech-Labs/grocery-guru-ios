@@ -47,7 +47,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - run: xcodebuild build-for-testing -project 'Grocery Guru.xcodeproj' -scheme 'Grocery Guru' -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' -enableCodeCoverage YES -derivedDataPath DerivedData
+      - run: xcodebuild build -project 'Grocery Guru.xcodeproj' -scheme 'Grocery Guru' -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' -enableCodeCoverage YES -derivedDataPath DerivedData -allowProvisioningUpdates
       - uses: michaelhenry/swifty-code-coverage@v1.0.0
         with:
           build-path: DerivedData
