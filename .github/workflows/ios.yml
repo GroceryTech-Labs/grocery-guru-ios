@@ -32,6 +32,9 @@ jobs:
           xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
       
   test:
+    runs-on: macos-latest
+    
+    steps:
       - needs: [build]
       - name: Checkout
         uses: actions/checkout@v4
