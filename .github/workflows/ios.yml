@@ -42,3 +42,5 @@ jobs:
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES
+          xcrun llvm-cov export -format="lcov" \
+          $(xcodebuild -project "Grocery Guru.xcodeproj" -scheme "$scheme" -destination "platform=$platform,name=$device" -showBuildSettings | grep -m 1 "OBJECT_FILE_DIR_normal" | awk -F '=' '{print $2}' | sed 's/^ *//g' )/x86_64/*.profdata > coverage.lcov
