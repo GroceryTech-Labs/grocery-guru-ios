@@ -28,24 +28,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <PostActions>
-         <ExecutionAction
-            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-            <ActionContent
-               title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;# Replace &quot;YourAppTarget&quot; with your actual app target name&#10;COVERAGE_DIR=&quot;${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}/&quot;&#10;COVERAGE_PROFRAW=&quot;${COVERAGE_DIR}/Grocery Guru.profraw&quot;&#10;COVERAGE_PROFDATA=&quot;${COVERAGE_DIR}/Gorcery Guru.profdata&quot;&#10;&#10;# Merge profraw files into a single profdata file&#10;xcrun llvm-profdata merge -sparse &quot;${COVERAGE_PROFRAW}&quot; -o &quot;${COVERAGE_PROFDATA}&quot;&#10;&#10;# Export the coverage data&#10;xcrun llvm-cov export -format=&quot;lcov&quot; &quot;${COVERAGE_PROFDATA}&quot; --instr-profile &quot;${COVERAGE_PROFDATA}&quot; &gt; &quot;${SRCROOT}/coverage.lcov&quot;&#10;">
-               <EnvironmentBuildable>
-                  <BuildableReference
-                     BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "5639A5312BFF95930086857F"
-                     BuildableName = "Grocery Guru.app"
-                     BlueprintName = "Grocery Guru"
-                     ReferencedContainer = "container:Grocery Guru.xcodeproj">
-                  </BuildableReference>
-               </EnvironmentBuildable>
-            </ActionContent>
-         </ExecutionAction>
-      </PostActions>
       <TestPlans>
          <TestPlanReference
             reference = "container:Grocery Guru.xctestplan"
