@@ -65,3 +65,13 @@ jobs:
       - name: Print JSON content
         run: |
           cat "$RESULT_JSON"
+      
+      - name: Extract and print coverage percentage
+        run: |
+          coverage=$(python -c "import json; print(json.load(open('$RESULT_JSON'))['metrics']['totalCoveragePercentage']['_value'])")
+          echo "Coverage: $coverage"
+          if (( $(echo "$coverage < 0.5" | bc -l) )); then
+            echo -e "\e[31mCoverage is below 50%\e[0m"
+          else
+            echo -e "\e[32mCoverage is above or equal to 50%\e[0m"
+          fi
