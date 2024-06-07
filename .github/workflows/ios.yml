@@ -51,10 +51,10 @@ jobs:
           fi
       
           # Build
-          xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES | xcpretty
+          xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES
       
           # Test
-          xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES -resultBundlePath $RESULT_BUNDLE | xcpretty
+          xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES -resultBundlePath $RESULT_BUNDLE
       
       - name: Debug
         run: |
