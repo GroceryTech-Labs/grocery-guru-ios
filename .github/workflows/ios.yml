@@ -57,4 +57,4 @@ jobs:
           set -o pipefail && env NSUnbufferedIO=YES xcrun xccov view --report --json $RESULT_BUNDLE > $RESULT_JSON
           CODE_COVERAGE=$(cat $RESULT_JSON | jq '.targets[] | select( .name == "Grocery Guru" and .executableLines > 0 ) | .lineCoverage')
           
-          printf "\033[0;32mCode coverage is %.1f%%\033[0m\n" $CODE_COVERAGE
+          printf "\033[0;32mCode coverage is %.4f%%\033[0m\n" $CODE_COVERAGE
