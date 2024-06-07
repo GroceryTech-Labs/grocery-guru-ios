@@ -56,16 +56,16 @@ jobs:
           # Code coverage
           set -o pipefail && env NSUnbufferedIO=YES xcrun xccov view --report --json $RESULT_BUNDLE > $RESULT_JSON
           CODE_COVERAGE=$(cat $RESULT_JSON | jq '.targets[] | select( .name == "Grocery Guru" and .executableLines > 0 ) | .lineCoverage')
-          CODE_COVERAGE=$(echo $CODE_COVERAGE*100.0 | bc)
-      
-          COVERAGE_PASSES=$(echo "$CODE_COVERAGE > $MIN_CODE_COVERAGE" | bc)
-          if [ $COVERAGE_PASSES -ne 1 ]; then
-          printf "\033[0;31mCode coverage %.1f%% is less than required %.1f%%\033[0m\n" $CODE_COVERAGE $MIN_CODE_COVERAGE
-          exit -1
+          CODE_COVERAGE=$(awk "BEGIN {print $CODE_COVERAGE*100.0}")
+
+          COVERAGE_PASSES=$(awk "BEGIN {if ($CODE_COVERAGE > $MIN_CODE_COVERAGE) print 1; else print 0}")
+          if [ -z "$COVERAGE_PASSES" ] || [ $COVERAGE_PASSES -ne 1 ]; then
+              printf "\033[0;31mCode coverage %.1f%% is less than required %.1f%%\033[0m\n" $CODE_COVERAGE $MIN_CODE_COVERAGE
+              exit -1
           else
-          printf "\033[0;32mCode coverage is %.1f%%\033[0m\n" $CODE_COVERAGE
+              printf "\033[0;32mCode coverage is %.1f%%\033[0m\n" $CODE_COVERAGE
           fi
-      # - name: Build
+        # - name: Build
       #   env:
       #     scheme: ${{ 'default' }}
       #     platform: ${{ 'iOS Simulator' }}
