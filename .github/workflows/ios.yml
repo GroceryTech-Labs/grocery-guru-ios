@@ -31,15 +31,14 @@ jobs:
         env:
           scheme: ${{ 'default' }}
           platform: ${{ 'iOS Simulator' }}
-          RESULT_BUNDLE: /Users/runner/work/grocery-guru-ios/grocery-guru-ios/CodeCoverage.xcresult
-          RESULT_JSON: /Users/runner/work/grocery-guru-ios/grocery-guru-ios/CodeCoverage.json
+          RESULT_BUNDLE: '/Users/runner/work/grocery-guru-ios/grocery-guru-ios/CodeCoverage.xcresult'
+          RESULT_JSON: '/Users/runner/work/grocery-guru-ios/grocery-guru-ios/CodeCoverage.json'
         run: |
           # xcrun xctrace returns via stderr, not the expected stdout (see https://developer.apple.com/forums/thread/663959)
           device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-
       
           # Pre-clean
           if [ -d $RESULT_BUNDLE ]; then
@@ -57,6 +56,7 @@ jobs:
       
       - name: Debug
         run: |
+          cd
           echo RESULT_BUNDLE=$RESULT_BUNDLE
           echo RESULT_JSON=$RESULT_JSON
         
