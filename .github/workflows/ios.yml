@@ -46,8 +46,10 @@ jobs:
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES
-          profdata_file=$(find ~/Library/Developer/Xcode/DerivedData -name '*.profdata')
-          if [ -z "$profdata_file" ]; then
+          PROJECT_TEMP_ROOT=$(xcodebuild -project "$file_to_build" -scheme "$scheme" -showBuildSettings | grep PROJECT_TEMP_ROOT | awk -F '=' '{print $2}' | sed 's/^ *//g')
+          PROJECT_NAME=$(xcodebuild -project "$file_to_build" -scheme "$scheme" -showBuildSettings | grep PROJECT_NAME | awk -F '=' '{print $2}' | sed 's/^ *//g')
+          profdata_file="$PROJECT_TEMP_ROOT/CodeCoverage/$PROJECT_NAME/Coverage.profdata"
+          if [ ! -f "$profdata_fxile" ]; then
             echo "Error: No .profdata file found"
             exit 1
           fi
