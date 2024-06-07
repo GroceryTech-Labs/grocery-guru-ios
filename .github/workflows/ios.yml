@@ -47,8 +47,8 @@ jobs:
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES
       - name: Extract Code Coverage
-      run: |
-        set -o pipefail && env NSUnbufferedIO=YES xcrun xccov view --report --json Test-Grocery\ Guru-*.xcresult > coverage.json
-        CODE_COVERAGE=$(cat coverage.json | jq '.targets[] | select( .name == "Grocery Guru" and .executableLines > 0 ) | .lineCoverage')
-        CODE_COVERAGE=$(echo $CODE_COVERAGE*100.0 | bc)
-        echo "Code coverage: $CODE_COVERAGE%"
+        run: |
+          set -o pipefail && env NSUnbufferedIO=YES xcrun xccov view --report --json Test-Grocery\ Guru-*.xcresult > coverage.json
+          CODE_COVERAGE=$(cat coverage.json | jq '.targets[] | select( .name == "Grocery Guru" and .executableLines > 0 ) | .lineCoverage')
+          CODE_COVERAGE=$(echo $CODE_COVERAGE*100.0 | bc)
+          echo "Code coverage: $CODE_COVERAGE%"
