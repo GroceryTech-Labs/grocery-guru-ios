@@ -47,6 +47,10 @@ jobs:
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES
           profdata_file=$(find ~/Library/Developer/Xcode/DerivedData -name '*.profdata')
+          if [ -z "$profdata_file" ]; then
+            echo "Error: No .profdata file found"
+            exit 1
+          fi
           xcrun llvm-cov export -format="lcov" \
-          $(xcodebuild -project "Grocery Guru.xcodeproj" -scheme "$scheme" -destination "platform=$platform,name=$device" -showBuildSettings | grep -m 1 "OBJECT_FILE_DIR_normal" | awk -F '=' '{print $2}' | sed 's/^ *//g' )/x86_64/*.profdata \
+          $(xcodebuild -project "$file_to_build" -scheme "$scheme" -destination "platform=$platform,name=$device" -showBuildSettings | grep -m 1 "OBJECT_FILE_DIR_normal" | awk -F '=' '{print $2}' | sed 's/^ *//g' )/x86_64/*.profdata \
           --instr-profile $profdata_file > coverage.lcov
