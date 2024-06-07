@@ -14,16 +14,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
       - name: Set Xcode version
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable
+      
       - name: Set Default Scheme
         run: |
           scheme_list=$(xcodebuild -list -json | tr -d "\n")
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default | cat >default
           echo Using default scheme: $default       
+     
       - name: Build and Test with Code Coverage
         env:
           scheme: ${{ 'default' }}
@@ -52,10 +55,16 @@ jobs:
       
           # Test
           set -o pipefail && env NSUnbufferedIO=YES xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES -resultBundlePath $RESULT_BUNDLE | xcpretty
+      
+      - name: Debug
+        run: |
+          echo RESULT_BUNDLE=$RESULT_BUNDLE
+          echo RESULT_JSON=$RESULT_JSON
+        
       - name: Convert .xcresult to JSON
         run: |
-          xcrun xcresulttool get --format json --path $RESULT_BUNDLE > $RESULT_JSON
-    
+          xcrun xcresulttool get --format json --path "$RESULT_BUNDLE" > "$RESULT_JSON"
+        
       - name: Print JSON content
         run: |
-          cat $RESULT_JSON
+          cat "$RESULT_JSON"
