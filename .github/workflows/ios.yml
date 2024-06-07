@@ -52,9 +52,10 @@ jobs:
       
           # Test
           set -o pipefail && env NSUnbufferedIO=YES xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES -resultBundlePath $RESULT_BUNDLE | xcpretty
-      
-          # Code coverage
-          set -o pipefail && env NSUnbufferedIO=YES xcrun xccov view --report --json $RESULT_BUNDLE > $RESULT_JSON
-          CODE_COVERAGE=$(cat $RESULT_JSON | jq '.targets[] | select( .name == "Grocery Guru" and .executableLines > 0 ) | .lineCoverage')
-          
-          printf "\033[0;32mCode coverage is %.4f%%\033[0m\n" $CODE_COVERAGE
+      - name: Convert .xcresult to JSON
+        run: |
+          xcrun xcresulttool get --format json --path $RESULT_BUNDLE > $RESULT_JSON
+    
+      - name: Print JSON content
+        run: |
+          cat $RESULT_JSON
