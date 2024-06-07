@@ -43,20 +43,14 @@ jobs:
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
   
-  code-coverage-report:
-    runs-on: macos-latest
+  codecov:
+    container:
+      image: swift:5.7
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - run: xcodebuild test -project 'Grocery Guru.xcodeproj' -scheme 'Grocery Guru' -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.1' -enableCodeCoverage YES -derivedDataPath DerivedData -allowProvisioningUpdates
-      - uses: michaelhenry/swifty-code-coverage@v1.0.0
-        with:
-          build-path: DerivedData
-          target: Grocery Guru.app
-          is-spm: false
-      - name: Publish to code climate
-        uses: paambaati/codeclimate-action@v3.0.0
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageLocations: |
-            coverage/lcov.info:lcov
+    - uses: actions/checkout@v3
+    - run: swift test --enable-test-discovery --enable-code-coverage
+    - uses: mattpolzin/swift-codecov-action@0.7.5
+      with:
+        MINIMUM_COVERAGE: 30
+        INCLUDE_TESTS: 'true'
