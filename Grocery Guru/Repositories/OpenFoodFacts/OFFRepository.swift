@@ -10,7 +10,7 @@ final class OFFRepository: OFFRepositoryProtocol {
 
     func getProductResult(barcode: String) async throws -> OFFProductResult {
         guard let url = URL(
-            string: config.productionURL + OFFEndpoints.product(barcode: barcode).string
+            string: config.baseURL + OFFEndpoints.product(barcode: barcode).string
         ) else {
             throw APIError.invalidURL
         }

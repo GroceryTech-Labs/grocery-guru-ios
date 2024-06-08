@@ -7,17 +7,13 @@ final class OFFAPIConfig: APIConfigProtocol {
 
     static var shared = OFFAPIConfig()
 
-    // swiftlint:disable force_unwrapping
-
-    var baseURL: URL {
+    var baseURL: String {
         #if DEBUG
-            return URL(string: stagingURL)!
+            return stagingURL
         #elseif RELEASE
-            return URL(string: productionURL)!
+            return productionURL
         #endif
     }
-
-    // swiftlint:enable force_unwrapping
 
     var stagingURL: String = "https://world.openfoodfacts.net/api/v2"
     var productionURL: String = "https://world.openfoodfacts.org/api/v2"
