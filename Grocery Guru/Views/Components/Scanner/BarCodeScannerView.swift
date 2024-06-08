@@ -2,6 +2,7 @@ import SwiftUI
 import CodeScanner
 
 struct BarCodeScannerView: View {
+    @State private var isPresentingIndicator = true
     @State private var isPresentingScanner = false
     @State private var scannedCode: String?
 
@@ -9,18 +10,16 @@ struct BarCodeScannerView: View {
 
     var body: some View {
         CodeScannerView(
-            codeTypes: [.ean13],
-            scanMode: .oncePerCode
+            codeTypes: [.ean8, .ean13],
+            scanMode: .once
         ) { response in
             completion(response)
         }
         .overlay(alignment: .center) {
-            Image(systemName: "barcode.viewfinder")
-                .resizable()
-                .scaledToFit()
-                .foregroundStyle(.white.opacity(0.5))
-                .padding(Constants.Padding.sizeL)
-                .accessibilityHidden(true)
+            ScannerOverlay(
+                isPresented: $isPresentingIndicator,
+                systemImage: "barcode.viewfinder"
+            )
         }
     }
 
