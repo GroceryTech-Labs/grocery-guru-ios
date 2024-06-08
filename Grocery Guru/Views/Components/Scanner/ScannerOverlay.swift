@@ -3,26 +3,21 @@ import SwiftUI
 struct ScannerOverlay: View {
     @Binding var isPresented: Bool
     let systemImage: String
-    let color: Color
+
+    private let opacity = 0.5
 
     var body: some View {
         if isPresented {
             Image(systemName: systemImage)
                 .resizable()
                 .scaledToFit()
-                .foregroundStyle(color)
-                .padding(Constants.Padding.sizeL)
+                .foregroundStyle(.white.opacity(opacity))
+                .padding(Constants.Padding.sizeXXL)
                 .accessibilityHidden(true)
                 .onAppear {
                     hideCodeIndicator()
                 }
         }
-    }
-
-    init(isPresented: Binding<Bool>, systemImage: String, color: Color = .white.opacity(0.5)) {
-        self._isPresented = isPresented
-        self.systemImage = systemImage
-        self.color = color
     }
 
     func hideCodeIndicator() {

@@ -18,7 +18,7 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
                     ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
                         HStack(spacing: Constants.Padding.sizeS) {
                             category.emoji.text
-                            
+
                             if selection == category {
                                 Text(category.localized)
                                     .lineLimit(1)
