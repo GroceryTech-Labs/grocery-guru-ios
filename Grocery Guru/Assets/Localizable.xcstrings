@@ -101,6 +101,16 @@
         }
       }
     },
+    "Barcode" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barcode"
+          }
+        }
+      }
+    },
     "Canned" : {
       "localizations" : {
         "de" : {

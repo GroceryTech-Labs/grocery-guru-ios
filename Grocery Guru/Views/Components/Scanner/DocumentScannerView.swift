@@ -1,7 +1,7 @@
 import VisionKit
 import SwiftUI
 
-struct ScannerView: UIViewControllerRepresentable {
+struct DocumentScannerView: UIViewControllerRepresentable {
     typealias UIViewControllerType = VNDocumentCameraViewController
 
     final class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {

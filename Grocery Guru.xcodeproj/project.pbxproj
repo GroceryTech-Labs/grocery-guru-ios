@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		560AA7CF2C02627C00365B1F /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7CE2C02627C00365B1F /* ScannerView.swift */; };
+		560AA7CF2C02627C00365B1F /* DocumentScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7CE2C02627C00365B1F /* DocumentScannerView.swift */; };
 		560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */; };
 		560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D22C026C9D00365B1F /* HomeViewModel.swift */; };
 		560AA7D62C02756600365B1F /* TestAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560AA7D52C02756600365B1F /* TestAssets.xcassets */; };
@@ -21,7 +21,7 @@
 		5639A5752BFF97BD0086857F /* InvoiceItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5692BFF97BD0086857F /* InvoiceItemCategory.swift */; };
 		5639A5782BFF97BD0086857F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56E2BFF97BD0086857F /* HomeView.swift */; };
 		563F2F622C0F50D0005BA713 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F2F612C0F50D0005BA713 /* RepositoryError.swift */; };
-		563F2F682C0F70DC005BA713 /* AddInvoiceForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F2F672C0F70DC005BA713 /* AddInvoiceForm.swift */; };
+		563F2F682C0F70DC005BA713 /* InvoiceForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F2F672C0F70DC005BA713 /* InvoiceForm.swift */; };
 		563F2F6A2C0FC8EA005BA713 /* MeasureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F2F692C0FC8EA005BA713 /* MeasureUnit.swift */; };
 		56415D012C0CCAE100C58D4E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56415D002C0CCAE100C58D4E /* .swiftlint.yml */; };
 		5655F7082C0D2D0800C80708 /* NavigationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F7072C0D2D0800C80708 /* NavigationKey.swift */; };
@@ -30,6 +30,10 @@
 		5655F7102C0D2E0100C80708 /* InvoiceItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F70F2C0D2E0100C80708 /* InvoiceItemList.swift */; };
 		5655F7122C0D346C00C80708 /* InvoiceItemListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */; };
 		5655F7142C0D36E300C80708 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F7132C0D36E300C80708 /* ErrorView.swift */; };
+		5683BBC32C13BE26001EF768 /* NavigationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBC22C13BE26001EF768 /* NavigationServiceTests.swift */; };
+		5683BBC62C145E76001EF768 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5683BBC52C145E76001EF768 /* CodeScanner */; };
+		5683BBC82C145EA0001EF768 /* BarCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBC72C145EA0001EF768 /* BarCodeScannerView.swift */; };
+		5683BBCA2C147BB3001EF768 /* ScannerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBC92C147BB3001EF768 /* ScannerOverlay.swift */; };
 		56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */; };
 		56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5A2C0BD75900370D7F /* Emoji.swift */; };
 		56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5C2C0BDA8900370D7F /* Constants.swift */; };
@@ -56,7 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		560AA7CE2C02627C00365B1F /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		560AA7CE2C02627C00365B1F /* DocumentScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScannerView.swift; sourceTree = "<group>"; };
 		560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizerService.swift; sourceTree = "<group>"; };
 		560AA7D22C026C9D00365B1F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		560AA7D52C02756600365B1F /* TestAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TestAssets.xcassets; sourceTree = "<group>"; };
@@ -73,7 +77,7 @@
 		5639A5692BFF97BD0086857F /* InvoiceItemCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceItemCategory.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
 		5639A56E2BFF97BD0086857F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		563F2F612C0F50D0005BA713 /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
-		563F2F672C0F70DC005BA713 /* AddInvoiceForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceForm.swift; sourceTree = "<group>"; };
+		563F2F672C0F70DC005BA713 /* InvoiceForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceForm.swift; sourceTree = "<group>"; };
 		563F2F692C0FC8EA005BA713 /* MeasureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureUnit.swift; sourceTree = "<group>"; };
 		56415D002C0CCAE100C58D4E /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5655F7072C0D2D0800C80708 /* NavigationKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationKey.swift; sourceTree = "<group>"; };
@@ -83,6 +87,9 @@
 		5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemListRow.swift; sourceTree = "<group>"; };
 		5655F7132C0D36E300C80708 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		567D8FE12C0288DD007C4076 /* Grocery-Guru-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Grocery-Guru-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5683BBC22C13BE26001EF768 /* NavigationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationServiceTests.swift; sourceTree = "<group>"; };
+		5683BBC72C145EA0001EF768 /* BarCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScannerView.swift; sourceTree = "<group>"; };
+		5683BBC92C147BB3001EF768 /* ScannerOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerOverlay.swift; sourceTree = "<group>"; };
 		56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemRepository.swift; sourceTree = "<group>"; };
 		56FAFB5A2C0BD75900370D7F /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		56FAFB5C2C0BDA8900370D7F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -103,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5683BBC62C145E76001EF768 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +127,9 @@
 		560AA7D42C026E5B00365B1F /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
-				560AA7CE2C02627C00365B1F /* ScannerView.swift */,
+				560AA7CE2C02627C00365B1F /* DocumentScannerView.swift */,
+				5683BBC72C145EA0001EF768 /* BarCodeScannerView.swift */,
+				5683BBC92C147BB3001EF768 /* ScannerOverlay.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -136,8 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				56346D4A2C0E671200454E17 /* AddInvoiceView.swift */,
-				560AA7D42C026E5B00365B1F /* Scanner */,
-				563F2F672C0F70DC005BA713 /* AddInvoiceForm.swift */,
+				563F2F672C0F70DC005BA713 /* InvoiceForm.swift */,
 			);
 			path = "Add Invoice";
 			sourceTree = "<group>";
@@ -183,6 +192,7 @@
 			children = (
 				563F2F632C0F5D26005BA713 /* Mocks */,
 				5639A5482BFF95940086857F /* LocalItemRepositoryTests.swift */,
+				5683BBC22C13BE26001EF768 /* NavigationServiceTests.swift */,
 				560AA7D52C02756600365B1F /* TestAssets.xcassets */,
 			);
 			path = "Grocery GuruTests";
@@ -305,10 +315,11 @@
 		56FFAC6B2C0BF15000D2D965 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				56346D482C0E669800454E17 /* Buttons */,
-				56FFAC692C0BF13200D2D965 /* SectionHeader.swift */,
-				56FAFB5E2C0BDAE400370D7F /* Invoice Category */,
 				5655F7132C0D36E300C80708 /* ErrorView.swift */,
+				56FFAC692C0BF13200D2D965 /* SectionHeader.swift */,
+				56346D482C0E669800454E17 /* Buttons */,
+				560AA7D42C026E5B00365B1F /* Scanner */,
+				56FAFB5E2C0BDAE400370D7F /* Invoice Category */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -363,6 +374,9 @@
 			dependencies = (
 			);
 			name = "Grocery Guru";
+			packageProductDependencies = (
+				5683BBC52C145E76001EF768 /* CodeScanner */,
+			);
 			productName = "Grocery Guru";
 			productReference = 5639A5322BFF95930086857F /* Grocery Guru.app */;
 			productType = "com.apple.product-type.application";
@@ -393,7 +407,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					5639A5312BFF95930086857F = {
 						CreatedOnToolsVersion = 15.3;
@@ -415,6 +429,9 @@
 				de,
 			);
 			mainGroup = 5639A5292BFF95930086857F;
+			packageReferences = (
+				5683BBC42C145E76001EF768 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 5639A5332BFF95930086857F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -475,7 +492,7 @@
 			files = (
 				563F2F6A2C0FC8EA005BA713 /* MeasureUnit.swift in Sources */,
 				5655F7142C0D36E300C80708 /* ErrorView.swift in Sources */,
-				560AA7CF2C02627C00365B1F /* ScannerView.swift in Sources */,
+				560AA7CF2C02627C00365B1F /* DocumentScannerView.swift in Sources */,
 				5655F70A2C0D2D6F00C80708 /* NavigationDestination.swift in Sources */,
 				560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */,
 				56FFAC6A2C0BF13200D2D965 /* SectionHeader.swift in Sources */,
@@ -493,12 +510,14 @@
 				56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */,
 				5655F70D2C0D2DA100C80708 /* NavigationServiceProtocol.swift in Sources */,
 				5639A5742BFF97BD0086857F /* InvoiceItem.swift in Sources */,
+				5683BBC82C145EA0001EF768 /* BarCodeScannerView.swift in Sources */,
 				56FFAC7B2C0C8B9B00D2D965 /* AddInvoiceButton.swift in Sources */,
 				56FFAC772C0C888200D2D965 /* InvoiceCategoryList.swift in Sources */,
 				5639A5752BFF97BD0086857F /* InvoiceItemCategory.swift in Sources */,
 				5655F7122C0D346C00C80708 /* InvoiceItemListRow.swift in Sources */,
 				56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */,
-				563F2F682C0F70DC005BA713 /* AddInvoiceForm.swift in Sources */,
+				563F2F682C0F70DC005BA713 /* InvoiceForm.swift in Sources */,
+				5683BBCA2C147BB3001EF768 /* ScannerOverlay.swift in Sources */,
 				56FAFB602C0BDB1200370D7F /* InvoiceCategoryCard.swift in Sources */,
 				56FCC0352C0CF62A003EAA8B /* NavigationService.swift in Sources */,
 				563F2F622C0F50D0005BA713 /* RepositoryError.swift in Sources */,
@@ -511,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5639A5492BFF95940086857F /* LocalItemRepositoryTests.swift in Sources */,
+				5683BBC32C13BE26001EF768 /* NavigationServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +550,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -593,6 +614,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -782,6 +804,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5683BBC42C145E76001EF768 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5683BBC52C145E76001EF768 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5683BBC42C145E76001EF768 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5639A52A2BFF95930086857F /* Project object */;
 }

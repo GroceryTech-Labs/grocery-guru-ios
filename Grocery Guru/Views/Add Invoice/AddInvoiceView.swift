@@ -2,18 +2,34 @@ import SwiftUI
 import SwiftData
 
 struct AddInvoiceView: View {
+    @Environment(\.navigationService)
+    private var navigator
+
     @State private var selectedOption: AddInvoiceOption
+    @State private var isPresentingIndicator = true
 
     var body: some View {
         VStack(spacing: Constants.Padding.sizeL) {
             AddInvoiceOption.Picker(selection: $selectedOption)
 
             switch selectedOption {
+            case .barCode:
+                barCodeView
+
             case .manual:
-                AddInvoiceForm()
+                InvoiceForm()
 
             case .scan:
-                ScannerView { _ in }
+                DocumentScannerView { _ in }
+                    .onAppear {
+                        isPresentingIndicator = true
+                    }
+                    .overlay(alignment: .center) {
+                        ScannerOverlay(
+                            isPresented: $isPresentingIndicator,
+                            systemImage: "doc.viewfinder"
+                        )
+                    }
             }
         }
         .frame(
@@ -24,6 +40,25 @@ struct AddInvoiceView: View {
         .padding(.top, Constants.Padding.sizeL)
         .background(Color.surfacePrimary, ignoresSafeAreaEdges: .all)
         .foregroundStyle(.labelPrimary)
+    }
+
+    private var barCodeView: some View {
+        BarCodeScannerView { result in
+            switch result {
+            case .success(let success):
+                navigator.push(.invoiceForm(
+                    item: InvoiceItem(
+                        name: success.string,
+                        amount: 1,
+                        category: .bakery,
+                        measureUnit: .gram
+                    )
+                ))
+
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
     }
 
     init(selectedOption: AddInvoiceOption) {
