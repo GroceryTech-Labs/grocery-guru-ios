@@ -23,7 +23,7 @@ struct OFFNutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Carbohydrates:",
-                value: nutriments.carbohydrates,
+                value: nutriments.carbohydrates100g,
                 unit: nutriments.carbohydratesUnit
             )
         }
@@ -33,7 +33,7 @@ struct OFFNutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Energy (kcal):",
-                value: nutriments.energyKcal,
+                value: nutriments.energyKcal100g,
                 unit: nutriments.energyKcalUnit
             )
         }
@@ -43,7 +43,7 @@ struct OFFNutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Energy (kJ):",
-                value: nutriments.energyKJ,
+                value: nutriments.energyKJ100g,
                 unit: nutriments.energyKJUnit
             )
         }
@@ -53,7 +53,7 @@ struct OFFNutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Fat:",
-                value: nutriments.fat,
+                value: nutriments.fat100g,
                 unit: nutriments.fatUnit
             )
         }
@@ -63,7 +63,7 @@ struct OFFNutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Proteins:",
-                value: nutriments.proteins,
+                value: nutriments.proteins100g,
                 unit: nutriments.proteinsUnit
             )
         }
@@ -73,7 +73,7 @@ struct OFFNutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Salt:",
-                value: nutriments.salt,
+                value: nutriments.salt100g,
                 unit: nutriments.saltUnit
             )
         }
@@ -83,7 +83,7 @@ struct OFFNutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Sugars:",
-                value: nutriments.sugars,
+                value: nutriments.sugars100g,
                 unit: nutriments.sugarsUnit
             )
         }

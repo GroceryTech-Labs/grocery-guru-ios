@@ -12,26 +12,38 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
     struct Picker: View {
         @Binding var selection: InvoiceItemCategory
 
-        let columnAmount = 5
-
         var body: some View {
-            LazyVGrid(
-                columns: Array(repeating: GridItem(.flexible()), count: columnAmount),
-                spacing: Constants.Padding.sizeS
-            ) {
-                ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
-                    category.emoji.text
+            ScrollView(.horizontal) {
+                HStack(spacing: Constants.Padding.sizeS) {
+                    ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
+                        HStack(spacing: Constants.Padding.sizeS) {
+                            if selection == category {
+                                category.emoji.text
+                                Text(category.localized)
+                                    .lineLimit(1)
+                                    .frame(maxWidth: .infinity)
+                                    .transition(.scale)
+                            } else {
+                                category.emoji.text
+                                    .transition(.scale)
+                            }
+                        }
                         .padding(Constants.Padding.sizeL)
-                        .background(
-                            selection == category ? Color.accentColor : Color.surfaceSecondary,
-                            in: .circle,
-                            fillStyle: .init()
-                        )
+                        .background(backgroundView(category: category))
+                        .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
                         .onTapGesture {
                             selection = category
                         }
                         .accessibilityAddTraits(.isButton)
+                        .animation(.bouncy, value: selection)
+                    }
                 }
+            }
+        }
+
+        func backgroundView(category: InvoiceItemCategory) -> some View {
+            VStack {
+                selection == category ? Color.accentColor : Color.surfaceSecondary
             }
         }
     }
@@ -55,28 +67,32 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
         }
     }
 
+    // swiftlint:disable indentation_width
+
     var emoji: Emoji {
         switch self {
         case .bakery:
-            .bakery
+                .bakery
 
         case .canned:
-            .canned
+                .canned
 
         case .fish:
-            .fish
+                .fish
 
         case .fruits:
-            .fruit
+                .fruit
 
         case .meat:
-            .meat
+                .meat
 
         case .milkEgg:
-            .milkEgg
+                .milkEgg
 
         case .vegetables:
-            .vegetable
+                .vegetable
         }
     }
+
+    // swiftlint:enable indentation_width
 }

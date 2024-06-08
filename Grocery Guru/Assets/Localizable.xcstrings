@@ -281,12 +281,12 @@
         }
       }
     },
-    "Nutriments" : {
+    "Nutriments (100g)" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nährwerte"
+            "value" : "Nährwerte (100g)"
           }
         }
       }

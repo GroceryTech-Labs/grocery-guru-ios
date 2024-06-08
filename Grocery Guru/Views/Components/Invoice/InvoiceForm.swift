@@ -33,6 +33,7 @@ struct InvoiceForm: View {
                     categoryRow
                 }
                 .tint(.labelPrimary)
+                .preferredColorScheme(.light)
                 .colorMultiply(.surfaceSecondary)
                 .textFieldStyle(.roundedBorder)
 
@@ -40,7 +41,7 @@ struct InvoiceForm: View {
                     DisclosureGroup(isExpanded: $isPresentingNutriments) {
                         OFFNutrimentsView(nutriments: product.nutriments)
                     } label: {
-                        Text("Nutriments")
+                        Text("Nutriments (100g)")
                             .font(.headline)
                     }
                 }
