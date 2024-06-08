@@ -43,10 +43,8 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
             }
         }
 
-        func backgroundView(category: InvoiceItemCategory) -> some View {
-            VStack {
-                selection == category ? Color.accentColor : Color.surfaceSecondary
-            }
+        func backgroundView(category: InvoiceItemCategory) -> Color {
+            selection == category ? Color.accentColor : Color.surfaceSecondary
         }
     }
 
