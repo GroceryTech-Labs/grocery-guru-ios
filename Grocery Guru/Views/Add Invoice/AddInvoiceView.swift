@@ -2,6 +2,9 @@ import SwiftUI
 import SwiftData
 
 struct AddInvoiceView: View {
+    @Environment(\.navigationService)
+    private var navigator
+
     @State private var selectedOption: AddInvoiceOption
 
     var body: some View {
@@ -9,8 +12,30 @@ struct AddInvoiceView: View {
             AddInvoiceOption.Picker(selection: $selectedOption)
 
             switch selectedOption {
+            case .barCode:
+                BarCodeScannerView { result in
+                    switch result {
+                    case .success(let success):
+                        print(success.string)
+                        navigator.sheet = nil
+                        navigator.push(
+                            .invoiceForm(
+                                item: InvoiceItem(
+                                    name: success.string,
+                                    amount: 1,
+                                    category: .bakery,
+                                    measureUnit: .gram
+                                )
+                            )
+                        )
+
+                    case .failure(let failure):
+                        print(failure.localizedDescription)
+                    }
+                }
+
             case .manual:
-                AddInvoiceForm()
+                InvoiceForm()
 
             case .scan:
                 ScannerView { _ in }

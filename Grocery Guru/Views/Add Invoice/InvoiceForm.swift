@@ -1,16 +1,16 @@
 import SwiftUI
 
-struct AddInvoiceForm: View {
+struct InvoiceForm: View {
     enum Field: Hashable {
         case amount
         case name
         case market
     }
 
-    @State private var name = ""
-    @State private var amount = ""
-    @State private var measureUnit: MeasureUnit = .gram
-    @State private var category: InvoiceItemCategory = .bakery
+    @State private var name: String
+    @State private var amount: String
+    @State private var measureUnit: MeasureUnit
+    @State private var category: InvoiceItemCategory
     @FocusState private var focusedField: Field?
 
     @Environment(\.dismiss)
@@ -140,8 +140,15 @@ struct AddInvoiceForm: View {
             TextField("Market", text: .constant("REWE"))
         }
     }
+
+    init(item: InvoiceItem? = nil) {
+        self.name = item?.name ?? ""
+        self.amount = String(item?.amount ?? 1)
+        self.measureUnit = item?.measureUnit ?? .gram
+        self.category = item?.category ?? .bakery
+    }
 }
 
 #Preview {
-    AddInvoiceForm()
+    InvoiceForm()
 }

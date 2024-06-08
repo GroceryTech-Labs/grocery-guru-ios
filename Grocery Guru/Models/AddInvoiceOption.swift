@@ -1,6 +1,7 @@
 import SwiftUI
 
 enum AddInvoiceOption: LocalizedStringKey, CaseIterable, Hashable {
+    case barCode = "Barcode"
     case manual = "Manual"
     case scan = "Scan"
 
@@ -23,6 +24,6 @@ enum AddInvoiceOption: LocalizedStringKey, CaseIterable, Hashable {
     }
 
     static var allCases: [Self] {
-        [.scan, .manual]
+        [.scan, .barCode, .manual]
     }
 }
