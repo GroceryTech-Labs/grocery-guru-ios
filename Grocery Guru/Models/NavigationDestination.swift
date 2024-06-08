@@ -2,7 +2,7 @@ import SwiftUI
 
 enum NavigationDestination: Hashable, Identifiable {
     case addInvoice(option: AddInvoiceOption = .scan)
-    case invoiceForm(item: InvoiceItem)
+    case invoiceForm(product: OFFProduct?)
     case invoiceList(items: [InvoiceItem])
 
     var id: UUID {
@@ -16,9 +16,9 @@ enum NavigationDestination: Hashable, Identifiable {
                 AddInvoiceView(selectedOption: option)
             )
 
-        case let .invoiceForm(item):
+        case let .invoiceForm(product):
             AnyView(
-                InvoiceForm(item: item)
+                InvoiceForm(product: product)
             )
 
         case let .invoiceList(items):

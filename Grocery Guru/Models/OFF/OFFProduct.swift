@@ -1,6 +1,6 @@
 import Foundation
 
-struct OFFProduct: Codable {
+struct OFFProduct: Codable, Hashable {
     enum CodingKeys: String, CodingKey {
         case nutriments = "nutriments"
         case productName = "product_name"

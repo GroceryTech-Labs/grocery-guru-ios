@@ -2,22 +2,22 @@ import Foundation
 
 // swiftlint:disable identifier_name type_contents_order
 
-struct OFFNutriments: Codable {
-    let carbohydrates: Float
+struct OFFNutriments: Codable, Hashable {
+    let carbohydrates: Float?
     let carbohydrates100g: Float?
     let carbohydratesServing: Float?
     let carbohydratesUnit: String?
     let carbohydratesValue: Float?
     let carbonFootprintFromKnownIngredientsProduct: Float?
     let carbonFootprintFromKnownIngredientsServing: Float?
-    let energy: Float
+    let energy: Float?
     let energyKcal: Float
     let energyKcal100g: Float?
     let energyKcalServing: Float?
     let energyKcalUnit: String?
     let energyKcalValue: Float?
     let energyKcalValueComputed: Float?
-    let energyKJ: Float
+    let energyKJ: Float?
     let energyKJ100g: Float?
     let energyKJServing: Float?
     let energyKJUnit: String?
@@ -27,32 +27,32 @@ struct OFFNutriments: Codable {
     let energyServing: Float?
     let energyUnit: String?
     let energyValue: Float?
-    let fat: Float
+    let fat: Float?
     let fat100g: Float?
     let fatServing: Float?
     let fatUnit: String?
     let fatValue: Float?
-    let proteins: Float
+    let proteins: Float?
     let proteins100g: Float?
     let proteinsServing: Float?
     let proteinsUnit: String?
     let proteinsValue: Float?
-    let salt: Float
+    let salt: Float?
     let salt100g: Float?
     let saltServing: Float?
     let saltUnit: String?
     let saltValue: Float?
-    let saturatedFat: Float
+    let saturatedFat: Float?
     let saturatedFat100g: Float?
     let saturatedFatServing: Float?
     let saturatedFatUnit: String?
     let saturatedFatValue: Float?
-    let sodium: Float
+    let sodium: Float?
     let sodium100g: Float?
     let sodiumServing: Float?
     let sodiumUnit: String?
     let sodiumValue: Float?
-    let sugars: Float
+    let sugars: Float?
     let sugars100g: Float?
     let sugarsServing: Float?
     let sugarsUnit: String?

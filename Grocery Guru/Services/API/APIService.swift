@@ -29,7 +29,7 @@ final class APIService: APIServiceProtocol {
         return items
     }
 
-    func fetchItem<Item: Decodable>(
+    private func fetchItem<Item: Decodable>(
         _ type: Item.Type,
         url: URL,
         method: HTTPMethod,

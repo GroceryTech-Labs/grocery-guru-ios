@@ -1,0 +1,24 @@
+import Foundation
+
+// swiftlint:disable identifier_name
+
+final class OFFRepository: OFFRepositoryProtocol {
+    static var shared = OFFRepository()
+
+    lazy var apiService = APIService.shared
+    lazy var config = OFFAPIConfig.shared
+
+    private init() { }
+
+    func getProductResult(barcode: String) async throws -> OFFProductResult {
+        guard let url = URL(
+            string: config.productionURL + OFFEndpoints.product(barcode: barcode).string
+        ) else {
+            throw APIError.invalidURL
+        }
+
+        return try await apiService.request(OFFProductResult.self, url: url, method: .get)
+    }
+}
+
+// swiftlint:enable identifier_name

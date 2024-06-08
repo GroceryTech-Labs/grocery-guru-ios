@@ -14,20 +14,6 @@ struct HomeView: View {
                 }
             }
             .modelContext(viewModel.repository.modelContext)
-            .onAppear {
-                APIService.shared.fetchItem(
-                    OFFProductResult.self,
-                    url: URL(string: OFFAPIConfig.shared.stagingURL + "/api/v2/product/4066600603405?fields=product_name,nutriscore_data,nutriments,nutrition_grade")!,
-                    method: .get) { result in
-                        switch result {
-                        case .success(let success):
-                            print(success)
-
-                        case .failure(let failure):
-                            print(failure.localizedDescription)
-                        }
-                    }
-            }
     }
 
     init(viewModel: HomeViewModel) {

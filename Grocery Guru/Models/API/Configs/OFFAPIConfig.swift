@@ -7,8 +7,10 @@ final class OFFAPIConfig: APIConfigProtocol {
 
     static var shared = OFFAPIConfig()
 
-    var stagingURL: String = "https://world.openfoodfacts.net"
-    var productionURL: String = "https://world.openfoodfacts.org"
+    internal var stagingURL: String = "https://world.openfoodfacts.net/api/v2"
+    internal var productionURL: String = "https://world.openfoodfacts.org/api/v2"
+
+    private init() { }
 
     func getUserAgent() -> String {
         let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""

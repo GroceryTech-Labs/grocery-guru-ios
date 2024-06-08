@@ -44,6 +44,9 @@
 		5683BBE22C14A113001EF768 /* OFFNutriments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBE12C14A113001EF768 /* OFFNutriments.swift */; };
 		5683BBE42C14A178001EF768 /* OFFProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBE32C14A178001EF768 /* OFFProduct.swift */; };
 		5683BBE92C14A316001EF768 /* Bundle+decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBE82C14A316001EF768 /* Bundle+decode.swift */; };
+		5683BBEC2C14AD07001EF768 /* OFFEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBEB2C14AD07001EF768 /* OFFEndpoints.swift */; };
+		5683BBEF2C14AE12001EF768 /* OFFRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBEE2C14AE12001EF768 /* OFFRepository.swift */; };
+		5683BBF12C14B0B7001EF768 /* OFFRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBF02C14B0B7001EF768 /* OFFRepositoryProtocol.swift */; };
 		56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */; };
 		56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5A2C0BD75900370D7F /* Emoji.swift */; };
 		56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5C2C0BDA8900370D7F /* Constants.swift */; };
@@ -110,6 +113,9 @@
 		5683BBE12C14A113001EF768 /* OFFNutriments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFNutriments.swift; sourceTree = "<group>"; };
 		5683BBE32C14A178001EF768 /* OFFProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFProduct.swift; sourceTree = "<group>"; };
 		5683BBE82C14A316001EF768 /* Bundle+decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+decode.swift"; sourceTree = "<group>"; };
+		5683BBEB2C14AD07001EF768 /* OFFEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFEndpoints.swift; sourceTree = "<group>"; };
+		5683BBEE2C14AE12001EF768 /* OFFRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFRepository.swift; sourceTree = "<group>"; };
+		5683BBF02C14B0B7001EF768 /* OFFRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFRepositoryProtocol.swift; sourceTree = "<group>"; };
 		56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemRepository.swift; sourceTree = "<group>"; };
 		56FAFB5A2C0BD75900370D7F /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		56FAFB5C2C0BDA8900370D7F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 		5639A5792BFFAB390086857F /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				5683BBED2C14ADEE001EF768 /* OpenFoodFacts */,
 				56FFAC7C2C0C901400D2D965 /* InvoiceItem */,
 			);
 			path = Repositories;
@@ -366,6 +373,7 @@
 				5683BBDF2C1497E3001EF768 /* OFFProductResult.swift */,
 				5683BBE32C14A178001EF768 /* OFFProduct.swift */,
 				5683BBE12C14A113001EF768 /* OFFNutriments.swift */,
+				5683BBEB2C14AD07001EF768 /* OFFEndpoints.swift */,
 			);
 			path = OFF;
 			sourceTree = "<group>";
@@ -376,6 +384,15 @@
 				5683BBE82C14A316001EF768 /* Bundle+decode.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5683BBED2C14ADEE001EF768 /* OpenFoodFacts */ = {
+			isa = PBXGroup;
+			children = (
+				5683BBEE2C14AE12001EF768 /* OFFRepository.swift */,
+				5683BBF02C14B0B7001EF768 /* OFFRepositoryProtocol.swift */,
+			);
+			path = OpenFoodFacts;
 			sourceTree = "<group>";
 		};
 		56E964352BFFAFF40099ED2F /* Home */ = {
@@ -601,6 +618,7 @@
 				5655F70D2C0D2DA100C80708 /* NavigationServiceProtocol.swift in Sources */,
 				5639A5742BFF97BD0086857F /* InvoiceItem.swift in Sources */,
 				5683BBC82C145EA0001EF768 /* BarCodeScannerView.swift in Sources */,
+				5683BBEF2C14AE12001EF768 /* OFFRepository.swift in Sources */,
 				56FFAC7B2C0C8B9B00D2D965 /* AddInvoiceButton.swift in Sources */,
 				56FFAC772C0C888200D2D965 /* InvoiceCategoryList.swift in Sources */,
 				5683BBD82C148D01001EF768 /* APIServiceProtocol.swift in Sources */,
@@ -616,7 +634,9 @@
 				5683BBE92C14A316001EF768 /* Bundle+decode.swift in Sources */,
 				563F2F622C0F50D0005BA713 /* RepositoryError.swift in Sources */,
 				5683BBE42C14A178001EF768 /* OFFProduct.swift in Sources */,
+				5683BBEC2C14AD07001EF768 /* OFFEndpoints.swift in Sources */,
 				56FFAC7E2C0C902800D2D965 /* LocalStorageItemRepository.swift in Sources */,
+				5683BBF12C14B0B7001EF768 /* OFFRepositoryProtocol.swift in Sources */,
 				5683BBE02C1497E3001EF768 /* OFFProductResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

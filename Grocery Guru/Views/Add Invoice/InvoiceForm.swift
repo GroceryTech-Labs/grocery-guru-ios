@@ -13,8 +13,8 @@ struct InvoiceForm: View {
     @State private var category: InvoiceItemCategory
     @FocusState private var focusedField: Field?
 
-    @Environment(\.dismiss)
-    private var dismiss
+    @Environment(\.navigationService)
+    private var navigator
 
     var body: some View {
         ScrollView {
@@ -72,7 +72,7 @@ struct InvoiceForm: View {
                             measureUnit: measureUnit
                         )
                     )
-                    dismiss.callAsFunction()
+                    navigator.drop()
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -141,11 +141,11 @@ struct InvoiceForm: View {
         }
     }
 
-    init(item: InvoiceItem? = nil) {
-        self.name = item?.name ?? ""
-        self.amount = String(item?.amount ?? 1)
-        self.measureUnit = item?.measureUnit ?? .gram
-        self.category = item?.category ?? .bakery
+    init(product: OFFProduct? = nil) {
+        self.name = product?.productName ?? ""
+        self.amount = String(1)
+        self.measureUnit = .gram
+        self.category = .bakery
     }
 }
 
