@@ -5,6 +5,12 @@ import Foundation
 final class APIService: APIServiceProtocol {
     static var shared = APIService()
 
+    private let session: URLSession
+
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+
     func request<Item: Decodable>(_ type: Item.Type, url: URL, method: HTTPMethod) async throws -> Item {
         let items = try await withCheckedThrowingContinuation { continuation in
             fetchItem(type, url: url, method: method) { result in
@@ -31,6 +37,7 @@ final class APIService: APIServiceProtocol {
     ) {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
+        request.setValue(OFFAPIConfig.shared.getUserAgent(), forHTTPHeaderField: "User-Agent")
 
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
             if let error {
