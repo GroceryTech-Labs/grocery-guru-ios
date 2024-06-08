@@ -3,16 +3,21 @@ import CodeScanner
 
 struct BarCodeScannerView: View {
     @State private var isPresentingIndicator = true
-    @State private var isPresentingScanner = false
     @State private var scannedCode: String?
+
+    @Binding var isPresentingSuccess: Bool
 
     let completion: (Result<ScanResult, ScanError>) -> Void
 
     var body: some View {
         CodeScannerView(
             codeTypes: [.ean8, .ean13],
-            scanMode: .once
+            scanMode: .once,
+            isPaused: isPresentingSuccess
         ) { response in
+            withAnimation {
+                isPresentingSuccess = true
+            }
             completion(response)
         }
         .overlay(alignment: .center) {
@@ -24,11 +29,11 @@ struct BarCodeScannerView: View {
     }
 
     init(
-        isPresentingScanner: Bool = false,
+        isPresentingSuccess: Binding<Bool> = .constant(false),
         scannedCode: String? = nil,
         completion: @escaping (Result<ScanResult, ScanError>) -> Void
     ) {
-        self.isPresentingScanner = isPresentingScanner
+        self._isPresentingSuccess = isPresentingSuccess
         self.scannedCode = scannedCode
         self.completion = completion
     }

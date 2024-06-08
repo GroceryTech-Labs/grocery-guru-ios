@@ -7,6 +7,7 @@ struct AddInvoiceView: View {
 
     @State private var selectedOption: AddInvoiceOption
     @State private var isPresentingIndicator = true
+    @State private var isPresentingSuccess = false
 
     var body: some View {
         VStack(spacing: Constants.Padding.sizeL) {
@@ -38,12 +39,19 @@ struct AddInvoiceView: View {
             alignment: .top
         )
         .padding(.top, Constants.Padding.sizeL)
+        .overlay(alignment: .center) {
+            ScannerOverlay(
+                isPresented: $isPresentingSuccess,
+                systemImage: "checkmark.diamond.fill",
+                color: .success
+            )
+        }
         .background(Color.surfacePrimary, ignoresSafeAreaEdges: .all)
         .foregroundStyle(.labelPrimary)
     }
 
     private var barCodeView: some View {
-        BarCodeScannerView { result in
+        BarCodeScannerView(isPresentingSuccess: $isPresentingSuccess) { result in
             switch result {
             case .success(let success):
                 Task {

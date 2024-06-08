@@ -17,15 +17,17 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
                 HStack(spacing: Constants.Padding.sizeS) {
                     ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
                         HStack(spacing: Constants.Padding.sizeS) {
+                            category.emoji.text
+                            
                             if selection == category {
-                                category.emoji.text
                                 Text(category.localized)
                                     .lineLimit(1)
-                                    .frame(maxWidth: .infinity)
-                                    .transition(.scale)
-                            } else {
-                                category.emoji.text
-                                    .transition(.scale)
+                                    .transition(
+                                        .asymmetric(
+                                            insertion: .push(from: .trailing),
+                                            removal: .offset(x: 100)
+                                        )
+                                    )
                             }
                         }
                         .padding(Constants.Padding.sizeL)
@@ -35,7 +37,7 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
                             selection = category
                         }
                         .accessibilityAddTraits(.isButton)
-                        .animation(.bouncy, value: selection)
+                        .animation(.smooth, value: selection)
                     }
                 }
             }
