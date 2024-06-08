@@ -46,14 +46,14 @@ struct AddInvoiceView: View {
         BarCodeScannerView { result in
             switch result {
             case .success(let success):
-                navigator.push(.invoiceForm(
-                    item: InvoiceItem(
-                        name: success.string,
-                        amount: 1,
-                        category: .bakery,
-                        measureUnit: .gram
-                    )
-                ))
+                Task {
+                    do {
+                        let result = try await OFFRepository.shared.getProductResult(barcode: success.string)
+                        navigator.push(.invoiceForm(product: result.product))
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
 
             case .failure(let failure):
                 print(failure.localizedDescription)

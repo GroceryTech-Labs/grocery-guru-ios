@@ -12,7 +12,7 @@ struct ScannerOverlay: View {
                 .resizable()
                 .scaledToFit()
                 .foregroundStyle(.white.opacity(opacity))
-                .padding(Constants.Padding.sizeL)
+                .padding(Constants.Padding.sizeXXL)
                 .accessibilityHidden(true)
                 .onAppear {
                     hideCodeIndicator()

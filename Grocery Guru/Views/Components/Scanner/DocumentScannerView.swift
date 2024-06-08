@@ -42,8 +42,8 @@ struct DocumentScannerView: UIViewControllerRepresentable {
 
     private let completionHandler: ([String]) -> Void
 
-    @Environment(\.presentationMode)
-    private var presentationMode
+    @Environment(\.navigationService)
+    private var navigator
 
     init(completion: @escaping ([String]) -> Void) {
         self.completionHandler = completion
@@ -64,7 +64,7 @@ struct DocumentScannerView: UIViewControllerRepresentable {
 
     func makeCoordinator() -> Coordinator {
         Coordinator(
-            onDismiss: { presentationMode.wrappedValue.dismiss() },
+            onDismiss: { navigator.drop() },
             completion: completionHandler
         )
     }

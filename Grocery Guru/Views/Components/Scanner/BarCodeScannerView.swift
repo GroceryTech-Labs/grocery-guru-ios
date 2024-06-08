@@ -3,7 +3,6 @@ import CodeScanner
 
 struct BarCodeScannerView: View {
     @State private var isPresentingIndicator = true
-    @State private var isPresentingScanner = false
     @State private var scannedCode: String?
 
     let completion: (Result<ScanResult, ScanError>) -> Void
@@ -21,16 +20,6 @@ struct BarCodeScannerView: View {
                 systemImage: "barcode.viewfinder"
             )
         }
-    }
-
-    init(
-        isPresentingScanner: Bool = false,
-        scannedCode: String? = nil,
-        completion: @escaping (Result<ScanResult, ScanError>) -> Void
-    ) {
-        self.isPresentingScanner = isPresentingScanner
-        self.scannedCode = scannedCode
-        self.completion = completion
     }
 }
 

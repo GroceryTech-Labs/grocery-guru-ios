@@ -1,16 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@ " : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        }
-      }
-    },
     "%@ Items" : {
       "localizations" : {
         "de" : {
@@ -121,6 +111,16 @@
         }
       }
     },
+    "Carbohydrates:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kohlenhydrate:"
+          }
+        }
+      }
+    },
     "Categories" : {
       "localizations" : {
         "de" : {
@@ -137,6 +137,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kategorie"
+          }
+        }
+      }
+    },
+    "Energy (kcal):" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energie (kcal)"
+          }
+        }
+      }
+    },
+    "Energy (kJ):" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energie (kJ):"
+          }
+        }
+      }
+    },
+    "Fat:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fett:"
           }
         }
       }
@@ -251,6 +281,16 @@
         }
       }
     },
+    "Nutriments (100g)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nährwerte (100g)"
+          }
+        }
+      }
+    },
     "Open Invoice Item" : {
       "localizations" : {
         "de" : {
@@ -271,12 +311,42 @@
         }
       }
     },
+    "Proteins:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protein:"
+          }
+        }
+      }
+    },
+    "Salt:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salz:"
+          }
+        }
+      }
+    },
     "Scan" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scan"
+          }
+        }
+      }
+    },
+    "Sugars:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zucker:"
           }
         }
       }
