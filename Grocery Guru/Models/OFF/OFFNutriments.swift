@@ -1,6 +1,6 @@
 import Foundation
 
-// swiftlint:disable identifier_name type_contents_order
+// swiftlint:disable type_contents_order
 
 struct OFFNutriments: Codable, Hashable {
     let carbohydrates: Float?
@@ -11,7 +11,7 @@ struct OFFNutriments: Codable, Hashable {
     let carbonFootprintFromKnownIngredientsProduct: Float?
     let carbonFootprintFromKnownIngredientsServing: Float?
     let energy: Float?
-    let energyKcal: Float
+    let energyKcal: Float?
     let energyKcal100g: Float?
     let energyKcalServing: Float?
     let energyKcalUnit: String?
@@ -116,4 +116,4 @@ struct OFFNutriments: Codable, Hashable {
     }
 }
 
-// swiftlint:enable identifier_name type_contents_order
+// swiftlint:enable type_contents_order

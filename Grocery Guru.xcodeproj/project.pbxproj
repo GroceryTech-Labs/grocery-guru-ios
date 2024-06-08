@@ -47,6 +47,8 @@
 		5683BBEC2C14AD07001EF768 /* OFFEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBEB2C14AD07001EF768 /* OFFEndpoints.swift */; };
 		5683BBEF2C14AE12001EF768 /* OFFRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBEE2C14AE12001EF768 /* OFFRepository.swift */; };
 		5683BBF12C14B0B7001EF768 /* OFFRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBF02C14B0B7001EF768 /* OFFRepositoryProtocol.swift */; };
+		5683BBF52C14E9ED001EF768 /* OFFNutrimentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBF42C14E9ED001EF768 /* OFFNutrimentsView.swift */; };
+		5683BBF82C14EA55001EF768 /* off_nutriments.json in Resources */ = {isa = PBXBuildFile; fileRef = 5683BBF72C14EA55001EF768 /* off_nutriments.json */; };
 		56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */; };
 		56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5A2C0BD75900370D7F /* Emoji.swift */; };
 		56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5C2C0BDA8900370D7F /* Constants.swift */; };
@@ -116,6 +118,8 @@
 		5683BBEB2C14AD07001EF768 /* OFFEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFEndpoints.swift; sourceTree = "<group>"; };
 		5683BBEE2C14AE12001EF768 /* OFFRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFRepository.swift; sourceTree = "<group>"; };
 		5683BBF02C14B0B7001EF768 /* OFFRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFRepositoryProtocol.swift; sourceTree = "<group>"; };
+		5683BBF42C14E9ED001EF768 /* OFFNutrimentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFNutrimentsView.swift; sourceTree = "<group>"; };
+		5683BBF72C14EA55001EF768 /* off_nutriments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = off_nutriments.json; sourceTree = "<group>"; };
 		56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemRepository.swift; sourceTree = "<group>"; };
 		56FAFB5A2C0BD75900370D7F /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		56FAFB5C2C0BDA8900370D7F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -172,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				56346D4A2C0E671200454E17 /* AddInvoiceView.swift */,
-				563F2F672C0F70DC005BA713 /* InvoiceForm.swift */,
 			);
 			path = "Add Invoice";
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 		5639A5622BFF97BD0086857F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				5683BBF62C14EA1C001EF768 /* JSON-Example */,
 				5639A5612BFF97BD0086857F /* Assets.xcassets */,
 				56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */,
 				56FAFB5A2C0BD75900370D7F /* Emoji.swift */,
@@ -272,7 +276,7 @@
 		5639A56F2BFF97BD0086857F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5655F70E2C0D2DE900C80708 /* Invoice Lists */,
+				5683BBF22C14B78A001EF768 /* Invoice */,
 				56FFAC6B2C0BF15000D2D965 /* Components */,
 				56346D492C0E670200454E17 /* Add Invoice */,
 				56E964352BFFAFF40099ED2F /* Home */,
@@ -312,15 +316,6 @@
 				5655F7072C0D2D0800C80708 /* NavigationKey.swift */,
 			);
 			path = Environment;
-			sourceTree = "<group>";
-		};
-		5655F70E2C0D2DE900C80708 /* Invoice Lists */ = {
-			isa = PBXGroup;
-			children = (
-				5655F70F2C0D2E0100C80708 /* InvoiceItemList.swift */,
-				5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */,
-			);
-			path = "Invoice Lists";
 			sourceTree = "<group>";
 		};
 		5683BBCF2C147F57001EF768 /* API */ = {
@@ -395,6 +390,29 @@
 			path = OpenFoodFacts;
 			sourceTree = "<group>";
 		};
+		5683BBF22C14B78A001EF768 /* Invoice */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Invoice;
+			sourceTree = "<group>";
+		};
+		5683BBF32C14E9D4001EF768 /* Open Food Facts */ = {
+			isa = PBXGroup;
+			children = (
+				5683BBF42C14E9ED001EF768 /* OFFNutrimentsView.swift */,
+			);
+			path = "Open Food Facts";
+			sourceTree = "<group>";
+		};
+		5683BBF62C14EA1C001EF768 /* JSON-Example */ = {
+			isa = PBXGroup;
+			children = (
+				5683BBF72C14EA55001EF768 /* off_nutriments.json */,
+			);
+			path = "JSON-Example";
+			sourceTree = "<group>";
+		};
 		56E964352BFFAFF40099ED2F /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,23 +423,27 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		56FAFB5E2C0BDAE400370D7F /* Invoice Category */ = {
+		56FAFB5E2C0BDAE400370D7F /* Invoice */ = {
 			isa = PBXGroup;
 			children = (
 				56FAFB5F2C0BDB1200370D7F /* InvoiceCategoryCard.swift */,
 				56FFAC762C0C888200D2D965 /* InvoiceCategoryList.swift */,
+				5655F70F2C0D2E0100C80708 /* InvoiceItemList.swift */,
+				5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */,
+				563F2F672C0F70DC005BA713 /* InvoiceForm.swift */,
 			);
-			path = "Invoice Category";
+			path = Invoice;
 			sourceTree = "<group>";
 		};
 		56FFAC6B2C0BF15000D2D965 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5683BBF32C14E9D4001EF768 /* Open Food Facts */,
 				5655F7132C0D36E300C80708 /* ErrorView.swift */,
 				56FFAC692C0BF13200D2D965 /* SectionHeader.swift */,
 				56346D482C0E669800454E17 /* Buttons */,
 				560AA7D42C026E5B00365B1F /* Scanner */,
-				56FAFB5E2C0BDAE400370D7F /* Invoice Category */,
+				56FAFB5E2C0BDAE400370D7F /* Invoice */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -550,6 +572,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5683BBF82C14EA55001EF768 /* off_nutriments.json in Resources */,
 				56415D012C0CCAE100C58D4E /* .swiftlint.yml in Resources */,
 				5639A5722BFF97BD0086857F /* Preview Assets.xcassets in Resources */,
 				5639A5702BFF97BD0086857F /* Assets.xcassets in Resources */,
@@ -616,6 +639,7 @@
 				56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */,
 				56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */,
 				5655F70D2C0D2DA100C80708 /* NavigationServiceProtocol.swift in Sources */,
+				5683BBF52C14E9ED001EF768 /* OFFNutrimentsView.swift in Sources */,
 				5639A5742BFF97BD0086857F /* InvoiceItem.swift in Sources */,
 				5683BBC82C145EA0001EF768 /* BarCodeScannerView.swift in Sources */,
 				5683BBEF2C14AE12001EF768 /* OFFRepository.swift in Sources */,
@@ -777,6 +801,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};

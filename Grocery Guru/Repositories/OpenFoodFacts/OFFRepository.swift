@@ -1,7 +1,5 @@
 import Foundation
 
-// swiftlint:disable identifier_name
-
 final class OFFRepository: OFFRepositoryProtocol {
     static var shared = OFFRepository()
 
@@ -20,5 +18,3 @@ final class OFFRepository: OFFRepositoryProtocol {
         return try await apiService.request(OFFProductResult.self, url: url, method: .get)
     }
 }
-
-// swiftlint:enable identifier_name

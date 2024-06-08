@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 struct InvoiceItemListRow: View {
     private let item: InvoiceItem
@@ -7,12 +8,12 @@ struct InvoiceItemListRow: View {
         HStack {
             VStack(alignment: .leading, spacing: Constants.Padding.sizeX) {
                 Text(item.name)
-                Group {
-                    Text("\(item.amount, format: .number) ") + Text(item.measureUnit.localized)
-                }
-                .foregroundStyle(.labelSecondary)
-                .font(.caption)
+                Text(verbatim: "\(item.amount)") +
+                Text(verbatim: " ") +
+                Text(item.measureUnit.localized)
             }
+            .foregroundStyle(.labelSecondary)
+            .font(.caption)
 
             Spacer()
 

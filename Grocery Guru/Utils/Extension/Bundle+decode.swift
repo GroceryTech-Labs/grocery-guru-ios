@@ -1,7 +1,5 @@
 import Foundation
 
-// swiftlint:disable identifier_name
-
 extension Bundle {
     func decode<T: Decodable>(
         _ type: T.Type,
@@ -40,5 +38,3 @@ extension Bundle {
         // swiftlint:enable line_length
     }
 }
-
-// swiftlint:enable identifier_name

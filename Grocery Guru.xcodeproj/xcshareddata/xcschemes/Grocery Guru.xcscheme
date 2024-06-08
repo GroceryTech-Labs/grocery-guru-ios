@@ -46,17 +46,6 @@
                ReferencedContainer = "container:Grocery Guru.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "YES"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5639A54D2BFF95940086857F"
-               BuildableName = "Grocery GuruUITests.xctest"
-               BlueprintName = "Grocery GuruUITests"
-               ReferencedContainer = "container:Grocery Guru.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

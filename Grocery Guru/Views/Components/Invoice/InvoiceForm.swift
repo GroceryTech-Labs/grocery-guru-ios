@@ -11,6 +11,8 @@ struct InvoiceForm: View {
     @State private var amount: String
     @State private var measureUnit: MeasureUnit
     @State private var category: InvoiceItemCategory
+    @State private var product: OFFProduct?
+    @State private var isPresentingNutriments = false
     @FocusState private var focusedField: Field?
 
     @Environment(\.navigationService)
@@ -33,6 +35,15 @@ struct InvoiceForm: View {
                 .tint(.labelPrimary)
                 .colorMultiply(.surfaceSecondary)
                 .textFieldStyle(.roundedBorder)
+
+                if let product {
+                    DisclosureGroup(isExpanded: $isPresentingNutriments) {
+                        OFFNutrimentsView(nutriments: product.nutriments)
+                    } label: {
+                        Text("Nutriments")
+                            .font(.headline)
+                    }
+                }
 
                 Spacer(minLength: Constants.Padding.sizeL)
 
@@ -142,6 +153,7 @@ struct InvoiceForm: View {
     }
 
     init(product: OFFProduct? = nil) {
+        self.product = product
         self.name = product?.productName ?? ""
         self.amount = String(1)
         self.measureUnit = .gram
@@ -150,5 +162,13 @@ struct InvoiceForm: View {
 }
 
 #Preview {
-    InvoiceForm()
+    InvoiceForm(
+        product: OFFProduct(
+            nutriments: Bundle.main.decode(
+                OFFNutriments.self,
+                from: "off_nutriments.json"
+            ),
+            productName: "Test"
+        )
+    )
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-// swiftlint:disable identifier_name direct_return
+// swiftlint:disable direct_return
 
 final class APIService: APIServiceProtocol {
     static var shared = APIService()
@@ -62,4 +62,4 @@ final class APIService: APIServiceProtocol {
     }
 }
 
-// swiftlint:enable identifier_name direct_return
+// swiftlint:enable direct_return
