@@ -14,6 +14,7 @@ enum AddInvoiceOption: LocalizedStringKey, CaseIterable, Hashable {
                     ForEach(AddInvoiceOption.allCases, id: \.hashValue) { option in
                         Text(option.rawValue)
                             .tag(option)
+                            .accessibilityIdentifier(option.accessibilityIdentifier)
                     }
                 }
                 .pickerStyle(.segmented)
@@ -25,5 +26,18 @@ enum AddInvoiceOption: LocalizedStringKey, CaseIterable, Hashable {
 
     static var allCases: [Self] {
         [.scan, .barCode, .manual]
+    }
+
+    var accessibilityIdentifier: String {
+        switch self {
+        case .barCode:
+            AccessibilityIdentifier.Button.addInvoiceBarcode
+
+        case .manual:
+            AccessibilityIdentifier.Button.addInvoiceManual
+
+        case .scan:
+            AccessibilityIdentifier.Button.addInvoiceDocument
+        }
     }
 }

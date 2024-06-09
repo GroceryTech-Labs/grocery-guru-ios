@@ -95,6 +95,7 @@ struct InvoiceForm: View {
                 .frame(maxWidth: .infinity)
         }
         .buttonStyle(.borderedProminent)
+        .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormSubmit)
     }
 
     private var amountAndMeasureUnitRow: some View {
@@ -110,6 +111,7 @@ struct InvoiceForm: View {
                     .onSubmit {
                         focusedField = nil
                     }
+                    .accessibilityIdentifier(AccessibilityIdentifier.TextField.invoiceFormAmount)
 
                 Picker("Measure Unit", selection: $measureUnit) {
                     ForEach(MeasureUnit.allCases, id: \.hashValue) { unit in
@@ -132,6 +134,7 @@ struct InvoiceForm: View {
                 .onSubmit {
                     focusedField = .amount
                 }
+                .accessibilityIdentifier(AccessibilityIdentifier.TextField.invoiceFormName)
         }
     }
 

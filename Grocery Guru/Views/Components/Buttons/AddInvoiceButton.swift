@@ -19,6 +19,7 @@ struct AddInvoiceButton: View {
             Circle()
                 .fill(.accent.opacity(opacity))
         }
+        .accessibilityIdentifier(AccessibilityIdentifier.Button.addInvoice)
     }
 
     init(
