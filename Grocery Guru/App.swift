@@ -8,9 +8,12 @@ struct Grocery_GuruApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $navigationService.path) {
+                let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
+
                 HomeView(
                     viewModel: HomeViewModel(
-                        repository: LocalStorageItemRepository.shared
+                        repository: testMode ?
+                        MockLocalStorageItemRepository() : LocalStorageItemRepository.shared
                     )
                 )
                 .navigationDestination(for: NavigationDestination.self) { destination in

@@ -10,6 +10,9 @@ final class AddItemTests: XCTestCase {
 
     func testAddItemManually() throws {
         let app = XCUIApplication()
+
+        // Set app to test mode
+        app.launchArguments = ["testMode"]
         app.launch()
 
         // 1) Open the "Add" screen.

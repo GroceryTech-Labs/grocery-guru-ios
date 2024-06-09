@@ -67,32 +67,28 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
         }
     }
 
-    // swiftlint:disable indentation_width
-
     var emoji: Emoji {
         switch self {
         case .bakery:
-                .bakery
+            Emoji.bakery
 
         case .canned:
-                .canned
+            Emoji.canned
 
         case .fish:
-                .fish
+            Emoji.fish
 
         case .fruits:
-                .fruit
+            Emoji.fruit
 
         case .meat:
-                .meat
+            Emoji.meat
 
         case .milkEgg:
-                .milkEgg
+            Emoji.milkEgg
 
         case .vegetables:
-                .vegetable
+            Emoji.vegetable
         }
     }
-
-    // swiftlint:enable indentation_width
 }
