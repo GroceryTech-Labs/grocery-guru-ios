@@ -1,7 +1,19 @@
 import XCTest
+@testable import Grocery_Guru
 
 /// Simple tap events with check for existence
 final class TapAction {
+
+    // MARK: HOME
+    // Buttons
+
+    static func invoiceCategoryButton(app: XCUIApplication) {
+        let button = app.otherElements[AccessibilityIdentifier.Button.invoiceCategory].firstMatch
+
+        // Check for existence
+        XCTAssertTrue(button.waitForExistence(timeout: 1))
+        button.tap()
+    }
 
     // MARK: ADD INVOICE
     // Buttons

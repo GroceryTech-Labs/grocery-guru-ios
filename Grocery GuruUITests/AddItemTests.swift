@@ -26,6 +26,9 @@ final class AddItemTests: XCTestCase {
         TypeAction.invoiceFormAmount(app: app)
         TapAction.invoiceFormSubmitButton(app: app)
 
+        // 3) Check if item is created
+        TapAction.invoiceCategoryButton(app: app)
+
         app.terminate()
     }
 

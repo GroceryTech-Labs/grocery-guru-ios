@@ -38,6 +38,8 @@ struct InvoiceCategoryCard: View {
             navigator.push(.invoiceList(items: filteredItems))
         }
         .accessibilityAddTraits(.isButton)
+        .accessibilityElement()
+        .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceCategory)
     }
 
     init(category: InvoiceItemCategory, items: [InvoiceItem]) {

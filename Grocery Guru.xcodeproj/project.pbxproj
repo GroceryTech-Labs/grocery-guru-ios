@@ -51,9 +51,10 @@
 		5683BBF82C14EA55001EF768 /* off_nutriments.json in Resources */ = {isa = PBXBuildFile; fileRef = 5683BBF72C14EA55001EF768 /* off_nutriments.json */; };
 		568560E02C15A520003BDAED /* AddItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560DF2C15A520003BDAED /* AddItemTests.swift */; };
 		568560EA2C15A60B003BDAED /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560E92C15A60B003BDAED /* AccessibilityIdentifier.swift */; };
-		568560EB2C15A74B003BDAED /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560E92C15A60B003BDAED /* AccessibilityIdentifier.swift */; };
 		568560EF2C15AF96003BDAED /* TapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560EE2C15AF96003BDAED /* TapAction.swift */; };
 		568560F12C15B08F003BDAED /* TypeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560F02C15B08F003BDAED /* TypeAction.swift */; };
+		568560F72C160B55003BDAED /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560E92C15A60B003BDAED /* AccessibilityIdentifier.swift */; };
+		568560F92C160F3F003BDAED /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560F82C160F3F003BDAED /* AppConfig.swift */; };
 		56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */; };
 		56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5A2C0BD75900370D7F /* Emoji.swift */; };
 		56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5C2C0BDA8900370D7F /* Constants.swift */; };
@@ -137,6 +138,7 @@
 		568560E92C15A60B003BDAED /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		568560EE2C15AF96003BDAED /* TapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAction.swift; sourceTree = "<group>"; };
 		568560F02C15B08F003BDAED /* TypeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAction.swift; sourceTree = "<group>"; };
+		568560F82C160F3F003BDAED /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemRepository.swift; sourceTree = "<group>"; };
 		56FAFB5A2C0BD75900370D7F /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		56FAFB5C2C0BDA8900370D7F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				5683BBCF2C147F57001EF768 /* API */,
 				563F2F662C0F5F8E005BA713 /* Errors */,
 				5655F7062C0D2CF900C80708 /* Environment */,
+				568560F82C160F3F003BDAED /* AppConfig.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				5639A5752BFF97BD0086857F /* InvoiceItemCategory.swift in Sources */,
 				5655F7122C0D346C00C80708 /* InvoiceItemListRow.swift in Sources */,
 				56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */,
+				568560F92C160F3F003BDAED /* AppConfig.swift in Sources */,
 				563F2F682C0F70DC005BA713 /* InvoiceForm.swift in Sources */,
 				5683BBCA2C147BB3001EF768 /* ScannerOverlay.swift in Sources */,
 				5683BBD22C147F7B001EF768 /* OFFAPIConfig.swift in Sources */,
@@ -763,9 +767,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				568560E02C15A520003BDAED /* AddItemTests.swift in Sources */,
-				568560EB2C15A74B003BDAED /* AccessibilityIdentifier.swift in Sources */,
 				568560EF2C15AF96003BDAED /* TapAction.swift in Sources */,
 				568560F12C15B08F003BDAED /* TypeAction.swift in Sources */,
+				568560F72C160B55003BDAED /* AccessibilityIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

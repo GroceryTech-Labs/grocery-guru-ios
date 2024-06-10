@@ -1,4 +1,5 @@
 import XCTest
+@testable import Grocery_Guru
 
 /// UI Actions that needs to perform a typing action
 final class TypeAction {
