@@ -26,6 +26,8 @@ struct InvoiceItemListRow: View {
         .background(Color.surfaceSecondary)
         .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
         .shadow(radius: 1, y: 1)
+        .accessibilityElement()
+        .accessibilityIdentifier(AccessibilityIdentifier.ListElement.invoiceItem)
     }
 
     init(item: InvoiceItem) {

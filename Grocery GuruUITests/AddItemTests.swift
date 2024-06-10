@@ -8,7 +8,7 @@ final class AddItemTests: XCTestCase {
         case decline = "Don’t Allow"
     }
 
-    func testAddItemManually() throws {
+    func test_AddItemManually() throws {
         let app = XCUIApplication()
 
         // Set app to test mode
@@ -26,8 +26,12 @@ final class AddItemTests: XCTestCase {
         TypeAction.invoiceFormAmount(app: app)
         TapAction.invoiceFormSubmitButton(app: app)
 
-        // 3) Check if item is created
+        // 3) Tap first category
         TapAction.invoiceCategoryButton(app: app)
+
+        // 4) Check for existence of item.
+        let invoiceItem = app.otherElements[AccessibilityIdentifier.ListElement.invoiceItem].firstMatch
+        XCTAssertTrue(invoiceItem.waitForExistence(timeout: 1))
 
         app.terminate()
     }
