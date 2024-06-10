@@ -9,7 +9,7 @@ struct BarCodeScannerView: View {
 
     var body: some View {
         CodeScannerView(
-            codeTypes: [.ean8, .ean13, gs1DataBar],
+            codeTypes: [.ean8, .ean13, .gs1DataBar],
             scanMode: .once
         ) { response in
             completion(response)
