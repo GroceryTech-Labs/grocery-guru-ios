@@ -11,7 +11,8 @@ struct BarCodeScannerView: View {
         CodeScannerView(
             codeTypes: [.ean8],
             scanMode: .once,
-            simulatedData: "4066600603405"
+            simulatedData: "4066600603405",
+            videoCaptureDevice: .systemPreferredCamera
         ) { response in
             completion(response)
         }
