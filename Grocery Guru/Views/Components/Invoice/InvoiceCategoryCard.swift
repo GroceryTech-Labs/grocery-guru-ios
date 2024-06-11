@@ -23,10 +23,12 @@ struct InvoiceCategoryCard: View {
 
             VStack(spacing: Constants.Padding.sizeX) {
                 Text(category.localized)
+                    .font(.headline)
+
                 Text("\(itemsCount, format: .number) Items")
-                    .font(.caption)
+                    .font(.subheadline)
+                    .foregroundStyle(.labelSecondary)
             }
-            .foregroundStyle(.labelSecondary)
         }
         .foregroundStyle(.labelPrimary)
         .frame(maxWidth: .infinity)
@@ -37,9 +39,11 @@ struct InvoiceCategoryCard: View {
         .onTapGesture {
             navigator.push(.invoiceList(items: filteredItems))
         }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
         .accessibilityAddTraits(.isButton)
         .accessibilityElement()
         .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceCategory)
+        .accessibilityLabel("Category Card")
     }
 
     init(category: InvoiceItemCategory, items: [InvoiceItem]) {

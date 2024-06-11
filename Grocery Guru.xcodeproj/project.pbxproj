@@ -11,6 +11,7 @@
 		560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */; };
 		560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D22C026C9D00365B1F /* HomeViewModel.swift */; };
 		560AA7D62C02756600365B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560AA7D52C02756600365B1F /* Assets.xcassets */; };
+		5620E1192C1850EC0027655A /* AccessibilityAuditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620E1182C1850EC0027655A /* AccessibilityAuditTests.swift */; };
 		56346D4B2C0E671200454E17 /* AddInvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56346D4A2C0E671200454E17 /* AddInvoiceView.swift */; };
 		56346D4D2C0E68E000454E17 /* AddInvoiceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */; };
 		5639A5492BFF95940086857F /* LocalItemRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5482BFF95940086857F /* LocalItemRepositoryTests.swift */; };
@@ -93,6 +94,7 @@
 		560AA7D22C026C9D00365B1F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		560AA7D52C02756600365B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		560AA7D72C02796B00365B1F /* Grocery Guru.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Grocery Guru.xctestplan"; sourceTree = "<group>"; };
+		5620E1182C1850EC0027655A /* AccessibilityAuditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityAuditTests.swift; sourceTree = "<group>"; };
 		56346D4A2C0E671200454E17 /* AddInvoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceView.swift; sourceTree = "<group>"; };
 		56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceOption.swift; sourceTree = "<group>"; };
 		5639A5322BFF95930086857F /* Grocery Guru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Guru.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -445,6 +447,7 @@
 		568560DE2C15A520003BDAED /* Grocery GuruUITests */ = {
 			isa = PBXGroup;
 			children = (
+				5620E1182C1850EC0027655A /* AccessibilityAuditTests.swift */,
 				568560DF2C15A520003BDAED /* AddItemTests.swift */,
 				568560EC2C15AF6D003BDAED /* Actions */,
 			);
@@ -606,7 +609,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					5639A5312BFF95930086857F = {
 						CreatedOnToolsVersion = 15.3;
@@ -769,6 +772,7 @@
 				568560E02C15A520003BDAED /* AddItemTests.swift in Sources */,
 				568560EF2C15AF96003BDAED /* TapAction.swift in Sources */,
 				568560F12C15B08F003BDAED /* TypeAction.swift in Sources */,
+				5620E1192C1850EC0027655A /* AccessibilityAuditTests.swift in Sources */,
 				568560F72C160B55003BDAED /* AccessibilityIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -918,7 +922,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Grocery Guru/Preview Content\"";
 				DEVELOPMENT_TEAM = KLXF66UW7Z;
 				ENABLE_PREVIEWS = YES;
@@ -952,7 +956,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Grocery Guru/Preview Content\"";
 				DEVELOPMENT_TEAM = KLXF66UW7Z;
 				ENABLE_PREVIEWS = YES;
@@ -981,7 +985,6 @@
 		5639A55C2BFF95940086857F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1001,7 +1004,6 @@
 		5639A55D2BFF95940086857F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

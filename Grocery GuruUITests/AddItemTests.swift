@@ -8,7 +8,7 @@ final class AddItemTests: XCTestCase {
         case decline = "Don’t Allow"
     }
 
-    func test_AddItemManually() throws {
+    func testAddItemManually() throws {
         let app = XCUIApplication()
 
         // Set app to test mode
@@ -36,7 +36,7 @@ final class AddItemTests: XCTestCase {
         app.terminate()
     }
 
-    func test_AddItemBarcode() throws {
+    func testAddItemBarcode() throws {
         let app = XCUIApplication()
 
         // Set app to test mode

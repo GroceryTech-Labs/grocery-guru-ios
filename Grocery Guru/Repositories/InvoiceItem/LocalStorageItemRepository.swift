@@ -23,7 +23,6 @@ class LocalStorageItemRepository: InvoiceItemRepository {
         }
     }
 
-    @MainActor
     func addItem(_ item: InvoiceItem) throws {
         modelContext.insert(item)
         do {
@@ -33,7 +32,6 @@ class LocalStorageItemRepository: InvoiceItemRepository {
         }
     }
 
-    @MainActor
     func deleteItem(_ item: InvoiceItem) {
         modelContext.delete(item)
     }

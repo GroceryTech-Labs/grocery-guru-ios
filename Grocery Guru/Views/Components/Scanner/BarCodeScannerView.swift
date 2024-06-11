@@ -15,7 +15,7 @@ struct BarCodeScannerView: View {
         ) { response in
             completion(response)
         }
-        .accessibilityElement(children: .ignore)
+        .accessibilityElement()
         .accessibilityIdentifier(AccessibilityIdentifier.Scanner.barcode)
         .overlay(alignment: .center) {
             ScannerOverlay(
