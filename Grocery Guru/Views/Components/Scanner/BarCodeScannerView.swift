@@ -9,7 +9,7 @@ struct BarCodeScannerView: View {
 
     var body: some View {
         CodeScannerView(
-            codeTypes: [.ean8],
+            codeTypes: [.ean13],
             scanMode: .once,
             simulatedData: "4066600603405",
             videoCaptureDevice: .systemPreferredCamera
