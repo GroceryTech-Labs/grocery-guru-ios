@@ -72,7 +72,7 @@ struct InvoiceForm: View {
 
             Task {
                 do {
-                    try AppConfig.shared.usedLocalRepository.addItem(
+                    try await AppConfig.shared.usedLocalRepository.addItem(
                         InvoiceItem(
                             name: name,
                             amount: Int(amount) ?? 0,
