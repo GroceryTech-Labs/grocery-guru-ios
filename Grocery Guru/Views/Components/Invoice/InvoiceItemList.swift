@@ -21,7 +21,6 @@ struct InvoiceItemList: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(Constants.Padding.sizeL)
-        .background(Color.surfacePrimary, ignoresSafeAreaEdges: .all)
     }
 
     init(items: [InvoiceItem]) {

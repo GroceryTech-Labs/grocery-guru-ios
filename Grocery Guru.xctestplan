@@ -9,6 +9,15 @@
     }
   ],
   "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:Grocery Guru.xcodeproj",
+          "identifier" : "5639A5312BFF95930086857F",
+          "name" : "Grocery Guru"
+        }
+      ]
+    },
     "targetForVariableExpansion" : {
       "containerPath" : "container:Grocery Guru.xcodeproj",
       "identifier" : "5639A5312BFF95930086857F",
@@ -22,6 +31,13 @@
         "containerPath" : "container:Grocery Guru.xcodeproj",
         "identifier" : "5639A5432BFF95940086857F",
         "name" : "Grocery GuruTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Grocery Guru.xcodeproj",
+        "identifier" : "568560DC2C15A520003BDAED",
+        "name" : "Grocery GuruUITests"
       }
     }
   ],

@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 class LocalStorageItemRepository: InvoiceItemRepository {
-    @MainActor static let shared = LocalStorageItemRepository()
+    @MainActor static var shared = LocalStorageItemRepository()
 
     var modelContext: ModelContext
     var modelContainer: ModelContainer
@@ -23,7 +23,6 @@ class LocalStorageItemRepository: InvoiceItemRepository {
         }
     }
 
-    @MainActor
     func addItem(_ item: InvoiceItem) throws {
         modelContext.insert(item)
         do {
@@ -33,7 +32,6 @@ class LocalStorageItemRepository: InvoiceItemRepository {
         }
     }
 
-    @MainActor
     func deleteItem(_ item: InvoiceItem) {
         modelContext.delete(item)
     }

@@ -1,20 +1,34 @@
 import SwiftUI
 
 struct InvoiceCategoryList: View {
+    @Environment(\.dynamicTypeSize)
+    private var typeSize
+
     private let invoiceItems: [InvoiceItem]
 
+    private var columns: [GridItem] {
+        if typeSize.isAccessibilitySize {
+            return [GridItem(.flexible())]
+        }
+
+        return [GridItem(.flexible()), GridItem(.flexible())]
+    }
+
     var body: some View {
-        LazyVGrid(
-            columns: [GridItem(.flexible()), GridItem(.flexible())],
-            spacing: Constants.Padding.sizeM
-        ) {
-            ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
-                InvoiceCategoryCard(
-                    category: category,
-                    items: invoiceItems
-                )
+        ScrollView {
+            LazyVGrid(
+                columns: columns,
+                spacing: Constants.Padding.sizeM
+            ) {
+                ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
+                    InvoiceCategoryCard(
+                        category: category,
+                        items: invoiceItems
+                    )
+                }
             }
         }
+        .scrollIndicators(.hidden)
     }
 
     init(invoiceItems: [InvoiceItem]) {

@@ -15,8 +15,6 @@ struct OFFNutrimentsView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .padding(Constants.Padding.sizeL)
-        .foregroundStyle(.labelPrimary)
-        .background(Color.surfacePrimary, ignoresSafeAreaEdges: .all)
     }
 
     private var carbohydratesSection: some View {
@@ -104,7 +102,7 @@ struct OFFNutrimentsView: View {
                     Text(verbatim: "-")
                 }
             }
-            .foregroundStyle(.labelSecondary)
+            .foregroundStyle(.secondary)
         }
     }
 }

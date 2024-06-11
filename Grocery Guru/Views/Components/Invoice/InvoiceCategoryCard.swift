@@ -23,21 +23,25 @@ struct InvoiceCategoryCard: View {
 
             VStack(spacing: Constants.Padding.sizeX) {
                 Text(category.localized)
+
                 Text("\(itemsCount, format: .number) Items")
                     .font(.caption)
+                    .foregroundStyle(.secondary)
             }
-            .foregroundStyle(.labelSecondary)
         }
-        .foregroundStyle(.labelPrimary)
         .frame(maxWidth: .infinity)
         .padding(Constants.Padding.sizeL)
-        .background(Color.surfaceSecondary)
+        .background(Color(.secondarySystemBackground))
         .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
         .shadow(radius: 1, y: 1)
         .onTapGesture {
             navigator.push(.invoiceList(items: filteredItems))
         }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
         .accessibilityAddTraits(.isButton)
+        .accessibilityElement()
+        .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceCategory)
+        .accessibilityLabel("Category Card")
     }
 
     init(category: InvoiceItemCategory, items: [InvoiceItem]) {

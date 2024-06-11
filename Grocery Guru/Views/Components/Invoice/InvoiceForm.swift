@@ -32,9 +32,6 @@ struct InvoiceForm: View {
 
                     categoryRow
                 }
-                .tint(.labelPrimary)
-                .preferredColorScheme(.light)
-                .colorMultiply(.surfaceSecondary)
                 .textFieldStyle(.roundedBorder)
 
                 if let product {
@@ -58,8 +55,6 @@ struct InvoiceForm: View {
             alignment: .top
         )
         .padding(Constants.Padding.sizeL)
-        .background(Color.surfacePrimary, ignoresSafeAreaEdges: .all)
-        .foregroundStyle(.labelPrimary)
     }
 
     private var addInvoiceButton: some View {
@@ -76,7 +71,7 @@ struct InvoiceForm: View {
 
             Task {
                 do {
-                    try await LocalStorageItemRepository.shared.addItem(
+                    try AppConfig.shared.usedLocalRepository.addItem(
                         InvoiceItem(
                             name: name,
                             amount: Int(amount) ?? 0,
@@ -95,6 +90,7 @@ struct InvoiceForm: View {
                 .frame(maxWidth: .infinity)
         }
         .buttonStyle(.borderedProminent)
+        .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormSubmit)
     }
 
     private var amountAndMeasureUnitRow: some View {
@@ -110,6 +106,7 @@ struct InvoiceForm: View {
                     .onSubmit {
                         focusedField = nil
                     }
+                    .accessibilityIdentifier(AccessibilityIdentifier.TextField.invoiceFormAmount)
 
                 Picker("Measure Unit", selection: $measureUnit) {
                     ForEach(MeasureUnit.allCases, id: \.hashValue) { unit in
@@ -132,6 +129,7 @@ struct InvoiceForm: View {
                 .onSubmit {
                     focusedField = .amount
                 }
+                .accessibilityIdentifier(AccessibilityIdentifier.TextField.invoiceFormName)
         }
     }
 
@@ -156,7 +154,7 @@ struct InvoiceForm: View {
     init(product: OFFProduct? = nil) {
         self.product = product
         self.name = product?.productName ?? ""
-        self.amount = String(1)
+        self.amount = ""
         self.measureUnit = .gram
         self.category = .bakery
     }

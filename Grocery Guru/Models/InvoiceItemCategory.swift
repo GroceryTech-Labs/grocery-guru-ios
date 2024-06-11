@@ -12,15 +12,17 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
     struct Picker: View {
         @Binding var selection: InvoiceItemCategory
 
+        let array = InvoiceItemCategory.allCases
+
         var body: some View {
             ScrollView(.horizontal) {
                 HStack(spacing: Constants.Padding.sizeS) {
-                    ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
+                    ForEach(Array(array.enumerated()), id: \.offset) { category in
                         HStack(spacing: Constants.Padding.sizeS) {
-                            category.emoji.text
+                            category.element.emoji.text
 
-                            if selection == category {
-                                Text(category.localized)
+                            if selection == category.element {
+                                Text(category.element.localized)
                                     .lineLimit(1)
                                     .transition(
                                         .asymmetric(
@@ -31,12 +33,16 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
                             }
                         }
                         .padding(Constants.Padding.sizeL)
-                        .background(backgroundView(category: category))
+                        .background(backgroundView(category: category.element))
                         .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
                         .onTapGesture {
-                            selection = category
+                            selection = category.element
                         }
+                        .accessibilityElement()
                         .accessibilityAddTraits(.isButton)
+                        .accessibilityIdentifier(
+                            AccessibilityIdentifier.Button.invoiceCategory
+                        )
                         .animation(.smooth, value: selection)
                     }
                 }
@@ -44,7 +50,7 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
         }
 
         func backgroundView(category: InvoiceItemCategory) -> Color {
-            selection == category ? Color.accentColor : Color.surfaceSecondary
+            selection == category ? .accentColor : Color(.secondarySystemBackground)
         }
     }
 
@@ -67,32 +73,28 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
         }
     }
 
-    // swiftlint:disable indentation_width
-
     var emoji: Emoji {
         switch self {
         case .bakery:
-                .bakery
+            Emoji.bakery
 
         case .canned:
-                .canned
+            Emoji.canned
 
         case .fish:
-                .fish
+            Emoji.fish
 
         case .fruits:
-                .fruit
+            Emoji.fruit
 
         case .meat:
-                .meat
+            Emoji.meat
 
         case .milkEgg:
-                .milkEgg
+            Emoji.milkEgg
 
         case .vegetables:
-                .vegetable
+            Emoji.vegetable
         }
     }
-
-    // swiftlint:enable indentation_width
 }

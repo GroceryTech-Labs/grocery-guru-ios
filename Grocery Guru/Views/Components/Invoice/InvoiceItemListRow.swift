@@ -8,12 +8,15 @@ struct InvoiceItemListRow: View {
         HStack {
             VStack(alignment: .leading, spacing: Constants.Padding.sizeX) {
                 Text(item.name)
-                Text(verbatim: "\(item.amount)") +
-                Text(verbatim: " ") +
-                Text(item.measureUnit.localized)
+
+                Group {
+                    Text(verbatim: "\(item.amount)") +
+                    Text(verbatim: " ") +
+                    Text(item.measureUnit.localized)
+                }
+                .font(.caption)
+                .foregroundStyle(.secondary)
             }
-            .foregroundStyle(.labelSecondary)
-            .font(.caption)
 
             Spacer()
 
@@ -22,10 +25,11 @@ struct InvoiceItemListRow: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(Constants.Padding.sizeL)
-        .foregroundStyle(.labelPrimary)
-        .background(Color.surfaceSecondary)
+        .background(Color(.secondarySystemBackground))
         .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
         .shadow(radius: 1, y: 1)
+        .accessibilityElement()
+        .accessibilityIdentifier(AccessibilityIdentifier.ListElement.invoiceItem)
     }
 
     init(item: InvoiceItem) {
