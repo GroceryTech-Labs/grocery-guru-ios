@@ -54,6 +54,7 @@ final class AddItemTests: XCTestCase {
 
         // 4) Fill in and submit the form.
         TypeAction.invoiceFormAmount(app: app)
+        TapAction.openAndCloseNutriments(app: app)
         TapAction.invoiceFormSubmitButton(app: app)
 
         // 5) Navigate back.

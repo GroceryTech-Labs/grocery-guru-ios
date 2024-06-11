@@ -17,27 +17,23 @@ struct InvoiceCategoryCard: View {
     }
 
     var body: some View {
-        VStack(spacing: Constants.Padding.sizeM) {
-            category.emoji.text
-                .font(.system(size: emojiSize))
+        ResponsiveCard {
+            VStack(spacing: Constants.Padding.sizeM) {
+                category.emoji.text
+                    .font(.system(size: emojiSize))
 
-            VStack(spacing: Constants.Padding.sizeX) {
-                Text(category.localized)
+                VStack(spacing: Constants.Padding.sizeX) {
+                    Text(category.localized)
 
-                Text("\(itemsCount, format: .number) Items")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    Text("\(itemsCount, format: .number) Items")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
         }
-        .frame(maxWidth: .infinity)
-        .padding(Constants.Padding.sizeL)
-        .background(Color(.secondarySystemBackground))
-        .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
-        .shadow(radius: 1, y: 1)
         .onTapGesture {
             navigator.push(.invoiceList(items: filteredItems))
         }
-        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
         .accessibilityAddTraits(.isButton)
         .accessibilityElement()
         .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceCategory)
@@ -55,4 +51,5 @@ struct InvoiceCategoryCard: View {
         category: .milkEgg,
         items: []
     )
+    .padding()
 }

@@ -5,29 +5,26 @@ struct InvoiceItemListRow: View {
     private let item: InvoiceItem
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: Constants.Padding.sizeX) {
-                Text(item.name)
+        ResponsiveCard {
+            HStack {
+                VStack(alignment: .leading, spacing: Constants.Padding.sizeX) {
+                    Text(item.name)
 
-                Group {
-                    Text(verbatim: "\(item.amount)") +
-                    Text(verbatim: " ") +
-                    Text(item.measureUnit.localized)
+                    Group {
+                        Text(verbatim: "\(item.amount)") +
+                        Text(verbatim: " ") +
+                        Text(item.measureUnit.localized)
+                    }
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
                 }
-                .font(.caption)
-                .foregroundStyle(.secondary)
+
+                Spacer()
+
+                Image(systemName: "chevron.right")
+                    .accessibilityLabel("Open Invoice Item")
             }
-
-            Spacer()
-
-            Image(systemName: "chevron.right")
-                .accessibilityLabel("Open Invoice Item")
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(Constants.Padding.sizeL)
-        .background(Color(.secondarySystemBackground))
-        .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
-        .shadow(radius: 1, y: 1)
         .accessibilityElement()
         .accessibilityIdentifier(AccessibilityIdentifier.ListElement.invoiceItem)
     }

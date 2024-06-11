@@ -10,11 +10,12 @@ struct InvoiceItemList: View {
                 ErrorView(text: "No items found!")
             } else {
                 ScrollView {
-                    LazyVStack(spacing: Constants.Padding.sizeS) {
+                    LazyVStack(spacing: Constants.Padding.sizeM) {
                         ForEach(items) { item in
                             InvoiceItemListRow(item: item)
                         }
                     }
+                    .padding(.horizontal, Constants.Padding.sizeX)
                 }
                 .scrollIndicators(.hidden)
             }

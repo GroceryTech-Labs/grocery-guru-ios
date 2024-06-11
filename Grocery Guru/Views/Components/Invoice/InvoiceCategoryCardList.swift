@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct InvoiceCategoryList: View {
+struct InvoiceCategoryCardList: View {
     @Environment(\.dynamicTypeSize)
     private var typeSize
 
@@ -18,7 +18,7 @@ struct InvoiceCategoryList: View {
         ScrollView {
             LazyVGrid(
                 columns: columns,
-                spacing: Constants.Padding.sizeM
+                spacing: Constants.Padding.sizeS
             ) {
                 ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
                     InvoiceCategoryCard(
@@ -27,6 +27,7 @@ struct InvoiceCategoryList: View {
                     )
                 }
             }
+            .padding(.horizontal, Constants.Padding.sizeX)
         }
         .scrollIndicators(.hidden)
     }
@@ -38,7 +39,7 @@ struct InvoiceCategoryList: View {
 
 #Preview {
     ScrollView {
-        InvoiceCategoryList(
+        InvoiceCategoryCardList(
             invoiceItems: []
         )
     }
