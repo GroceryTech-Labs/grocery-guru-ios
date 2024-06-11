@@ -15,17 +15,20 @@ struct InvoiceCategoryList: View {
     }
 
     var body: some View {
-        LazyVGrid(
-            columns: columns,
-            spacing: Constants.Padding.sizeM
-        ) {
-            ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
-                InvoiceCategoryCard(
-                    category: category,
-                    items: invoiceItems
-                )
+        ScrollView {
+            LazyVGrid(
+                columns: columns,
+                spacing: Constants.Padding.sizeM
+            ) {
+                ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
+                    InvoiceCategoryCard(
+                        category: category,
+                        items: invoiceItems
+                    )
+                }
             }
         }
+        .scrollIndicators(.hidden)
     }
 
     init(invoiceItems: [InvoiceItem]) {

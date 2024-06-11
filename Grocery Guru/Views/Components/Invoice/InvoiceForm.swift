@@ -32,9 +32,6 @@ struct InvoiceForm: View {
 
                     categoryRow
                 }
-                .tint(.labelPrimary)
-                .preferredColorScheme(.light)
-                .colorMultiply(.surfaceSecondary)
                 .textFieldStyle(.roundedBorder)
 
                 if let product {
@@ -58,8 +55,6 @@ struct InvoiceForm: View {
             alignment: .top
         )
         .padding(Constants.Padding.sizeL)
-        .background(Color.surfacePrimary, ignoresSafeAreaEdges: .all)
-        .foregroundStyle(.labelPrimary)
     }
 
     private var addInvoiceButton: some View {
@@ -159,7 +154,7 @@ struct InvoiceForm: View {
     init(product: OFFProduct? = nil) {
         self.product = product
         self.name = product?.productName ?? ""
-        self.amount = String(1)
+        self.amount = ""
         self.measureUnit = .gram
         self.category = .bakery
     }

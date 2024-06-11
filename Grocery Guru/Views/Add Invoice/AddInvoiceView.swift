@@ -38,8 +38,6 @@ struct AddInvoiceView: View {
             alignment: .top
         )
         .padding(.top, Constants.Padding.sizeL)
-        .background(Color.surfacePrimary, ignoresSafeAreaEdges: .all)
-        .foregroundStyle(.labelPrimary)
     }
 
     private var barCodeView: some View {

@@ -50,7 +50,7 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
         }
 
         func backgroundView(category: InvoiceItemCategory) -> Color {
-            selection == category ? Color.accentColor : Color.surfaceSecondary
+            selection == category ? .accentColor : Color(.secondarySystemBackground)
         }
     }
 

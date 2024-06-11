@@ -23,17 +23,15 @@ struct InvoiceCategoryCard: View {
 
             VStack(spacing: Constants.Padding.sizeX) {
                 Text(category.localized)
-                    .font(.headline)
 
                 Text("\(itemsCount, format: .number) Items")
-                    .font(.subheadline)
-                    .foregroundStyle(.labelSecondary)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
             }
         }
-        .foregroundStyle(.labelPrimary)
         .frame(maxWidth: .infinity)
         .padding(Constants.Padding.sizeL)
-        .background(Color.surfaceSecondary)
+        .background(Color(.secondarySystemBackground))
         .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
         .shadow(radius: 1, y: 1)
         .onTapGesture {

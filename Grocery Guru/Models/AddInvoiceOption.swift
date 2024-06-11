@@ -18,7 +18,6 @@ enum AddInvoiceOption: LocalizedStringKey, CaseIterable, Hashable {
                     }
                 }
                 .pickerStyle(.segmented)
-                .preferredColorScheme(.light)
                 .padding(.horizontal, Constants.Padding.sizeL)
             }
         }

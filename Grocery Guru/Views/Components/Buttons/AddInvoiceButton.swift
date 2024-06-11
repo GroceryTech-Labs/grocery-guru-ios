@@ -11,14 +11,10 @@ struct AddInvoiceButton: View {
             Image(systemName: "plus")
                 .accessibilityLabel("Add Invoice")
                 .font(.largeTitle)
-                .foregroundStyle(.labelPrimary)
                 .padding(Constants.Padding.sizeL)
         }
+        .buttonStyle(.borderedProminent)
         .buttonBorderShape(.circle)
-        .background {
-            Circle()
-                .fill(.accent.opacity(opacity))
-        }
         .accessibilityIdentifier(AccessibilityIdentifier.Button.addInvoice)
     }
 

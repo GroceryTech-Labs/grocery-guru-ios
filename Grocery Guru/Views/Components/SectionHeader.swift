@@ -7,8 +7,10 @@ struct SectionHeader: View {
     var body: some View {
         Text(text)
             .font(font)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .foregroundStyle(.labelPrimary)
+            .frame(
+                maxWidth: .infinity,
+                alignment: .leading
+            )
     }
 
     init(_ text: LocalizedStringKey, font: Font = .title) {
