@@ -63,7 +63,6 @@
 		56FAFB602C0BDB1200370D7F /* InvoiceCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5F2C0BDB1200370D7F /* InvoiceCategoryCard.swift */; };
 		56FCC0352C0CF62A003EAA8B /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FCC0342C0CF62A003EAA8B /* NavigationService.swift */; };
 		56FFAC6A2C0BF13200D2D965 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC692C0BF13200D2D965 /* SectionHeader.swift */; };
-		56FFAC722C0BF34900D2D965 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC712C0BF34900D2D965 /* DateFormatters.swift */; };
 		56FFAC772C0C888200D2D965 /* InvoiceCategoryCardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC762C0C888200D2D965 /* InvoiceCategoryCardList.swift */; };
 		56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC782C0C89E800D2D965 /* HomeViewList.swift */; };
 		56FFAC7B2C0C8B9B00D2D965 /* AddInvoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC7A2C0C8B9B00D2D965 /* AddInvoiceButton.swift */; };
@@ -149,7 +148,6 @@
 		56FAFB5F2C0BDB1200370D7F /* InvoiceCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCategoryCard.swift; sourceTree = "<group>"; };
 		56FCC0342C0CF62A003EAA8B /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
 		56FFAC692C0BF13200D2D965 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
-		56FFAC712C0BF34900D2D965 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		56FFAC762C0C888200D2D965 /* InvoiceCategoryCardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCategoryCardList.swift; sourceTree = "<group>"; };
 		56FFAC782C0C89E800D2D965 /* HomeViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewList.swift; sourceTree = "<group>"; };
 		56FFAC7A2C0C8B9B00D2D965 /* AddInvoiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceButton.swift; sourceTree = "<group>"; };
@@ -514,25 +512,8 @@
 			children = (
 				568560E82C15A5EF003BDAED /* Accessibility */,
 				5683BBE72C14A30A001EF768 /* Extension */,
-				56FFAC6F2C0BF33200D2D965 /* Formatter */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		56FFAC6F2C0BF33200D2D965 /* Formatter */ = {
-			isa = PBXGroup;
-			children = (
-				56FFAC702C0BF33F00D2D965 /* Date */,
-			);
-			path = Formatter;
-			sourceTree = "<group>";
-		};
-		56FFAC702C0BF33F00D2D965 /* Date */ = {
-			isa = PBXGroup;
-			children = (
-				56FFAC712C0BF34900D2D965 /* DateFormatters.swift */,
-			);
-			path = Date;
 			sourceTree = "<group>";
 		};
 		56FFAC7C2C0C901400D2D965 /* InvoiceItem */ = {
@@ -723,7 +704,6 @@
 				5683BBD62C14870F001EF768 /* APIError.swift in Sources */,
 				56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */,
 				5639A5712BFF97BD0086857F /* App.swift in Sources */,
-				56FFAC722C0BF34900D2D965 /* DateFormatters.swift in Sources */,
 				560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */,
 				56FFAC802C0C904F00D2D965 /* MockItemRepository.swift in Sources */,
 				56346D4B2C0E671200454E17 /* AddInvoiceView.swift in Sources */,

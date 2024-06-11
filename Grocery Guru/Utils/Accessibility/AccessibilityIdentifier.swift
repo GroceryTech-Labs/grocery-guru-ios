@@ -6,7 +6,8 @@ enum AccessibilityIdentifier {
         static let addInvoiceDocument = "button_add_invoice_document"
         static let addInvoiceBarcode = "button_add_invoice_barcode"
         static let addInvoiceManual = "button_add_invoice_manual"
-        static let invoiceFormSubmit = "button_invoice_for_submit"
+        static let invoiceFormNutriments = "button_invoice_form_nutriments"
+        static let invoiceFormSubmit = "button_invoice_form_submit"
         static let invoiceCategory = "button_invoice_category"
     }
 

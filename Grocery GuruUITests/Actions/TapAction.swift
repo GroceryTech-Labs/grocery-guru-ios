@@ -95,12 +95,13 @@ final class TapAction {
         textField.tap()
     }
 
-    // Disclosure Groups
-
     static func openAndCloseNutriments(app: XCUIApplication) {
-//        let disclosureGroup = app.dis[AccessibilityIdentifier.TextField.invoiceFormAmount]
+        let disclosureGroup = app.staticTexts[AccessibilityIdentifier.Button.invoiceFormNutriments]
 
         // Check for existence
+        XCTAssertTrue(disclosureGroup.waitForExistence(timeout: 1))
+        disclosureGroup.tap()
+
         XCTAssertTrue(disclosureGroup.waitForExistence(timeout: 1))
         disclosureGroup.tap()
     }

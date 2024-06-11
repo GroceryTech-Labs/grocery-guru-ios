@@ -40,6 +40,7 @@ struct InvoiceForm: View {
                     } label: {
                         Text("Nutriments (100g)")
                             .font(.headline)
+                            .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormNutriments)
                     }
                 }
 
@@ -155,7 +156,7 @@ struct InvoiceForm: View {
         self.product = product
         self.name = product?.productName ?? ""
         self.amount = ""
-        self.measureUnit = .gram
+        self.measureUnit = .whole
         self.category = .bakery
     }
 }
