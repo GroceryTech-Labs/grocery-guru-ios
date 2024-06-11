@@ -15,7 +15,7 @@ final class OFFAPIConfig: APIConfigProtocol {
         #endif
     }
 
-    var stagingURL: String = "https://world.openfoodfacts.net/api/v2"
+    var stagingURL: String = "https://world.openfoodfacts.org/api/v2"
     var productionURL: String = "https://world.openfoodfacts.org/api/v2"
 
     private init() { }

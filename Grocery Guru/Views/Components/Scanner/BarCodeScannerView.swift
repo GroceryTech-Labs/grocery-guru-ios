@@ -9,11 +9,14 @@ struct BarCodeScannerView: View {
 
     var body: some View {
         CodeScannerView(
-            codeTypes: [.ean8, .ean13],
-            scanMode: .once
+            codeTypes: [.ean8],
+            scanMode: .once,
+            simulatedData: "4066600603405"
         ) { response in
             completion(response)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityIdentifier(AccessibilityIdentifier.Scanner.barcode)
         .overlay(alignment: .center) {
             ScannerOverlay(
                 isPresented: $isPresentingIndicator,

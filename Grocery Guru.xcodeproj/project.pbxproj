@@ -288,7 +288,7 @@
 		5639A56A2BFF97BD0086857F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5683BBDE2C1497D6001EF768 /* OFF */,
+				568560F82C160F3F003BDAED /* AppConfig.swift */,
 				56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */,
 				5639A5682BFF97BD0086857F /* InvoiceItem.swift */,
 				5639A5692BFF97BD0086857F /* InvoiceItemCategory.swift */,
@@ -297,7 +297,7 @@
 				5683BBCF2C147F57001EF768 /* API */,
 				563F2F662C0F5F8E005BA713 /* Errors */,
 				5655F7062C0D2CF900C80708 /* Environment */,
-				568560F82C160F3F003BDAED /* AppConfig.swift */,
+				5683BBDE2C1497D6001EF768 /* OFF */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -445,8 +445,8 @@
 		568560DE2C15A520003BDAED /* Grocery GuruUITests */ = {
 			isa = PBXGroup;
 			children = (
-				568560EC2C15AF6D003BDAED /* Actions */,
 				568560DF2C15A520003BDAED /* AddItemTests.swift */,
+				568560EC2C15AF6D003BDAED /* Actions */,
 			);
 			path = "Grocery GuruUITests";
 			sourceTree = "<group>";
@@ -929,8 +929,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -963,8 +963,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
