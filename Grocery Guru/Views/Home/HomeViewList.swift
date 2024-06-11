@@ -17,7 +17,7 @@ struct HomeViewList: View {
                 InvoiceCategoryList(invoiceItems: items)
             }
         }
-        .padding(Constants.Padding.sizeL)
+        .padding(.horizontal, Constants.Padding.sizeL)
     }
 
     init(viewModel: HomeViewModel) {
