@@ -60,6 +60,8 @@
 		56AAD2FF2C1B83A000BF8030 /* BarCodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD2FE2C1B83A000BF8030 /* BarCodeScannerViewModel.swift */; };
 		56AAD3012C1B8EF200BF8030 /* ErrorToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3002C1B8EF200BF8030 /* ErrorToast.swift */; };
 		56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3022C1B9BB100BF8030 /* OFFError.swift */; };
+		56AAD3052C1C535600BF8030 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3042C1C535600BF8030 /* APIServiceTests.swift */; };
+		56AAD3072C1C550800BF8030 /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3062C1C550800BF8030 /* MockAPIService.swift */; };
 		56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */; };
 		56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5A2C0BD75900370D7F /* Emoji.swift */; };
 		56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5C2C0BDA8900370D7F /* Constants.swift */; };
@@ -148,6 +150,8 @@
 		56AAD2FE2C1B83A000BF8030 /* BarCodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScannerViewModel.swift; sourceTree = "<group>"; };
 		56AAD3002C1B8EF200BF8030 /* ErrorToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorToast.swift; sourceTree = "<group>"; };
 		56AAD3022C1B9BB100BF8030 /* OFFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFError.swift; sourceTree = "<group>"; };
+		56AAD3042C1C535600BF8030 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		56AAD3062C1C550800BF8030 /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
 		56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemRepository.swift; sourceTree = "<group>"; };
 		56FAFB5A2C0BD75900370D7F /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		56FAFB5C2C0BDA8900370D7F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				560AA7D52C02756600365B1F /* Assets.xcassets */,
+				56AAD3042C1C535600BF8030 /* APIServiceTests.swift */,
 				5639A5482BFF95940086857F /* LocalItemRepositoryTests.swift */,
 				5683BBC22C13BE26001EF768 /* NavigationServiceTests.swift */,
 				563F2F632C0F5D26005BA713 /* Mocks */,
@@ -342,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				56FFAC7F2C0C904F00D2D965 /* MockItemRepository.swift */,
+				56AAD3062C1C550800BF8030 /* MockAPIService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -756,6 +762,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56AAD3072C1C550800BF8030 /* MockAPIService.swift in Sources */,
+				56AAD3052C1C535600BF8030 /* APIServiceTests.swift in Sources */,
 				5639A5492BFF95940086857F /* LocalItemRepositoryTests.swift in Sources */,
 				5683BBC32C13BE26001EF768 /* NavigationServiceTests.swift in Sources */,
 			);

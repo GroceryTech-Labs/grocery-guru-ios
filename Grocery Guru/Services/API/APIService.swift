@@ -1,6 +1,6 @@
 import Foundation
 
-final class APIService: APIServiceProtocol {
+class APIService: APIServiceProtocol {
     static var shared = APIService()
 
     private let session: URLSession
