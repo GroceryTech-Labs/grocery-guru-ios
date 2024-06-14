@@ -1,7 +1,5 @@
 import Foundation
 
-// swiftlint:disable direct_return
-
 final class APIService: APIServiceProtocol {
     static var shared = APIService()
 
@@ -11,13 +9,18 @@ final class APIService: APIServiceProtocol {
         self.session = session
     }
 
-    func request<Item: Decodable>(_ type: Item.Type, url: URL, method: HTTPMethod) async throws -> Item {
-        let items = try await withCheckedThrowingContinuation { continuation in
+    func request<Item: Decodable>(
+        _ type: Item.Type,
+        url: URL,
+        method: HTTPMethod
+    ) async throws -> Item {
+        print("🔵 Request: \(url.absoluteString)")
+        return try await withCheckedThrowingContinuation { continuation in
             fetchItem(type, url: url, method: method) { result in
                 switch result {
-                case .success(let albums):
-                    // Resume with fetched albums
-                    continuation.resume(returning: albums)
+                case .success(let result):
+                    // Resume with result
+                    continuation.resume(returning: result)
 
                 case .failure(let error):
                     // Resume with error
@@ -25,8 +28,6 @@ final class APIService: APIServiceProtocol {
                 }
             }
         }
-
-        return items
     }
 
     private func fetchItem<Item: Decodable>(
@@ -39,11 +40,26 @@ final class APIService: APIServiceProtocol {
         request.httpMethod = method.rawValue
         request.setValue(OFFAPIConfig.shared.getUserAgent(), forHTTPHeaderField: "User-Agent")
 
-        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error {
                 completion(.failure(error))
                 return
             }
+
+            // swiftlint:disable no_magic_numbers
+
+            if let httpResponse = response as? HTTPURLResponse {
+                let statusCode = httpResponse.statusCode
+                switch statusCode {
+                case 200:
+                    break
+
+                default:
+                    completion(.failure(self.resolveStatusCodeError(for: statusCode)))
+                }
+            }
+
+            // swiftlint:enable no_magic_numbers
 
             guard let data else {
                 completion(.failure(APIError.missingData))
@@ -54,12 +70,32 @@ final class APIService: APIServiceProtocol {
                 // Parse the JSON data
                 let result = try JSONDecoder().decode(Item.self, from: data)
                 completion(.success(result))
+                return
             } catch {
                 completion(.failure(error))
+                return
             }
         }
         task.resume()
     }
-}
 
-// swiftlint:enable direct_return
+    // swiftlint:disable no_magic_numbers
+
+    private func resolveStatusCodeError(for statusCode: Int) -> APIError {
+        switch statusCode {
+        case 404:
+            return APIError.notFound
+
+        case 500:
+            return APIError.internalServer
+
+        case 503:
+            return APIError.serviceUnavailable
+
+        default:
+            return APIError.unknownStatus
+        }
+    }
+
+    // swiftlint:enable no_magic_numbers
+}

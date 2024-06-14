@@ -211,6 +211,16 @@
         }
       }
     },
+    "Hello World!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "Invoice Items" : {
       "localizations" : {
         "de" : {

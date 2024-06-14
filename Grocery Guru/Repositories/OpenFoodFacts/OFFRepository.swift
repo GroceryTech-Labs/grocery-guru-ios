@@ -15,6 +15,12 @@ final class OFFRepository: OFFRepositoryProtocol {
             throw APIError.invalidURL
         }
 
-        return try await apiService.request(OFFProductResult.self, url: url, method: .get)
+        let result = try await apiService.request(OFFProductResult.self, url: url, method: .get)
+
+        guard result.status == 1 else {
+            throw OFFError.productNotFound(result.statusVerbose)
+        }
+
+        return result
     }
 }

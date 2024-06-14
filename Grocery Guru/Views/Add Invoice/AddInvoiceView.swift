@@ -14,7 +14,7 @@ struct AddInvoiceView: View {
 
             switch selectedOption {
             case .barCode:
-                barCodeView
+                BarCodeScannerView()
 
             case .manual:
                 InvoiceForm()
@@ -38,25 +38,6 @@ struct AddInvoiceView: View {
             alignment: .top
         )
         .padding(.top, Constants.Padding.sizeL)
-    }
-
-    private var barCodeView: some View {
-        BarCodeScannerView { result in
-            switch result {
-            case .success(let success):
-                Task {
-                    do {
-                        let result = try await OFFRepository.shared.getProductResult(barcode: success.string)
-                        navigator.push(.invoiceForm(product: result.product))
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
-
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
-        }
     }
 
     init(selectedOption: AddInvoiceOption) {

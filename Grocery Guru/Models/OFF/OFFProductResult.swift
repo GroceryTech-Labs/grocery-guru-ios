@@ -11,5 +11,5 @@ struct OFFProductResult: Codable {
     let code: String
     let status: Int
     let statusVerbose: String
-    let product: OFFProduct
+    let product: OFFProduct?
 }
