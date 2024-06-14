@@ -21,7 +21,7 @@ struct ScannerOverlay: View {
     }
 
     func hideCodeIndicator() {
-        let delay = 2.0
+        let delay = 1.0
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             withAnimation {
                 isPresented = false
