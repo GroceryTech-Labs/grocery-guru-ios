@@ -9,51 +9,6 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
     case milkEgg
     case vegetables
 
-    struct Picker: View {
-        @Binding var selection: InvoiceItemCategory
-
-        let array = InvoiceItemCategory.allCases
-
-        var body: some View {
-            ScrollView(.horizontal) {
-                HStack(spacing: Constants.Padding.sizeS) {
-                    ForEach(Array(array.enumerated()), id: \.offset) { category in
-                        HStack(spacing: Constants.Padding.sizeS) {
-                            category.element.emoji.text
-
-                            if selection == category.element {
-                                Text(category.element.localized)
-                                    .lineLimit(1)
-                                    .transition(
-                                        .asymmetric(
-                                            insertion: .push(from: .trailing),
-                                            removal: .offset(x: 100)
-                                        )
-                                    )
-                            }
-                        }
-                        .padding(Constants.Padding.sizeL)
-                        .background(backgroundView(category: category.element))
-                        .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
-                        .onTapGesture {
-                            selection = category.element
-                        }
-                        .accessibilityElement()
-                        .accessibilityAddTraits(.isButton)
-                        .accessibilityIdentifier(
-                            AccessibilityIdentifier.Button.invoiceCategory
-                        )
-                        .animation(.smooth, value: selection)
-                    }
-                }
-            }
-        }
-
-        func backgroundView(category: InvoiceItemCategory) -> Color {
-            selection == category ? .accentColor : Color(.secondarySystemBackground)
-        }
-    }
-
     var localized: LocalizedStringKey {
         switch self {
         case .bakery:

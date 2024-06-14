@@ -139,7 +139,7 @@ struct InvoiceForm: View {
             Text("Category")
                 .font(.headline)
 
-            InvoiceItemCategory.Picker(selection: $category)
+            InvoiceCategoryPicker(selection: $category)
         }
     }
 
