@@ -6,7 +6,7 @@ enum OFFEndpoints {
     var string: String {
         switch self {
         case .product(let barcode):
-            "/product/\(barcode)"
+            "/product/\(barcode)?fields=product_name,nutriments"
         }
     }
 }

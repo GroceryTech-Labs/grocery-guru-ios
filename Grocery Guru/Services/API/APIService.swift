@@ -56,6 +56,7 @@ class APIService: APIServiceProtocol {
 
                 default:
                     completion(.failure(self.resolveStatusCodeError(for: statusCode)))
+                    return
                 }
             }
 
