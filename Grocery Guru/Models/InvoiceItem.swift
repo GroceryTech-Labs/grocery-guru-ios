@@ -19,6 +19,4 @@ final class InvoiceItem {
         self.category = category
         self.measureUnit = measureUnit
     }
-
-    deinit { }
 }

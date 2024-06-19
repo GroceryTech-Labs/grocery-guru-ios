@@ -10,10 +10,10 @@ struct AddInvoiceView: View {
 
     var body: some View {
         VStack(spacing: Constants.Padding.sizeL) {
-            AddInvoiceOption.Picker(selection: $selectedOption)
+            AddInvoicePicker(selection: $selectedOption)
 
             switch selectedOption {
-            case .barCode:
+            case .barcode:
                 BarCodeScannerView()
 
             case .manual:

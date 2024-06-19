@@ -1,9 +1,8 @@
 import SwiftUI
 
 struct CategoryMoreButton: View {
-    let height: CGFloat?
-
-    let action: Void
+    private let height: CGFloat?
+    private let action: Void
 
     var body: some View {
         Button {
@@ -11,8 +10,8 @@ struct CategoryMoreButton: View {
         } label: {
             Image(systemName: "ellipsis")
         }
-        .accessibilityLabel("Show more")
         .buttonStyle(.secondary(height: height))
+        .accessibilityLabel("Show more")
     }
 
     init(height: CGFloat? = nil, action: @escaping () -> Void) {

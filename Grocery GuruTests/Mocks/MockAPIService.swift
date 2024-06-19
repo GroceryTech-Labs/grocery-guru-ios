@@ -18,7 +18,7 @@ class MockAPIService: APIService {
         print("🔵 Mock Request: \(url.absoluteString)")
 
         switch requestType {
-        case .product(let barcode):
+        case .product:
             let url = Bundle.main.url(forResource: "off_nutriments", withExtension: "json")!
             guard let data = try? Data(contentsOf: url) else {
                 fatalError("Failed to load off_nutriments from bundle.")
