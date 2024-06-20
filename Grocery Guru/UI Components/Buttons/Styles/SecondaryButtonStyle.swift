@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SecondaryButtonStyle: PrimitiveButtonStyle {
-    let height: CGFloat?
+    private let height: CGFloat?
 
     init(height: CGFloat? = nil) {
         self.height = height

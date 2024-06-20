@@ -8,7 +8,7 @@ final class TapAction {
     // Buttons
 
     static func invoiceCategoryButton(app: XCUIApplication) {
-        let button = app.otherElements[AccessibilityIdentifier.Button.invoiceCategory].firstMatch
+        let button = app.buttons[AccessibilityIdentifier.Button.invoiceCategory].firstMatch
 
         // Check for existence
         XCTAssertTrue(button.waitForExistence(timeout: 1))

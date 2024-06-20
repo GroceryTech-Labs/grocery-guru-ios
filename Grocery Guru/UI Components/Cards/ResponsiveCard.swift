@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct ResponsiveCard<Content: View>: View {
-    let alignment: Alignment
-    let content: Content
+    private let alignment: Alignment
+    private let content: Content
 
     var body: some View {
         content
