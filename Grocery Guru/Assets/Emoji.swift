@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum Emoji: String, CaseIterable {
+enum Emoji: String, Codable, CaseIterable {
     case bakery = "🥖"
     case canned = "🥫"
     case fish = "🐟"

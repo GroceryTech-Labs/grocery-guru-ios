@@ -3,11 +3,22 @@ import SwiftUI
 enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
     case bakery
     case canned
+    case custom(name: String, emoji: Emoji)
     case fish
     case fruits
     case meat
     case milkEgg
     case vegetables
+
+    static var allCases: [Self] = [
+        .bakery,
+        .canned,
+        .fish,
+        .fruits,
+        .meat,
+        .milkEgg,
+        .vegetables
+    ]
 
     var localized: LocalizedStringKey {
         switch self {
@@ -25,6 +36,8 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
             "Milk & Egg"
         case .vegetables:
             "Vegetables"
+        case let .custom(name, _):
+            LocalizedStringKey(name)
         }
     }
 
@@ -50,6 +63,9 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
 
         case .vegetables:
             Emoji.vegetable
+
+        case let .custom(_, emoji):
+            emoji
         }
     }
 }

@@ -3,7 +3,7 @@ import CodeScanner
 
 @Observable
 final class BarcodeScannerViewModel {
-    var navigator = NavigationService.shared
+    private var navigator = NavigationService.shared
 
     var error: Error?
 

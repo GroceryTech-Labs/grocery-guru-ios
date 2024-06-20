@@ -15,6 +15,9 @@
 		5620E11C2C1887D90027655A /* ResponsiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620E11B2C1887D90027655A /* ResponsiveCard.swift */; };
 		56346D4B2C0E671200454E17 /* AddInvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56346D4A2C0E671200454E17 /* AddInvoiceView.swift */; };
 		56346D4D2C0E68E000454E17 /* AddInvoiceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */; };
+		5635E32B2C24A746000A6628 /* CustomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E32A2C24A746000A6628 /* CustomCategory.swift */; };
+		5635E32D2C24AC87000A6628 /* InvoiceFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E32C2C24AC87000A6628 /* InvoiceFormViewModel.swift */; };
+		5635E32F2C24AEE1000A6628 /* MeasureUnitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E32E2C24AEE1000A6628 /* MeasureUnitPicker.swift */; };
 		5639A5492BFF95940086857F /* LocalItemRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5482BFF95940086857F /* LocalItemRepositoryTests.swift */; };
 		5639A5702BFF97BD0086857F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639A5612BFF97BD0086857F /* Assets.xcassets */; };
 		5639A5712BFF97BD0086857F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5632BFF97BD0086857F /* App.swift */; };
@@ -32,6 +35,7 @@
 		5655F7102C0D2E0100C80708 /* InvoiceItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F70F2C0D2E0100C80708 /* InvoiceItemList.swift */; };
 		5655F7122C0D346C00C80708 /* InvoiceItemListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */; };
 		5655F7142C0D36E300C80708 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F7132C0D36E300C80708 /* ErrorView.swift */; };
+		5656BB9B2C24588F00A8F0F7 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656BB9A2C24588F00A8F0F7 /* UserSettings.swift */; };
 		5683BBC32C13BE26001EF768 /* NavigationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBC22C13BE26001EF768 /* NavigationServiceTests.swift */; };
 		5683BBC62C145E76001EF768 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5683BBC52C145E76001EF768 /* CodeScanner */; };
 		5683BBC82C145EA0001EF768 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBC72C145EA0001EF768 /* BarcodeScannerView.swift */; };
@@ -56,7 +60,6 @@
 		568560EF2C15AF96003BDAED /* TapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560EE2C15AF96003BDAED /* TapAction.swift */; };
 		568560F12C15B08F003BDAED /* TypeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560F02C15B08F003BDAED /* TypeAction.swift */; };
 		568560F72C160B55003BDAED /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560E92C15A60B003BDAED /* AccessibilityIdentifier.swift */; };
-		568560F92C160F3F003BDAED /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560F82C160F3F003BDAED /* AppConfig.swift */; };
 		56AAD2FF2C1B83A000BF8030 /* BarcodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD2FE2C1B83A000BF8030 /* BarcodeScannerViewModel.swift */; };
 		56AAD3012C1B8EF200BF8030 /* ErrorToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3002C1B8EF200BF8030 /* ErrorToast.swift */; };
 		56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3022C1B9BB100BF8030 /* OFFError.swift */; };
@@ -107,6 +110,9 @@
 		5620E11B2C1887D90027655A /* ResponsiveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveCard.swift; sourceTree = "<group>"; };
 		56346D4A2C0E671200454E17 /* AddInvoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceView.swift; sourceTree = "<group>"; };
 		56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceOption.swift; sourceTree = "<group>"; };
+		5635E32A2C24A746000A6628 /* CustomCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategory.swift; sourceTree = "<group>"; };
+		5635E32C2C24AC87000A6628 /* InvoiceFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceFormViewModel.swift; sourceTree = "<group>"; };
+		5635E32E2C24AEE1000A6628 /* MeasureUnitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureUnitPicker.swift; sourceTree = "<group>"; };
 		5639A5322BFF95930086857F /* Grocery Guru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Guru.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5442BFF95940086857F /* Grocery GuruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery GuruTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5482BFF95940086857F /* LocalItemRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalItemRepositoryTests.swift; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 		5655F70F2C0D2E0100C80708 /* InvoiceItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemList.swift; sourceTree = "<group>"; };
 		5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemListRow.swift; sourceTree = "<group>"; };
 		5655F7132C0D36E300C80708 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		5656BB9A2C24588F00A8F0F7 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		567D8FE12C0288DD007C4076 /* Grocery-Guru-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Grocery-Guru-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5683BBC22C13BE26001EF768 /* NavigationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationServiceTests.swift; sourceTree = "<group>"; };
 		5683BBC72C145EA0001EF768 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
@@ -150,7 +157,6 @@
 		568560E92C15A60B003BDAED /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		568560EE2C15AF96003BDAED /* TapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAction.swift; sourceTree = "<group>"; };
 		568560F02C15B08F003BDAED /* TypeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAction.swift; sourceTree = "<group>"; };
-		568560F82C160F3F003BDAED /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		56AAD2FE2C1B83A000BF8030 /* BarcodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewModel.swift; sourceTree = "<group>"; };
 		56AAD3002C1B8EF200BF8030 /* ErrorToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorToast.swift; sourceTree = "<group>"; };
 		56AAD3022C1B9BB100BF8030 /* OFFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFError.swift; sourceTree = "<group>"; };
@@ -321,12 +327,13 @@
 		5639A56A2BFF97BD0086857F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				568560F82C160F3F003BDAED /* AppConfig.swift */,
 				56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */,
+				5635E32A2C24A746000A6628 /* CustomCategory.swift */,
 				5639A5682BFF97BD0086857F /* InvoiceItem.swift */,
 				5639A5692BFF97BD0086857F /* InvoiceItemCategory.swift */,
 				563F2F692C0FC8EA005BA713 /* MeasureUnit.swift */,
 				5655F7092C0D2D6F00C80708 /* NavigationDestination.swift */,
+				5656BB9A2C24588F00A8F0F7 /* UserSettings.swift */,
 				5683BBCF2C147F57001EF768 /* API */,
 				563F2F662C0F5F8E005BA713 /* Errors */,
 				5655F7062C0D2CF900C80708 /* Environment */,
@@ -528,6 +535,7 @@
 			children = (
 				56CA91712C239DC30018198F /* AddInvoicePicker.swift */,
 				56C121002C1CF5A400F56B3D /* InvoiceCategoryPicker.swift */,
+				5635E32E2C24AEE1000A6628 /* MeasureUnitPicker.swift */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -550,6 +558,7 @@
 				5655F70F2C0D2E0100C80708 /* InvoiceItemList.swift */,
 				5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */,
 				563F2F672C0F70DC005BA713 /* InvoiceForm.swift */,
+				5635E32C2C24AC87000A6628 /* InvoiceFormViewModel.swift */,
 			);
 			path = Invoice;
 			sourceTree = "<group>";
@@ -769,6 +778,8 @@
 				56CA91722C239DC30018198F /* AddInvoicePicker.swift in Sources */,
 				56FFAC802C0C904F00D2D965 /* MockItemRepository.swift in Sources */,
 				56346D4B2C0E671200454E17 /* AddInvoiceView.swift in Sources */,
+				5635E32D2C24AC87000A6628 /* InvoiceFormViewModel.swift in Sources */,
+				5635E32B2C24A746000A6628 /* CustomCategory.swift in Sources */,
 				5639A5782BFF97BD0086857F /* HomeView.swift in Sources */,
 				56346D4D2C0E68E000454E17 /* AddInvoiceOption.swift in Sources */,
 				56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */,
@@ -778,6 +789,8 @@
 				5639A5742BFF97BD0086857F /* InvoiceItem.swift in Sources */,
 				5683BBC82C145EA0001EF768 /* BarcodeScannerView.swift in Sources */,
 				56CA916F2C2393490018198F /* SecondaryButtonStyle.swift in Sources */,
+				5635E32F2C24AEE1000A6628 /* MeasureUnitPicker.swift in Sources */,
+				5656BB9B2C24588F00A8F0F7 /* UserSettings.swift in Sources */,
 				5683BBEF2C14AE12001EF768 /* OFFRepository.swift in Sources */,
 				56FFAC7B2C0C8B9B00D2D965 /* AddInvoiceButton.swift in Sources */,
 				56FFAC772C0C888200D2D965 /* InvoiceCategoryCardList.swift in Sources */,
@@ -787,7 +800,6 @@
 				5655F7122C0D346C00C80708 /* InvoiceItemListRow.swift in Sources */,
 				56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */,
 				56AAD2FF2C1B83A000BF8030 /* BarcodeScannerViewModel.swift in Sources */,
-				568560F92C160F3F003BDAED /* AppConfig.swift in Sources */,
 				563F2F682C0F70DC005BA713 /* InvoiceForm.swift in Sources */,
 				5683BBCA2C147BB3001EF768 /* ScannerOverlay.swift in Sources */,
 				5683BBD22C147F7B001EF768 /* OFFAPIConfig.swift in Sources */,
