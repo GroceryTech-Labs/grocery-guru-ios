@@ -4,23 +4,24 @@ struct InvoiceItemList: View {
     private let items: [InvoiceItem]
 
     var body: some View {
-        VStack(spacing: Constants.Padding.sizeM) {
-            SectionHeader("Invoice Items")
-            if items.isEmpty {
-                ErrorView(text: "No items found!")
-            } else {
-                ScrollView {
-                    LazyVStack(spacing: Constants.Padding.sizeM) {
-                        ForEach(items) { item in
-                            InvoiceItemListRow(item: item)
+        SectionHeader("Invoice Items") {
+            Group {
+                if items.isEmpty {
+                    ErrorView(text: "No items found!")
+                } else {
+                    ScrollView {
+                        LazyVStack(spacing: Constants.Padding.sizeM) {
+                            ForEach(items) { item in
+                                InvoiceItemListRow(item: item)
+                            }
                         }
+                        .padding(.horizontal, Constants.Padding.sizeX)
                     }
-                    .padding(.horizontal, Constants.Padding.sizeX)
+                    .scrollIndicators(.hidden)
                 }
-                .scrollIndicators(.hidden)
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxHeight: .infinity)
         .padding(Constants.Padding.sizeL)
     }
 

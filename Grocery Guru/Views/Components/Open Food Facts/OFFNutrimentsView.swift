@@ -93,7 +93,7 @@ struct OFFNutrimentsView: View {
         unit: String?
     ) -> some View {
         HStack {
-            SectionHeader(title, font: .body)
+            Text(title)
             Spacer()
             Group {
                 if let value, let unit {

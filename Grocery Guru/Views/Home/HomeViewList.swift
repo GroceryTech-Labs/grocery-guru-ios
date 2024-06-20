@@ -6,14 +6,8 @@ struct HomeViewList: View {
     @Query private var items: [InvoiceItem]
 
     var body: some View {
-        VStack(spacing: Constants.Padding.sizeM) {
-            SectionHeader(
-                "Welcome back!",
-                font: .largeTitle
-            )
-
-            VStack(spacing: Constants.Padding.sizeS) {
-                SectionHeader("Categories")
+        SectionHeader("Welcome back!", font: .largeTitle) {
+            SectionHeader("Categories") {
                 InvoiceCategoryCardList(invoiceItems: items)
             }
         }

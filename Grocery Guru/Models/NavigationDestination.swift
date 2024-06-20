@@ -1,7 +1,7 @@
 import SwiftUI
 
 enum NavigationDestination: Hashable, Identifiable {
-    case addInvoice(option: AddInvoiceOption = .scan)
+    case addInvoice(option: AddInvoiceOption = .document)
     case invoiceForm(product: OFFProduct?)
     case invoiceList(items: [InvoiceItem])
 

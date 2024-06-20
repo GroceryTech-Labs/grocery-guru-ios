@@ -2,7 +2,7 @@ import SwiftUI
 import CodeScanner
 
 @Observable
-final class BarCodeScannerViewModel {
+final class BarcodeScannerViewModel {
     var navigator = NavigationService.shared
 
     var error: Error?

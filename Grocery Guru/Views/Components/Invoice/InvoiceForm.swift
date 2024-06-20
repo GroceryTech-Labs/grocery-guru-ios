@@ -21,18 +21,16 @@ struct InvoiceForm: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: Constants.Padding.sizeL) {
-                SectionHeader("Add Item")
+                SectionHeader("Add Item") {
+                    VStack(alignment: .leading, spacing: Constants.Padding.sizeL) {
+                        nameRow
 
-                VStack(alignment: .leading, spacing: Constants.Padding.sizeL) {
-                    nameRow
+                        amountAndMeasureUnitRow
 
-                    amountAndMeasureUnitRow
-
-                    //                    marketRow
-
-                    categoryRow
+                        categoryRow
+                    }
+                    .textFieldStyle(.roundedBorder)
                 }
-                .textFieldStyle(.roundedBorder)
 
                 if let product {
                     DisclosureGroup(isExpanded: $isPresentingNutriments) {
@@ -140,15 +138,6 @@ struct InvoiceForm: View {
                 .font(.headline)
 
             InvoiceCategoryPicker(selection: $category)
-        }
-    }
-
-    private var marketRow: some View {
-        VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
-            Text("Market")
-                .font(.headline)
-
-            TextField("Market", text: .constant("REWE"))
         }
     }
 

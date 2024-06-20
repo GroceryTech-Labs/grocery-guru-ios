@@ -1,8 +1,8 @@
 import SwiftUI
 import CodeScanner
 
-struct BarCodeScannerView: View {
-    @State private var viewModel = BarCodeScannerViewModel()
+struct BarcodeScannerView: View {
+    @State private var viewModel = BarcodeScannerViewModel()
 
     var body: some View {
         CodeScannerView(
@@ -44,5 +44,5 @@ struct BarCodeScannerView: View {
 }
 
 #Preview {
-    BarCodeScannerView()
+    BarcodeScannerView()
 }

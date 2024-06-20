@@ -2,11 +2,11 @@ import SwiftUI
 
 enum AddInvoiceOption: LocalizedStringKey, CaseIterable, Hashable {
     case barcode = "Barcode"
+    case document = "Document"
     case manual = "Manual"
-    case scan = "Scan"
 
     static var allCases: [Self] {
-        [.scan, .barcode, .manual]
+        [.document, .barcode, .manual]
     }
 
     var accessibilityIdentifier: String {
@@ -17,7 +17,7 @@ enum AddInvoiceOption: LocalizedStringKey, CaseIterable, Hashable {
         case .manual:
             AccessibilityIdentifier.Button.addInvoiceManual
 
-        case .scan:
+        case .document:
             AccessibilityIdentifier.Button.addInvoiceDocument
         }
     }

@@ -14,12 +14,12 @@ struct AddInvoiceView: View {
 
             switch selectedOption {
             case .barcode:
-                BarCodeScannerView()
+                BarcodeScannerView()
 
             case .manual:
                 InvoiceForm()
 
-            case .scan:
+            case .document:
                 DocumentScannerView { _ in }
                     .onAppear {
                         isPresentingIndicator = true

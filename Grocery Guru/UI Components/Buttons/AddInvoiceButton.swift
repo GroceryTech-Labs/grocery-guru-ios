@@ -1,31 +1,24 @@
 import SwiftUI
 
 struct AddInvoiceButton: View {
-    private let opacity: CGFloat
-    private let action: Void
+    @Environment(\.navigationService)
+    private var navigator
 
     var body: some View {
         Button {
-            action
+            navigator.push(.addInvoice())
         } label: {
             Image(systemName: "plus")
                 .font(.largeTitle)
+                .padding(Constants.Padding.sizeL)
         }
         .buttonStyle(.borderedProminent)
         .buttonBorderShape(.circle)
-        .padding(Constants.Padding.sizeL)
         .accessibilityLabel("Add Invoice")
         .accessibilityIdentifier(AccessibilityIdentifier.Button.addInvoice)
-    }
-
-    init(opacity: CGFloat = 0.75, action: @escaping () -> Void) {
-        self.opacity = opacity
-        self.action = action()
     }
 }
 
 #Preview {
-    AddInvoiceButton {
-        print("Preview Button Test")
-    }
+    AddInvoiceButton()
 }

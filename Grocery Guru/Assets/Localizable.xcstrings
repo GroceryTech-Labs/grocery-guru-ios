@@ -31,6 +31,16 @@
         }
       }
     },
+    "332" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "Add Invoice" : {
       "localizations" : {
         "de" : {
@@ -151,6 +161,16 @@
         }
       }
     },
+    "Document" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dokument"
+          }
+        }
+      }
+    },
     "Energy (kcal):" : {
       "localizations" : {
         "de" : {
@@ -237,16 +257,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Manuell"
-          }
-        }
-      }
-    },
-    "Market" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Markt"
           }
         }
       }
@@ -347,16 +357,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Salz:"
-          }
-        }
-      }
-    },
-    "Scan" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scan"
           }
         }
       }

@@ -17,25 +17,25 @@ struct InvoiceCategoryCard: View {
     }
 
     var body: some View {
-        ResponsiveCard {
-            VStack(spacing: Constants.Padding.sizeM) {
-                category.emoji.text
-                    .font(.system(size: emojiSize))
+        Button {
+            navigator.push(.invoiceList(items: filteredItems))
+        } label: {
+            ResponsiveCard {
+                VStack(spacing: Constants.Padding.sizeM) {
+                    category.emoji.text
+                        .font(.system(size: emojiSize))
 
-                VStack(spacing: Constants.Padding.sizeX) {
-                    Text(category.localized)
+                    VStack(spacing: Constants.Padding.sizeX) {
+                        Text(category.localized)
 
-                    Text("\(itemsCount, format: .number) Items")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                        Text("\(itemsCount, format: .number) Items")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
                 }
             }
         }
-        .onTapGesture {
-            navigator.push(.invoiceList(items: filteredItems))
-        }
-        .accessibilityAddTraits(.isButton)
-        .accessibilityElement()
+        .buttonStyle(.plain)
         .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceCategory)
         .accessibilityLabel("Category Card")
     }
