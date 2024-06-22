@@ -29,7 +29,7 @@ struct InvoiceForm: View {
 
                     NutrimentsRow(viewModel: $viewModel)
 
-                    AddInvoiceButton(
+                    FormsAddInvoiceButton(
                         viewModel: $viewModel,
                         focusedField: _focusedField
                     )

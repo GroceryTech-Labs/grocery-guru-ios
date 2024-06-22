@@ -38,7 +38,7 @@ class APIService: APIServiceProtocol {
     ) {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
-        request.setValue(OFFAPIConfig.shared.getUserAgent(), forHTTPHeaderField: "User-Agent")
+        request.setValue(OFFAPIConfig().getUserAgent(), forHTTPHeaderField: "User-Agent")
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error {

@@ -4,7 +4,7 @@ final class OFFRepository: OFFRepositoryProtocol {
     static var shared = OFFRepository()
 
     lazy var apiService = APIService.shared
-    lazy var config = OFFAPIConfig.shared
+    lazy var config = OFFAPIConfig()
 
     private init() { }
 

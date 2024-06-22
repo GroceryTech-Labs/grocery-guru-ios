@@ -5,8 +5,6 @@ final class OFFAPIConfig: APIConfigProtocol {
         case product(barcode: String)
     }
 
-    static var shared = OFFAPIConfig()
-
     var baseURL: String {
         #if DEBUG
             return stagingURL
@@ -18,7 +16,7 @@ final class OFFAPIConfig: APIConfigProtocol {
     var stagingURL: String = "https://world.openfoodfacts.org/api/v2"
     var productionURL: String = "https://world.openfoodfacts.org/api/v2"
 
-    private init() { }
+    init() { }
 
     func getUserAgent() -> String {
         let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""

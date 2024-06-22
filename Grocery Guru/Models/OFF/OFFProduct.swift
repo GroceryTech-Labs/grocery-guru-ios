@@ -6,14 +6,14 @@ struct OFFProduct: Codable, Hashable {
         case productName = "product_name"
     }
 
-    let nutriments: OFFNutriments
-    let productName: String
-
-    static let example: OFFProduct = OFFProduct(
+    static let example = Self(
         nutriments: Bundle.main.decode(
             OFFNutriments.self,
             from: "off_nutriments.json"
         ),
         productName: "Paulaner Spezi"
     )
+
+    let nutriments: OFFNutriments
+    let productName: String
 }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AddInvoiceButton: View {
+struct FormsAddInvoiceButton: View {
     @Binding var viewModel: InvoiceFormViewModel
     @FocusState var focusedField: InvoiceForm.Field?
 
@@ -28,5 +28,5 @@ struct AddInvoiceButton: View {
 }
 
 #Preview {
-    AddInvoiceButton(viewModel: .constant(InvoiceFormViewModel(product: .example)))
+    FormsAddInvoiceButton(viewModel: .constant(InvoiceFormViewModel(product: .example)))
 }
