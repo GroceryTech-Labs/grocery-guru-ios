@@ -6,6 +6,8 @@ struct InvoiceCategoryCardList: View {
 
     private let invoiceItems: [InvoiceItem]
 
+    private let categoryRepository: LocalStorageCategoryRepository
+
     private var columns: [GridItem] {
         if typeSize.isAccessibilitySize {
             return [GridItem(.flexible())]
@@ -13,6 +15,8 @@ struct InvoiceCategoryCardList: View {
 
         return [GridItem(.flexible()), GridItem(.flexible())]
     }
+
+    @State private var categories: [InvoiceItemCategory] = InvoiceItemCategory.allCases
 
     var body: some View {
         ScrollView {
@@ -27,13 +31,23 @@ struct InvoiceCategoryCardList: View {
                     )
                 }
             }
-            .padding(.horizontal, Constants.Padding.sizeX)
         }
         .scrollIndicators(.hidden)
+        .task {
+            do {
+                let test = try await categoryRepository.fetchAllItems()
+                let mapped = test.map { InvoiceItemCategory.custom(name: $0.name, emoji: $0.emoji) }
+                categories.append(contentsOf: mapped)
+            } catch {
+                print(error)
+            }
+        }
     }
 
+    @MainActor
     init(invoiceItems: [InvoiceItem]) {
         self.invoiceItems = invoiceItems
+        self.categoryRepository = .shared
     }
 }
 

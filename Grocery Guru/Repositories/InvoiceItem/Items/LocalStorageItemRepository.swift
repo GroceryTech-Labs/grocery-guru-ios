@@ -1,7 +1,7 @@
 import Foundation
 import SwiftData
 
-class LocalStorageItemRepository: InvoiceItemRepository {
+class LocalStorageItemRepository: SwiftDataRepository {
     @MainActor static var shared = LocalStorageItemRepository()
 
     var modelContext: ModelContext

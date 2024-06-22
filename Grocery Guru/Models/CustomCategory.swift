@@ -4,10 +4,10 @@ import SwiftData
 @Model
 final class CustomCategory {
     let name: String
-    let symbol: String
+    let emoji: Emoji
 
-    init(name: String, symbol: String) {
+    init(name: String, emoji: Emoji) {
         self.name = name
-        self.symbol = symbol
+        self.emoji = emoji
     }
 }
