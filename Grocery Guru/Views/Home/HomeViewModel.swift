@@ -2,11 +2,14 @@ import SwiftUI
 
 @Observable
 final class HomeViewModel {
-    @ObservationIgnored let itemRepository: LocalStorageItemRepository
-    @ObservationIgnored let categoryRepository: LocalStorageCategoryRepository
+    @ObservationIgnored let itemRepository: ItemLocalStorageRepository
+    @ObservationIgnored let categoryRepository: CategoryLocalStorageRepository
 
     @MainActor
-    init(itemRepository: LocalStorageItemRepository, categoryRepository: LocalStorageCategoryRepository) {
+    init(
+        itemRepository: ItemLocalStorageRepository,
+        categoryRepository: CategoryLocalStorageRepository
+    ) {
         self.itemRepository = itemRepository
         self.categoryRepository = categoryRepository
     }

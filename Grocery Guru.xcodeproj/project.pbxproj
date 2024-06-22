@@ -78,7 +78,7 @@
 		56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5C2C0BDA8900370D7F /* Constants.swift */; };
 		56FAFB602C0BDB1200370D7F /* InvoiceCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5F2C0BDB1200370D7F /* InvoiceCategoryCard.swift */; };
 		56FCC0352C0CF62A003EAA8B /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FCC0342C0CF62A003EAA8B /* NavigationService.swift */; };
-		56FF56042C26D42C00C74505 /* LocalStorageCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FF56032C26D42C00C74505 /* LocalStorageCategoryRepository.swift */; };
+		56FF56042C26D42C00C74505 /* CategoryLocalStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FF56032C26D42C00C74505 /* CategoryLocalStorageRepository.swift */; };
 		56FFAC6A2C0BF13200D2D965 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC692C0BF13200D2D965 /* SectionHeader.swift */; };
 		56FFAC772C0C888200D2D965 /* InvoiceCategoryCardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC762C0C888200D2D965 /* InvoiceCategoryCardList.swift */; };
 		56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC782C0C89E800D2D965 /* HomeViewList.swift */; };
@@ -180,7 +180,7 @@
 		56FAFB5C2C0BDA8900370D7F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		56FAFB5F2C0BDB1200370D7F /* InvoiceCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCategoryCard.swift; sourceTree = "<group>"; };
 		56FCC0342C0CF62A003EAA8B /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
-		56FF56032C26D42C00C74505 /* LocalStorageCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageCategoryRepository.swift; sourceTree = "<group>"; };
+		56FF56032C26D42C00C74505 /* CategoryLocalStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLocalStorageRepository.swift; sourceTree = "<group>"; };
 		56FFAC692C0BF13200D2D965 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		56FFAC762C0C888200D2D965 /* InvoiceCategoryCardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCategoryCardList.swift; sourceTree = "<group>"; };
 		56FFAC782C0C89E800D2D965 /* HomeViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewList.swift; sourceTree = "<group>"; };
@@ -597,7 +597,7 @@
 		56FF56022C26D41900C74505 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				56FF56032C26D42C00C74505 /* LocalStorageCategoryRepository.swift */,
+				56FF56032C26D42C00C74505 /* CategoryLocalStorageRepository.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -820,7 +820,7 @@
 				56FFAC802C0C904F00D2D965 /* MockItemRepository.swift in Sources */,
 				56346D4B2C0E671200454E17 /* AddInvoiceView.swift in Sources */,
 				5635E32D2C24AC87000A6628 /* InvoiceFormViewModel.swift in Sources */,
-				56FF56042C26D42C00C74505 /* LocalStorageCategoryRepository.swift in Sources */,
+				56FF56042C26D42C00C74505 /* CategoryLocalStorageRepository.swift in Sources */,
 				5635E3342C24E50D000A6628 /* CategoryRow.swift in Sources */,
 				5635E32B2C24A746000A6628 /* CustomCategory.swift in Sources */,
 				5639A5782BFF97BD0086857F /* HomeView.swift in Sources */,

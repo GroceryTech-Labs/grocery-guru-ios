@@ -6,7 +6,7 @@ struct InvoiceCategoryCardList: View {
 
     private let invoiceItems: [InvoiceItem]
 
-    private let categoryRepository: LocalStorageCategoryRepository
+    private let categoryRepository: CategoryLocalStorageRepository
 
     private var columns: [GridItem] {
         if typeSize.isAccessibilitySize {

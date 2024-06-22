@@ -24,13 +24,13 @@ struct Grocery_GuruApp: App {
         }
     }
 
-    @MainActor var usedLocalRepository: LocalStorageItemRepository {
+    @MainActor var usedLocalRepository: ItemLocalStorageRepository {
         let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
 
         if testMode {
-            return MockLocalStorageItemRepository.mockInstance
+            return MockItemLocalStorageRepository.mockInstance
         }
 
-        return LocalStorageItemRepository.shared
+        return ItemLocalStorageRepository.shared
     }
 }

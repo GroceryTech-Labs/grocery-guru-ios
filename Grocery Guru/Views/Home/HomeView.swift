@@ -24,8 +24,8 @@ struct HomeView: View {
 #Preview {
     HomeView(
         viewModel: HomeViewModel(
-            itemRepository: MockLocalStorageItemRepository.mockInstance,
-            categoryRepository: LocalStorageCategoryRepository()
+            itemRepository: MockItemLocalStorageRepository.mockInstance,
+            categoryRepository: CategoryLocalStorageRepository()
         )
     )
 }
