@@ -1,18 +1,27 @@
 import SwiftUI
 
-struct SectionHeader<Content: View>: View {
+struct SectionHeader<Content: View, Trailing: View>: View {
     private let text: LocalizedStringKey
     private let font: Font
     private let content: Content
+    private let trailing: Trailing?
 
     var body: some View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeM) {
-            Text(text)
-                .font(font)
-                .frame(
-                    maxWidth: .infinity,
-                    alignment: .leading
-                )
+            HStack {
+                Text(text)
+                    .font(font)
+                    .frame(
+                        maxWidth: .infinity,
+                        alignment: .leading
+                    )
+
+                Spacer()
+
+                if let trailing {
+                    trailing
+                }
+            }
 
             content
         }
@@ -21,16 +30,20 @@ struct SectionHeader<Content: View>: View {
     init(
         _ text: LocalizedStringKey,
         font: Font = .title,
-        @ViewBuilder _ content: () -> Content
+        @ViewBuilder _ content: () -> Content,
+        @ViewBuilder trailing: () -> Trailing? = { EmptyView() }
     ) {
         self.text = text
         self.font = font
         self.content = content()
+        self.trailing = trailing()
     }
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
     SectionHeader("Categories") {
         Text("332")
+    } trailing: {
+        Button("dsald") { }
     }
 }

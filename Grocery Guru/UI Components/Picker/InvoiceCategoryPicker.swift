@@ -21,7 +21,7 @@ struct InvoiceCategoryPicker: View {
         HStack(spacing: Constants.Padding.sizeS) {
             ScrollView(.horizontal) {
                 ScrollViewReader { sReader in
-                    HStack(spacing: Constants.Padding.sizeS) {
+                    HStack(spacing: 0) {
                         ForEach(Array(categories), id: \.offset) { category in
                             Button {
                                 withAnimation(.smooth) {
@@ -35,6 +35,16 @@ struct InvoiceCategoryPicker: View {
                                 buttonLabel(category: category.element)
                             }
                             .buttonStyle(.plain)
+                            .background {
+                                GeometryReader { gReader in
+                                    Color.clear
+                                        .onAppear {
+                                            if gReader.size.height > rowHeight {
+                                                rowHeight = gReader.size.height
+                                            }
+                                        }
+                                }
+                            }
                             .accessibilityIdentifier(
                                 AccessibilityIdentifier.Button.invoiceCategory
                             )
@@ -44,57 +54,33 @@ struct InvoiceCategoryPicker: View {
             }
             .scrollIndicators(.hidden)
 
-            CategoryMoreButton(height: rowHeight) {
+            MoreButton(height: rowHeight) {
                 // TODO: Open sheet
             }
         }
     }
 
     func buttonLabel(category: InvoiceItemCategory) -> some View {
-        HStack(spacing: Constants.Padding.sizeS) {
-            category.emoji.text
+        let background = selection == category ? .accentColor : Color(.secondarySystemBackground)
+        return ResponsiveCard(background: background) {
+            HStack(spacing: Constants.Padding.sizeS) {
+                category.emoji.text
 
-            if selection == category {
-                Text(category.localized)
-                    .lineLimit(1)
-                    .transition(
-                        .asymmetric(
-                            insertion: .push(from: .trailing),
-                            removal: .offset(x: 100)
+                if selection == category {
+                    Text(category.localized)
+                        .lineLimit(1)
+                        .transition(
+                            .asymmetric(
+                                insertion: .push(from: .trailing),
+                                removal: .offset(x: 100)
+                            )
                         )
-                    )
-            }
-        }
-        .padding(Constants.Padding.sizeL)
-        .background(backgroundView(category: category))
-        .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
-        .background {
-            GeometryReader { gReader in
-                Color.clear
-                    .onAppear {
-                        rowHeight = gReader.size.height
-                    }
+                }
             }
         }
     }
-
-    func backgroundView(category: InvoiceItemCategory) -> Color {
-        selection == category ? .accentColor : Color(.secondarySystemBackground)
-    }
 }
-
-// swiftlint:disable one_declaration_per_file
-
-private struct Picker_Preview: View {
-    @State private var category = InvoiceItemCategory.bakery
-
-    var body: some View {
-        InvoiceCategoryPicker(selection: $category)
-    }
-}
-
-// swiftlint:enable one_declaration_per_file
 
 #Preview {
-    Picker_Preview()
+    InvoiceCategoryPicker(selection: .constant(.bakery))
 }

@@ -12,6 +12,7 @@
       }
     },
     "2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -22,6 +23,7 @@
       }
     },
     "200" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -170,6 +172,9 @@
           }
         }
       }
+    },
+    "dsald" : {
+
     },
     "Energy (kcal):" : {
       "localizations" : {
@@ -360,6 +365,9 @@
           }
         }
       }
+    },
+    "Show all" : {
+
     },
     "Show more" : {
       "localizations" : {

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AddInvoiceButton: View {
+struct ShowAddInvoiceButton: View {
     @Environment(\.navigationService)
     private var navigator
 
@@ -20,5 +20,5 @@ struct AddInvoiceButton: View {
 }
 
 #Preview {
-    AddInvoiceButton()
+    ShowAddInvoiceButton()
 }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SecondaryButtonStyle: PrimitiveButtonStyle {
+struct SecondaryButtonStyle: ButtonStyle {
     private let height: CGFloat?
 
     init(height: CGFloat? = nil) {
@@ -10,13 +10,14 @@ struct SecondaryButtonStyle: PrimitiveButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(Constants.Padding.sizeL)
-            .frame(maxHeight: height)
             .background(Color(.secondarySystemBackground))
             .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
+            .shadow(radius: 1, y: 1)
+            .padding(Constants.Padding.sizeS)
     }
 }
 
-extension PrimitiveButtonStyle where Self == SecondaryButtonStyle {
+extension ButtonStyle where Self == SecondaryButtonStyle {
     static var secondary: SecondaryButtonStyle {
         SecondaryButtonStyle()
     }

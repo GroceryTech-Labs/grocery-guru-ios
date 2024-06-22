@@ -10,7 +10,7 @@ struct HomeView: View {
     var body: some View {
         HomeViewList(viewModel: viewModel)
             .overlay(alignment: .bottom) {
-                AddInvoiceButton()
+                ShowAddInvoiceButton()
             }
             .modelContext(viewModel.repository.modelContext)
     }

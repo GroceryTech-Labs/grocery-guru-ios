@@ -18,6 +18,8 @@
 		5635E32B2C24A746000A6628 /* CustomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E32A2C24A746000A6628 /* CustomCategory.swift */; };
 		5635E32D2C24AC87000A6628 /* InvoiceFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E32C2C24AC87000A6628 /* InvoiceFormViewModel.swift */; };
 		5635E32F2C24AEE1000A6628 /* MeasureUnitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E32E2C24AEE1000A6628 /* MeasureUnitPicker.swift */; };
+		5635E3322C24E436000A6628 /* NutrimentsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E3312C24E436000A6628 /* NutrimentsRow.swift */; };
+		5635E3342C24E50D000A6628 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E3332C24E50D000A6628 /* CategoryRow.swift */; };
 		5639A5492BFF95940086857F /* LocalItemRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5482BFF95940086857F /* LocalItemRepositoryTests.swift */; };
 		5639A5702BFF97BD0086857F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639A5612BFF97BD0086857F /* Assets.xcassets */; };
 		5639A5712BFF97BD0086857F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5632BFF97BD0086857F /* App.swift */; };
@@ -65,8 +67,11 @@
 		56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3022C1B9BB100BF8030 /* OFFError.swift */; };
 		56AAD3052C1C535600BF8030 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3042C1C535600BF8030 /* APIServiceTests.swift */; };
 		56AAD3072C1C550800BF8030 /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3062C1C550800BF8030 /* MockAPIService.swift */; };
+		56B138ED2C26C8D700B35CA4 /* AmountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B138EC2C26C8D700B35CA4 /* AmountRow.swift */; };
+		56B138EF2C26C90E00B35CA4 /* NameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B138EE2C26C90E00B35CA4 /* NameRow.swift */; };
+		56B138F12C26C9CF00B35CA4 /* AddInvoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B138F02C26C9CF00B35CA4 /* AddInvoiceButton.swift */; };
 		56C121012C1CF5A400F56B3D /* InvoiceCategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C121002C1CF5A400F56B3D /* InvoiceCategoryPicker.swift */; };
-		56CA916B2C238DD30018198F /* CategoryMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA916A2C238DD30018198F /* CategoryMoreButton.swift */; };
+		56CA916B2C238DD30018198F /* MoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA916A2C238DD30018198F /* MoreButton.swift */; };
 		56CA916F2C2393490018198F /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA916E2C2393490018198F /* SecondaryButtonStyle.swift */; };
 		56CA91722C239DC30018198F /* AddInvoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA91712C239DC30018198F /* AddInvoicePicker.swift */; };
 		56E964342BFFABA70099ED2F /* InvoiceItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */; };
@@ -77,7 +82,7 @@
 		56FFAC6A2C0BF13200D2D965 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC692C0BF13200D2D965 /* SectionHeader.swift */; };
 		56FFAC772C0C888200D2D965 /* InvoiceCategoryCardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC762C0C888200D2D965 /* InvoiceCategoryCardList.swift */; };
 		56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC782C0C89E800D2D965 /* HomeViewList.swift */; };
-		56FFAC7B2C0C8B9B00D2D965 /* AddInvoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC7A2C0C8B9B00D2D965 /* AddInvoiceButton.swift */; };
+		56FFAC7B2C0C8B9B00D2D965 /* ShowAddInvoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC7A2C0C8B9B00D2D965 /* ShowAddInvoiceButton.swift */; };
 		56FFAC7E2C0C902800D2D965 /* LocalStorageItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC7D2C0C902800D2D965 /* LocalStorageItemRepository.swift */; };
 		56FFAC802C0C904F00D2D965 /* MockItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC7F2C0C904F00D2D965 /* MockItemRepository.swift */; };
 		56FFAC822C0CC82300D2D965 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */; };
@@ -113,6 +118,8 @@
 		5635E32A2C24A746000A6628 /* CustomCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategory.swift; sourceTree = "<group>"; };
 		5635E32C2C24AC87000A6628 /* InvoiceFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceFormViewModel.swift; sourceTree = "<group>"; };
 		5635E32E2C24AEE1000A6628 /* MeasureUnitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureUnitPicker.swift; sourceTree = "<group>"; };
+		5635E3312C24E436000A6628 /* NutrimentsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrimentsRow.swift; sourceTree = "<group>"; };
+		5635E3332C24E50D000A6628 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		5639A5322BFF95930086857F /* Grocery Guru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Guru.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5442BFF95940086857F /* Grocery GuruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery GuruTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5482BFF95940086857F /* LocalItemRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalItemRepositoryTests.swift; sourceTree = "<group>"; };
@@ -162,8 +169,11 @@
 		56AAD3022C1B9BB100BF8030 /* OFFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFError.swift; sourceTree = "<group>"; };
 		56AAD3042C1C535600BF8030 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		56AAD3062C1C550800BF8030 /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
+		56B138EC2C26C8D700B35CA4 /* AmountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountRow.swift; sourceTree = "<group>"; };
+		56B138EE2C26C90E00B35CA4 /* NameRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameRow.swift; sourceTree = "<group>"; };
+		56B138F02C26C9CF00B35CA4 /* AddInvoiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceButton.swift; sourceTree = "<group>"; };
 		56C121002C1CF5A400F56B3D /* InvoiceCategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCategoryPicker.swift; sourceTree = "<group>"; };
-		56CA916A2C238DD30018198F /* CategoryMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMoreButton.swift; sourceTree = "<group>"; };
+		56CA916A2C238DD30018198F /* MoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreButton.swift; sourceTree = "<group>"; };
 		56CA916E2C2393490018198F /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
 		56CA91712C239DC30018198F /* AddInvoicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoicePicker.swift; sourceTree = "<group>"; };
 		56E964332BFFABA70099ED2F /* InvoiceItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemRepository.swift; sourceTree = "<group>"; };
@@ -174,7 +184,7 @@
 		56FFAC692C0BF13200D2D965 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		56FFAC762C0C888200D2D965 /* InvoiceCategoryCardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCategoryCardList.swift; sourceTree = "<group>"; };
 		56FFAC782C0C89E800D2D965 /* HomeViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewList.swift; sourceTree = "<group>"; };
-		56FFAC7A2C0C8B9B00D2D965 /* AddInvoiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceButton.swift; sourceTree = "<group>"; };
+		56FFAC7A2C0C8B9B00D2D965 /* ShowAddInvoiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAddInvoiceButton.swift; sourceTree = "<group>"; };
 		56FFAC7D2C0C902800D2D965 /* LocalStorageItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageItemRepository.swift; sourceTree = "<group>"; };
 		56FFAC7F2C0C904F00D2D965 /* MockItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemRepository.swift; sourceTree = "<group>"; };
 		56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -228,8 +238,8 @@
 		56346D482C0E669800454E17 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				56FFAC7A2C0C8B9B00D2D965 /* AddInvoiceButton.swift */,
-				56CA916A2C238DD30018198F /* CategoryMoreButton.swift */,
+				56FFAC7A2C0C8B9B00D2D965 /* ShowAddInvoiceButton.swift */,
+				56CA916A2C238DD30018198F /* MoreButton.swift */,
 				56CA916D2C23933B0018198F /* Styles */,
 			);
 			path = Buttons;
@@ -241,6 +251,18 @@
 				56346D4A2C0E671200454E17 /* AddInvoiceView.swift */,
 			);
 			path = "Add Invoice";
+			sourceTree = "<group>";
+		};
+		5635E3302C24E427000A6628 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				56B138EC2C26C8D700B35CA4 /* AmountRow.swift */,
+				5635E3332C24E50D000A6628 /* CategoryRow.swift */,
+				56B138EE2C26C90E00B35CA4 /* NameRow.swift */,
+				5635E3312C24E436000A6628 /* NutrimentsRow.swift */,
+				56B138F02C26C9CF00B35CA4 /* AddInvoiceButton.swift */,
+			);
+			path = Forms;
 			sourceTree = "<group>";
 		};
 		5639A5292BFF95930086857F = {
@@ -514,6 +536,7 @@
 		56CA916C2C23932D0018198F /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
+				5635E3302C24E427000A6628 /* Forms */,
 				5620E11A2C1887AC0027655A /* Cards */,
 				5656BB982C24237E00A8F0F7 /* Sections */,
 				56346D482C0E669800454E17 /* Buttons */,
@@ -761,11 +784,13 @@
 				5655F7142C0D36E300C80708 /* ErrorView.swift in Sources */,
 				5683BBE22C14A113001EF768 /* OFFNutriments.swift in Sources */,
 				560AA7CF2C02627C00365B1F /* DocumentScannerView.swift in Sources */,
+				56B138F12C26C9CF00B35CA4 /* AddInvoiceButton.swift in Sources */,
 				5655F70A2C0D2D6F00C80708 /* NavigationDestination.swift in Sources */,
 				5683BBCE2C147F11001EF768 /* APIConfigProtocol.swift in Sources */,
 				5683BBCC2C147ED7001EF768 /* APIService.swift in Sources */,
 				560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */,
 				56AAD3012C1B8EF200BF8030 /* ErrorToast.swift in Sources */,
+				56B138EF2C26C90E00B35CA4 /* NameRow.swift in Sources */,
 				56FFAC6A2C0BF13200D2D965 /* SectionHeader.swift in Sources */,
 				5655F7102C0D2E0100C80708 /* InvoiceItemList.swift in Sources */,
 				56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */,
@@ -779,6 +804,7 @@
 				56FFAC802C0C904F00D2D965 /* MockItemRepository.swift in Sources */,
 				56346D4B2C0E671200454E17 /* AddInvoiceView.swift in Sources */,
 				5635E32D2C24AC87000A6628 /* InvoiceFormViewModel.swift in Sources */,
+				5635E3342C24E50D000A6628 /* CategoryRow.swift in Sources */,
 				5635E32B2C24A746000A6628 /* CustomCategory.swift in Sources */,
 				5639A5782BFF97BD0086857F /* HomeView.swift in Sources */,
 				56346D4D2C0E68E000454E17 /* AddInvoiceOption.swift in Sources */,
@@ -792,7 +818,7 @@
 				5635E32F2C24AEE1000A6628 /* MeasureUnitPicker.swift in Sources */,
 				5656BB9B2C24588F00A8F0F7 /* UserSettings.swift in Sources */,
 				5683BBEF2C14AE12001EF768 /* OFFRepository.swift in Sources */,
-				56FFAC7B2C0C8B9B00D2D965 /* AddInvoiceButton.swift in Sources */,
+				56FFAC7B2C0C8B9B00D2D965 /* ShowAddInvoiceButton.swift in Sources */,
 				56FFAC772C0C888200D2D965 /* InvoiceCategoryCardList.swift in Sources */,
 				56C121012C1CF5A400F56B3D /* InvoiceCategoryPicker.swift in Sources */,
 				5683BBD82C148D01001EF768 /* APIServiceProtocol.swift in Sources */,
@@ -803,6 +829,7 @@
 				563F2F682C0F70DC005BA713 /* InvoiceForm.swift in Sources */,
 				5683BBCA2C147BB3001EF768 /* ScannerOverlay.swift in Sources */,
 				5683BBD22C147F7B001EF768 /* OFFAPIConfig.swift in Sources */,
+				5635E3322C24E436000A6628 /* NutrimentsRow.swift in Sources */,
 				56FAFB602C0BDB1200370D7F /* InvoiceCategoryCard.swift in Sources */,
 				5683BBD42C14832A001EF768 /* HTTPMethod.swift in Sources */,
 				568560EA2C15A60B003BDAED /* AccessibilityIdentifier.swift in Sources */,
@@ -814,7 +841,8 @@
 				56FFAC7E2C0C902800D2D965 /* LocalStorageItemRepository.swift in Sources */,
 				5683BBF12C14B0B7001EF768 /* OFFRepositoryProtocol.swift in Sources */,
 				5683BBE02C1497E3001EF768 /* OFFProductResult.swift in Sources */,
-				56CA916B2C238DD30018198F /* CategoryMoreButton.swift in Sources */,
+				56B138ED2C26C8D700B35CA4 /* AmountRow.swift in Sources */,
+				56CA916B2C238DD30018198F /* MoreButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

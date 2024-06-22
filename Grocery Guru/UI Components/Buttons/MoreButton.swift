@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CategoryMoreButton: View {
+struct MoreButton: View {
     private let height: CGFloat?
     private let action: Void
 
@@ -21,5 +21,5 @@ struct CategoryMoreButton: View {
 }
 
 #Preview {
-    CategoryMoreButton { }
+    MoreButton { }
 }

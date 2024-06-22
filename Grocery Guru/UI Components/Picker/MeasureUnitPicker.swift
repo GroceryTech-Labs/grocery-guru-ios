@@ -10,6 +10,7 @@ struct MeasureUnitPicker: View {
                     .tag(unit)
             }
         }
+        .pickerStyle(.segmented)
     }
 
     init(_ unit: Binding<MeasureUnit>) {
