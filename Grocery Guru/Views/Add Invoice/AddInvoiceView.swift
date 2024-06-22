@@ -37,7 +37,6 @@ struct AddInvoiceView: View {
             maxHeight: .infinity,
             alignment: .top
         )
-        .padding(.top, Constants.Padding.sizeL)
     }
 
     init(selectedOption: AddInvoiceOption) {

@@ -370,6 +370,7 @@
 
     },
     "Show more" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

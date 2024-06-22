@@ -13,28 +13,29 @@ struct InvoiceForm: View {
     var body: some View {
         ScrollView {
             SectionHeader("Add Item") {
-                NameRow(
-                    viewModel: $viewModel,
-                    focusedField: _focusedField
-                )
+                VStack(spacing: Constants.Padding.sizeXL) {
+                    NameRow(
+                        viewModel: $viewModel,
+                        focusedField: _focusedField
+                    )
 
-                AmountRow(
-                    viewModel: $viewModel,
-                    focusedField: _focusedField
-                )
+                    AmountRow(
+                        viewModel: $viewModel,
+                        focusedField: _focusedField
+                    )
 
-                CategoryRow(viewModel: $viewModel)
+                    CategoryRow(viewModel: $viewModel)
+                        .padding(.horizontal, -Constants.Padding.sizeL)
 
-                NutrimentsRow(viewModel: $viewModel)
+                    NutrimentsRow(viewModel: $viewModel)
 
-                Spacer(minLength: Constants.Padding.sizeL)
-
-                AddInvoiceButton(
-                    viewModel: $viewModel,
-                    focusedField: _focusedField
-                )
+                    AddInvoiceButton(
+                        viewModel: $viewModel,
+                        focusedField: _focusedField
+                    )
+                }
             }
-            .padding(Constants.Padding.sizeL)
+            .padding(.horizontal, Constants.Padding.sizeL)
             .textFieldStyle(.roundedBorder)
         }
         .scrollIndicators(.hidden)

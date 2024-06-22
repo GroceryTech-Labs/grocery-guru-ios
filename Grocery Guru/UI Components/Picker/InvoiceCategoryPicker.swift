@@ -3,18 +3,8 @@ import SwiftUI
 struct InvoiceCategoryPicker: View {
     @Binding var selection: InvoiceItemCategory
 
-    @State private var rowHeight: CGFloat = .zero
-
     private var categories: EnumeratedSequence<[InvoiceItemCategory]>.Iterator {
         InvoiceItemCategory.allCases.enumerated().makeIterator()
-    }
-
-    private let scrollX: CGFloat = 0.1
-    private var scrollAnchor: UnitPoint {
-        UnitPoint(
-            x: scrollX,
-            y: 0
-        )
     }
 
     var body: some View {
@@ -28,23 +18,14 @@ struct InvoiceCategoryPicker: View {
                                     selection = category.element
                                     sReader.scrollTo(
                                         category.offset,
-                                        anchor: scrollAnchor
+                                        anchor: .leading
                                     )
                                 }
                             } label: {
                                 buttonLabel(category: category.element)
                             }
                             .buttonStyle(.plain)
-                            .background {
-                                GeometryReader { gReader in
-                                    Color.clear
-                                        .onAppear {
-                                            if gReader.size.height > rowHeight {
-                                                rowHeight = gReader.size.height
-                                            }
-                                        }
-                                }
-                            }
+
                             .accessibilityIdentifier(
                                 AccessibilityIdentifier.Button.invoiceCategory
                             )
@@ -53,10 +34,7 @@ struct InvoiceCategoryPicker: View {
                 }
             }
             .scrollIndicators(.hidden)
-
-            MoreButton(height: rowHeight) {
-                // TODO: Open sheet
-            }
+            .scrollClipDisabled(true)
         }
     }
 
