@@ -1,21 +1,16 @@
 import SwiftUI
 
 struct NameRow: View {
-    @Binding var viewModel: InvoiceFormViewModel
-    @FocusState var focusedField: InvoiceForm.Field?
+    @Binding var name: String
 
     var body: some View {
         SectionHeader("Name", font: .headline) {
             TextField(
                 "Name",
-                text: $viewModel.name,
+                text: $name,
                 prompt: Text("Pringles")
             )
-            .focused($focusedField, equals: .name)
-            .submitLabel(.next)
-            .onSubmit {
-                focusedField = .amount
-            }
+            .textFieldStyle(.roundedBorder)
             .accessibilityIdentifier(
                 AccessibilityIdentifier.TextField.invoiceFormName
             )
@@ -24,5 +19,5 @@ struct NameRow: View {
 }
 
 #Preview {
-    NameRow(viewModel: .constant(InvoiceFormViewModel(product: .example)))
+    NameRow(name: .constant("Name"))
 }

@@ -1,30 +1,29 @@
 import SwiftUI
 
 struct AmountRow: View {
-    @Binding var viewModel: InvoiceFormViewModel
-    @FocusState var focusedField: InvoiceForm.Field?
+    @Binding var amount: String
+    @Binding var measureUnit: MeasureUnit
 
     var body: some View {
         SectionHeader("Amount", font: .headline) {
             HStack {
                 TextField(
                     "Amount",
-                    text: $viewModel.amount
+                    text: $amount
                 )
-                .keyboardType(.numberPad)
-                .focused($focusedField, equals: .amount)
-                .submitLabel(.next)
-                .onSubmit {
-                    focusedField = nil
-                }
+                .textFieldStyle(.roundedBorder)
+                .keyboardType(.numbersAndPunctuation)
                 .accessibilityIdentifier(AccessibilityIdentifier.TextField.invoiceFormAmount)
 
-                MeasureUnitPicker($viewModel.measureUnit)
+                MeasureUnitPicker($measureUnit)
             }
         }
     }
 }
 
 #Preview {
-    AmountRow(viewModel: .constant(InvoiceFormViewModel(product: .example)))
+    AmountRow(
+        amount: .constant("Amount"),
+        measureUnit: .constant(.gram)
+    )
 }

@@ -74,6 +74,8 @@
 		56CA916F2C2393490018198F /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA916E2C2393490018198F /* SecondaryButtonStyle.swift */; };
 		56CA91722C239DC30018198F /* AddInvoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA91712C239DC30018198F /* AddInvoicePicker.swift */; };
 		56E964342BFFABA70099ED2F /* SwiftDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E964332BFFABA70099ED2F /* SwiftDataRepository.swift */; };
+		56F49E4F2C26EEE500DE69E2 /* CategoryCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F49E4E2C26EEE500DE69E2 /* CategoryCreationView.swift */; };
+		56F49E512C26F31B00DE69E2 /* CategoryCreationViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F49E502C26F31B00DE69E2 /* CategoryCreationViewmodel.swift */; };
 		56FAFB5B2C0BD75900370D7F /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5A2C0BD75900370D7F /* Emoji.swift */; };
 		56FAFB5D2C0BDA8900370D7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5C2C0BDA8900370D7F /* Constants.swift */; };
 		56FAFB602C0BDB1200370D7F /* InvoiceCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFB5F2C0BDB1200370D7F /* InvoiceCategoryCard.swift */; };
@@ -176,6 +178,8 @@
 		56CA916E2C2393490018198F /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
 		56CA91712C239DC30018198F /* AddInvoicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoicePicker.swift; sourceTree = "<group>"; };
 		56E964332BFFABA70099ED2F /* SwiftDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataRepository.swift; sourceTree = "<group>"; };
+		56F49E4E2C26EEE500DE69E2 /* CategoryCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationView.swift; sourceTree = "<group>"; };
+		56F49E502C26F31B00DE69E2 /* CategoryCreationViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationViewmodel.swift; sourceTree = "<group>"; };
 		56FAFB5A2C0BD75900370D7F /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		56FAFB5C2C0BDA8900370D7F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		56FAFB5F2C0BDB1200370D7F /* InvoiceCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCategoryCard.swift; sourceTree = "<group>"; };
@@ -369,6 +373,8 @@
 				56FFAC6B2C0BF15000D2D965 /* Components */,
 				56346D492C0E670200454E17 /* Add Invoice */,
 				56E964352BFFAFF40099ED2F /* Home */,
+				56F49E4E2C26EEE500DE69E2 /* CategoryCreationView.swift */,
+				56F49E502C26F31B00DE69E2 /* CategoryCreationViewmodel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,9 +382,8 @@
 		5639A5792BFFAB390086857F /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				56E964332BFFABA70099ED2F /* SwiftDataRepository.swift */,
 				5683BBED2C14ADEE001EF768 /* OpenFoodFacts */,
-				56FFAC7C2C0C901400D2D965 /* InvoiceItem */,
+				56F49E4D2C26EE9200DE69E2 /* Local Storage */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -571,6 +576,15 @@
 				560AA7D22C026C9D00365B1F /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		56F49E4D2C26EE9200DE69E2 /* Local Storage */ = {
+			isa = PBXGroup;
+			children = (
+				56E964332BFFABA70099ED2F /* SwiftDataRepository.swift */,
+				56FFAC7C2C0C901400D2D965 /* InvoiceItem */,
+			);
+			path = "Local Storage";
 			sourceTree = "<group>";
 		};
 		56FAFB5E2C0BDAE400370D7F /* Invoice */ = {
@@ -799,6 +813,7 @@
 				563F2F6A2C0FC8EA005BA713 /* MeasureUnit.swift in Sources */,
 				5655F7142C0D36E300C80708 /* ErrorView.swift in Sources */,
 				5683BBE22C14A113001EF768 /* OFFNutriments.swift in Sources */,
+				56F49E4F2C26EEE500DE69E2 /* CategoryCreationView.swift in Sources */,
 				560AA7CF2C02627C00365B1F /* DocumentScannerView.swift in Sources */,
 				56B138F12C26C9CF00B35CA4 /* FormsAddInvoiceButton.swift in Sources */,
 				5655F70A2C0D2D6F00C80708 /* NavigationDestination.swift in Sources */,
@@ -852,6 +867,7 @@
 				568560EA2C15A60B003BDAED /* AccessibilityIdentifier.swift in Sources */,
 				56FCC0352C0CF62A003EAA8B /* NavigationService.swift in Sources */,
 				5683BBE92C14A316001EF768 /* Bundle+decode.swift in Sources */,
+				56F49E512C26F31B00DE69E2 /* CategoryCreationViewmodel.swift in Sources */,
 				563F2F622C0F50D0005BA713 /* RepositoryError.swift in Sources */,
 				5683BBE42C14A178001EF768 /* OFFProduct.swift in Sources */,
 				5683BBEC2C14AD07001EF768 /* OFFEndpoints.swift in Sources */,

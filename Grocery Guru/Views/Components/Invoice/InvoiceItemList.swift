@@ -22,7 +22,7 @@ struct InvoiceItemList: View {
             }
         }
         .frame(maxHeight: .infinity)
-        .padding(Constants.Padding.sizeL)
+        .padding(.horizontal, Constants.Padding.sizeL)
     }
 
     init(items: [InvoiceItem]) {

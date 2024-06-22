@@ -14,20 +14,26 @@ struct InvoiceForm: View {
         ScrollView {
             SectionHeader("Add Item") {
                 VStack(spacing: Constants.Padding.sizeXL) {
-                    NameRow(
-                        viewModel: $viewModel,
-                        focusedField: _focusedField
+                    NameRow(name: $viewModel.name)
+                        .focused($focusedField, equals: .name)
+                        .submitLabel(.next)
+                        .onSubmit {
+                            focusedField = .amount
+                        }
+
+                    AmountRow(amount: $viewModel.amount, measureUnit: $viewModel.measureUnit)
+                        .focused($focusedField, equals: .amount)
+                        .submitLabel(.next)
+                        .onSubmit {
+                            focusedField = nil
+                        }
+
+                    CategoryRow(category: $viewModel.category)
+
+                    NutrimentsRow(
+                        product: $viewModel.product,
+                        isExpanded: $viewModel.isPresentingNutriments
                     )
-
-                    AmountRow(
-                        viewModel: $viewModel,
-                        focusedField: _focusedField
-                    )
-
-                    CategoryRow(viewModel: $viewModel)
-                        .padding(.horizontal, -Constants.Padding.sizeL)
-
-                    NutrimentsRow(viewModel: $viewModel)
 
                     FormsAddInvoiceButton(
                         viewModel: $viewModel,
@@ -36,7 +42,6 @@ struct InvoiceForm: View {
                 }
             }
             .padding(.horizontal, Constants.Padding.sizeL)
-            .textFieldStyle(.roundedBorder)
         }
         .scrollIndicators(.hidden)
     }

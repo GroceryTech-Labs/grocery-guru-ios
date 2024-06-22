@@ -1,12 +1,13 @@
 import SwiftUI
 
 struct NutrimentsRow: View {
-    @Binding var viewModel: InvoiceFormViewModel
+    @Binding var product: OFFProduct?
+    @Binding var isExpanded: Bool
 
     var body: some View {
-        if let product = viewModel.product {
-            DisclosureGroup(isExpanded: $viewModel.isPresentingNutriments) {
-                OFFNutrimentsView(nutriments: product.nutriments)
+        if let nutriments = product?.nutriments {
+            DisclosureGroup(isExpanded: $isExpanded) {
+                OFFNutrimentsView(nutriments: nutriments)
             } label: {
                 Text("Nutriments (100g)")
                     .font(.headline)
@@ -18,10 +19,7 @@ struct NutrimentsRow: View {
 
 #Preview {
     NutrimentsRow(
-        viewModel: .constant(
-            InvoiceFormViewModel(
-                product: .example
-            )
-        )
+        product: .constant(.example),
+        isExpanded: .constant(true)
     )
 }

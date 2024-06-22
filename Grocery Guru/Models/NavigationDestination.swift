@@ -1,6 +1,7 @@
 import SwiftUI
 
 enum NavigationDestination: Hashable, Identifiable {
+    case addCategory
     case addInvoice(option: AddInvoiceOption = .document)
     case invoiceForm(product: OFFProduct?)
     case invoiceList(items: [InvoiceItem])
@@ -9,8 +10,13 @@ enum NavigationDestination: Hashable, Identifiable {
         UUID()
     }
 
-    var view: some View {
+    @MainActor var view: some View {
         switch self {
+        case .addCategory:
+            AnyView(
+                CategoryCreationView()
+            )
+
         case let .addInvoice(option):
             AnyView(
                 AddInvoiceView(selectedOption: option)

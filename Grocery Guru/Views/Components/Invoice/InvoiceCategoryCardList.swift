@@ -1,12 +1,12 @@
 import SwiftUI
+import SwiftData
 
 struct InvoiceCategoryCardList: View {
     @Environment(\.dynamicTypeSize)
     private var typeSize
 
-    private let invoiceItems: [InvoiceItem]
-
-    private let categoryRepository: CategoryLocalStorageRepository
+    var items: [InvoiceItem]
+    @Query private var customCategories: [CustomCategory]
 
     private var columns: [GridItem] {
         if typeSize.isAccessibilitySize {
@@ -16,7 +16,11 @@ struct InvoiceCategoryCardList: View {
         return [GridItem(.flexible()), GridItem(.flexible())]
     }
 
-    @State private var categories: [InvoiceItemCategory] = InvoiceItemCategory.allCases
+    private var categories: [InvoiceItemCategory] {
+        InvoiceItemCategory.allCases + customCategories.map { category in
+                .custom(name: category.name, emoji: category.emoji)
+        }
+    }
 
     var body: some View {
         ScrollView {
@@ -27,34 +31,26 @@ struct InvoiceCategoryCardList: View {
                 ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
                     InvoiceCategoryCard(
                         category: category,
-                        items: invoiceItems
+                        items: items
                     )
                 }
             }
         }
         .scrollIndicators(.hidden)
-        .task {
-            do {
-                let test = try await categoryRepository.fetchAllItems()
-                let mapped = test.map { InvoiceItemCategory.custom(name: $0.name, emoji: $0.emoji) }
-                categories.append(contentsOf: mapped)
-            } catch {
-                print(error)
-            }
-        }
-    }
-
-    @MainActor
-    init(invoiceItems: [InvoiceItem]) {
-        self.invoiceItems = invoiceItems
-        self.categoryRepository = .shared
     }
 }
 
 #Preview {
     ScrollView {
         InvoiceCategoryCardList(
-            invoiceItems: []
+            items: [
+                InvoiceItem(
+                    name: "Cheese",
+                    amount: 100,
+                    category: .bakery,
+                    measureUnit: .gram
+                )
+            ]
         )
     }
 }

@@ -5,15 +5,16 @@ struct HomeViewList: View {
     @Environment(\.navigationService)
     private var navigator
     @State private var viewModel: HomeViewModel
+
     @Query private var items: [InvoiceItem]
 
     var body: some View {
         SectionHeader("Welcome back!", font: .largeTitle) {
             SectionHeader("Categories") {
-                InvoiceCategoryCardList(invoiceItems: items)
+                InvoiceCategoryCardList(items: items)
             } trailing: {
                 Button {
-                    navigator.sheet(NavigationDestination.addInvoice())
+                    navigator.sheet(.addCategory)
                 } label: {
                     Image(systemName: "gearshape")
                         .imageScale(.large)
@@ -21,7 +22,7 @@ struct HomeViewList: View {
                 }
             }
         }
-        .padding(.horizontal, Constants.Padding.sizeM)
+        .padding(.horizontal, Constants.Padding.sizeL)
     }
 
     init(viewModel: HomeViewModel) {

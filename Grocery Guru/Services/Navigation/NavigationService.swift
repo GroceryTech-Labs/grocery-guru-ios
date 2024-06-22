@@ -16,6 +16,11 @@ class NavigationService: NavigationServiceProtocol {
     }
 
     func drop() {
+        guard sheet == nil else {
+            sheet = nil
+            return
+        }
+
         guard !path.isEmpty else {
             return
         }
@@ -24,6 +29,8 @@ class NavigationService: NavigationServiceProtocol {
     }
 
     func dropUntil(_ destination: NavigationDestination) {
+        sheet = nil
+
         guard path.contains(destination) else {
             return
         }
@@ -34,6 +41,7 @@ class NavigationService: NavigationServiceProtocol {
     }
 
     func dropToRoot() {
+        sheet = nil
         path.removeAll()
     }
 }
