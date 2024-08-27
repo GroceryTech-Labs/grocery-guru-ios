@@ -33,7 +33,6 @@
       }
     },
     {
-      "enabled" : false,
       "target" : {
         "containerPath" : "container:Grocery Guru.xcodeproj",
         "identifier" : "568560DC2C15A520003BDAED",
