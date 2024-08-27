@@ -15,6 +15,8 @@
 		5620E11C2C1887D90027655A /* ResponsiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620E11B2C1887D90027655A /* ResponsiveCard.swift */; };
 		562DCABB2C7E5AE6006CBFB6 /* LocalStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562DCABA2C7E5AE6006CBFB6 /* LocalStorageRepository.swift */; };
 		562DCABD2C7E62DE006CBFB6 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562DCABC2C7E62DE006CBFB6 /* Assets.swift */; };
+		562DCABF2C7E69A0006CBFB6 /* EmojiRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562DCABE2C7E69A0006CBFB6 /* EmojiRow.swift */; };
+		562DCAC12C7E69BE006CBFB6 /* EmojiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562DCAC02C7E69BE006CBFB6 /* EmojiPicker.swift */; };
 		56346D4B2C0E671200454E17 /* AddInvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56346D4A2C0E671200454E17 /* AddInvoiceView.swift */; };
 		56346D4D2C0E68E000454E17 /* AddInvoiceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */; };
 		5635E32B2C24A746000A6628 /* CustomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E32A2C24A746000A6628 /* CustomCategory.swift */; };
@@ -117,6 +119,8 @@
 		5620E11B2C1887D90027655A /* ResponsiveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveCard.swift; sourceTree = "<group>"; };
 		562DCABA2C7E5AE6006CBFB6 /* LocalStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageRepository.swift; sourceTree = "<group>"; };
 		562DCABC2C7E62DE006CBFB6 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		562DCABE2C7E69A0006CBFB6 /* EmojiRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRow.swift; sourceTree = "<group>"; };
+		562DCAC02C7E69BE006CBFB6 /* EmojiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPicker.swift; sourceTree = "<group>"; };
 		56346D4A2C0E671200454E17 /* AddInvoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceView.swift; sourceTree = "<group>"; };
 		56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceOption.swift; sourceTree = "<group>"; };
 		5635E32A2C24A746000A6628 /* CustomCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategory.swift; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 			children = (
 				56B138EC2C26C8D700B35CA4 /* AmountRow.swift */,
 				5635E3332C24E50D000A6628 /* CategoryRow.swift */,
+				562DCABE2C7E69A0006CBFB6 /* EmojiRow.swift */,
 				56B138EE2C26C90E00B35CA4 /* NameRow.swift */,
 				5635E3312C24E436000A6628 /* NutrimentsRow.swift */,
 				56B138F02C26C9CF00B35CA4 /* FormsAddInvoiceButton.swift */,
@@ -563,6 +568,7 @@
 			isa = PBXGroup;
 			children = (
 				56CA91712C239DC30018198F /* AddInvoicePicker.swift */,
+				562DCAC02C7E69BE006CBFB6 /* EmojiPicker.swift */,
 				56C121002C1CF5A400F56B3D /* InvoiceCategoryPicker.swift */,
 				5635E32E2C24AEE1000A6628 /* MeasureUnitPicker.swift */,
 			);
@@ -826,6 +832,7 @@
 				562DCABB2C7E5AE6006CBFB6 /* LocalStorageRepository.swift in Sources */,
 				5635E32F2C24AEE1000A6628 /* MeasureUnitPicker.swift in Sources */,
 				5656BB9B2C24588F00A8F0F7 /* UserSettings.swift in Sources */,
+				562DCAC12C7E69BE006CBFB6 /* EmojiPicker.swift in Sources */,
 				5683BBEF2C14AE12001EF768 /* OFFRepository.swift in Sources */,
 				56FFAC7B2C0C8B9B00D2D965 /* ShowAddInvoiceButton.swift in Sources */,
 				56FFAC772C0C888200D2D965 /* InvoiceCategoryCardList.swift in Sources */,
@@ -839,6 +846,7 @@
 				5683BBCA2C147BB3001EF768 /* ScannerOverlay.swift in Sources */,
 				5683BBD22C147F7B001EF768 /* OFFAPIConfig.swift in Sources */,
 				5635E3322C24E436000A6628 /* NutrimentsRow.swift in Sources */,
+				562DCABF2C7E69A0006CBFB6 /* EmojiRow.swift in Sources */,
 				56FAFB602C0BDB1200370D7F /* InvoiceCategoryCard.swift in Sources */,
 				5683BBD42C14832A001EF768 /* HTTPMethod.swift in Sources */,
 				568560EA2C15A60B003BDAED /* AccessibilityIdentifier.swift in Sources */,

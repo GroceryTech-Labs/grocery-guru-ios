@@ -20,6 +20,11 @@ struct CategorySettingsView: View {
                             focusedField = nil
                         }
 
+                    EmojiRow { emoji in
+                        viewModel.emoji = emoji
+                    }
+                    .frame(maxHeight: 200)
+
                     Button("Create") {
                         guard !viewModel.name.isEmpty else {
                             focusedField = .name
