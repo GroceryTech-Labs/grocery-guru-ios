@@ -28,7 +28,7 @@ struct InvoiceCategoryCardList: View {
                 columns: columns,
                 spacing: Constants.Padding.sizeS
             ) {
-                ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
+                ForEach(categories, id: \.hashValue) { category in
                     InvoiceCategoryCard(
                         category: category,
                         items: items

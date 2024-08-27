@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "75DC64AF-25BA-4960-8E4D-85AB952312A0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Grocery Guru/Views/Components/Invoice/InvoiceCategoryCardList.swift"
@@ -23,7 +23,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "131E3AF1-337E-4DBC-8988-EB83A00AB634"
+            uuid = "F505D02C-703E-4170-A2C0-CB49CD8E1F96"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -39,16 +39,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C13F5FEA-884D-41BB-A078-38A5E2EF7982"
+            uuid = "DD01980C-935B-4282-99B7-9C4F829F9FC6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Grocery Guru/Repositories/Local Storage/InvoiceItem/Categories/CategoryLocalStorageRepository.swift"
+            filePath = "Grocery Guru/Repositories/Local Storage/InvoiceItem/Items/LocalStorageItemRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "addItem(_:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "fetchAllItems()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

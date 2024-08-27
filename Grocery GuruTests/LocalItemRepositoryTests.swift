@@ -2,12 +2,12 @@ import XCTest
 @testable import Grocery_Guru
 
 class LocalItemRepositoryTests: XCTestCase {
-    var repository: ItemLocalStorageRepository!
+    var repository: LocalStorageRepository!
 
     @MainActor
     override func setUp() {
         super.setUp()
-        repository = MockItemLocalStorageRepository()
+        repository = MockLocalStorageRepository()
     }
 
     override func tearDown() {

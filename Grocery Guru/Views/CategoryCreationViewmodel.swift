@@ -2,7 +2,7 @@ import SwiftUI
 
 @Observable
 class CategoryCreationViewModel {
-    @ObservationIgnored private let categoryRepository: CategoryLocalStorageRepository
+    @ObservationIgnored private let repository: LocalStorageRepository
 
     private var navigator = NavigationService.shared
 
@@ -10,13 +10,13 @@ class CategoryCreationViewModel {
     var emoji: Emoji = .bakery
 
     @MainActor
-    init(categoryRepository: CategoryLocalStorageRepository) {
-        self.categoryRepository = categoryRepository
+    init(repository: LocalStorageRepository) {
+        self.repository = repository
     }
 
     func addCategory() {
         do {
-            try categoryRepository.addItem(
+            try repository.addCategory(
                 CustomCategory(
                     name: name,
                     emoji: emoji

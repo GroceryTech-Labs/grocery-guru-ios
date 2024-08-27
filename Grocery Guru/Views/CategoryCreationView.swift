@@ -37,7 +37,7 @@ struct CategoryCreationView: View {
 
     @MainActor
     init() {
-        self.viewModel = CategoryCreationViewModel(categoryRepository: .shared)
+        self.viewModel = CategoryCreationViewModel(repository: .shared)
     }
 }
 

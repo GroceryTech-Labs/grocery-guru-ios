@@ -10,8 +10,7 @@ struct Grocery_GuruApp: App {
             NavigationStack(path: $navigationService.path) {
                 HomeView(
                     viewModel: HomeViewModel(
-                        itemRepository: usedLocalRepository,
-                        categoryRepository: .shared
+                        repository: .shared
                     )
                 )
                 .navigationDestination(for: NavigationDestination.self) { destination in
@@ -22,15 +21,5 @@ struct Grocery_GuruApp: App {
                 }
             }
         }
-    }
-
-    @MainActor var usedLocalRepository: ItemLocalStorageRepository {
-        let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
-
-        if testMode {
-            return MockItemLocalStorageRepository.mockInstance
-        }
-
-        return ItemLocalStorageRepository.shared
-    }
+    }    
 }

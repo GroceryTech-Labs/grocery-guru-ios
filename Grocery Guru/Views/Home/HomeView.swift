@@ -12,8 +12,7 @@ struct HomeView: View {
             .overlay(alignment: .bottom) {
                 ShowAddInvoiceButton()
             }
-            .modelContext(viewModel.itemRepository.modelContext)
-            .modelContext(viewModel.categoryRepository.modelContext)
+            .modelContext(viewModel.repository.modelContext)
     }
 
     init(viewModel: HomeViewModel) {
@@ -24,8 +23,7 @@ struct HomeView: View {
 #Preview {
     HomeView(
         viewModel: HomeViewModel(
-            itemRepository: MockItemLocalStorageRepository.mockInstance,
-            categoryRepository: CategoryLocalStorageRepository()
+            repository: LocalStorageRepository()
         )
     )
 }

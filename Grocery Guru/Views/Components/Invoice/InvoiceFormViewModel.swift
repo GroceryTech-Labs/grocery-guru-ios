@@ -13,14 +13,14 @@ class InvoiceFormViewModel {
     var product: OFFProduct?
     var isPresentingNutriments = false
 
-    @MainActor var usedLocalRepository: ItemLocalStorageRepository {
+    @MainActor var usedLocalRepository: LocalStorageRepository {
         let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
 
         if testMode {
-            return MockItemLocalStorageRepository.mockInstance
+            return MockLocalStorageRepository.mockInstance
         }
 
-        return ItemLocalStorageRepository.shared
+        return LocalStorageRepository.shared
     }
 
     init(
