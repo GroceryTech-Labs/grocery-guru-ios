@@ -1,10 +1,18 @@
 import SwiftUI
+import SwiftData
 
 struct InvoiceCategoryPicker: View {
     @Binding var selection: InvoiceItemCategory
 
-    private var categories: EnumeratedSequence<[InvoiceItemCategory]>.Iterator {
-        InvoiceItemCategory.allCases.enumerated().makeIterator()
+    @Query var customCategories: [CustomCategory]
+
+    private var categories: [InvoiceItemCategory] {
+        InvoiceItemCategory.allCases + customCategories.map { category in
+            InvoiceItemCategory.custom(
+                name: category.name,
+                emoji: category.emoji
+            )
+        }
     }
 
     var body: some View {
@@ -12,7 +20,7 @@ struct InvoiceCategoryPicker: View {
             ScrollView(.horizontal) {
                 ScrollViewReader { sReader in
                     HStack(spacing: 0) {
-                        ForEach(Array(categories), id: \.offset) { category in
+                        ForEach(Array(categories.enumerated()), id: \.offset) { category in
                             Button {
                                 withAnimation(.smooth) {
                                     selection = category.element

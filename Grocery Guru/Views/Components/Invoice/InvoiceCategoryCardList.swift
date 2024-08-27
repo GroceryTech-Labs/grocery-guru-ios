@@ -18,7 +18,10 @@ struct InvoiceCategoryCardList: View {
 
     private var categories: [InvoiceItemCategory] {
         InvoiceItemCategory.allCases + customCategories.map { category in
-                .custom(name: category.name, emoji: category.emoji)
+            InvoiceItemCategory.custom(
+                name: category.name,
+                emoji: category.emoji
+            )
         }
     }
 

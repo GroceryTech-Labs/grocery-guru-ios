@@ -48,7 +48,7 @@ class InvoiceFormViewModel {
                         measureUnit: measureUnit
                     )
                 )
-                navigator.drop()
+                navigator.dropToRoot()
             } catch {
                 print(error.localizedDescription)
             }
