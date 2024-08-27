@@ -7,7 +7,7 @@ class CategoryCreationViewModel {
     private var navigator = NavigationService.shared
 
     var name: String = ""
-    var emoji: Emoji = .bakery
+    var emoji: String = ""
 
     @MainActor
     init(repository: LocalStorageRepository) {

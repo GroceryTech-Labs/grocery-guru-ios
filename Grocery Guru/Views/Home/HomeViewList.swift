@@ -14,7 +14,7 @@ struct HomeViewList: View {
                 InvoiceCategoryCardList(items: items)
             } trailing: {
                 Button {
-                    navigator.sheet(.addCategory)
+                    navigator.sheet(.categorySettings)
                 } label: {
                     Image(systemName: "gearshape")
                         .imageScale(.large)

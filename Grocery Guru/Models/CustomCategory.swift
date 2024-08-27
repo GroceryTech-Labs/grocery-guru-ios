@@ -4,9 +4,9 @@ import SwiftData
 @Model
 final class CustomCategory {
     let name: String
-    let emoji: Emoji
+    let emoji: String
 
-    init(name: String, emoji: Emoji) {
+    init(name: String, emoji: String) {
         self.name = name
         self.emoji = emoji
     }

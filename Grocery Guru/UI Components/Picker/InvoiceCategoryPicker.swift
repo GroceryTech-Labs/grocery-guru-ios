@@ -42,7 +42,7 @@ struct InvoiceCategoryPicker: View {
         let background = selection == category ? .accentColor : Color(.secondarySystemBackground)
         return ResponsiveCard(background: background) {
             HStack(spacing: Constants.Padding.sizeS) {
-                category.emoji.text
+                Text(category.emoji)
 
                 if selection == category {
                     Text(category.localized)

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CategoryCreationView: View {
+struct CategorySettingsView: View {
     enum Field: Hashable {
         case name
         case emoji
@@ -11,7 +11,7 @@ struct CategoryCreationView: View {
 
     var body: some View {
         ScrollView {
-            SectionHeader("Create Category") {
+            SectionHeader("Category Settings") {
                 VStack(spacing: Constants.Padding.sizeXL) {
                     NameRow(name: $viewModel.name)
                         .focused($focusedField, equals: .name)
@@ -42,5 +42,5 @@ struct CategoryCreationView: View {
 }
 
 #Preview {
-    CategoryCreationView()
+    CategorySettingsView()
 }

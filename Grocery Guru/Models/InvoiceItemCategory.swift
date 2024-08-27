@@ -3,7 +3,7 @@ import SwiftUI
 enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
     case bakery
     case canned
-    case custom(name: String, emoji: Emoji)
+    case custom(name: String, emoji: String)
     case fish
     case fruits
     case meat
@@ -41,28 +41,28 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
         }
     }
 
-    var emoji: Emoji {
+    var emoji: String {
         switch self {
         case .bakery:
-            Emoji.bakery
+            "🥖"
 
         case .canned:
-            Emoji.canned
+            "🥫"
 
         case .fish:
-            Emoji.fish
+            "🐟"
 
         case .fruits:
-            Emoji.fruit
+            "🍎"
 
         case .meat:
-            Emoji.meat
+            "🥩"
 
         case .milkEgg:
-            Emoji.milkEgg
+            "🥛"
 
         case .vegetables:
-            Emoji.vegetable
+            "🥕"
 
         case let .custom(_, emoji):
             emoji

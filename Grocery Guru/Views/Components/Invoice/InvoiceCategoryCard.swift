@@ -22,7 +22,7 @@ struct InvoiceCategoryCard: View {
         } label: {
             ResponsiveCard {
                 VStack(spacing: Constants.Padding.sizeM) {
-                    category.emoji.text
+                    Text(category.emoji)
                         .font(.system(size: emojiSize))
 
                     VStack(spacing: Constants.Padding.sizeX) {
