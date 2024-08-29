@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CategorySettingsView: View {
+struct CategoryCreationView: View {
     enum Field: Hashable {
         case name
     }
@@ -10,7 +10,7 @@ struct CategorySettingsView: View {
 
     var body: some View {
         ScrollView {
-            SectionHeader("Category Settings") {
+            SectionHeader("Create Category") {
                 VStack(spacing: Constants.Padding.sizeXL) {
                     NameRow(name: $viewModel.name)
                         .focused($focusedField, equals: .name)
@@ -30,23 +30,29 @@ struct CategorySettingsView: View {
                         )
                     )
 
-                    Button("Create") {
-                        guard !viewModel.name.isEmpty else {
-                            focusedField = .name
-                            return
-                        }
-
-                        guard !viewModel.emoji.isEmpty else {
-                            return
-                        }
-
+                    Button {
                         viewModel.addCategory()
+                    } label: {
+                        Text("Create")
+                            .frame(maxWidth: .infinity)
                     }
+                    .disabled(viewModel.emoji.isEmpty || viewModel.name.isEmpty)
+                    .buttonStyle(.borderedProminent)
+                }
+            } trailing: {
+                Button {
+                    viewModel.resetToInitialState()
+                } label: {
+                    Image(systemName: "eraser")
+                        .accessibilityLabel("Reset")
                 }
             }
             .padding(Constants.Padding.sizeL)
         }
         .scrollIndicators(.hidden)
+        .onDisappear {
+            viewModel.resetToInitialState()
+        }
     }
 
     @MainActor
@@ -56,5 +62,5 @@ struct CategorySettingsView: View {
 }
 
 #Preview {
-    CategorySettingsView()
+    CategoryCreationView()
 }

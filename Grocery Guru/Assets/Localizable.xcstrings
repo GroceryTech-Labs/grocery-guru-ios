@@ -171,6 +171,16 @@
         }
       }
     },
+    "Create Category" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategorie erstellen"
+          }
+        }
+      }
+    },
     "Document" : {
       "localizations" : {
         "de" : {
@@ -281,6 +291,16 @@
         }
       }
     },
+    "Manage categories" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategorien verwalten"
+          }
+        }
+      }
+    },
     "Manual" : {
       "localizations" : {
         "de" : {
@@ -387,6 +407,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Protein:"
+          }
+        }
+      }
+    },
+    "Reset" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zurücksetzen"
           }
         }
       }

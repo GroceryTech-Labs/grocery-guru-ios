@@ -14,6 +14,11 @@ class CategoryCreationViewModel {
         self.repository = repository
     }
 
+    func resetToInitialState() {
+        name = ""
+        emoji = ""
+    }
+
     func addCategory() {
         do {
             try repository.addCategory(

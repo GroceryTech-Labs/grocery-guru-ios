@@ -33,7 +33,6 @@ struct InvoiceCategoryPicker: View {
                                 buttonLabel(category: category.element)
                             }
                             .buttonStyle(.plain)
-
                             .accessibilityIdentifier(
                                 AccessibilityIdentifier.Button.invoiceCategory
                             )
