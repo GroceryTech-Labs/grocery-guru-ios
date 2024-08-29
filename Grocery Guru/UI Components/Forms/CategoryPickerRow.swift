@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CategoryRow: View {
+struct CategoryPickerRow: View {
     @Binding var category: InvoiceItemCategory
 
     var body: some View {
@@ -14,5 +14,5 @@ struct CategoryRow: View {
 }
 
 #Preview {
-    CategoryRow(category: .constant(.bakery))
+    CategoryPickerRow(category: .constant(.bakery))
 }

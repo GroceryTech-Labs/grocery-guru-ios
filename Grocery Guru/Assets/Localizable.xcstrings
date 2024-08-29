@@ -361,6 +361,16 @@
         }
       }
     },
+    "Preview" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vorschau"
+          }
+        }
+      }
+    },
     "Pringles" : {
       "localizations" : {
         "de" : {

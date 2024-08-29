@@ -21,6 +21,7 @@ struct EmojiPicker: View {
                 }
             }
         }
+        .scrollIndicators(.hidden)
     }
 
     init(selection: @escaping (String) -> Void) {

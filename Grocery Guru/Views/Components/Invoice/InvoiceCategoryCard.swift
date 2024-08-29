@@ -6,6 +6,7 @@ struct InvoiceCategoryCard: View {
 
     private let category: InvoiceItemCategory
     private let items: [InvoiceItem]
+    private let isPreview: Bool
     private let emojiSize: CGFloat = 64
 
     private var filteredItems: [InvoiceItem] {
@@ -17,32 +18,33 @@ struct InvoiceCategoryCard: View {
     }
 
     var body: some View {
-        Button {
-            navigator.push(.invoiceList(items: filteredItems))
-        } label: {
-            ResponsiveCard {
-                VStack(spacing: Constants.Padding.sizeM) {
-                    Text(category.emoji)
-                        .font(.system(size: emojiSize))
+        ResponsiveCard {
+            VStack(spacing: Constants.Padding.sizeM) {
+                Text(category.emoji)
+                    .font(.system(size: emojiSize))
 
-                    VStack(spacing: Constants.Padding.sizeX) {
-                        Text(category.localized)
+                VStack(spacing: Constants.Padding.sizeX) {
+                    Text(category.localized)
 
-                        Text("\(itemsCount, format: .number) Items")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
+                    Text("\(itemsCount, format: .number) Items")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
                 }
             }
         }
+        .onTapGesture {
+            navigator.push(.invoiceList(items: filteredItems))
+        }
+        .accessibilityAddTraits(.isButton)
         .buttonStyle(.plain)
         .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceCategory)
         .accessibilityLabel("Category Card")
     }
 
-    init(category: InvoiceItemCategory, items: [InvoiceItem]) {
+    init(category: InvoiceItemCategory, items: [InvoiceItem], isPreview: Bool = false) {
         self.category = category
         self.items = items
+        self.isPreview = isPreview
     }
 }
 

@@ -3,7 +3,6 @@ import SwiftUI
 struct CategorySettingsView: View {
     enum Field: Hashable {
         case name
-        case emoji
     }
 
     @FocusState private var focusedField: Field?
@@ -23,11 +22,21 @@ struct CategorySettingsView: View {
                     EmojiRow { emoji in
                         viewModel.emoji = emoji
                     }
-                    .frame(maxHeight: 200)
+
+                    CategoryPreviewRow(
+                        invoiceItemCategory: .custom(
+                            name: viewModel.name,
+                            emoji: viewModel.emoji
+                        )
+                    )
 
                     Button("Create") {
                         guard !viewModel.name.isEmpty else {
                             focusedField = .name
+                            return
+                        }
+
+                        guard !viewModel.emoji.isEmpty else {
                             return
                         }
 

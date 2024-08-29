@@ -58,6 +58,9 @@ file_length:
   error: 1200
 # naming rules can set warnings/errors for min_length and max_length
 # additionally they can set excluded names
+closure_body_length:
+  warning: 50
+  error: 100
 type_name:
   min_length: 4 # only warning
   max_length: # warning and error
