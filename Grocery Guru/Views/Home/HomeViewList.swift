@@ -6,33 +6,25 @@ struct HomeViewList: View {
     @Query private var items: [InvoiceItem]
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: Constants.Padding.sizeL) {
-                SectionHeader(
-                    "Welcome back!",
-                    font: .largeTitle
-                )
+        VStack(spacing: Constants.Padding.sizeM) {
+            SectionHeader(
+                "Welcome back!",
+                font: .largeTitle
+            )
 
-                VStack(spacing: Constants.Padding.sizeS) {
-                    SectionHeader("Categories")
-                    InvoiceCategoryList(invoiceItems: items)
-                }
+            VStack(spacing: Constants.Padding.sizeS) {
+                SectionHeader("Categories")
+                InvoiceCategoryCardList(invoiceItems: items)
             }
-            .foregroundStyle(.labelPrimary)
-            .padding(Constants.Padding.sizeL)
         }
-        .background(
-            Color.surfacePrimary,
-            ignoresSafeAreaEdges: .all
-        )
-        .scrollIndicators(.hidden)
+        .padding(.horizontal, Constants.Padding.sizeM)
     }
 }
 
 #Preview {
     HomeViewList(
         viewModel: HomeViewModel(
-            repository: MockLocalStorageItemRepository()
+            repository: MockLocalStorageItemRepository.mockInstance
         )
     )
 }

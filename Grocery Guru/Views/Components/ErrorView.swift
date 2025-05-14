@@ -8,9 +8,7 @@ struct ErrorView: View {
             .font(.title)
             .multilineTextAlignment(.center)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            .foregroundStyle(.labelPrimary)
             .padding(Constants.Padding.sizeL)
-            .background(Color.surfacePrimary, ignoresSafeAreaEdges: .all)
     }
 
     init(text: LocalizedStringKey) {

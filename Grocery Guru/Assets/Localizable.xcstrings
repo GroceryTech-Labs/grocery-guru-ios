@@ -1,16 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@ " : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        }
-      }
-    },
     "%@ Items" : {
       "localizations" : {
         "de" : {
@@ -101,12 +91,32 @@
         }
       }
     },
+    "Barcode" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barcode"
+          }
+        }
+      }
+    },
     "Canned" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Konserven"
+          }
+        }
+      }
+    },
+    "Carbohydrates:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kohlenhydrate:"
           }
         }
       }
@@ -127,6 +137,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kategorie"
+          }
+        }
+      }
+    },
+    "Category Card" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategorienkarte"
+          }
+        }
+      }
+    },
+    "Energy (kcal):" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energie (kcal)"
+          }
+        }
+      }
+    },
+    "Energy (kJ):" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energie (kJ):"
+          }
+        }
+      }
+    },
+    "Fat:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fett:"
           }
         }
       }
@@ -157,6 +207,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "g"
+          }
+        }
+      }
+    },
+    "Hello World!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -241,6 +301,16 @@
         }
       }
     },
+    "Nutriments (100g)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nährwerte (100g)"
+          }
+        }
+      }
+    },
     "Open Invoice Item" : {
       "localizations" : {
         "de" : {
@@ -261,12 +331,42 @@
         }
       }
     },
+    "Proteins:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protein:"
+          }
+        }
+      }
+    },
+    "Salt:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salz:"
+          }
+        }
+      }
+    },
     "Scan" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scan"
+          }
+        }
+      }
+    },
+    "Sugars:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zucker:"
           }
         }
       }

@@ -10,7 +10,7 @@ struct HomeView: View {
         HomeViewList(viewModel: viewModel)
             .overlay(alignment: .bottom) {
                 AddInvoiceButton {
-                    navigator.sheet(.addInvoice())
+                    navigator.push(.addInvoice())
                 }
             }
             .modelContext(viewModel.repository.modelContext)

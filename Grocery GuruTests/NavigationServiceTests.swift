@@ -15,27 +15,27 @@ class NavigationServiceTests: XCTestCase {
     }
 
     func testPush() {
-        let destination = NavigationDestination.invoiceList(items: []) // Replace with actual destination
+        let destination = NavigationDestination.invoiceList(items: [])
         navigationService.push(destination)
         XCTAssertEqual(navigationService.path.last, destination)
     }
 
     func testSheet() {
-        let destination = NavigationDestination.invoiceList(items: []) // Replace with actual destination
+        let destination = NavigationDestination.invoiceList(items: [])
         navigationService.sheet(destination)
         XCTAssertEqual(navigationService.sheet, destination)
     }
 
     func testDrop() {
-        let destination = NavigationDestination.invoiceList(items: []) // Replace with actual destination
+        let destination = NavigationDestination.invoiceList(items: [])
         navigationService.push(destination)
         navigationService.drop()
         XCTAssertTrue(navigationService.path.isEmpty)
     }
 
     func testDropUntil() {
-        let destination1 = NavigationDestination.invoiceList(items: []) // Replace with actual destination
-        let destination2 = NavigationDestination.addInvoice(option: .manual) // Replace with actual destination
+        let destination1 = NavigationDestination.invoiceList(items: [])
+        let destination2 = NavigationDestination.addInvoice(option: .manual)
         navigationService.push(destination1)
         navigationService.push(destination2)
         navigationService.dropUntil(destination1)
@@ -43,7 +43,7 @@ class NavigationServiceTests: XCTestCase {
     }
 
     func testDropToRoot() {
-        let destination = NavigationDestination.invoiceList(items: []) // Replace with actual destination
+        let destination = NavigationDestination.invoiceList(items: [])
         navigationService.push(destination)
         navigationService.dropToRoot()
         XCTAssertTrue(navigationService.path.isEmpty)

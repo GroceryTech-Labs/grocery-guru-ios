@@ -10,7 +10,7 @@ struct Grocery_GuruApp: App {
             NavigationStack(path: $navigationService.path) {
                 HomeView(
                     viewModel: HomeViewModel(
-                        repository: LocalStorageItemRepository.shared
+                        repository: AppConfig.shared.usedLocalRepository
                     )
                 )
                 .navigationDestination(for: NavigationDestination.self) { destination in

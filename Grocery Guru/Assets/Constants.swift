@@ -18,5 +18,11 @@ enum Constants {
 
         /// Size of 16px
         static let sizeL: CGFloat = 16.0
+
+        /// Size of 32px
+        static let sizeXL: CGFloat = 32.0
+
+        /// Size of 64px
+        static let sizeXXL: CGFloat = 64.0
     }
 }

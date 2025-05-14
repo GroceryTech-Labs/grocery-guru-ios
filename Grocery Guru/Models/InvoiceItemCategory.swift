@@ -12,27 +12,45 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
     struct Picker: View {
         @Binding var selection: InvoiceItemCategory
 
-        let columnAmount = 5
+        let array = InvoiceItemCategory.allCases
 
         var body: some View {
-            LazyVGrid(
-                columns: Array(repeating: GridItem(.flexible()), count: columnAmount),
-                spacing: Constants.Padding.sizeS
-            ) {
-                ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
-                    category.emoji.text
-                        .padding(Constants.Padding.sizeL)
-                        .background(
-                            selection == category ? Color.accentColor : Color.surfaceSecondary,
-                            in: .circle,
-                            fillStyle: .init()
-                        )
-                        .onTapGesture {
-                            selection = category
+            ScrollView(.horizontal) {
+                HStack(spacing: Constants.Padding.sizeS) {
+                    ForEach(Array(array.enumerated()), id: \.offset) { category in
+                        HStack(spacing: Constants.Padding.sizeS) {
+                            category.element.emoji.text
+
+                            if selection == category.element {
+                                Text(category.element.localized)
+                                    .lineLimit(1)
+                                    .transition(
+                                        .asymmetric(
+                                            insertion: .push(from: .trailing),
+                                            removal: .offset(x: 100)
+                                        )
+                                    )
+                            }
                         }
+                        .padding(Constants.Padding.sizeL)
+                        .background(backgroundView(category: category.element))
+                        .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
+                        .onTapGesture {
+                            selection = category.element
+                        }
+                        .accessibilityElement()
                         .accessibilityAddTraits(.isButton)
+                        .accessibilityIdentifier(
+                            AccessibilityIdentifier.Button.invoiceCategory
+                        )
+                        .animation(.smooth, value: selection)
+                    }
                 }
             }
+        }
+
+        func backgroundView(category: InvoiceItemCategory) -> Color {
+            selection == category ? .accentColor : Color(.secondarySystemBackground)
         }
     }
 
@@ -58,25 +76,25 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
     var emoji: Emoji {
         switch self {
         case .bakery:
-            .bakery
+            Emoji.bakery
 
         case .canned:
-            .canned
+            Emoji.canned
 
         case .fish:
-            .fish
+            Emoji.fish
 
         case .fruits:
-            .fruit
+            Emoji.fruit
 
         case .meat:
-            .meat
+            Emoji.meat
 
         case .milkEgg:
-            .milkEgg
+            Emoji.milkEgg
 
         case .vegetables:
-            .vegetable
+            Emoji.vegetable
         }
     }
 }

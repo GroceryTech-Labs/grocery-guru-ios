@@ -15,19 +15,15 @@ enum Emoji: String, CaseIterable {
     }
 }
 
-// swiftlint:disable all
-private struct EmojiPreview: View {
-    var body: some View {
-        VStack {
-            ForEach(Emoji.allCases, id: \.hashValue) { emoji in
-                emoji.text
-                    .font(.system(size: 64))
-            }
+// swiftlint:disable no_magic_numbers
+
+#Preview {
+    ScrollView {
+        ForEach(Emoji.allCases, id: \.hashValue) { emoji in
+            emoji.text
+                .font(.system(size: 64))
         }
     }
 }
-// swiftlint:enable all
 
-#Preview {
-    EmojiPreview()
-}
+// swiftlint:enable no_magic_numbers
