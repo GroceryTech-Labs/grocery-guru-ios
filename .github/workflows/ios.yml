@@ -20,48 +20,5 @@ jobs:
         with:
           xcode-version: latest-stable
       
-      - name: Set Default Scheme
-        run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          default=Grocery Guru Debug
-          echo $default | cat >default
-          echo Using default scheme: $default       
-     
-      - name: Build and Test with Code Coverage
-        env:
-          scheme: ${{ 'default' }}
-          platform: ${{ 'iOS Simulator' }}
-          RESULT_BUNDLE: '/Users/runner/work/grocery-guru-ios/grocery-guru-ios/CodeCoverage.xcresult'
-          RESULT_JSON: '/Users/runner/work/grocery-guru-ios/grocery-guru-ios/CodeCoverage.json'
-        run: |
-          # xcrun xctrace returns via stderr, not the expected stdout (see https://developer.apple.com/forums/thread/663959)
-          device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
-          if [ $scheme = default ]; then scheme=$(cat default); fi
-          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-      
-          # Pre-clean
-          if [ -d $RESULT_BUNDLE ]; then
-            rm -rf $RESULT_BUNDLE
-          fi
-          if [ -f $RESULT_JSON ]; then
-            rm $RESULT_JSON
-          fi
-      
-          # Build
-          xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES
-      
-          # Test
-          xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device" -enableCodeCoverage YES -resultBundlePath $RESULT_BUNDLE
-
-          # Set RESULT_BUNDLE and RESULT_JSON as environment variables for subsequent steps
-          echo "RESULT_BUNDLE=$RESULT_BUNDLE" >> $GITHUB_ENV
-          echo "RESULT_JSON=$RESULT_JSON" >> $GITHUB_ENV
-
-      - name: Convert .xcresult to JSON
-        run: |
-          xcrun xcresulttool get --format json --path "$RESULT_BUNDLE" > "$RESULT_JSON"
-        
-      - name: Print JSON content
-        run: |
-          cat "$RESULT_JSON"
+      - name: swifty-code-coverage
+        uses: michaelhenry/swifty-code-coverage@v1.0.1
