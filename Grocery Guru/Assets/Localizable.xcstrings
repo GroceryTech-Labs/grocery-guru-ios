@@ -22,6 +22,7 @@
       }
     },
     "332" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -192,6 +193,7 @@
       }
     },
     "dsald" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -272,6 +274,7 @@
       }
     },
     "Hello World!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -291,12 +294,22 @@
         }
       }
     },
-    "Manage categories" : {
+    "Item" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kategorien verwalten"
+            "value" : "Stück"
+          }
+        }
+      }
+    },
+    "Manage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwalten"
           }
         }
       }
@@ -477,16 +490,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Willkommen zurück!"
-          }
-        }
-      }
-    },
-    "Whole" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stück"
           }
         }
       }

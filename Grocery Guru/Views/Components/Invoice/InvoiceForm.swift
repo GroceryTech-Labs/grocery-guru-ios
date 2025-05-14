@@ -51,7 +51,7 @@ struct InvoiceForm: View {
         viewModel = InvoiceFormViewModel(
             name: product?.productName ?? "",
             amount: product == nil ? "" : "1",
-            measureUnit: .whole,
+            measureUnit: .item,
             category: .bakery,
             product: product
         )

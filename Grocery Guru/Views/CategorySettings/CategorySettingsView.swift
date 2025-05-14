@@ -11,15 +11,19 @@ struct CategorySettingsView: View {
                         Text("Create")
                             .frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.secondary)
+                    .buttonStyle(.primary)
 
                     NavigationLink {
-//                        CategoryCreationView(viewModel: CategoryCreationViewModel(repository: .shared))
+                        // CustomCategoryList
+                        // Edit display order
+                        // Delete category
+                        // Update category (also update items category)
+                        // CategoryCreationView(viewModel: CategoryCreationViewModel(repository: .shared))
                     } label: {
-                        Text("Manage categories")
+                        Text("Manage")
                             .frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.secondary)
+                    .buttonStyle(.primary)
                 }
                 .padding(Constants.Padding.sizeL)
             }

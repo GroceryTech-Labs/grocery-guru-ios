@@ -41,7 +41,7 @@ struct InvoiceItemListRow: View {
             name: "Cheese",
             amount: 200,
             category: .milkEgg,
-            measureUnit: .whole
+            measureUnit: .item
         )
     )
 }

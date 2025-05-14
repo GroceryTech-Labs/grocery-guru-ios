@@ -26,7 +26,7 @@ class InvoiceFormViewModel {
     init(
         name: String = "",
         amount: String = "1",
-        measureUnit: MeasureUnit = .whole,
+        measureUnit: MeasureUnit = .item,
         category: InvoiceItemCategory = .bakery,
         product: OFFProduct? = nil
     ) {
