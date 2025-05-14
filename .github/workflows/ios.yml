@@ -15,7 +15,7 @@ jobs:
       - name: Artifacts Upload
         uses: actions/upload-artifact@v3
       - name: Artifacts Download
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
       - run: swift test --enable-code-coverage
       - uses: michaelhenry/swifty-code-coverage@v1.0.0
         with:
