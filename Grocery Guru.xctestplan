@@ -39,6 +39,22 @@
         "identifier" : "568560DC2C15A520003BDAED",
         "name" : "Grocery GuruUITests"
       }
+    },
+    {
+      "enabled" : false,
+      "target" : {
+        "containerPath" : "container:Packages\/OpenFoodFacts",
+        "identifier" : "OpenFoodFactsTests",
+        "name" : "OpenFoodFactsTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "target" : {
+        "containerPath" : "container:Packages\/Cross-Cutting",
+        "identifier" : "GGAPITests",
+        "name" : "GGAPITests"
+      }
     }
   ],
   "version" : 1

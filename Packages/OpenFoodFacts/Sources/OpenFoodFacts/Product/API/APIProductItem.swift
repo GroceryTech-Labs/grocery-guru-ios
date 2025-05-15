@@ -1,6 +1,6 @@
 import Foundation
 
-public struct APIProductItem: Hashable, Sendable {
+public struct APIProductItem: Sendable {
     public let productName: String?
     public let nutriments: APINutrimentsItem
 

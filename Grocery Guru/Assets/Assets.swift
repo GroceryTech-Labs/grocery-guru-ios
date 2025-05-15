@@ -1,4 +1,5 @@
 import SwiftUI
+import OpenFoodFacts
 
 enum Assets {
     static var emojis: [String] {
@@ -14,6 +15,21 @@ enum Assets {
         }
 
         return emojiData.emojis
+    }
+
+    static var nutriments: APINutrimentsItem? {
+        guard let asset = NSDataAsset(name: "nutriments") else {
+            return nil
+        }
+
+        let data = asset.data
+        let decoder = JSONDecoder()
+
+        guard let nutrimentsData = try? decoder.decode(APINutrimentsItem.self, from: data) else {
+            return nil
+        }
+
+        return nutrimentsData
     }
 }
 

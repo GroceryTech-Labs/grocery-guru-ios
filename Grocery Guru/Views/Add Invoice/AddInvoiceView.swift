@@ -25,12 +25,6 @@ struct AddInvoiceView: View {
                     .onAppear {
                         isPresentingIndicator = true
                     }
-                    .overlay(alignment: .center) {
-                        ScannerOverlay(
-                            isPresented: $isPresentingIndicator,
-                            systemImage: "doc.viewfinder"
-                        )
-                    }
             }
         }
         .frame(

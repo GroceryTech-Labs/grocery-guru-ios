@@ -1,6 +1,6 @@
 import Foundation
 
-public struct UINutrimentsItem: Hashable, Equatable, Identifiable {
+public struct UINutrimentsItem: Hashable, Equatable, Identifiable, Sendable {
     public let id = UUID()
 
     public let carbohydrates100g: Float?

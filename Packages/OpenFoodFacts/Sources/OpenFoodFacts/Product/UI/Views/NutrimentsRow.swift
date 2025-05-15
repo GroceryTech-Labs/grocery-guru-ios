@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 public struct NutrimentsRow: View {
     @Binding public var product: UIProductItem?
@@ -11,7 +12,7 @@ public struct NutrimentsRow: View {
             } label: {
                 Text("Nutriments (100g)")
                     .font(.headline)
-//                    .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormNutriments)
+                    .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormNutriments)
             }
         }
     }

@@ -12,7 +12,13 @@ let package = Package(
         .package(path: "../DesignSystem")
     ],
     targets: [
-        .target(name: "OpenFoodFacts", dependencies: ["DesignSystem"]),
+        .target(
+            name: "OpenFoodFacts",
+            dependencies: ["DesignSystem"],
+            resources: [.process(
+                "Product/Resources/off_nutriments.json"
+            )]
+        ),
         .testTarget(name: "OpenFoodFactsTests", dependencies: ["OpenFoodFacts"])
     ]
 )

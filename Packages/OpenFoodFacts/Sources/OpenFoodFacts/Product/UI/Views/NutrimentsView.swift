@@ -13,7 +13,6 @@ public struct NutrimentsView: View {
             carbohydratesSection
             energyKcalSection
             energyKJSection
-            // FAT
             fatSection
             proteinSection
             saltSection
@@ -110,5 +109,16 @@ public struct NutrimentsView: View {
             }
             .foregroundStyle(.secondary)
         }
+    }
+}
+
+#Preview {
+    NutrimentsView(nutriments: .sample)
+}
+
+extension UINutrimentsItem {
+    static var sample: UINutrimentsItem {
+        let data = Bundle.main.decode(APINutrimentsItem.self, from: "off_nutriments.json")
+        return UINutrimentsItem(from: data)
     }
 }
