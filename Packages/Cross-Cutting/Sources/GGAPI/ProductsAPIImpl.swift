@@ -19,6 +19,11 @@ extension ProductAPIImpl {
     public func fetchProduct(barcode: String) async throws -> APIProductItem {
         let request = GETProductRequest(barcode)
         let response = try await ggAPI.request(request)
+
+        guard response.status == 1 else {
+            throw ProductError.productNotFound(response.statusVerbose)
+        }
+
         return convert(response)
     }
 

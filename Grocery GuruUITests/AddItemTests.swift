@@ -1,4 +1,5 @@
 import XCTest
+@testable import DesignSystem
 
 final class AddItemTests: XCTestCase {
     enum TypeOfHandle: String, CaseIterable {
@@ -16,18 +17,18 @@ final class AddItemTests: XCTestCase {
         app.launch()
 
         // 1) Open the "Add" screen.
-        TapAction.addInvoiceButton(app: app)
+        app.tapAddInvoiceButton()
 
         // 2) Switch to "manual" adding.
-        TapAction.addInvoiceManualSegmentButton(app: app)
+        app.tapAddInvoiceManualSegmentButton()
 
         // 3) Fill in and submit the form.
-        TypeAction.invoiceFormName(app: app)
-        TypeAction.invoiceFormAmount(app: app)
-        TapAction.invoiceFormSubmitButton(app: app)
+        app.typeInvoiceFormName()
+        app.typeInvoiceFormAmount()
+        app.tapInvoiceFormSubmitButton()
 
         // 4) Tap first category
-        TapAction.invoiceCategoryButton(app: app)
+        app.tapInvoiceCategoryButton()
 
         // 5) Check for existence of item.
         let invoiceItem = app.otherElements[AccessibilityIdentifier.ListElement.invoiceItem].firstMatch
@@ -44,26 +45,23 @@ final class AddItemTests: XCTestCase {
         app.launch()
 
         // 1) Open the "Add" screen.
-        TapAction.addInvoiceButton(app: app)
+        app.tapAddInvoiceButton()
 
         // 2) Switch to "barcode".
-        TapAction.addInvoiceBarcodeSegmentButton(app: app)
+        app.tapAddInvoiceBarcodeSegmentButton()
 
         // 3) Simulate a barcode scan,
-        TapAction.barcodeScanner(app: app, maxRequestTime: 5)
+        app.tapBarcodeScanner(maxRequestTime: 5)
 
         // 4) Fill in and submit the form.
-        TypeAction.invoiceFormAmount(app: app)
-        TapAction.openAndCloseNutriments(app: app)
-        TapAction.invoiceFormSubmitButton(app: app)
+        app.typeInvoiceFormAmount()
+        app.tapOpenAndCloseNutriments()
+        app.tapInvoiceFormSubmitButton()
 
-        // 5) Navigate back.
-        TapAction.navigateBack(app: app)
+        // 5) Tap first category.
+        app.tapInvoiceCategoryButton()
 
-        // 6) Tap first category.
-        TapAction.invoiceCategoryButton(app: app)
-
-        // 7) Check for existence of item.
+        // 6) Check for existence of item.
         let invoiceItem = app.otherElements[AccessibilityIdentifier.ListElement.invoiceItem].firstMatch
         XCTAssertTrue(invoiceItem.waitForExistence(timeout: 1))
 

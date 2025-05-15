@@ -6,4 +6,3 @@ public enum HTTPRequestError: Error {
     case unexpectedHTTPResponse(response: HTTPURLResponse, data: Data)
     case unknownResponse(response: URLResponse, data: Data)
 }
-

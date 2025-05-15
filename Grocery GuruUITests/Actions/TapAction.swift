@@ -1,14 +1,15 @@
 import XCTest
 @testable import Grocery_Guru
+@testable import DesignSystem
 
 /// Simple tap events with check for existence
-final class TapAction {
+extension XCUIApplication {
 
     // MARK: HOME
     // Buttons
 
-    static func invoiceCategoryButton(app: XCUIApplication) {
-        let button = app.buttons[AccessibilityIdentifier.Button.invoiceCategory].firstMatch
+    func tapInvoiceCategoryButton() {
+        let button = self.buttons[AccessibilityIdentifier.Button.invoiceCategory].firstMatch
 
         // Check for existence
         XCTAssertTrue(button.waitForExistence(timeout: 1))
@@ -18,32 +19,32 @@ final class TapAction {
     // MARK: ADD INVOICE
     // Buttons
 
-    static func addInvoiceButton(app: XCUIApplication) {
-        let button = app.buttons[AccessibilityIdentifier.Button.addInvoice]
+    func tapAddInvoiceButton() {
+        let button = self.buttons[AccessibilityIdentifier.Button.addInvoice]
 
         // Check for existence
         XCTAssertTrue(button.waitForExistence(timeout: 1))
         button.tap()
     }
 
-    static func addInvoiceManualSegmentButton(app: XCUIApplication) {
-        let button = app.buttons[AccessibilityIdentifier.Button.addInvoiceManual]
+    func tapAddInvoiceManualSegmentButton() {
+        let button = self.buttons[AccessibilityIdentifier.Button.addInvoiceManual]
 
         // Check for existence
         XCTAssertTrue(button.waitForExistence(timeout: 1))
         button.tap()
     }
 
-    static func addInvoiceDocumentSegmentButton(app: XCUIApplication) {
-        let button = app.buttons[AccessibilityIdentifier.Button.addInvoiceDocument]
+    func tapAddInvoiceDocumentSegmentButton() {
+        let button = self.buttons[AccessibilityIdentifier.Button.addInvoiceDocument]
 
         // Check for existence
         XCTAssertTrue(button.waitForExistence(timeout: 1))
         button.tap()
     }
 
-    static func addInvoiceBarcodeSegmentButton(app: XCUIApplication) {
-        let button = app.buttons[AccessibilityIdentifier.Button.addInvoiceBarcode]
+    func tapAddInvoiceBarcodeSegmentButton() {
+        let button = self.buttons[AccessibilityIdentifier.Button.addInvoiceBarcode]
 
         // Check for existence
         XCTAssertTrue(button.waitForExistence(timeout: 1))
@@ -51,8 +52,8 @@ final class TapAction {
     }
 
     // Other
-    static func barcodeScanner(app: XCUIApplication, maxRequestTime: TimeInterval) {
-        let barcodeScanner = app.otherElements[AccessibilityIdentifier.Scanner.barcode]
+    func tapBarcodeScanner(maxRequestTime: TimeInterval) {
+        let barcodeScanner = self.otherElements[AccessibilityIdentifier.Scanner.barcode]
 
         // Necessary for the UI to respond
         sleep(3)
@@ -62,15 +63,15 @@ final class TapAction {
         barcodeScanner.tap()
 
         // Check for view switch
-        let formTextField = app.textFields[AccessibilityIdentifier.TextField.invoiceFormName]
+        let formTextField = self.textFields[AccessibilityIdentifier.TextField.invoiceFormName]
         XCTAssertTrue(formTextField.waitForExistence(timeout: maxRequestTime))
     }
 
     // MARK: INVOICE FORM
     // Buttons
 
-    static func invoiceFormSubmitButton(app: XCUIApplication) {
-        let button = app.buttons[AccessibilityIdentifier.Button.invoiceFormSubmit]
+    func tapInvoiceFormSubmitButton() {
+        let button = self.buttons[AccessibilityIdentifier.Button.invoiceFormSubmit]
 
         // Check for existence
         XCTAssertTrue(button.waitForExistence(timeout: 1))
@@ -79,24 +80,24 @@ final class TapAction {
 
     // Text Fields
 
-    static func invoiceFormNameTextfield(app: XCUIApplication) {
-        let textField = app.textFields[AccessibilityIdentifier.TextField.invoiceFormName]
+    func tapInvoiceFormNameTextfield() {
+        let textField = self.textFields[AccessibilityIdentifier.TextField.invoiceFormName]
 
         // Check for existence
         XCTAssertTrue(textField.waitForExistence(timeout: 1))
         textField.tap()
     }
 
-    static func invoiceFormAmountTextfield(app: XCUIApplication) {
-        let textField = app.textFields[AccessibilityIdentifier.TextField.invoiceFormAmount]
+    func tapInvoiceFormAmountTextfield() {
+        let textField = self.textFields[AccessibilityIdentifier.TextField.invoiceFormAmount]
 
         // Check for existence
         XCTAssertTrue(textField.waitForExistence(timeout: 1))
         textField.tap()
     }
 
-    static func openAndCloseNutriments(app: XCUIApplication) {
-        let disclosureGroup = app.staticTexts[AccessibilityIdentifier.Button.invoiceFormNutriments]
+    func tapOpenAndCloseNutriments() {
+        let disclosureGroup = self.staticTexts[AccessibilityIdentifier.Button.invoiceFormNutriments]
 
         // Check for existence
         XCTAssertTrue(disclosureGroup.waitForExistence(timeout: 1))
@@ -108,8 +109,8 @@ final class TapAction {
 
     // MARK: General
 
-    static func navigateBack(app: XCUIApplication) {
-        let navigationBar = app.navigationBars.firstMatch
+    func tapNavigateBack() {
+        let navigationBar = self.navigationBars.firstMatch
         let leadingItem = navigationBar.buttons.firstMatch
 
         // Check for existence

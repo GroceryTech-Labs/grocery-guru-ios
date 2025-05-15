@@ -3,20 +3,20 @@ import Foundation
 public struct UINutrimentsItem: Hashable, Equatable, Identifiable, Sendable {
     public let id = UUID()
 
-    public var carbohydrates100g: Float? = nil
-    public var carbohydratesUnit: String? = nil
-    public var energyKcal100g: Float? = nil
-    public var energyKcalUnit: String? = nil
-    public var energyKJ100g: Float? = nil
-    public var energyKJUnit: String? = nil
-    public var fat100g: Float? = nil
-    public var fatUnit: String? = nil
-    public var proteins100g: Float? = nil
-    public var proteinsUnit: String? = nil
-    public var salt100g: Float? = nil
-    public var saltUnit: String? = nil
-    public var sugars100g: Float? = nil
-    public var sugarsUnit: String? = nil
+    public var carbohydrates100g: Float?
+    public var carbohydratesUnit: String?
+    public var energyKcal100g: Float?
+    public var energyKcalUnit: String?
+    public var energyKJ100g: Float?
+    public var energyKJUnit: String?
+    public var fat100g: Float?
+    public var fatUnit: String?
+    public var proteins100g: Float?
+    public var proteinsUnit: String?
+    public var salt100g: Float?
+    public var saltUnit: String?
+    public var sugars100g: Float?
+    public var sugarsUnit: String?
 }
 
 extension UINutrimentsItem {

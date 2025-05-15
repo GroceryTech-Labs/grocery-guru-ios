@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class InvoiceItem: Sendable {
+final class InvoiceItem {
     var name: String
     var amount: Int
     var category: InvoiceItemCategory

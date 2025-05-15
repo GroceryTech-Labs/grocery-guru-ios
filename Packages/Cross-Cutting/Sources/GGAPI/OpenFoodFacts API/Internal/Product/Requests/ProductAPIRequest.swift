@@ -2,7 +2,7 @@ import Foundation
 
 class ProductAPIRequest: APIRequest, @unchecked Sendable {
 
-    typealias T = GETProductResponse
+    typealias Item = GETProductResponse
 
     let decoder: JSONDecoder? = nil
     let path: String

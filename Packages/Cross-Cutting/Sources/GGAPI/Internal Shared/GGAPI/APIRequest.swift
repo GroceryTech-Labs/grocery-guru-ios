@@ -1,7 +1,7 @@
 import Foundation
 
-protocol APIRequest<T> {
-    associatedtype T: Decodable
+protocol APIRequest<Item> {
+    associatedtype Item: Decodable
 
     var path: String { get }
     var queryItems: [URLQueryItem] { get }

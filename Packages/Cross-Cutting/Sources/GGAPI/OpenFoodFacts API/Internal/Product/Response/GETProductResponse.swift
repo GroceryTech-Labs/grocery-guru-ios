@@ -25,6 +25,9 @@ struct ProductDTO: Decodable, Sendable {
 }
 
 struct NutrimentsDTO: Decodable, Sendable {
+
+    // swiftlint:disable identifier_name
+
     enum CodingKeys: String, CodingKey {
         case carbohydrates = "carbohydrates"
         case carbohydrates100g = "carbohydrates_100g"
@@ -136,4 +139,6 @@ struct NutrimentsDTO: Decodable, Sendable {
     let sugarsServing: Float?
     let sugarsUnit: String?
     let sugarsValue: Float?
+
+    // swiftlint:enable identifier_name
 }

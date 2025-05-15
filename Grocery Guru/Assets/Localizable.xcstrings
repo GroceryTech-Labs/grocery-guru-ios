@@ -1,17 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        }
-      }
-    },
     "%@ Items" : {
       "localizations" : {
         "de" : {
@@ -21,18 +10,6 @@
           }
         }
       }
-    },
-    "332" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "Add Invoice" : {
       "localizations" : {
@@ -184,18 +161,6 @@
         }
       }
     },
-    "dsald" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "Emoji" : {
       "localizations" : {
         "de" : {
@@ -232,17 +197,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "g"
-          }
-        }
-      }
-    },
-    "Hello World!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
           }
         }
       }
