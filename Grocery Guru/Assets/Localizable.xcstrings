@@ -379,6 +379,7 @@
       }
     },
     "Nutriments (100g)" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

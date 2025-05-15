@@ -49,7 +49,7 @@ struct InvoiceForm: View {
         .modelContext(viewModel.usedLocalRepository.modelContext)
     }
 
-    init(product: APIProductItem? = nil) {
+    init(product: UIProductItem? = nil) {
         viewModel = InvoiceFormViewModel(
             name: product?.productName ?? "",
             amount: product == nil ? "" : "1",

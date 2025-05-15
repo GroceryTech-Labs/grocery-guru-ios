@@ -22,7 +22,8 @@ final class BarcodeScannerViewModel {
         switch response {
         case .success(let success):
             do {
-                let result = try await productAPI.fetchProduct(barcode: success.string)
+                let response = try await productAPI.fetchProduct(barcode: success.string)
+                let result = UIProductItem(from: response)
 
                 navigator.push(.invoiceForm(product: result))
 

@@ -10,6 +10,13 @@ public struct UIProductItem: Hashable, Equatable, Identifiable {
 //    )
 
     public let id = UUID()
-    public let productName: String
+    public let productName: String?
     public let nutriments: UINutrimentsItem
+}
+
+extension UIProductItem {
+    public init(from apiItem: APIProductItem) {
+        productName = apiItem.productName
+        nutriments = UINutrimentsItem(from: apiItem.nutriments)
+    }
 }

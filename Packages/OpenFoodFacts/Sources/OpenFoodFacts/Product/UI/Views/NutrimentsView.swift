@@ -2,9 +2,9 @@ import SwiftUI
 import DesignSystem
 
 public struct NutrimentsView: View {
-    public let nutriments: APINutrimentsItem
+    public let nutriments: UINutrimentsItem
 
-    public init(nutriments: APINutrimentsItem) {
+    public init(nutriments: UINutrimentsItem) {
         self.nutriments = nutriments
     }
 
@@ -13,6 +13,7 @@ public struct NutrimentsView: View {
             carbohydratesSection
             energyKcalSection
             energyKJSection
+            // FAT
             fatSection
             proteinSection
             saltSection
