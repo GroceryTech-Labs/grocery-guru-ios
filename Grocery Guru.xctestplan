@@ -17,7 +17,7 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
+      "parallelizable" : false,
       "target" : {
         "containerPath" : "container:Grocery Guru.xcodeproj",
         "identifier" : "5639A5432BFF95940086857F",
@@ -25,7 +25,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "skippedTests" : [
         "AccessibilityAuditTests",
         "AccessibilityAuditTests\/testHomeAudit()"
@@ -34,22 +33,6 @@
         "containerPath" : "container:Grocery Guru.xcodeproj",
         "identifier" : "568560DC2C15A520003BDAED",
         "name" : "Grocery GuruUITests"
-      }
-    },
-    {
-      "enabled" : false,
-      "target" : {
-        "containerPath" : "container:Packages\/OpenFoodFacts",
-        "identifier" : "OpenFoodFactsTests",
-        "name" : "OpenFoodFactsTests"
-      }
-    },
-    {
-      "enabled" : false,
-      "target" : {
-        "containerPath" : "container:Packages\/Cross-Cutting",
-        "identifier" : "GGAPITests",
-        "name" : "GGAPITests"
       }
     }
   ],
