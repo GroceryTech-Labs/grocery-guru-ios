@@ -24,13 +24,17 @@ jobs:
           echo $default | cat >default
           echo Using default scheme: $default
       - name: Build
+        env:
+          scheme: ${{ 'default' }}
         run: |
           # xcrun xctrace returns via stderr, not the expected stdout (see https://developer.apple.com/forums/thread/663959)
-          xcodebuild build-for-testing -scheme $default -project "Grocery Guru.xcodeproj" -destination "platform=iOS Simulator,name=iPhone 16 Pro"
+          xcodebuild build-for-testing -scheme "$scheme" -project "Grocery Guru.xcodeproj" -destination "platform=iOS Simulator,name=iPhone 16 Pro"
       - name: Test
+        env:
+          scheme: ${{ 'default' }}
         run: |
           # xcrun xctrace returns via stderr, not the expected stdout (see https://developer.apple.com/forums/thread/663959)
-          xcodebuild test-without-building -scheme $default -project "Grocery Guru.xcodeproj" -destination "platform=iOS Simulator,name=iPhone 16 Pro" -enableCodeCoverage YES -resultBundlePath CoverageResults.xcresult
+          xcodebuild test-without-building -scheme "$scheme" -project "Grocery Guru.xcodeproj" -destination "platform=iOS Simulator,name=iPhone 16 Pro" -enableCodeCoverage YES -resultBundlePath CoverageResults.xcresult
       - name: Code Coverage
         run: |
           xcrun xccov view --report --json CoverageResults.xcresult > test_coverage.json
