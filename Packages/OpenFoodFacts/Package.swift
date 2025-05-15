@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "OpenFoodFacts",
+    defaultLocalization: "en",
     platforms: [.iOS(.v17)],
     products: [
         .library(name: "OpenFoodFacts", targets: ["OpenFoodFacts"])
@@ -15,9 +16,9 @@ let package = Package(
         .target(
             name: "OpenFoodFacts",
             dependencies: ["DesignSystem"],
-            resources: [.process(
-                "Product/Resources/off_nutriments.json"
-            )]
+            resources: [
+                .process("Product/Resources")
+            ]
         ),
         .testTarget(name: "OpenFoodFactsTests", dependencies: ["OpenFoodFacts"])
     ]

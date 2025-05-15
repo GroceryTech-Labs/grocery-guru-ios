@@ -2,6 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -30,7 +31,8 @@
             "value" : ""
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "Add Invoice" : {
       "localizations" : {
@@ -108,17 +110,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Konserven"
-          }
-        }
-      }
-    },
-    "Carbohydrates:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kohlenhydrate:"
           }
         }
       }
@@ -202,7 +193,8 @@
             "value" : ""
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "Emoji" : {
       "localizations" : {
@@ -210,39 +202,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Emoji"
-          }
-        }
-      }
-    },
-    "Energy (kcal):" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Energie (kcal)"
-          }
-        }
-      }
-    },
-    "Energy (kJ):" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Energie (kJ):"
-          }
-        }
-      }
-    },
-    "Fat:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fett:"
           }
         }
       }
@@ -378,17 +337,6 @@
         }
       }
     },
-    "Nutriments (100g)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nährwerte (100g)"
-          }
-        }
-      }
-    },
     "Open Invoice Item" : {
       "localizations" : {
         "de" : {
@@ -419,34 +367,12 @@
         }
       }
     },
-    "Proteins:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Protein:"
-          }
-        }
-      }
-    },
     "Reset" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zurücksetzen"
-          }
-        }
-      }
-    },
-    "Salt:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Salz:"
           }
         }
       }
@@ -467,17 +393,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zeige alle"
-          }
-        }
-      }
-    },
-    "Sugars:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zucker:"
           }
         }
       }

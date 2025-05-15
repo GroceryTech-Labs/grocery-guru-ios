@@ -3,20 +3,20 @@ import Foundation
 public struct UINutrimentsItem: Hashable, Equatable, Identifiable, Sendable {
     public let id = UUID()
 
-    public let carbohydrates100g: Float?
-    public let carbohydratesUnit: String?
-    public let energyKcal100g: Float?
-    public let energyKcalUnit: String?
-    public let energyKJ100g: Float?
-    public let energyKJUnit: String?
-    public let fat100g: Float?
-    public let fatUnit: String?
-    public let proteins100g: Float?
-    public let proteinsUnit: String?
-    public let salt100g: Float?
-    public let saltUnit: String?
-    public let sugars100g: Float?
-    public let sugarsUnit: String?
+    public var carbohydrates100g: Float? = nil
+    public var carbohydratesUnit: String? = nil
+    public var energyKcal100g: Float? = nil
+    public var energyKcalUnit: String? = nil
+    public var energyKJ100g: Float? = nil
+    public var energyKJUnit: String? = nil
+    public var fat100g: Float? = nil
+    public var fatUnit: String? = nil
+    public var proteins100g: Float? = nil
+    public var proteinsUnit: String? = nil
+    public var salt100g: Float? = nil
+    public var saltUnit: String? = nil
+    public var sugars100g: Float? = nil
+    public var sugarsUnit: String? = nil
 }
 
 extension UINutrimentsItem {
@@ -36,4 +36,23 @@ extension UINutrimentsItem {
         sugars100g = apiItem.sugars100g
         sugarsUnit = apiItem.sugarsUnit
     }
+}
+
+extension UINutrimentsItem {
+    static let example = UINutrimentsItem(
+        carbohydrates100g: 9.2,
+        carbohydratesUnit: "g",
+        energyKcal100g: 37,
+        energyKcalUnit: "kcal",
+        energyKJ100g: 158,
+        energyKJUnit: "kj",
+        fat100g: 0,
+        fatUnit: "g",
+        proteins100g: 0,
+        proteinsUnit: "g",
+        salt100g: 0.04,
+        saltUnit: "g",
+        sugars100g: 9.2,
+        sugarsUnit: "g"
+    )
 }

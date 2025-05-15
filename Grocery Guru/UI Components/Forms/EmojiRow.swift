@@ -8,9 +8,7 @@ struct EmojiRow: View {
 
     var body: some View {
         SectionHeader("Emoji", font: .headline) {
-            EmojiPicker { emoji in
-                selection(emoji)
-            }
+            
         }
         .frame(maxHeight: pickerHeight)
     }

@@ -1,0 +1,86 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Carbohydrates" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kohlenhydrate"
+          }
+        }
+      }
+    },
+    "Energy (kcal)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energie (kcal)"
+          }
+        }
+      }
+    },
+    "Energy (kJ)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energy (kj)"
+          }
+        }
+      }
+    },
+    "Fat" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fett"
+          }
+        }
+      }
+    },
+    "Nutriments (100g)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nährwerte (100g)"
+          }
+        }
+      }
+    },
+    "Proteins" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proteine"
+          }
+        }
+      }
+    },
+    "Salt" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salz"
+          }
+        }
+      }
+    },
+    "Sugars" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zucker"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

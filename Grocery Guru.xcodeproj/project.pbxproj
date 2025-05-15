@@ -15,9 +15,7 @@
 		5620E1192C1850EC0027655A /* AccessibilityAuditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620E1182C1850EC0027655A /* AccessibilityAuditTests.swift */; };
 		5620E11C2C1887D90027655A /* ResponsiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620E11B2C1887D90027655A /* ResponsiveCard.swift */; };
 		562DCABB2C7E5AE6006CBFB6 /* LocalStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562DCABA2C7E5AE6006CBFB6 /* LocalStorageRepository.swift */; };
-		562DCABD2C7E62DE006CBFB6 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562DCABC2C7E62DE006CBFB6 /* Assets.swift */; };
 		562DCABF2C7E69A0006CBFB6 /* EmojiRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562DCABE2C7E69A0006CBFB6 /* EmojiRow.swift */; };
-		562DCAC12C7E69BE006CBFB6 /* EmojiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562DCAC02C7E69BE006CBFB6 /* EmojiPicker.swift */; };
 		56346D4B2C0E671200454E17 /* AddInvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56346D4A2C0E671200454E17 /* AddInvoiceView.swift */; };
 		56346D4D2C0E68E000454E17 /* AddInvoiceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */; };
 		5635E32B2C24A746000A6628 /* CustomCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E32A2C24A746000A6628 /* CustomCategory.swift */; };
@@ -48,7 +46,6 @@
 		5683BBC62C145E76001EF768 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5683BBC52C145E76001EF768 /* CodeScanner */; };
 		5683BBC82C145EA0001EF768 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBC72C145EA0001EF768 /* BarcodeScannerView.swift */; };
 		5683BBE92C14A316001EF768 /* Bundle+decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBE82C14A316001EF768 /* Bundle+decode.swift */; };
-		5683BBF82C14EA55001EF768 /* off_nutriments.json in Resources */ = {isa = PBXBuildFile; fileRef = 5683BBF72C14EA55001EF768 /* off_nutriments.json */; };
 		568560E02C15A520003BDAED /* AddItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560DF2C15A520003BDAED /* AddItemTests.swift */; };
 		568560EF2C15AF96003BDAED /* TapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560EE2C15AF96003BDAED /* TapAction.swift */; };
 		568560F12C15B08F003BDAED /* TypeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560F02C15B08F003BDAED /* TypeAction.swift */; };
@@ -104,9 +101,7 @@
 		5620E1182C1850EC0027655A /* AccessibilityAuditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityAuditTests.swift; sourceTree = "<group>"; };
 		5620E11B2C1887D90027655A /* ResponsiveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveCard.swift; sourceTree = "<group>"; };
 		562DCABA2C7E5AE6006CBFB6 /* LocalStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageRepository.swift; sourceTree = "<group>"; };
-		562DCABC2C7E62DE006CBFB6 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		562DCABE2C7E69A0006CBFB6 /* EmojiRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRow.swift; sourceTree = "<group>"; };
-		562DCAC02C7E69BE006CBFB6 /* EmojiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPicker.swift; sourceTree = "<group>"; };
 		56346D4A2C0E671200454E17 /* AddInvoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceView.swift; sourceTree = "<group>"; };
 		56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceOption.swift; sourceTree = "<group>"; };
 		5635E32A2C24A746000A6628 /* CustomCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategory.swift; sourceTree = "<group>"; };
@@ -139,7 +134,6 @@
 		5683BBC22C13BE26001EF768 /* NavigationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationServiceTests.swift; sourceTree = "<group>"; };
 		5683BBC72C145EA0001EF768 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
 		5683BBE82C14A316001EF768 /* Bundle+decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+decode.swift"; sourceTree = "<group>"; };
-		5683BBF72C14EA55001EF768 /* off_nutriments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = off_nutriments.json; sourceTree = "<group>"; };
 		568560DD2C15A520003BDAED /* Grocery GuruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery GuruUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		568560DF2C15A520003BDAED /* AddItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTests.swift; sourceTree = "<group>"; };
 		568560EE2C15AF96003BDAED /* TapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAction.swift; sourceTree = "<group>"; };
@@ -304,7 +298,6 @@
 				5683BBF62C14EA1C001EF768 /* JSON-Example */,
 				5639A5612BFF97BD0086857F /* Assets.xcassets */,
 				56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */,
-				562DCABC2C7E62DE006CBFB6 /* Assets.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -415,7 +408,6 @@
 		5683BBF62C14EA1C001EF768 /* JSON-Example */ = {
 			isa = PBXGroup;
 			children = (
-				5683BBF72C14EA55001EF768 /* off_nutriments.json */,
 			);
 			path = "JSON-Example";
 			sourceTree = "<group>";
@@ -474,7 +466,6 @@
 			isa = PBXGroup;
 			children = (
 				56CA91712C239DC30018198F /* AddInvoicePicker.swift */,
-				562DCAC02C7E69BE006CBFB6 /* EmojiPicker.swift */,
 				56C121002C1CF5A400F56B3D /* InvoiceCategoryPicker.swift */,
 				5635E32E2C24AEE1000A6628 /* MeasureUnitPicker.swift */,
 			);
@@ -664,7 +655,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5683BBF82C14EA55001EF768 /* off_nutriments.json in Resources */,
 				56415D012C0CCAE100C58D4E /* .swiftlint.yml in Resources */,
 				5639A5722BFF97BD0086857F /* Preview Assets.xcassets in Resources */,
 				5639A5702BFF97BD0086857F /* Assets.xcassets in Resources */,
@@ -722,7 +712,6 @@
 				567409BD2C8502DB000B9954 /* PrimaryButtomStyle.swift in Sources */,
 				56B138F12C26C9CF00B35CA4 /* FormsAddInvoiceButton.swift in Sources */,
 				5655F70A2C0D2D6F00C80708 /* NavigationDestination.swift in Sources */,
-				562DCABD2C7E62DE006CBFB6 /* Assets.swift in Sources */,
 				560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */,
 				56B138EF2C26C90E00B35CA4 /* NameRow.swift in Sources */,
 				56FFAC6A2C0BF13200D2D965 /* SectionHeader.swift in Sources */,
@@ -749,7 +738,6 @@
 				562DCABB2C7E5AE6006CBFB6 /* LocalStorageRepository.swift in Sources */,
 				5635E32F2C24AEE1000A6628 /* MeasureUnitPicker.swift in Sources */,
 				5656BB9B2C24588F00A8F0F7 /* UserSettings.swift in Sources */,
-				562DCAC12C7E69BE006CBFB6 /* EmojiPicker.swift in Sources */,
 				56FFAC7B2C0C8B9B00D2D965 /* ShowAddInvoiceButton.swift in Sources */,
 				56FFAC772C0C888200D2D965 /* InvoiceCategoryCardList.swift in Sources */,
 				56C121012C1CF5A400F56B3D /* InvoiceCategoryPicker.swift in Sources */,
@@ -866,6 +854,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -924,6 +913,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
