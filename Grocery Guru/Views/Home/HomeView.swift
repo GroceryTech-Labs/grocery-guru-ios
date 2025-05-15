@@ -2,16 +2,15 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
-    @State private var viewModel: HomeViewModel
     @Environment(\.navigationService)
     private var navigator
+
+    @State private var viewModel: HomeViewModel
 
     var body: some View {
         HomeViewList(viewModel: viewModel)
             .overlay(alignment: .bottom) {
-                AddInvoiceButton {
-                    navigator.push(.addInvoice())
-                }
+                ShowAddInvoiceButton()
             }
             .modelContext(viewModel.repository.modelContext)
     }
@@ -23,6 +22,8 @@ struct HomeView: View {
 
 #Preview {
     HomeView(
-        viewModel: HomeViewModel(repository: LocalStorageItemRepository.shared)
+        viewModel: HomeViewModel(
+            repository: LocalStorageRepository()
+        )
     )
 }

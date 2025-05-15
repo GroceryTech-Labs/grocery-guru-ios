@@ -2,10 +2,12 @@ import SwiftUI
 
 @Observable
 final class HomeViewModel {
-    @ObservationIgnored let repository: InvoiceItemRepository
+    @ObservationIgnored let repository: LocalStorageRepository
 
     @MainActor
-    init(repository: InvoiceItemRepository) {
+    init(
+        repository: LocalStorageRepository
+    ) {
         self.repository = repository
     }
 }

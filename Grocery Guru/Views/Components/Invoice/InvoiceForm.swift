@@ -1,4 +1,6 @@
 import SwiftUI
+import OpenFoodFacts
+import DesignSystem
 
 struct InvoiceForm: View {
     enum Field: Hashable {
@@ -7,168 +9,53 @@ struct InvoiceForm: View {
         case market
     }
 
-    @State private var name: String
-    @State private var amount: String
-    @State private var measureUnit: MeasureUnit
-    @State private var category: InvoiceItemCategory
-    @State private var product: OFFProduct?
-    @State private var isPresentingNutriments = false
+    @State private var viewModel: InvoiceFormViewModel
     @FocusState private var focusedField: Field?
-
-    @Environment(\.navigationService)
-    private var navigator
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: Constants.Padding.sizeL) {
-                SectionHeader("Add Item")
+            SectionHeader("Add Item") {
+                VStack(spacing: Constants.Padding.sizeXL) {
+                    NameRow(name: $viewModel.name)
+                        .focused($focusedField, equals: .name)
+                        .submitLabel(.next)
+                        .onSubmit {
+                            focusedField = .amount
+                        }
 
-                VStack(alignment: .leading, spacing: Constants.Padding.sizeL) {
-                    nameRow
+                    AmountRow(amount: $viewModel.amount, measureUnit: $viewModel.measureUnit)
+                        .focused($focusedField, equals: .amount)
+                        .submitLabel(.next)
+                        .onSubmit {
+                            focusedField = nil
+                        }
 
-                    amountAndMeasureUnitRow
+                    CategoryPickerRow(category: $viewModel.category)
 
-                    //                    marketRow
+                    NutrimentsRow(
+                        product: $viewModel.product,
+                        isExpanded: $viewModel.isPresentingNutriments
+                    )
 
-                    categoryRow
+                    FormsAddInvoiceButton(
+                        viewModel: $viewModel,
+                        focusedField: _focusedField
+                    )
                 }
-                .textFieldStyle(.roundedBorder)
-
-                if let product {
-                    DisclosureGroup(isExpanded: $isPresentingNutriments) {
-                        OFFNutrimentsView(nutriments: product.nutriments)
-                    } label: {
-                        Text("Nutriments (100g)")
-                            .font(.headline)
-                            .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormNutriments)
-                    }
-                }
-
-                Spacer(minLength: Constants.Padding.sizeL)
-
-                addInvoiceButton
             }
+            .padding(.horizontal, Constants.Padding.sizeL)
         }
         .scrollIndicators(.hidden)
-        .frame(
-            maxWidth: .infinity,
-            maxHeight: .infinity,
-            alignment: .top
+        .modelContext(viewModel.usedLocalRepository.modelContext)
+    }
+
+    init(product: APIProductItem? = nil) {
+        viewModel = InvoiceFormViewModel(
+            name: product?.productName ?? "",
+            amount: product == nil ? "" : "1",
+            measureUnit: .item,
+            category: .bakery,
+            product: product
         )
-        .padding(Constants.Padding.sizeL)
     }
-
-    private var addInvoiceButton: some View {
-        Button {
-            guard !name.isEmpty else {
-                focusedField = .name
-                return
-            }
-
-            guard !amount.isEmpty else {
-                focusedField = .amount
-                return
-            }
-
-            Task {
-                do {
-                    try await AppConfig.shared.usedLocalRepository.addItem(
-                        InvoiceItem(
-                            name: name,
-                            amount: Int(amount) ?? 0,
-                            category: category,
-                            measureUnit: measureUnit
-                        )
-                    )
-                    navigator.drop()
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }
-        } label: {
-            Text("Add to inventory")
-                .foregroundStyle(.white)
-                .frame(maxWidth: .infinity)
-        }
-        .buttonStyle(.borderedProminent)
-        .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormSubmit)
-    }
-
-    private var amountAndMeasureUnitRow: some View {
-        VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
-            Text("Amount")
-                .font(.headline)
-
-            HStack {
-                TextField("Amount", text: $amount, prompt: Text(measureUnit == .gram ? "200" : "2"))
-                    .keyboardType(.numberPad)
-                    .focused($focusedField, equals: .amount)
-                    .submitLabel(.next)
-                    .onSubmit {
-                        focusedField = nil
-                    }
-                    .accessibilityIdentifier(AccessibilityIdentifier.TextField.invoiceFormAmount)
-
-                Picker("Measure Unit", selection: $measureUnit) {
-                    ForEach(MeasureUnit.allCases, id: \.hashValue) { unit in
-                        Text(unit.localized)
-                            .tag(unit)
-                    }
-                }
-            }
-        }
-    }
-
-    private var nameRow: some View {
-        VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
-            Text("Name")
-                .font(.headline)
-
-            TextField("Name", text: $name, prompt: Text("Pringles"))
-                .focused($focusedField, equals: .name)
-                .submitLabel(.next)
-                .onSubmit {
-                    focusedField = .amount
-                }
-                .accessibilityIdentifier(AccessibilityIdentifier.TextField.invoiceFormName)
-        }
-    }
-
-    private var categoryRow: some View {
-        VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
-            Text("Category")
-                .font(.headline)
-
-            InvoiceItemCategory.Picker(selection: $category)
-        }
-    }
-
-    private var marketRow: some View {
-        VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
-            Text("Market")
-                .font(.headline)
-
-            TextField("Market", text: .constant("REWE"))
-        }
-    }
-
-    init(product: OFFProduct? = nil) {
-        self.product = product
-        self.name = product?.productName ?? ""
-        self.amount = ""
-        self.measureUnit = .whole
-        self.category = .bakery
-    }
-}
-
-#Preview {
-    InvoiceForm(
-        product: OFFProduct(
-            nutriments: Bundle.main.decode(
-                OFFNutriments.self,
-                from: "off_nutriments.json"
-            ),
-            productName: "Test"
-        )
-    )
 }

@@ -1,10 +1,13 @@
 import SwiftUI
+import SwiftData
+import DesignSystem
 
 struct InvoiceCategoryCardList: View {
     @Environment(\.dynamicTypeSize)
     private var typeSize
 
-    private let invoiceItems: [InvoiceItem]
+    var items: [InvoiceItem]
+    @Query private var customCategories: [CustomCategory]
 
     private var columns: [GridItem] {
         if typeSize.isAccessibilitySize {
@@ -14,33 +17,44 @@ struct InvoiceCategoryCardList: View {
         return [GridItem(.flexible()), GridItem(.flexible())]
     }
 
+    private var categories: [InvoiceItemCategory] {
+        InvoiceItemCategory.allCases + customCategories.map { category in
+            InvoiceItemCategory.custom(
+                name: category.name,
+                emoji: category.emoji
+            )
+        }
+    }
+
     var body: some View {
         ScrollView {
             LazyVGrid(
                 columns: columns,
                 spacing: Constants.Padding.sizeS
             ) {
-                ForEach(InvoiceItemCategory.allCases, id: \.hashValue) { category in
+                ForEach(categories, id: \.hashValue) { category in
                     InvoiceCategoryCard(
                         category: category,
-                        items: invoiceItems
+                        items: items
                     )
                 }
             }
-            .padding(.horizontal, Constants.Padding.sizeX)
         }
         .scrollIndicators(.hidden)
-    }
-
-    init(invoiceItems: [InvoiceItem]) {
-        self.invoiceItems = invoiceItems
     }
 }
 
 #Preview {
     ScrollView {
         InvoiceCategoryCardList(
-            invoiceItems: []
+            items: [
+                InvoiceItem(
+                    name: "Cheese",
+                    amount: 100,
+                    category: .bakery,
+                    measureUnit: .gram
+                )
+            ]
         )
     }
 }

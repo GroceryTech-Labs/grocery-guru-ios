@@ -1,23 +1,29 @@
 import SwiftUI
 import SwiftData
+import DesignSystem
 
 struct HomeViewList: View {
+    @Environment(\.navigationService)
+    private var navigator
     @State private var viewModel: HomeViewModel
+
     @Query private var items: [InvoiceItem]
 
     var body: some View {
-        VStack(spacing: Constants.Padding.sizeM) {
-            SectionHeader(
-                "Welcome back!",
-                font: .largeTitle
-            )
-
-            VStack(spacing: Constants.Padding.sizeS) {
-                SectionHeader("Categories")
-                InvoiceCategoryCardList(invoiceItems: items)
+        SectionHeader("Welcome back!", font: .largeTitle) {
+            SectionHeader("Categories") {
+                InvoiceCategoryCardList(items: items)
+            } trailing: {
+                Button {
+                    navigator.sheet(.categorySettings)
+                } label: {
+                    Image(systemName: "gearshape")
+                        .imageScale(.large)
+                        .accessibilityLabel("Settings")
+                }
             }
         }
-        .padding(.horizontal, Constants.Padding.sizeM)
+        .padding(.horizontal, Constants.Padding.sizeL)
     }
 
     init(viewModel: HomeViewModel) {
@@ -28,7 +34,7 @@ struct HomeViewList: View {
 #Preview {
     HomeViewList(
         viewModel: HomeViewModel(
-            repository: MockLocalStorageItemRepository.mockInstance
+            repository: LocalStorageRepository()
         )
     )
 }

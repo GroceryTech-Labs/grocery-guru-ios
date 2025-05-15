@@ -22,5 +22,6 @@ enum AccessibilityIdentifier {
 
     enum ListElement {
         static let invoiceItem = "list_element_invoice_item"
+        static let emoji = "list_element_emoji"
     }
 }

@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import DesignSystem
 
 struct AddInvoiceView: View {
     @Environment(\.navigationService)
@@ -10,16 +11,16 @@ struct AddInvoiceView: View {
 
     var body: some View {
         VStack(spacing: Constants.Padding.sizeL) {
-            AddInvoiceOption.Picker(selection: $selectedOption)
+            AddInvoicePicker(selection: $selectedOption)
 
             switch selectedOption {
-            case .barCode:
-                BarCodeScannerView()
+            case .barcode:
+                BarcodeScannerView()
 
             case .manual:
                 InvoiceForm()
 
-            case .scan:
+            case .document:
                 DocumentScannerView { _ in }
                     .onAppear {
                         isPresentingIndicator = true
@@ -37,7 +38,6 @@ struct AddInvoiceView: View {
             maxHeight: .infinity,
             alignment: .top
         )
-        .padding(.top, Constants.Padding.sizeL)
     }
 
     init(selectedOption: AddInvoiceOption) {

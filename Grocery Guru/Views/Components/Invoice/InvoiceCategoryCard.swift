@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 struct InvoiceCategoryCard: View {
     @Environment(\.navigationService)
@@ -6,6 +7,7 @@ struct InvoiceCategoryCard: View {
 
     private let category: InvoiceItemCategory
     private let items: [InvoiceItem]
+    private let isPreview: Bool
     private let emojiSize: CGFloat = 64
 
     private var filteredItems: [InvoiceItem] {
@@ -19,7 +21,7 @@ struct InvoiceCategoryCard: View {
     var body: some View {
         ResponsiveCard {
             VStack(spacing: Constants.Padding.sizeM) {
-                category.emoji.text
+                Text(category.emoji)
                     .font(.system(size: emojiSize))
 
                 VStack(spacing: Constants.Padding.sizeX) {
@@ -35,14 +37,15 @@ struct InvoiceCategoryCard: View {
             navigator.push(.invoiceList(items: filteredItems))
         }
         .accessibilityAddTraits(.isButton)
-        .accessibilityElement()
+        .buttonStyle(.plain)
         .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceCategory)
         .accessibilityLabel("Category Card")
     }
 
-    init(category: InvoiceItemCategory, items: [InvoiceItem]) {
+    init(category: InvoiceItemCategory, items: [InvoiceItem], isPreview: Bool = false) {
         self.category = category
         self.items = items
+        self.isPreview = isPreview
     }
 }
 

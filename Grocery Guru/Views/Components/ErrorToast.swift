@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 struct ErrorToast: View {
     @Binding var error: Error?

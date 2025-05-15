@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class InvoiceItem {
+final class InvoiceItem: Sendable {
     var name: String
     var amount: Int
     var category: InvoiceItemCategory
@@ -19,6 +19,4 @@ final class InvoiceItem {
         self.category = category
         self.measureUnit = measureUnit
     }
-
-    deinit { }
 }

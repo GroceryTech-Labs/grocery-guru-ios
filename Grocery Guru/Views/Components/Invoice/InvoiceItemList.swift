@@ -1,27 +1,29 @@
 import SwiftUI
+import DesignSystem
 
 struct InvoiceItemList: View {
     private let items: [InvoiceItem]
 
     var body: some View {
-        VStack(spacing: Constants.Padding.sizeM) {
-            SectionHeader("Invoice Items")
-            if items.isEmpty {
-                ErrorView(text: "No items found!")
-            } else {
-                ScrollView {
-                    LazyVStack(spacing: Constants.Padding.sizeM) {
-                        ForEach(items) { item in
-                            InvoiceItemListRow(item: item)
+        SectionHeader("Invoice Items") {
+            Group {
+                if items.isEmpty {
+                    ErrorView(text: "No items found!")
+                } else {
+                    ScrollView {
+                        LazyVStack(spacing: Constants.Padding.sizeM) {
+                            ForEach(items) { item in
+                                InvoiceItemListRow(item: item)
+                            }
                         }
+                        .padding(.horizontal, Constants.Padding.sizeX)
                     }
-                    .padding(.horizontal, Constants.Padding.sizeX)
+                    .scrollIndicators(.hidden)
                 }
-                .scrollIndicators(.hidden)
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(Constants.Padding.sizeL)
+        .frame(maxHeight: .infinity)
+        .padding(.horizontal, Constants.Padding.sizeL)
     }
 
     init(items: [InvoiceItem]) {
@@ -36,19 +38,19 @@ struct InvoiceItemList: View {
             name: "Cheddar Cheese",
             amount: 1,
             category: .milkEgg,
-            measureUnit: .whole
+            measureUnit: .item
         ),
         InvoiceItem(
             name: "asd sda",
             amount: 2,
             category: .milkEgg,
-            measureUnit: .whole
+            measureUnit: .item
         ),
         InvoiceItem(
             name: "asd sda",
             amount: 3,
             category: .milkEgg,
-            measureUnit: .whole
+            measureUnit: .item
         )
     ])
 }

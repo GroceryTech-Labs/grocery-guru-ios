@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import DesignSystem
 
 struct InvoiceItemListRow: View {
     private let item: InvoiceItem
@@ -41,7 +42,7 @@ struct InvoiceItemListRow: View {
             name: "Cheese",
             amount: 200,
             category: .milkEgg,
-            measureUnit: .whole
+            measureUnit: .item
         )
     )
 }
