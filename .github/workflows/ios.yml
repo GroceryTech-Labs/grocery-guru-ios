@@ -32,7 +32,7 @@ jobs:
       - name: Test
         run: |
           set -o pipefail && \
-          xcodebuild test-without-building \
+          xcodebuild test \
             -scheme "Grocery Guru Debug" \
             -project "Grocery Guru.xcodeproj" \
             -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
