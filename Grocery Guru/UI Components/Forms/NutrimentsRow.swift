@@ -1,13 +1,14 @@
 import SwiftUI
+import OpenFoodFacts
 
 struct NutrimentsRow: View {
-    @Binding var product: OFFProduct?
+    @Binding var product: APIProductItem?
     @Binding var isExpanded: Bool
 
     var body: some View {
         if let nutriments = product?.nutriments {
             DisclosureGroup(isExpanded: $isExpanded) {
-                OFFNutrimentsView(nutriments: nutriments)
+                NutrimentsView(nutriments: nutriments)
             } label: {
                 Text("Nutriments (100g)")
                     .font(.headline)
@@ -15,11 +16,4 @@ struct NutrimentsRow: View {
             }
         }
     }
-}
-
-#Preview {
-    NutrimentsRow(
-        product: .constant(.example),
-        isExpanded: .constant(true)
-    )
 }

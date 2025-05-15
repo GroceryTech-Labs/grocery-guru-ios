@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 struct ResponsiveCard<Content: View>: View {
     private let alignment: Alignment

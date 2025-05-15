@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 struct SectionHeader<Content: View, Trailing: View>: View {
     private let text: LocalizedStringKey

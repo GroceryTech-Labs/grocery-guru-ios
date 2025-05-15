@@ -1,4 +1,6 @@
 import SwiftUI
+import OpenFoodFacts
+import DesignSystem
 
 struct InvoiceForm: View {
     enum Field: Hashable {
@@ -47,7 +49,7 @@ struct InvoiceForm: View {
         .modelContext(viewModel.usedLocalRepository.modelContext)
     }
 
-    init(product: OFFProduct? = nil) {
+    init(product: APIProductItem? = nil) {
         viewModel = InvoiceFormViewModel(
             name: product?.productName ?? "",
             amount: product == nil ? "" : "1",
@@ -56,16 +58,4 @@ struct InvoiceForm: View {
             product: product
         )
     }
-}
-
-#Preview {
-    InvoiceForm(
-        product: OFFProduct(
-            nutriments: Bundle.main.decode(
-                OFFNutriments.self,
-                from: "off_nutriments.json"
-            ),
-            productName: "Test"
-        )
-    )
 }

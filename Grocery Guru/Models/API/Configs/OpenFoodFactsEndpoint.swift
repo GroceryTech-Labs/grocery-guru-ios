@@ -1,10 +1,6 @@
 import UIKit
 
-final class OFFAPIConfig: APIConfigProtocol {
-    enum Request {
-        case product(barcode: String)
-    }
-
+final class OpenFoodFactsEndpoint: EndpointConfig {
     var baseURL: String {
         #if DEBUG
             return stagingURL

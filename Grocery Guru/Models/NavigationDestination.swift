@@ -1,9 +1,10 @@
 import SwiftUI
+import OpenFoodFacts
 
 enum NavigationDestination: Hashable, Identifiable {
     case addInvoice(option: AddInvoiceOption = .document)
     case categorySettings
-    case invoiceForm(product: OFFProduct?)
+    case invoiceForm(product: APIProductItem?)
     case invoiceList(items: [InvoiceItem])
 
     var id: UUID {

@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 struct CategorySettingsView: View {
     var body: some View {

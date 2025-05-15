@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import DesignSystem
 
 struct InvoiceItemListRow: View {
     private let item: InvoiceItem

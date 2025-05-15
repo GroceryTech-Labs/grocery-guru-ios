@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 struct CategoryCreationView: View {
     enum Field: Hashable {

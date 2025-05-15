@@ -22,20 +22,13 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
 
     var localized: LocalizedStringKey {
         switch self {
-        case .bakery:
-            "Bakery"
-        case .canned:
-            "Canned"
-        case .fish:
-            "Fish"
-        case .fruits:
-            "Fruits"
-        case .meat:
-            "Meat"
-        case .milkEgg:
-            "Milk & Egg"
-        case .vegetables:
-            "Vegetables"
+        case .bakery: "Bakery"
+        case .canned: "Canned"
+        case .fish: "Fish"
+        case .fruits: "Fruits"
+        case .meat: "Meat"
+        case .milkEgg: "Milk & Egg"
+        case .vegetables: "Vegetables"
         case let .custom(name, _):
             LocalizedStringKey(name)
         }
@@ -43,27 +36,13 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
 
     var emoji: String {
         switch self {
-        case .bakery:
-            "🥖"
-
-        case .canned:
-            "🥫"
-
-        case .fish:
-            "🐟"
-
-        case .fruits:
-            "🍎"
-
-        case .meat:
-            "🥩"
-
-        case .milkEgg:
-            "🥛"
-
-        case .vegetables:
-            "🥕"
-
+        case .bakery: "🥖"
+        case .canned: "🥫"
+        case .fish: "🐟"
+        case .fruits: "🍎"
+        case .meat: "🥩"
+        case .milkEgg: "🥛"
+        case .vegetables: "🥕"
         case let .custom(_, emoji):
             emoji
         }

@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import DesignSystem
 
 struct InvoiceCategoryPicker: View {
     @Binding var selection: InvoiceItemCategory

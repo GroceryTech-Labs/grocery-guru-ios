@@ -113,6 +113,7 @@
       }
     },
     "Carbohydrates:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -214,6 +215,7 @@
       }
     },
     "Energy (kcal):" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -224,6 +226,7 @@
       }
     },
     "Energy (kJ):" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -234,6 +237,7 @@
       }
     },
     "Fat:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -415,6 +419,7 @@
       }
     },
     "Proteins:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -435,6 +440,7 @@
       }
     },
     "Salt:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -465,6 +471,7 @@
       }
     },
     "Sugars:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

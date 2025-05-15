@@ -1,9 +1,14 @@
 import SwiftUI
+import DesignSystem
 
-struct OFFNutrimentsView: View {
-    let nutriments: OFFNutriments
+public struct NutrimentsView: View {
+    public let nutriments: APINutrimentsItem
 
-    var body: some View {
+    public init(nutriments: APINutrimentsItem) {
+        self.nutriments = nutriments
+    }
+
+    public var body: some View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeL) {
             carbohydratesSection
             energyKcalSection
@@ -105,10 +110,4 @@ struct OFFNutrimentsView: View {
             .foregroundStyle(.secondary)
         }
     }
-}
-
-#Preview {
-    OFFNutrimentsView(
-        nutriments: Bundle.main.decode(OFFNutriments.self, from: "off_nutriments.json")
-    )
 }

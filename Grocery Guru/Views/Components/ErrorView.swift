@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 struct ErrorView: View {
     private let text: LocalizedStringKey

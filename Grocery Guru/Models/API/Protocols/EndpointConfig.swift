@@ -1,6 +1,6 @@
 import Foundation
 
-protocol APIConfigProtocol {
+protocol EndpointConfig {
     var stagingURL: String { get }
     var productionURL: String { get }
 }

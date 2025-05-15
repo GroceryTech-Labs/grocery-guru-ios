@@ -26,7 +26,3 @@ struct FormsAddInvoiceButton: View {
         .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormSubmit)
     }
 }
-
-#Preview {
-    FormsAddInvoiceButton(viewModel: .constant(InvoiceFormViewModel(product: .example)))
-}

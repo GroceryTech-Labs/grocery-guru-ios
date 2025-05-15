@@ -1,8 +1,13 @@
 import SwiftUI
 import CodeScanner
+import DesignSystem
+import GGAPI
+import OpenFoodFacts
 
 struct BarcodeScannerView: View {
-    @State private var viewModel = BarcodeScannerViewModel()
+    @State private var viewModel = BarcodeScannerViewModel(
+        productAPI: ProductAPIImpl(OpenFoodFactsEndpoint.baseURL)
+    )
 
     var body: some View {
         CodeScannerView(
