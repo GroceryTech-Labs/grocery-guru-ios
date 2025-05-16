@@ -67,3 +67,22 @@ extension APINutrimentsItem: Codable {
         case sugarsUnit = "sugars_unit"
     }
 }
+
+extension APINutrimentsItem {
+    static let example = APINutrimentsItem(
+        carbohydrates100g: 9.2,
+        carbohydratesUnit: "g",
+        energyKcal100g: 37,
+        energyKcalUnit: "kcal",
+        energyKJ100g: 158,
+        energyKJUnit: "kj",
+        fat100g: 0,
+        fatUnit: "g",
+        proteins100g: 0,
+        proteinsUnit: "g",
+        salt100g: 0.04,
+        saltUnit: "g",
+        sugars100g: 9.2,
+        sugarsUnit: "g"
+    )
+}

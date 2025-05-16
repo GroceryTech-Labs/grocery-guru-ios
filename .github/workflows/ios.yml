@@ -11,10 +11,6 @@ jobs:
     name: Build and Test
     runs-on: macos-latest
 
-    env:
-      SCHEME: "Grocery Guru Debug"
-      PROJECT: "Grocery Guru.xcodeproj"
-      TESTPLAN: "Grocery Guru"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,41 +20,25 @@ jobs:
         with:
           xcode-version: latest-stable
 
-      - name: Install xcbeautify
-        run: brew install xcbeautify
-
-      - name: Get available iPhone Simulator
-        id: find-sim
-        run: |
-          UDID=$(xcrun simctl list devices available | grep 'iPhone 16 Pro (.*) (Booted)' | awk -F '[()]' '{print $2}' | head -n 1)
-          if [ -z "$UDID" ]; then
-            UDID=$(xcrun simctl list devices available | grep 'iPhone 16 Pro (.*) (Shutdown)' | awk -F '[()]' '{print $2}' | head -n 1)
-            xcrun simctl boot "$UDID"
-          fi
-          echo "SIMULATOR_ID=$UDID" >> $GITHUB_ENV
-      
-      - name: Build for Testing
+      - name: Build
         run: |
           set -o pipefail && \
           xcodebuild build-for-testing \
-            -scheme "$SCHEME" \
-            -project "$PROJECT" \
-            -destination "id=$SIMULATOR_ID" \
+            -scheme "Grocery Guru Debug" \
+            -project "Grocery Guru.xcodeproj" \
+            -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
           | xcbeautify
-
-      - name: Test (with Code Coverage)
+      - name: Test
         run: |
           set -o pipefail && \
           xcodebuild test-without-building \
-            -scheme "$SCHEME" \
-            -project "$PROJECT" \
-            -destination "id=$SIMULATOR_ID" \
+            -scheme "Grocery Guru Debug" \
+            -project "Grocery Guru.xcodeproj" \
+            -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
             -enableCodeCoverage YES \
             -resultBundlePath CoverageResults.xcresult \
-            -testPlan "$TESTPLAN" \
           | xcbeautify
-
-      - name: Show Coverage %
+      - name: Test Coverage %
         run: |
           COVERAGE=$(xcrun xccov view --report CoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | head -n 1)
           echo "Total Test Coverage: $COVERAGE"
