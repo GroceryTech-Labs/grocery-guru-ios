@@ -40,5 +40,21 @@ jobs:
           | xcbeautify
       - name: Test Coverage %
         run: |
-          COVERAGE=$(xcrun xccov view --report CoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | head -n 1)
-          echo "Total Test Coverage: $COVERAGE"
+          COVERAGE_VALUES=$(xcrun xccov view --report CoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | tr -d '%' )
+          SUM=0
+          COUNT=0
+          for VALUE in $COVERAGE_VALUES; do
+            SUM=$(echo "$SUM + $VALUE" | bc)
+            COUNT=$((COUNT + 1))
+          done
+          if [ $COUNT -gt 0 ]; then
+            AVERAGE=$(echo "scale=2; $SUM / $COUNT" | bc)
+            echo "Average Test Coverage: $AVERAGE%"
+          else
+            echo "No coverage data found."
+          fi
+      - name: Test Coverage per Target
+        run: |
+          echo "Test Coverage per Target:"
+          xcrun xccov view --report CoverageResults.xcresult | grep '%'
+        
