@@ -49,6 +49,7 @@ struct InvoiceCategoryCardList: View {
         InvoiceCategoryCardList(
             items: [
                 InvoiceItem(
+                    code: "1234",
                     name: "Cheese",
                     amount: 100,
                     category: .bakery,

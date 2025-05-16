@@ -2,11 +2,11 @@ import SwiftUI
 import DesignSystem
 
 public struct NutrimentsRow: View {
-    @Binding public var product: UIProductItem?
     @Binding public var isExpanded: Bool
+    let nutriments: UINutrimentsItem?
 
     public var body: some View {
-        if let nutriments = product?.nutriments {
+        if let nutriments {
             DisclosureGroup(isExpanded: $isExpanded) {
                 NutrimentsView(nutriments: nutriments)
             } label: {
@@ -17,8 +17,8 @@ public struct NutrimentsRow: View {
         }
     }
 
-    public init(product: Binding<UIProductItem?>, isExpanded: Binding<Bool>) {
-        self._product = product
+    public init(isExpanded: Binding<Bool>, nutriments: UINutrimentsItem?) {
         self._isExpanded = isExpanded
+        self.nutriments = nutriments
     }
 }

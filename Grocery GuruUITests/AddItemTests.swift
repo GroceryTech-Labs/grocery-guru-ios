@@ -47,21 +47,18 @@ final class AddItemTests: XCTestCase {
         // 1) Open the "Add" screen.
         app.tapAddInvoiceButton()
 
-        // 2) Switch to "barcode".
-        app.tapAddInvoiceBarcodeSegmentButton()
-
-        // 3) Simulate a barcode scan,
+        // 2) Simulate a barcode scan,
         app.tapBarcodeScanner(maxRequestTime: 5)
 
-        // 4) Fill in and submit the form.
+        // 3) Fill in and submit the form.
         app.typeInvoiceFormAmount()
         app.tapOpenAndCloseNutriments()
         app.tapInvoiceFormSubmitButton()
 
-        // 5) Tap first category.
+        // 4) Tap first category.
         app.tapInvoiceCategoryButton()
 
-        // 6) Check for existence of item.
+        // 5) Check for existence of item.
         let invoiceItem = app.otherElements[AccessibilityIdentifier.ListElement.invoiceItem].firstMatch
         XCTAssertTrue(invoiceItem.waitForExistence(timeout: 1))
 

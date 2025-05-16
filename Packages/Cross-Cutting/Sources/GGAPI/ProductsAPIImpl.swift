@@ -29,6 +29,7 @@ extension ProductAPIImpl {
 
     private func convert(_ apiProduct: GETProductResponseElement) -> APIProductItem {
         return APIProductItem(
+            code: apiProduct.code,
             productName: apiProduct.product?.productName,
             nutriments: APINutrimentsItem(
                 carbohydrates100g: apiProduct.product?.nutriments.carbohydrates100g,

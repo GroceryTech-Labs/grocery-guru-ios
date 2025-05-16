@@ -2,7 +2,7 @@ import SwiftUI
 import DesignSystem
 
 struct FormsAddInvoiceButton: View {
-    @Binding var viewModel: InvoiceFormViewModel
+    let viewModel: InvoiceFormViewModel
     @FocusState var focusedField: InvoiceForm.Field?
 
     var body: some View {

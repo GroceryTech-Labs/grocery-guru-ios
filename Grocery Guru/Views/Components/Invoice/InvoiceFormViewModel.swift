@@ -41,6 +41,7 @@ class InvoiceFormViewModel {
             do {
                 try await usedLocalRepository.addItem(
                     InvoiceItem(
+                        code: product?.code,
                         name: name,
                         amount: Int(amount) ?? 0,
                         category: category,

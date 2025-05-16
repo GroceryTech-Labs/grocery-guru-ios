@@ -34,16 +34,27 @@
     },
     {
       "target" : {
+        "containerPath" : "container:Packages\/OpenFoodFacts",
+        "identifier" : "OpenFoodFactsTests",
+        "name" : "OpenFoodFactsTests"
+      }
+    },
+    {
+      "target" : {
         "containerPath" : "container:Packages\/Cross-Cutting",
         "identifier" : "GGAPITests",
         "name" : "GGAPITests"
       }
     },
     {
+      "skippedTests" : [
+        "AccessibilityAuditTests",
+        "AccessibilityAuditTests\/testHomeAudit()"
+      ],
       "target" : {
-        "containerPath" : "container:Packages\/OpenFoodFacts",
-        "identifier" : "OpenFoodFactsTests",
-        "name" : "OpenFoodFactsTests"
+        "containerPath" : "container:Grocery Guru.xcodeproj",
+        "identifier" : "568560DC2C15A520003BDAED",
+        "name" : "Grocery GuruUITests"
       }
     }
   ],
