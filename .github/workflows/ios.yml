@@ -28,13 +28,16 @@ jobs:
       - name: Install xcbeautify
         run: brew install xcbeautify
 
-      - name: Create fresh simulator
-        id: sim
+      - name: Get available iPhone Simulator
+        id: find-sim
         run: |
-          SIM_ID=$(xcrun simctl create "CI-iPhone" "iPhone 16 Pro" latest)
-          echo "SIMULATOR_ID=$SIM_ID" >> $GITHUB_ENV
-          xcrun simctl boot "$SIM_ID"
-
+          UDID=$(xcrun simctl list devices available | grep 'iPhone 16 Pro (.*) (Booted)' | awk -F '[()]' '{print $2}' | head -n 1)
+          if [ -z "$UDID" ]; then
+            UDID=$(xcrun simctl list devices available | grep 'iPhone 16 Pro (.*) (Shutdown)' | awk -F '[()]' '{print $2}' | head -n 1)
+            xcrun simctl boot "$UDID"
+          fi
+          echo "SIMULATOR_ID=$UDID" >> $GITHUB_ENV
+      
       - name: Build for Testing
         run: |
           set -o pipefail && \
