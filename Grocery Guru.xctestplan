@@ -17,22 +17,27 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Packages\/OpenFoodFacts",
+        "identifier" : "OpenFoodFactsTests",
+        "name" : "OpenFoodFactsTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Packages\/Cross-Cutting",
+        "identifier" : "GGAPITests",
+        "name" : "GGAPITests"
+      }
+    },
+    {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:Grocery Guru.xcodeproj",
         "identifier" : "5639A5432BFF95940086857F",
         "name" : "Grocery GuruTests"
-      }
-    },
-    {
-      "skippedTests" : [
-        "AccessibilityAuditTests",
-        "AccessibilityAuditTests\/testHomeAudit()"
-      ],
-      "target" : {
-        "containerPath" : "container:Grocery Guru.xcodeproj",
-        "identifier" : "568560DC2C15A520003BDAED",
-        "name" : "Grocery GuruUITests"
       }
     }
   ],
