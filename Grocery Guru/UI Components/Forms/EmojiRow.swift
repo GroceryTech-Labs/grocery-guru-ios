@@ -1,21 +1,25 @@
 import SwiftUI
+import DesignSystem
 
 struct EmojiRow: View {
-    var selection: (String) -> Void
+    @Binding var selection: String
 
     private let pickerHeight: CGFloat = 200
     private let emojiSize: CGFloat = 64
 
     var body: some View {
-        SectionHeader("Emoji", font: .headline) { }
+        SectionHeader("Emoji", font: .headline) {
+            EmojiTextFieldWrapper(text: $selection)
+        }
         .frame(maxHeight: pickerHeight)
     }
 
-    init(selection: @escaping (String) -> Void) {
-        self.selection = selection
+    init(selection: Binding<String>) {
+        self._selection = selection
     }
 }
 
 #Preview {
-    EmojiRow { _ in }
+    @Previewable @State var selection: String = ""
+    EmojiRow(selection: $selection)
 }

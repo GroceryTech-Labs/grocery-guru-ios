@@ -4,6 +4,7 @@ import DesignSystem
 struct CategoryCreationView: View {
     enum Field: Hashable {
         case name
+        case emoji
     }
 
     @FocusState private var focusedField: Field?
@@ -15,14 +16,17 @@ struct CategoryCreationView: View {
                 VStack(spacing: Constants.Padding.sizeXL) {
                     NameRow(name: $viewModel.name)
                         .focused($focusedField, equals: .name)
+                        .submitLabel(.next)
+                        .onSubmit {
+                            focusedField = .emoji
+                        }
+
+                    EmojiRow(selection: $viewModel.emoji)
+                        .focused($focusedField, equals: .emoji)
                         .submitLabel(.done)
                         .onSubmit {
                             focusedField = nil
                         }
-
-                    EmojiRow { emoji in
-                        viewModel.emoji = emoji
-                    }
 
                     CategoryPreviewRow(
                         invoiceItemCategory: .custom(

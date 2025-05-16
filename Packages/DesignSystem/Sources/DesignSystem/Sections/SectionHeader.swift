@@ -1,13 +1,12 @@
 import SwiftUI
-import DesignSystem
 
-struct SectionHeader<Content: View, Trailing: View>: View {
+public struct SectionHeader<Content: View, Trailing: View>: View {
     private let text: LocalizedStringKey
     private let font: Font
     private let content: Content
     private let trailing: Trailing?
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeM) {
             HStack {
                 Text(text)
@@ -28,7 +27,7 @@ struct SectionHeader<Content: View, Trailing: View>: View {
         }
     }
 
-    init(
+    public init(
         _ text: LocalizedStringKey,
         font: Font = .title,
         @ViewBuilder _ content: () -> Content,
@@ -43,8 +42,12 @@ struct SectionHeader<Content: View, Trailing: View>: View {
 
 #Preview(traits: .sizeThatFitsLayout) {
     SectionHeader("Categories") {
-        Text("332")
+        Text(verbatim: "332")
     } trailing: {
-        Button("dsald") { }
+        Button {
+            print("Test")
+        } label: {
+            Text(verbatim: "Test")
+        }
     }
 }
