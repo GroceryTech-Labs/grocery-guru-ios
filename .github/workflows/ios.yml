@@ -28,19 +28,20 @@ jobs:
             -project "Grocery Guru.xcodeproj" \
             -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
           | xcbeautify
-      - name: Test
+      - name: Unit Test
         run: |
           set -o pipefail && \
           xcodebuild test-without-building \
             -scheme "Grocery Guru Debug" \
             -project "Grocery Guru.xcodeproj" \
             -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
+            -testPlan "Grocery Guru Unit Tests" \
             -enableCodeCoverage YES \
-            -resultBundlePath CoverageResults.xcresult \
+            -resultBundlePath UnitCoverageResults.xcresult \
           | xcbeautify
-      - name: Test Coverage %
+      - name: Unit Test Coverage %
         run: |
-          COVERAGE_VALUES=$(xcrun xccov view --report CoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | tr -d '%' )
+          COVERAGE_VALUES=$(xcrun xccov view --report UnitCoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | tr -d '%' )
           SUM=0
           COUNT=0
           for VALUE in $COVERAGE_VALUES; do
@@ -53,8 +54,37 @@ jobs:
           else
             echo "No coverage data found."
           fi
-      - name: Test Coverage per Target
+      - name: Unit Test Coverage per Target
         run: |
           echo "Test Coverage per Target:"
-          xcrun xccov view --report CoverageResults.xcresult | grep '%'
-        
+          xcrun xccov view --report UnitCoverageResults.xcresult | grep '%'
+      - name: UI Test
+        run: |
+          set -o pipefail && \
+          xcodebuild test-without-building \
+            -scheme "Grocery Guru Debug" \
+            -project "Grocery Guru.xcodeproj" \
+            -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
+            -testPlan "Grocery Guru UI Tests" \
+            -enableCodeCoverage YES \
+            -resultBundlePath UICoverageResults.xcresult \
+          | xcbeautify
+      - name: UI Test Coverage %
+        run: |
+          COVERAGE_VALUES=$(xcrun xccov view --report UICoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | tr -d '%' )
+          SUM=0
+          COUNT=0
+          for VALUE in $COVERAGE_VALUES; do
+            SUM=$(echo "$SUM + $VALUE" | bc)
+            COUNT=$((COUNT + 1))
+          done
+          if [ $COUNT -gt 0 ]; then
+            AVERAGE=$(echo "scale=2; $SUM / $COUNT" | bc)
+            echo "Average Test Coverage: $AVERAGE%"
+          else
+            echo "No coverage data found."
+          fi
+      - name: UI Test Coverage per Target
+        run: |
+          echo "Test Coverage per Target:"
+          xcrun xccov view --report UICoverageResults.xcresult | grep '%'

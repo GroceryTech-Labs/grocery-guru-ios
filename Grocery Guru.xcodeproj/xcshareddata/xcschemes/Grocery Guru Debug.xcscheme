@@ -30,8 +30,11 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:Grocery Guru.xctestplan"
+            reference = "container:Grocery Guru Unit Tests.xctestplan"
             default = "YES">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:Grocery Guru UI Tests.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>

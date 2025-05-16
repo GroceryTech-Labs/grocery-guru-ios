@@ -89,7 +89,7 @@
 		560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizerService.swift; sourceTree = "<group>"; };
 		560AA7D22C026C9D00365B1F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		560AA7D52C02756600365B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		560AA7D72C02796B00365B1F /* Grocery Guru.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Grocery Guru.xctestplan"; sourceTree = "<group>"; };
+		560AA7D72C02796B00365B1F /* Grocery Guru Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Grocery Guru Unit Tests.xctestplan"; sourceTree = "<group>"; };
 		560CE2E32C8113CA00E031CE /* CategoryCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationView.swift; sourceTree = "<group>"; };
 		5620E1182C1850EC0027655A /* AccessibilityAuditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityAuditTests.swift; sourceTree = "<group>"; };
 		562DCABA2C7E5AE6006CBFB6 /* LocalStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageRepository.swift; sourceTree = "<group>"; };
@@ -140,6 +140,7 @@
 		56E964332BFFABA70099ED2F /* SwiftDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataRepository.swift; sourceTree = "<group>"; };
 		56F49E4E2C26EEE500DE69E2 /* CategorySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySettingsView.swift; sourceTree = "<group>"; };
 		56F49E502C26F31B00DE69E2 /* CategoryCreationViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCreationViewmodel.swift; sourceTree = "<group>"; };
+		56F51B092DD7951000694E61 /* Grocery Guru UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Grocery Guru UI Tests.xctestplan"; sourceTree = "<group>"; };
 		56FAFB5F2C0BDB1200370D7F /* InvoiceCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCategoryCard.swift; sourceTree = "<group>"; };
 		56FCC0342C0CF62A003EAA8B /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
 		56FFAC762C0C888200D2D965 /* InvoiceCategoryCardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCategoryCardList.swift; sourceTree = "<group>"; };
@@ -212,7 +213,8 @@
 		5639A5292BFF95930086857F = {
 			isa = PBXGroup;
 			children = (
-				560AA7D72C02796B00365B1F /* Grocery Guru.xctestplan */,
+				560AA7D72C02796B00365B1F /* Grocery Guru Unit Tests.xctestplan */,
+				56F51B092DD7951000694E61 /* Grocery Guru UI Tests.xctestplan */,
 				5639A5342BFF95930086857F /* Grocery Guru */,
 				56CE7FC12DD5FF420006E3B1 /* Packages */,
 				5639A5472BFF95940086857F /* Grocery GuruTests */,

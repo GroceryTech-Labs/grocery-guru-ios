@@ -1,0 +1,56 @@
+{
+  "configurations" : [
+    {
+      "id" : "4FFC9E8B-46C3-4717-BD23-C3E70E5B8806",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:Grocery Guru.xcodeproj",
+          "identifier" : "5639A5312BFF95930086857F",
+          "name" : "Grocery Guru"
+        },
+        {
+          "containerPath" : "container:Packages\/OpenFoodFacts",
+          "identifier" : "OpenFoodFacts",
+          "name" : "OpenFoodFacts"
+        },
+        {
+          "containerPath" : "container:Packages\/DesignSystem",
+          "identifier" : "DesignSystem",
+          "name" : "DesignSystem"
+        },
+        {
+          "containerPath" : "container:Packages\/Cross-Cutting",
+          "identifier" : "Cross-Cutting",
+          "name" : "Cross-Cutting"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Grocery Guru.xcodeproj",
+      "identifier" : "5639A5312BFF95930086857F",
+      "name" : "Grocery Guru"
+    }
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "AccessibilityAuditTests",
+        "AccessibilityAuditTests\/testHomeAudit()"
+      ],
+      "target" : {
+        "containerPath" : "container:Grocery Guru.xcodeproj",
+        "identifier" : "568560DC2C15A520003BDAED",
+        "name" : "Grocery GuruUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
