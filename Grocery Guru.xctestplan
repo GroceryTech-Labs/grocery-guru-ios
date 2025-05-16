@@ -9,6 +9,25 @@
     }
   ],
   "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:Packages\/Cross-Cutting",
+          "identifier" : "Cross-Cutting",
+          "name" : "Cross-Cutting"
+        },
+        {
+          "containerPath" : "container:Grocery Guru.xcodeproj",
+          "identifier" : "5639A5312BFF95930086857F",
+          "name" : "Grocery Guru"
+        },
+        {
+          "containerPath" : "container:Packages\/OpenFoodFacts",
+          "identifier" : "OpenFoodFacts",
+          "name" : "OpenFoodFacts"
+        }
+      ]
+    },
     "targetForVariableExpansion" : {
       "containerPath" : "container:Grocery Guru.xcodeproj",
       "identifier" : "5639A5312BFF95930086857F",
