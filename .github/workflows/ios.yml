@@ -7,8 +7,8 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  build:
-    name: Build and Test
+  unit_test:
+    name: Unit Testing
     runs-on: macos-latest
 
     steps:
@@ -28,6 +28,7 @@ jobs:
             -project "Grocery Guru.xcodeproj" \
             -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
           | xcbeautify
+
       - name: Unit Test
         run: |
           set -o pipefail && \
@@ -39,6 +40,7 @@ jobs:
             -enableCodeCoverage YES \
             -resultBundlePath UnitCoverageResults.xcresult \
           | xcbeautify
+
       - name: Unit Test Coverage %
         run: |
           COVERAGE_VALUES=$(xcrun xccov view --report UnitCoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | tr -d '%' )
@@ -54,11 +56,35 @@ jobs:
           else
             echo "No coverage data found."
           fi
+
       - name: Unit Test Coverage per Target
         run: |
           echo "Unit Test Coverage per Target:"
           xcrun xccov view --report UnitCoverageResults.xcresult \
           | awk '/%/ && /^[^[:space:]]/ { match($0, /[0-9]+\.[0-9]+%/); printf "%s %s\n", substr($0, 1, RSTART-2), substr($0, RSTART, RLENGTH) }'
+
+  ui_test:
+    name: User Interface Testing
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set Xcode version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Build
+        run: |
+          set -o pipefail && \
+          xcodebuild build-for-testing \
+            -scheme "Grocery Guru Debug" \
+            -project "Grocery Guru.xcodeproj" \
+            -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
+          | xcbeautify
+
       - name: UI Test
         run: |
           set -o pipefail && \
@@ -70,6 +96,7 @@ jobs:
             -enableCodeCoverage YES \
             -resultBundlePath UICoverageResults.xcresult \
           | xcbeautify
+
       - name: UI Test Coverage %
         run: |
           COVERAGE_VALUES=$(xcrun xccov view --report UICoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | tr -d '%' )
@@ -85,6 +112,7 @@ jobs:
           else
             echo "No coverage data found."
           fi
+
       - name: UI Test Coverage per Target
         run: |
           echo "UI Test Coverage per Target:"
