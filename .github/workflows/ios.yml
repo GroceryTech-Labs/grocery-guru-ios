@@ -11,6 +11,11 @@ jobs:
     name: Build and Test
     runs-on: macos-latest
 
+    env:
+      SCHEME: "Grocery Guru Debug"
+      PROJECT: "Grocery Guru.xcodeproj"
+      TESTPLAN: "Grocery Guru.xctestplan" # optional – falls du Testplan nutzt
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,28 +25,52 @@ jobs:
         with:
           xcode-version: latest-stable
 
-      - name: Build
+      - name: Install xcbeautify
+        run: brew install xcbeautify
+
+      - name: Create fresh simulator
+        id: sim
+        run: |
+          SIM_ID=$(xcrun simctl create "CI-iPhone" "iPhone 16 Pro" latest)
+          echo "SIMULATOR_ID=$SIM_ID" >> $GITHUB_ENV
+          xcrun simctl boot "$SIM_ID"
+
+      - name: Build for Testing
         run: |
           set -o pipefail && \
           xcodebuild build-for-testing \
-            -scheme "Grocery Guru Debug" \
-            -project "Grocery Guru.xcodeproj" \
-            -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
+            -scheme "$SCHEME" \
+            -project "$PROJECT" \
+            -destination "id=$SIMULATOR_ID" \
           | xcbeautify
 
-      - name: Test
+      - name: Test (with UI + Code Coverage)
+        env:
+          SIMCTL_CHILD_PHOTOS_AUTHORIZE: YES
+          SIMCTL_CHILD_CAMERA_AUTHORIZE: YES
+          SIMCTL_CHILD_MICROPHONE_AUTHORIZE: YES
         run: |
           set -o pipefail && \
-          xcodebuild test \
-            -scheme "Grocery Guru Debug" \
-            -project "Grocery Guru.xcodeproj" \
-            -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
+          xcodebuild test-without-building \
+            -scheme "$SCHEME" \
+            -project "$PROJECT" \
+            -destination "id=$SIMULATOR_ID" \
             -enableCodeCoverage YES \
             -resultBundlePath CoverageResults.xcresult \
+            -testPlan "$TESTPLAN" \
           | xcbeautify
 
-      - name: Test Coverage %
+      - name: Show Coverage %
         run: |
           COVERAGE=$(xcrun xccov view --report CoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | head -n 1)
           echo "Total Test Coverage: $COVERAGE"
 
+      - name: Export Coverage JSON
+        run: |
+          xcrun xccov view --report --json CoverageResults.xcresult > coverage.json
+
+      - name: Upload Coverage Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-reports
+          path: coverage.json
