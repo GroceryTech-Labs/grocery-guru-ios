@@ -2,22 +2,22 @@ import XCTest
 @testable import Grocery_Guru
 
 /// UI Actions that needs to perform a typing action
-final class TypeAction {
+extension XCUIApplication {
 
     // MARK: INVOICE FORM
 
     /// Search and tap the "Name" textfield on the invoice form and fill in text.
-    static func invoiceFormName(app: XCUIApplication, name: String = "Strawberries") {
-        TapAction.invoiceFormNameTextfield(app: app)
-        app.typeText(name)
+    func typeInvoiceFormName(name: String = "Strawberries") {
+        tapInvoiceFormNameTextfield()
+        self.typeText(name)
     }
 
     /// Search and tap the "Amount" textfield on the invoice form and fill in text.
-    static func invoiceFormAmount(app: XCUIApplication, name: String = "100") {
-        TapAction.invoiceFormAmountTextfield(app: app)
+    func typeInvoiceFormAmount(name: String = "100") {
+        tapInvoiceFormAmountTextfield()
 
         // Clear field and type new text
-        app.typeText(XCUIKeyboardKey.delete.rawValue)
-        app.typeText(name)
+        self.typeText(XCUIKeyboardKey.delete.rawValue)
+        self.typeText(name)
     }
 }

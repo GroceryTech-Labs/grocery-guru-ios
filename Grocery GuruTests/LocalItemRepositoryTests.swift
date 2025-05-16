@@ -15,7 +15,7 @@ class LocalItemRepositoryTests: XCTestCase {
         super.tearDown()
     }
 
-    @MainActor func testGetAllItems() async {
+    func testGetAllItems() async {
         // Given
         let item1 = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg, measureUnit: .gram)
         let item2 = InvoiceItem(name: "Rumpsteak", amount: 400, category: .meat, measureUnit: .gram)
@@ -41,7 +41,7 @@ class LocalItemRepositoryTests: XCTestCase {
         XCTAssertEqual(items[1], item2)
     }
 
-    @MainActor func testAddItem() async {
+    func testAddItem() async {
         // Given
         let item = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg, measureUnit: .gram)
 
@@ -64,7 +64,7 @@ class LocalItemRepositoryTests: XCTestCase {
         XCTAssertEqual(items[0], item)
     }
 
-    @MainActor func testRemoveItem() async {
+    func testRemoveItem() async {
         // Given
         let item = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg, measureUnit: .gram)
         let item2 = InvoiceItem(name: "Bread", amount: 1, category: .bakery, measureUnit: .gram)
@@ -99,7 +99,7 @@ class LocalItemRepositoryTests: XCTestCase {
         XCTAssertEqual(items.count, 1)
     }
 
-    @MainActor func testRemoveWrongItem() async {
+    func testRemoveWrongItem() async {
         // Given
         let item = InvoiceItem(name: "Cheese", amount: 200, category: .milkEgg, measureUnit: .gram)
         let item2 = InvoiceItem(name: "Bread", amount: 1, category: .bakery, measureUnit: .gram)

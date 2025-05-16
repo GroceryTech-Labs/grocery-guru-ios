@@ -7,11 +7,7 @@ struct EmojiRow: View {
     private let emojiSize: CGFloat = 64
 
     var body: some View {
-        SectionHeader("Emoji", font: .headline) {
-            EmojiPicker { emoji in
-                selection(emoji)
-            }
-        }
+        SectionHeader("Emoji", font: .headline) { }
         .frame(maxHeight: pickerHeight)
     }
 

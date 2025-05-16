@@ -33,12 +33,12 @@ struct InvoiceForm: View {
                     CategoryPickerRow(category: $viewModel.category)
 
                     NutrimentsRow(
-                        product: $viewModel.product,
-                        isExpanded: $viewModel.isPresentingNutriments
+                        isExpanded: $viewModel.isPresentingNutriments,
+                        nutriments: viewModel.product?.nutriments
                     )
 
                     FormsAddInvoiceButton(
-                        viewModel: $viewModel,
+                        viewModel: viewModel,
                         focusedField: _focusedField
                     )
                 }
@@ -49,7 +49,7 @@ struct InvoiceForm: View {
         .modelContext(viewModel.usedLocalRepository.modelContext)
     }
 
-    init(product: APIProductItem? = nil) {
+    init(product: UIProductItem? = nil) {
         viewModel = InvoiceFormViewModel(
             name: product?.productName ?? "",
             amount: product == nil ? "" : "1",

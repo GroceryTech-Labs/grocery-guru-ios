@@ -39,6 +39,7 @@ struct InvoiceItemListRow: View {
 #Preview {
     InvoiceItemListRow(
         item: InvoiceItem(
+            code: "1234",
             name: "Cheese",
             amount: 200,
             category: .milkEgg,

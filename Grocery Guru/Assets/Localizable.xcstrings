@@ -1,33 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        }
-      }
-    },
     "%@ Items" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Gegenstände"
-          }
-        }
-      }
-    },
-    "332" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
           }
         }
       }
@@ -112,17 +91,6 @@
         }
       }
     },
-    "Carbohydrates:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kohlenhydrate:"
-          }
-        }
-      }
-    },
     "Categories" : {
       "localizations" : {
         "de" : {
@@ -193,56 +161,12 @@
         }
       }
     },
-    "dsald" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Emoji" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Emoji"
-          }
-        }
-      }
-    },
-    "Energy (kcal):" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Energie (kcal)"
-          }
-        }
-      }
-    },
-    "Energy (kJ):" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Energie (kJ):"
-          }
-        }
-      }
-    },
-    "Fat:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fett:"
           }
         }
       }
@@ -273,17 +197,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "g"
-          }
-        }
-      }
-    },
-    "Hello World!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
           }
         }
       }
@@ -378,16 +291,6 @@
         }
       }
     },
-    "Nutriments (100g)" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nährwerte (100g)"
-          }
-        }
-      }
-    },
     "Open Invoice Item" : {
       "localizations" : {
         "de" : {
@@ -418,34 +321,12 @@
         }
       }
     },
-    "Proteins:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Protein:"
-          }
-        }
-      }
-    },
     "Reset" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zurücksetzen"
-          }
-        }
-      }
-    },
-    "Salt:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Salz:"
           }
         }
       }
@@ -466,17 +347,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zeige alle"
-          }
-        }
-      }
-    },
-    "Sugars:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zucker:"
           }
         }
       }

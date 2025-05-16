@@ -35,18 +35,21 @@ struct InvoiceItemList: View {
 #Preview {
     InvoiceItemList(items: [
         InvoiceItem(
+            code: "1234",
             name: "Cheddar Cheese",
             amount: 1,
             category: .milkEgg,
             measureUnit: .item
         ),
         InvoiceItem(
+            code: "1234",
             name: "asd sda",
             amount: 2,
             category: .milkEgg,
             measureUnit: .item
         ),
         InvoiceItem(
+            code: "1234",
             name: "asd sda",
             amount: 3,
             category: .milkEgg,

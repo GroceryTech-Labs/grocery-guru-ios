@@ -1,12 +1,12 @@
 import SwiftUI
-import OpenFoodFacts
+import DesignSystem
 
-struct NutrimentsRow: View {
-    @Binding var product: APIProductItem?
-    @Binding var isExpanded: Bool
+public struct NutrimentsRow: View {
+    @Binding public var isExpanded: Bool
+    let nutriments: UINutrimentsItem?
 
-    var body: some View {
-        if let nutriments = product?.nutriments {
+    public var body: some View {
+        if let nutriments {
             DisclosureGroup(isExpanded: $isExpanded) {
                 NutrimentsView(nutriments: nutriments)
             } label: {
@@ -15,5 +15,10 @@ struct NutrimentsRow: View {
                     .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormNutriments)
             }
         }
+    }
+
+    public init(isExpanded: Binding<Bool>, nutriments: UINutrimentsItem?) {
+        self._isExpanded = isExpanded
+        self.nutriments = nutriments
     }
 }

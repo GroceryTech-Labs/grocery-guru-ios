@@ -25,12 +25,6 @@ struct BarcodeScannerView: View {
         }
         .accessibilityElement()
         .accessibilityIdentifier(AccessibilityIdentifier.Scanner.barcode)
-        .overlay(alignment: .center) {
-            ScannerOverlay(
-                isPresented: $viewModel.isPresentingIndicator,
-                systemImage: "barcode.viewfinder"
-            )
-        }
         .overlay {
             if viewModel.isLoading {
                 ProgressView()
@@ -41,9 +35,6 @@ struct BarcodeScannerView: View {
                         in: .rect(cornerRadius: Constants.Radius.Normal)
                     )
             }
-        }
-        .overlay(alignment: .center) {
-            ErrorToast(error: $viewModel.error)
         }
     }
 }

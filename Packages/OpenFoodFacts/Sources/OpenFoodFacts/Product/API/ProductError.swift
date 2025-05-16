@@ -1,9 +1,9 @@
 import Foundation
 
-enum ProductError: LocalizedError {
+public enum ProductError: LocalizedError {
     case productNotFound(_ status: String)
 
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case .productNotFound(let status):
             status

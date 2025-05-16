@@ -2,7 +2,7 @@ name: iOS Build and Test
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "production" ]
   pull_request:
     branches: [ "develop" ]
 
@@ -28,7 +28,6 @@ jobs:
             -project "Grocery Guru.xcodeproj" \
             -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
           | xcbeautify
-
       - name: Test
         run: |
           set -o pipefail && \
@@ -39,9 +38,7 @@ jobs:
             -enableCodeCoverage YES \
             -resultBundlePath CoverageResults.xcresult \
           | xcbeautify
-
       - name: Test Coverage %
         run: |
           COVERAGE=$(xcrun xccov view --report CoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | head -n 1)
           echo "Total Test Coverage: $COVERAGE"
-

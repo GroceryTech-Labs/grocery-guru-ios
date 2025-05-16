@@ -1,15 +1,16 @@
 import Foundation
 
-public struct UIProductItem: Hashable, Equatable, Identifiable {
-//    static let example = Self(
-//        nutriments: Bundle.main.decode(
-//            OFFNutriments.self,
-//            from: "off_nutriments.json"
-//        ),
-//        productName: "Paulaner Spezi"
-//    )
-
+public struct UIProductItem: Hashable, Equatable, Identifiable, Sendable {
     public let id = UUID()
-    public let productName: String
+    public let code: String?
+    public let productName: String?
     public let nutriments: UINutrimentsItem
+}
+
+extension UIProductItem {
+    public init(from apiItem: APIProductItem) {
+        code = apiItem.code
+        productName = apiItem.productName
+        nutriments = UINutrimentsItem(from: apiItem.nutriments)
+    }
 }

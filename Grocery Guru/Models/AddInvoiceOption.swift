@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 enum AddInvoiceOption: LocalizedStringKey, CaseIterable, Hashable {
     case barcode = "Barcode"
@@ -6,7 +7,7 @@ enum AddInvoiceOption: LocalizedStringKey, CaseIterable, Hashable {
     case manual = "Manual"
 
     static var allCases: [Self] {
-        [.document, .barcode, .manual]
+        [.barcode, .manual]
     }
 
     var accessibilityIdentifier: String {

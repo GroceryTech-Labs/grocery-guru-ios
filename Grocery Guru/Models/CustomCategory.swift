@@ -3,8 +3,8 @@ import SwiftData
 
 @Model
 final class CustomCategory {
-    let name: String
-    let emoji: String
+    var name: String
+    var emoji: String
 
     init(name: String, emoji: String) {
         self.name = name

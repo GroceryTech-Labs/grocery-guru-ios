@@ -9,12 +9,13 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
   - explicit_top_level_acl
   - explicit_type_interface
   - file_types_order
-  - anyobject_protocol
-  - inert_defer
-  - unused_capture_list
   - required_deinit
   - contrasted_opening_brace
   - vertical_whitespace_between_cases
+  - no_empty_block
+  - unused_parameter
+  - switch_case_on_newline
+
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
   - all
   - empty_count # find all the available rules by running: `swiftlint rules`

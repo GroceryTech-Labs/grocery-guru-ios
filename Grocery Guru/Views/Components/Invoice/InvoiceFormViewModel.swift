@@ -9,7 +9,7 @@ class InvoiceFormViewModel {
     var amount: String
     var measureUnit: MeasureUnit
     var category: InvoiceItemCategory
-    var product: APIProductItem?
+    var product: UIProductItem?
     var isPresentingNutriments = false
 
     @MainActor var usedLocalRepository: LocalStorageRepository {
@@ -27,7 +27,7 @@ class InvoiceFormViewModel {
         amount: String = "1",
         measureUnit: MeasureUnit = .item,
         category: InvoiceItemCategory = .bakery,
-        product: APIProductItem? = nil
+        product: UIProductItem? = nil
     ) {
         self.name = name
         self.amount = amount
@@ -41,6 +41,7 @@ class InvoiceFormViewModel {
             do {
                 try await usedLocalRepository.addItem(
                     InvoiceItem(
+                        code: product?.code,
                         name: name,
                         amount: Int(amount) ?? 0,
                         category: category,
