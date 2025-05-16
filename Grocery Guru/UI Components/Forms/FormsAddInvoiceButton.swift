@@ -23,7 +23,7 @@ struct FormsAddInvoiceButton: View {
                 .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
         }
-        .buttonStyle(.borderedProminent)
+        .buttonStyle(.primary)
         .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormSubmit)
     }
 }
