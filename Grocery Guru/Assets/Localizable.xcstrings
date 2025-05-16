@@ -12,6 +12,7 @@
       }
     },
     "Add Invoice" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

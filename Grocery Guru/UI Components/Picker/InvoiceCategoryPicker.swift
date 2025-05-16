@@ -17,56 +17,37 @@ struct InvoiceCategoryPicker: View {
     }
 
     var body: some View {
-        HStack(spacing: Constants.Padding.sizeS) {
-            ScrollView(.horizontal) {
-                ScrollViewReader { sReader in
-                    HStack(spacing: 0) {
-                        ForEach(Array(categories.enumerated()), id: \.offset) { category in
-                            Button {
-                                withAnimation(.smooth) {
-                                    selection = category.element
-                                    sReader.scrollTo(
-                                        category.offset,
-                                        anchor: .leading
-                                    )
-                                }
-                            } label: {
-                                buttonLabel(category: category.element)
-                            }
-                            .buttonStyle(.plain)
-                            .accessibilityIdentifier(
-                                AccessibilityIdentifier.Button.invoiceCategory
-                            )
-                        }
-                    }
-                }
-            }
-            .scrollIndicators(.hidden)
-            .scrollClipDisabled(true)
+        AnimatableLabelPicker(
+            selectedElement: $selection,
+            elements: categories
+        ) { category in
+            pickerLabel(category: category)
         }
     }
 
-    func buttonLabel(category: InvoiceItemCategory) -> some View {
-        let background = selection == category ? .accentColor : Color(.secondarySystemBackground)
-        return ResponsiveCard(background: background) {
-            HStack(spacing: Constants.Padding.sizeS) {
-                Text(category.emoji)
+    func pickerLabel(category: InvoiceItemCategory) -> some View {
+        HStack(spacing: Constants.Padding.sizeS) {
+            Text(category.emoji)
 
-                if selection == category {
-                    Text(category.localized)
-                        .lineLimit(1)
-                        .transition(
-                            .asymmetric(
-                                insertion: .push(from: .trailing),
-                                removal: .offset(x: 100)
-                            )
+            if selection == category {
+                Text(category.localized)
+                    .lineLimit(1)
+                    .transition(
+                        .asymmetric(
+                            insertion: .push(from: .trailing),
+                            removal: .move(edge: .trailing)
                         )
-                }
+                    )
             }
         }
+        .clipped()
+        .accessibilityIdentifier(
+            AccessibilityIdentifier.Button.invoiceCategory
+        )
     }
 }
 
 #Preview {
-    InvoiceCategoryPicker(selection: .constant(.bakery))
+    @Previewable @State var selection = InvoiceItemCategory.bakery
+    InvoiceCategoryPicker(selection: $selection)
 }

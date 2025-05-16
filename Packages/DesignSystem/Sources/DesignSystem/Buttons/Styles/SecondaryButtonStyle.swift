@@ -1,14 +1,13 @@
 import SwiftUI
-import DesignSystem
 
-struct SecondaryButtonStyle: ButtonStyle {
+public struct SecondaryButtonStyle: ButtonStyle {
     private let height: CGFloat?
 
-    init(height: CGFloat? = nil) {
+    public init(height: CGFloat? = nil) {
         self.height = height
     }
 
-    func makeBody(configuration: Configuration) -> some View {
+    public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(Constants.Padding.sizeL)
             .background(Color(.secondarySystemBackground))
@@ -19,16 +18,20 @@ struct SecondaryButtonStyle: ButtonStyle {
 }
 
 extension ButtonStyle where Self == SecondaryButtonStyle {
-    static var secondary: SecondaryButtonStyle {
+    public static var secondary: SecondaryButtonStyle {
         SecondaryButtonStyle()
     }
 
-    static func secondary(height: CGFloat?) -> SecondaryButtonStyle {
+    public static func secondary(height: CGFloat?) -> SecondaryButtonStyle {
         SecondaryButtonStyle(height: height)
     }
 }
 
 #Preview {
-    Button(InvoiceItemCategory.bakery.localized) { }
-        .buttonStyle(.secondary)
+    Button {
+        print("Test")
+    } label: {
+        Text(verbatim: "Test")
+    }
+    .buttonStyle(.secondary)
 }

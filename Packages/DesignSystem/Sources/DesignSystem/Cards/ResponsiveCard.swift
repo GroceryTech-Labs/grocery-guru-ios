@@ -1,14 +1,11 @@
 import SwiftUI
-import DesignSystem
 
-struct ResponsiveCard<Content: View>: View {
-    private let alignment: Alignment
+public struct ResponsiveCard<Content: View>: View {
     private let background: Color
     private let content: Content
 
-    var body: some View {
+    public var body: some View {
         content
-            .frame(maxWidth: .infinity, alignment: alignment)
             .padding(Constants.Padding.sizeL)
             .background(background)
             .clipShape(.rect(cornerRadius: Constants.Radius.Normal))
@@ -16,12 +13,10 @@ struct ResponsiveCard<Content: View>: View {
             .padding(Constants.Padding.sizeX)
     }
 
-    init(
-        alignment: Alignment = .center,
+    public init(
         background: Color = Color(.secondarySystemBackground),
         @ViewBuilder _ content: () -> Content
     ) {
-        self.alignment = alignment
         self.background = background
         self.content = content()
     }

@@ -32,6 +32,7 @@ struct InvoiceCategoryCard: View {
                         .foregroundStyle(.secondary)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .center)
         }
         .onTapGesture {
             navigator.push(.invoiceList(items: filteredItems))

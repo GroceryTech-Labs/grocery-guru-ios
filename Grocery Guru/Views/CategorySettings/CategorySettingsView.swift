@@ -12,7 +12,7 @@ struct CategorySettingsView: View {
                         Text("Create")
                             .frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.primary)
+                    .buttonStyle(.secondary)
 
                     NavigationLink {
                         // CustomCategoryList
@@ -24,7 +24,7 @@ struct CategorySettingsView: View {
                         Text("Manage")
                             .frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.primary)
+                    .buttonStyle(.secondary)
                 }
                 .padding(Constants.Padding.sizeL)
             }

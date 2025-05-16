@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import DesignSystem
 
 struct HomeView: View {
     @Environment(\.navigationService)
@@ -10,7 +11,9 @@ struct HomeView: View {
     var body: some View {
         HomeViewList(viewModel: viewModel)
             .overlay(alignment: .bottom) {
-                ShowAddInvoiceButton()
+                ShowAddInvoiceButton {
+                    navigator.push(.addInvoice())
+                }
             }
             .modelContext(viewModel.repository.modelContext)
     }
