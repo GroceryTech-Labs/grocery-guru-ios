@@ -1,12 +1,13 @@
 import SwiftUI
 import DesignSystem
+import Categories
 
 struct CategoryPickerRow: View {
-    @Binding var category: InvoiceItemCategory
+    @Binding var selectedCategory: Categories.BaseCategory
 
     var body: some View {
         SectionHeader("Category", font: .headline) {
-            InvoiceCategoryPicker(selection: $category)
+            CategoryPicker(selectedElement: $selectedCategory)
                 .padding(.horizontal, -Constants.Padding.sizeL)
         } trailing: {
             Button("Show all") { }
@@ -15,5 +16,5 @@ struct CategoryPickerRow: View {
 }
 
 #Preview {
-    CategoryPickerRow(category: .constant(.bakery))
+    CategoryPickerRow(selectedCategory: .constant(.bakery))
 }

@@ -30,7 +30,7 @@ struct InvoiceForm: View {
                             focusedField = nil
                         }
 
-                    CategoryPickerRow(category: $viewModel.category)
+                    CategoryPickerRow(selectedCategory: $viewModel.category)
 
                     NutrimentsRow(
                         isExpanded: $viewModel.isPresentingNutriments,

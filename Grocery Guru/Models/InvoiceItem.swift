@@ -1,19 +1,19 @@
-import Foundation
 import SwiftData
+import Categories
 
 @Model
 final class InvoiceItem {
     var code: String?
     var name: String
     var amount: Int
-    var category: InvoiceItemCategory
+    var category: BaseCategory
     var measureUnit: MeasureUnit
 
     init(
         code: String? = nil,
         name: String,
         amount: Int,
-        category: InvoiceItemCategory,
+        category: BaseCategory,
         measureUnit: MeasureUnit
     ) {
         self.code = code

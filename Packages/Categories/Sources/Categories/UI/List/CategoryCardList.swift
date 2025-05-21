@@ -2,11 +2,10 @@ import SwiftUI
 import SwiftData
 import DesignSystem
 
-struct InvoiceCategoryCardList: View {
+public struct CategoryCardList: View {
     @Environment(\.dynamicTypeSize)
     private var typeSize
 
-    var items: [InvoiceItem]
     @Query private var customCategories: [CustomCategory]
 
     private var columns: [GridItem] {
@@ -17,45 +16,40 @@ struct InvoiceCategoryCardList: View {
         return [GridItem(.flexible()), GridItem(.flexible())]
     }
 
-    private var categories: [InvoiceItemCategory] {
-        InvoiceItemCategory.allCases + customCategories.map { category in
-            InvoiceItemCategory.custom(
+    private var categories: [BaseCategory] {
+        BaseCategory.allCases + customCategories.map { category in
+            BaseCategory.custom(
                 name: category.name,
                 emoji: category.emoji
             )
         }
     }
 
-    var body: some View {
+    private let onCardTaped: () -> Void
+
+    public var body: some View {
         ScrollView {
             LazyVGrid(
                 columns: columns,
                 spacing: Constants.Padding.sizeS
             ) {
                 ForEach(categories, id: \.hashValue) { category in
-                    InvoiceCategoryCard(
-                        category: category,
-                        items: items
-                    )
+                    CategoryCard(category: category) {
+                        onCardTaped()
+                    }
                 }
             }
         }
         .scrollIndicators(.hidden)
     }
+
+    public init(onCardTaped: @escaping () -> Void) {
+        self.onCardTaped = onCardTaped
+    }
 }
 
 #Preview {
     ScrollView {
-        InvoiceCategoryCardList(
-            items: [
-                InvoiceItem(
-                    code: "1234",
-                    name: "Cheese",
-                    amount: 100,
-                    category: .bakery,
-                    measureUnit: .gram
-                )
-            ]
-        )
+        CategoryCardList { }
     }
 }

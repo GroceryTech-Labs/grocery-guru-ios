@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import Categories
 
 final class MockLocalStorageRepository: LocalStorageRepository {
     @MainActor static var mockInstance = MockLocalStorageRepository()

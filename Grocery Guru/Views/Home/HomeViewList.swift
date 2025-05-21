@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftData
 import DesignSystem
+import Categories
 
 struct HomeViewList: View {
     @Environment(\.navigationService)
@@ -12,7 +13,9 @@ struct HomeViewList: View {
     var body: some View {
         SectionHeader("Welcome back!", font: .largeTitle) {
             SectionHeader("Categories") {
-                InvoiceCategoryCardList(items: items)
+                CategoryCardList {
+                    navigator.push(.invoiceList(items: items))
+                }
             } trailing: {
                 Button {
                     navigator.sheet(.categorySettings)

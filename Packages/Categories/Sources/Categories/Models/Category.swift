@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
+public enum BaseCategory: Codable, CaseIterable, Hashable {
     case bakery
     case canned
     case custom(name: String, emoji: String)
@@ -10,17 +10,19 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
     case milkEgg
     case vegetables
 
-    static var allCases: [Self] = [
-        .bakery,
-        .canned,
-        .fish,
-        .fruits,
-        .meat,
-        .milkEgg,
-        .vegetables
-    ]
+    public static var allCases: [BaseCategory] {
+        [
+            .bakery,
+            .canned,
+            .fish,
+            .fruits,
+            .meat,
+            .milkEgg,
+            .vegetables
+        ]
+    }
 
-    var localized: LocalizedStringKey {
+    public var localized: LocalizedStringKey {
         switch self {
         case .bakery: "Bakery"
         case .canned: "Canned"
@@ -34,7 +36,7 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
         }
     }
 
-    var emoji: String {
+    public var emoji: String {
         switch self {
         case .bakery: "🥖"
         case .canned: "🥫"

@@ -1,5 +1,6 @@
 import SwiftUI
 import OpenFoodFacts
+import Categories
 
 @Observable
 class InvoiceFormViewModel {
@@ -8,7 +9,7 @@ class InvoiceFormViewModel {
     var name: String
     var amount: String
     var measureUnit: MeasureUnit
-    var category: InvoiceItemCategory
+    var category: BaseCategory
     var product: UIProductItem?
     var isPresentingNutriments = false
 
@@ -26,7 +27,7 @@ class InvoiceFormViewModel {
         name: String = "",
         amount: String = "1",
         measureUnit: MeasureUnit = .item,
-        category: InvoiceItemCategory = .bakery,
+        category: BaseCategory = .bakery,
         product: UIProductItem? = nil
     ) {
         self.name = name

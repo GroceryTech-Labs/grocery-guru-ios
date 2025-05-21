@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import Categories
 
 class LocalStorageRepository: SwiftDataRepository {
     @MainActor static var shared = LocalStorageRepository()

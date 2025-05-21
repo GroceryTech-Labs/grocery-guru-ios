@@ -1,4 +1,5 @@
 import SwiftUI
+import Categories
 
 @Observable
 class CategoryCreationViewModel {

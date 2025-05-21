@@ -29,7 +29,7 @@ struct CategoryCreationView: View {
                         }
 
                     CategoryPreviewRow(
-                        invoiceItemCategory: .custom(
+                        category: .custom(
                             name: viewModel.name,
                             emoji: viewModel.emoji
                         )

@@ -25,6 +25,11 @@
           "containerPath" : "container:Packages\/OpenFoodFacts",
           "identifier" : "OpenFoodFacts",
           "name" : "OpenFoodFacts"
+        },
+        {
+          "containerPath" : "container:Packages\/Categories",
+          "identifier" : "Categories",
+          "name" : "Categories"
         }
       ]
     },
@@ -47,6 +52,13 @@
         "containerPath" : "container:Packages\/Cross-Cutting",
         "identifier" : "GGAPITests",
         "name" : "GGAPITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/Categories",
+        "identifier" : "CategoriesTests",
+        "name" : "CategoriesTests"
       }
     },
     {

@@ -1,20 +1,17 @@
 import SwiftUI
 import DesignSystem
+import Categories
 
 struct CategoryPreviewRow: View {
-    let invoiceItemCategory: InvoiceItemCategory
+    let category: BaseCategory
 
     var body: some View {
         SectionHeader("Preview", font: .headline) {
-            InvoiceCategoryCard(
-                category: invoiceItemCategory,
-                items: [],
-                isPreview: true
-            )
+            CategoryCard(category: category)
         }
     }
 }
 
 #Preview {
-    CategoryPreviewRow(invoiceItemCategory: .bakery)
+    CategoryPreviewRow(category: .bakery)
 }
