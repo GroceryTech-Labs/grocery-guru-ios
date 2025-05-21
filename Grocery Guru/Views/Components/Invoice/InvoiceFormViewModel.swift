@@ -2,10 +2,11 @@ import SwiftUI
 import OpenFoodFacts
 import Categories
 import LocalStorage
+import Routing
 
 @Observable
 class InvoiceFormViewModel {
-    private var navigator = NavigationService.shared
+    @MainActor private var navigator = NavigationService.shared
 
     var name: String
     var amount: String

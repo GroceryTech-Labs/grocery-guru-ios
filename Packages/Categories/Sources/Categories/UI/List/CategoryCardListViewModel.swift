@@ -1,5 +1,6 @@
 import SwiftUI
 import LocalStorage
+import Routing
 
 @Observable @MainActor
 class CategoryCardListViewModel {
@@ -26,5 +27,9 @@ class CategoryCardListViewModel {
         } catch {
             print(error)
         }
+    }
+
+    func navigateToCategoryDetails(category: BaseCategory) {
+        NavigationService.shared.push(.)
     }
 }

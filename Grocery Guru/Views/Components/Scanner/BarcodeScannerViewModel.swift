@@ -1,11 +1,12 @@
 import SwiftUI
 import CodeScanner
 import OpenFoodFacts
+import Routing
 
 @Observable
 final class BarcodeScannerViewModel {
     private let productAPI: ProductAPI
-    private var navigator = NavigationService.shared
+    @MainActor private var navigator = NavigationService.shared
 
     var error: Error?
 
@@ -25,7 +26,7 @@ final class BarcodeScannerViewModel {
                 let response = try await productAPI.fetchProduct(barcode: success.string)
                 let result = UIProductItem(from: response)
 
-                navigator.push(.invoiceForm(product: result))
+                await navigator.push(.invoiceForm)
 
                 withAnimation {
                     error = nil

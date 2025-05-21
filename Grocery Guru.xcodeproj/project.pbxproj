@@ -27,9 +27,6 @@
 		563F2F6A2C0FC8EA005BA713 /* MeasureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F2F692C0FC8EA005BA713 /* MeasureUnit.swift */; };
 		56415D012C0CCAE100C58D4E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56415D002C0CCAE100C58D4E /* .swiftlint.yml */; };
 		564AD3412DDCAA3E009D488B /* Categories in Frameworks */ = {isa = PBXBuildFile; productRef = 564AD3402DDCAA3E009D488B /* Categories */; };
-		5655F7082C0D2D0800C80708 /* NavigationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F7072C0D2D0800C80708 /* NavigationKey.swift */; };
-		5655F70A2C0D2D6F00C80708 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F7092C0D2D6F00C80708 /* NavigationDestination.swift */; };
-		5655F70D2C0D2DA100C80708 /* NavigationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F70C2C0D2DA100C80708 /* NavigationServiceProtocol.swift */; };
 		5655F7102C0D2E0100C80708 /* InvoiceItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F70F2C0D2E0100C80708 /* InvoiceItemList.swift */; };
 		5655F7122C0D346C00C80708 /* InvoiceItemListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */; };
 		5655F7142C0D36E300C80708 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F7132C0D36E300C80708 /* ErrorView.swift */; };
@@ -42,6 +39,7 @@
 		568560EF2C15AF96003BDAED /* TapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560EE2C15AF96003BDAED /* TapAction.swift */; };
 		568560F12C15B08F003BDAED /* TypeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560F02C15B08F003BDAED /* TypeAction.swift */; };
 		5686D0B22DDE6EA000C85704 /* LocalStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5686D0B12DDE6EA000C85704 /* LocalStorage */; };
+		569FEFBA2DDE8EB600CEA8E1 /* NavigationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569FEFB82DDE8EB600CEA8E1 /* NavigationKey.swift */; };
 		56AAD2FF2C1B83A000BF8030 /* BarcodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD2FE2C1B83A000BF8030 /* BarcodeScannerViewModel.swift */; };
 		56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3022C1B9BB100BF8030 /* OFFError.swift */; };
 		56B138ED2C26C8D700B35CA4 /* AmountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B138EC2C26C8D700B35CA4 /* AmountRow.swift */; };
@@ -51,7 +49,6 @@
 		56CA91722C239DC30018198F /* AddInvoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA91712C239DC30018198F /* AddInvoicePicker.swift */; };
 		56CE7FC62DD61D290006E3B1 /* Cross-Cutting in Frameworks */ = {isa = PBXBuildFile; productRef = 56CE7FC52DD61D290006E3B1 /* Cross-Cutting */; };
 		56CE7FC82DD61D290006E3B1 /* OpenFoodFacts in Frameworks */ = {isa = PBXBuildFile; productRef = 56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */; };
-		56FCC0352C0CF62A003EAA8B /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FCC0342C0CF62A003EAA8B /* NavigationService.swift */; };
 		56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC782C0C89E800D2D965 /* HomeViewList.swift */; };
 		56FFAC822C0CC82300D2D965 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
@@ -97,9 +94,6 @@
 		563F2F692C0FC8EA005BA713 /* MeasureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureUnit.swift; sourceTree = "<group>"; };
 		56415D002C0CCAE100C58D4E /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		564AD33F2DDCA9A5009D488B /* Categories */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Categories; sourceTree = "<group>"; };
-		5655F7072C0D2D0800C80708 /* NavigationKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationKey.swift; sourceTree = "<group>"; };
-		5655F7092C0D2D6F00C80708 /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
-		5655F70C2C0D2DA100C80708 /* NavigationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationServiceProtocol.swift; sourceTree = "<group>"; };
 		5655F70F2C0D2E0100C80708 /* InvoiceItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemList.swift; sourceTree = "<group>"; };
 		5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemListRow.swift; sourceTree = "<group>"; };
 		5655F7132C0D36E300C80708 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -112,6 +106,7 @@
 		568560EE2C15AF96003BDAED /* TapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAction.swift; sourceTree = "<group>"; };
 		568560F02C15B08F003BDAED /* TypeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAction.swift; sourceTree = "<group>"; };
 		5686D0B02DDE6E2E00C85704 /* LocalStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LocalStorage; sourceTree = "<group>"; };
+		569FEFB82DDE8EB600CEA8E1 /* NavigationKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationKey.swift; sourceTree = "<group>"; };
 		56AAD2FE2C1B83A000BF8030 /* BarcodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewModel.swift; sourceTree = "<group>"; };
 		56AAD3022C1B9BB100BF8030 /* OFFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFError.swift; sourceTree = "<group>"; };
 		56B138EC2C26C8D700B35CA4 /* AmountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountRow.swift; sourceTree = "<group>"; };
@@ -122,7 +117,6 @@
 		56CE7FC22DD5FFA70006E3B1 /* Cross-Cutting */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "Cross-Cutting"; sourceTree = "<group>"; };
 		56CE7FC32DD616CB0006E3B1 /* OpenFoodFacts */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OpenFoodFacts; sourceTree = "<group>"; };
 		56F51B092DD7951000694E61 /* Grocery Guru UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Grocery Guru UI Tests.xctestplan"; sourceTree = "<group>"; };
-		56FCC0342C0CF62A003EAA8B /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
 		56FFAC782C0C89E800D2D965 /* HomeViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewList.swift; sourceTree = "<group>"; };
 		56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */,
-				5683BBDB2C148E07001EF768 /* Navigation */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -271,9 +264,8 @@
 				56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */,
 				5639A5682BFF97BD0086857F /* InvoiceItem.swift */,
 				563F2F692C0FC8EA005BA713 /* MeasureUnit.swift */,
-				5655F7092C0D2D6F00C80708 /* NavigationDestination.swift */,
 				563F2F662C0F5F8E005BA713 /* Errors */,
-				5655F7062C0D2CF900C80708 /* Environment */,
+				569FEFB92DDE8EB600CEA8E1 /* Environment */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,23 +288,6 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		5655F7062C0D2CF900C80708 /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				5655F7072C0D2D0800C80708 /* NavigationKey.swift */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
-		5683BBDB2C148E07001EF768 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				56FCC0342C0CF62A003EAA8B /* NavigationService.swift */,
-				5655F70C2C0D2DA100C80708 /* NavigationServiceProtocol.swift */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
 		568560DE2C15A520003BDAED /* Grocery GuruUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +305,14 @@
 				568560F02C15B08F003BDAED /* TypeAction.swift */,
 			);
 			path = Actions;
+			sourceTree = "<group>";
+		};
+		569FEFB92DDE8EB600CEA8E1 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				569FEFB82DDE8EB600CEA8E1 /* NavigationKey.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 		56CA916C2C23932D0018198F /* UI Components */ = {
@@ -572,12 +555,11 @@
 				5655F7142C0D36E300C80708 /* ErrorView.swift in Sources */,
 				560AA7CF2C02627C00365B1F /* DocumentScannerView.swift in Sources */,
 				56B138F12C26C9CF00B35CA4 /* FormsAddInvoiceButton.swift in Sources */,
-				5655F70A2C0D2D6F00C80708 /* NavigationDestination.swift in Sources */,
 				560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */,
 				56B138EF2C26C90E00B35CA4 /* NameRow.swift in Sources */,
 				5655F7102C0D2E0100C80708 /* InvoiceItemList.swift in Sources */,
+				569FEFBA2DDE8EB600CEA8E1 /* NavigationKey.swift in Sources */,
 				56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */,
-				5655F7082C0D2D0800C80708 /* NavigationKey.swift in Sources */,
 				56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */,
 				5639A5712BFF97BD0086857F /* App.swift in Sources */,
 				560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */,
@@ -587,7 +569,6 @@
 				5635E3342C24E50D000A6628 /* CategoryPickerRow.swift in Sources */,
 				5639A5782BFF97BD0086857F /* HomeView.swift in Sources */,
 				56346D4D2C0E68E000454E17 /* AddInvoiceOption.swift in Sources */,
-				5655F70D2C0D2DA100C80708 /* NavigationServiceProtocol.swift in Sources */,
 				5639A5742BFF97BD0086857F /* InvoiceItem.swift in Sources */,
 				5683BBC82C145EA0001EF768 /* BarcodeScannerView.swift in Sources */,
 				5635E32F2C24AEE1000A6628 /* MeasureUnitPicker.swift in Sources */,
@@ -595,7 +576,6 @@
 				56AAD2FF2C1B83A000BF8030 /* BarcodeScannerViewModel.swift in Sources */,
 				563F2F682C0F70DC005BA713 /* InvoiceForm.swift in Sources */,
 				562DCABF2C7E69A0006CBFB6 /* EmojiRow.swift in Sources */,
-				56FCC0352C0CF62A003EAA8B /* NavigationService.swift in Sources */,
 				56B430E02C810E7A000FA774 /* CategoryPreviewRow.swift in Sources */,
 				56B138ED2C26C8D700B35CA4 /* AmountRow.swift in Sources */,
 			);

@@ -1,4 +1,5 @@
 import SwiftUI
+import Routing
 
 struct NavigationKey: EnvironmentKey {
     static var defaultValue: NavigationService = .shared

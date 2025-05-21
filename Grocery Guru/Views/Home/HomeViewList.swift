@@ -8,14 +8,10 @@ struct HomeViewList: View {
     private var navigator
     @State private var viewModel: HomeViewModel
 
-//    @Query private var items: [InvoiceItem]
-
     var body: some View {
         SectionHeader("Welcome back!", font: .largeTitle) {
             SectionHeader("Categories") {
-                CategoryCardList {
-                    navigator.push(.invoiceList(items: []))
-                }
+                CategoryCardList()
             } trailing: {
                 Button {
                     navigator.sheet(.categorySettings)

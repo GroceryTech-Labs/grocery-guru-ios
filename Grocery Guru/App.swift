@@ -1,6 +1,8 @@
 import SwiftUI
 import SwiftData
 import LocalStorage
+import Routing
+import Categories
 
 @main
 struct Grocery_GuruApp: App {
@@ -11,12 +13,28 @@ struct Grocery_GuruApp: App {
             NavigationStack(path: $navigationService.path) {
                 HomeView()
                     .navigationDestination(for: NavigationDestination.self) { destination in
-                        destination.view
+                        destination.resolveView()
                     }
                     .sheet(item: $navigationService.sheet) { destination in
-                        destination.view
+                        destination.resolveView()
                     }
             }
+        }
+    }
+}
+
+extension NavigationDestination {
+    @ViewBuilder
+    func resolveView() -> some View {
+        switch self {
+        case .addInvoice:
+            AddInvoiceView(selectedOption: .barcode)
+        case .categorySettings:
+            CategorySettingsView()
+        case .invoiceForm:
+            InvoiceForm()
+        case .invoiceList:
+            InvoiceItemList(items: [])
         }
     }
 }
