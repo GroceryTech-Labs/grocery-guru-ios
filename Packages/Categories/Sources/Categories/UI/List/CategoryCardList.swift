@@ -1,12 +1,9 @@
 import SwiftUI
-import SwiftData
 import DesignSystem
 
 public struct CategoryCardList: View {
     @Environment(\.dynamicTypeSize)
     private var typeSize
-
-    @Query private var customCategories: [CustomCategory]
 
     private var columns: [GridItem] {
         if typeSize.isAccessibilitySize {
@@ -16,16 +13,9 @@ public struct CategoryCardList: View {
         return [GridItem(.flexible()), GridItem(.flexible())]
     }
 
-    private var categories: [BaseCategory] {
-        BaseCategory.allCases + customCategories.map { category in
-            BaseCategory.custom(
-                name: category.name,
-                emoji: category.emoji
-            )
-        }
-    }
-
     private let onCardTaped: () -> Void
+
+    @State private var viewModel = CategoryCardListViewModel()
 
     public var body: some View {
         ScrollView {
@@ -33,7 +23,7 @@ public struct CategoryCardList: View {
                 columns: columns,
                 spacing: Constants.Padding.sizeS
             ) {
-                ForEach(categories, id: \.hashValue) { category in
+                ForEach(viewModel.categories, id: \.hashValue) { category in
                     CategoryCard(category: category) {
                         onCardTaped()
                     }
@@ -41,6 +31,11 @@ public struct CategoryCardList: View {
             }
         }
         .scrollIndicators(.hidden)
+        .onAppear {
+            Task {
+                await viewModel.fetchCategories()
+            }
+        }
     }
 
     public init(onCardTaped: @escaping () -> Void) {

@@ -1,5 +1,6 @@
 import SwiftUI
 import OpenFoodFacts
+import Categories
 
 enum NavigationDestination: Hashable, Identifiable {
     case addInvoice(option: AddInvoiceOption = .barcode)

@@ -1,17 +1,15 @@
 import SwiftUI
-import Categories
+import LocalStorage
 
 @Observable
 class CategoryCreationViewModel {
-    @ObservationIgnored private let repository: LocalStorageRepository
-
-    private var navigator = NavigationService.shared
+    @ObservationIgnored private let repository: CategoryRepository
 
     var name: String = ""
     var emoji: String = ""
 
     @MainActor
-    init(repository: LocalStorageRepository) {
+    init(repository: CategoryRepository = CategoryRepository()) {
         self.repository = repository
     }
 
@@ -20,15 +18,15 @@ class CategoryCreationViewModel {
         emoji = ""
     }
 
-    func addCategory() {
+    @MainActor
+    func addCategory() async {
         do {
-            try repository.addCategory(
+            try await repository.add(
                 CustomCategory(
                     name: name,
                     emoji: emoji
                 )
             )
-            navigator.drop()
         } catch {
             print(error.localizedDescription)
         }

@@ -8,13 +8,13 @@ struct HomeViewList: View {
     private var navigator
     @State private var viewModel: HomeViewModel
 
-    @Query private var items: [InvoiceItem]
+//    @Query private var items: [InvoiceItem]
 
     var body: some View {
         SectionHeader("Welcome back!", font: .largeTitle) {
             SectionHeader("Categories") {
                 CategoryCardList {
-                    navigator.push(.invoiceList(items: items))
+                    navigator.push(.invoiceList(items: []))
                 }
             } trailing: {
                 Button {
@@ -29,15 +29,11 @@ struct HomeViewList: View {
         .padding(.horizontal, Constants.Padding.sizeL)
     }
 
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModel = HomeViewModel()) {
         self.viewModel = viewModel
     }
 }
 
 #Preview {
-    HomeViewList(
-        viewModel: HomeViewModel(
-            repository: LocalStorageRepository()
-        )
-    )
+    HomeViewList()
 }

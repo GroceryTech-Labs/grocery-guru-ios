@@ -1,8 +1,8 @@
 import SwiftUI
 import DesignSystem
 
-struct CategorySettingsView: View {
-    var body: some View {
+public struct CategorySettingsView: View {
+    public var body: some View {
         NavigationView {
             ScrollView {
                 SectionHeader("Category Settings") {
@@ -31,6 +31,8 @@ struct CategorySettingsView: View {
             .scrollIndicators(.hidden)
         }
     }
+
+    public init() { }
 }
 
 #Preview {

@@ -2,8 +2,6 @@ import SwiftUI
 import DesignSystem
 
 public struct CategoryCard: View {
-//    @Environment(\.navigationService)
-//    private var navigator
     private var onTapAction: (() -> Void)?
 
     private let category: BaseCategory

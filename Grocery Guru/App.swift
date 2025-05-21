@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import LocalStorage
 
 @main
 struct Grocery_GuruApp: App {
@@ -8,28 +9,14 @@ struct Grocery_GuruApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $navigationService.path) {
-                HomeView(
-                    viewModel: HomeViewModel(
-                        repository: usedLocalRepository
-                    )
-                )
-                .navigationDestination(for: NavigationDestination.self) { destination in
-                    destination.view
-                }
-                .sheet(item: $navigationService.sheet) { destination in
-                    destination.view
-                }
+                HomeView()
+                    .navigationDestination(for: NavigationDestination.self) { destination in
+                        destination.view
+                    }
+                    .sheet(item: $navigationService.sheet) { destination in
+                        destination.view
+                    }
             }
         }
-    }
-
-    @MainActor var usedLocalRepository: LocalStorageRepository {
-        let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
-
-        if testMode {
-            return MockLocalStorageRepository.mockInstance
-        }
-
-        return LocalStorageRepository.shared
     }
 }

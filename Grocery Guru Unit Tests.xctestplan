@@ -42,16 +42,9 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Packages\/OpenFoodFacts",
-        "identifier" : "OpenFoodFactsTests",
-        "name" : "OpenFoodFactsTests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:Packages\/Cross-Cutting",
-        "identifier" : "GGAPITests",
-        "name" : "GGAPITests"
+        "containerPath" : "container:Grocery Guru.xcodeproj",
+        "identifier" : "5639A5432BFF95940086857F",
+        "name" : "Grocery GuruTests"
       }
     },
     {
@@ -63,9 +56,16 @@
     },
     {
       "target" : {
-        "containerPath" : "container:Grocery Guru.xcodeproj",
-        "identifier" : "5639A5432BFF95940086857F",
-        "name" : "Grocery GuruTests"
+        "containerPath" : "container:Packages\/Cross-Cutting",
+        "identifier" : "GGAPITests",
+        "name" : "GGAPITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/OpenFoodFacts",
+        "identifier" : "OpenFoodFactsTests",
+        "name" : "OpenFoodFactsTests"
       }
     }
   ],

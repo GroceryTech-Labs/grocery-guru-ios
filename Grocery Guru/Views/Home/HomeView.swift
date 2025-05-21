@@ -15,18 +15,15 @@ struct HomeView: View {
                     navigator.push(.addInvoice())
                 }
             }
-            .modelContext(viewModel.repository.modelContext)
     }
 
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModel = HomeViewModel()) {
         self.viewModel = viewModel
     }
 }
 
 #Preview {
     HomeView(
-        viewModel: HomeViewModel(
-            repository: LocalStorageRepository()
-        )
+        viewModel: HomeViewModel()
     )
 }

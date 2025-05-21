@@ -46,7 +46,6 @@ struct InvoiceForm: View {
             .padding(.horizontal, Constants.Padding.sizeL)
         }
         .scrollIndicators(.hidden)
-        .modelContext(viewModel.usedLocalRepository.modelContext)
     }
 
     init(product: UIProductItem? = nil) {
