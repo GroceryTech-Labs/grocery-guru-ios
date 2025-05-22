@@ -1,6 +1,7 @@
 import SwiftUI
 import OpenFoodFacts
 import DesignSystem
+import Categories
 
 struct InvoiceForm: View {
     enum Field: Hashable {
@@ -53,7 +54,7 @@ struct InvoiceForm: View {
             name: product?.productName ?? "",
             amount: product == nil ? "" : "1",
             measureUnit: .item,
-            category: .bakery,
+            category: UICategoryItem(.bakery),
             product: product
         )
     }

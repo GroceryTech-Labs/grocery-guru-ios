@@ -2,15 +2,15 @@ import SwiftUI
 import DesignSystem
 
 struct CategoryPickerLabel: View {
-    let selectedCategory: BaseCategory
-    let category: BaseCategory
+    let selectedCategory: UICategoryItem
+    let category: UICategoryItem
 
     var body: some View {
         HStack(spacing: Constants.Padding.sizeS) {
             Text(category.emoji)
 
             if selectedCategory == category {
-                Text(category.localized)
+                Text(category.categoryName)
                     .lineLimit(1)
                     .transition(
                         .asymmetric(

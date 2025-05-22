@@ -10,4 +10,9 @@ public struct UICategoryItem: Identifiable, Equatable, Sendable {
         self.categoryName = categoryName
         self.emoji = emoji
     }
+
+    public init(_ baseCategory: BaseCategory) {
+        self.categoryName = baseCategory.name
+        self.emoji = baseCategory.emoji
+    }
 }

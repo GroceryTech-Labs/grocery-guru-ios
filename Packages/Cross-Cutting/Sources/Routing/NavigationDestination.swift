@@ -1,6 +1,6 @@
 import SwiftUI
 
-public enum NavigationDestination: Hashable, Identifiable, Sendable {
+public enum NavigationDestination: Hashable, Identifiable, Sendable, Equatable {
     case addInvoice
     case categorySettings
     case invoiceForm

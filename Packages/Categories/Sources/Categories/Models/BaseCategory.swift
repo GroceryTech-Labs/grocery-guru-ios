@@ -3,24 +3,11 @@ import SwiftUI
 public enum BaseCategory: Codable, CaseIterable, Hashable {
     case bakery
     case canned
-    case custom(name: String, emoji: String)
     case fish
     case fruits
     case meat
     case milkEgg
     case vegetables
-
-    public static var allCases: [BaseCategory] {
-        [
-            .bakery,
-            .canned,
-            .fish,
-            .fruits,
-            .meat,
-            .milkEgg,
-            .vegetables
-        ]
-    }
 
     public var localized: LocalizedStringKey {
         switch self {
@@ -31,9 +18,11 @@ public enum BaseCategory: Codable, CaseIterable, Hashable {
         case .meat: "Meat"
         case .milkEgg: "Milk & Egg"
         case .vegetables: "Vegetables"
-        case let .custom(name, _):
-            LocalizedStringKey(name)
         }
+    }
+
+    public var name: String {
+        NSLocalizedString(localized.extractRawString(), comment: "")
     }
 
     public var emoji: String {
@@ -45,8 +34,18 @@ public enum BaseCategory: Codable, CaseIterable, Hashable {
         case .meat: "🥩"
         case .milkEgg: "🥛"
         case .vegetables: "🥕"
-        case let .custom(_, emoji):
-            emoji
         }
+    }
+}
+
+extension LocalizedStringKey {
+    func extractRawString() -> String {
+        let mirror = Mirror(reflecting: self)
+        for child in mirror.children {
+            if child.label == "key", let rawKey = child.value as? String {
+                return rawKey
+            }
+        }
+        return ""
     }
 }

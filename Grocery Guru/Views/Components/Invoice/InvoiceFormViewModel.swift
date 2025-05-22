@@ -11,7 +11,7 @@ class InvoiceFormViewModel {
     var name: String
     var amount: String
     var measureUnit: MeasureUnit
-    var category: BaseCategory
+    var category: UICategoryItem
     var product: UIProductItem?
     var isPresentingNutriments = false
 
@@ -29,7 +29,7 @@ class InvoiceFormViewModel {
         name: String = "",
         amount: String = "1",
         measureUnit: MeasureUnit = .item,
-        category: BaseCategory = .bakery,
+        category: UICategoryItem = UICategoryItem(.bakery),
         product: UIProductItem? = nil
     ) {
         self.name = name

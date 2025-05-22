@@ -4,7 +4,7 @@ import Categories
 import LocalStorage
 
 struct CategoryPickerRow: View {
-    @Binding var selectedCategory: Categories.BaseCategory
+    @Binding var selectedCategory: UICategoryItem
 
     var body: some View {
         SectionHeader("Category", font: .headline) {
@@ -20,5 +20,5 @@ struct CategoryPickerRow: View {
 }
 
 #Preview {
-    CategoryPickerRow(selectedCategory: .constant(.bakery))
+    CategoryPickerRow(selectedCategory: .constant(UICategoryItem(categoryName: "Egg", emoji: "🥚")))
 }

@@ -4,31 +4,25 @@ import Routing
 @Observable @MainActor
 public class CategoryCardListViewModel {
     private let repository: CategoryRepository
+    private let navigationService: NavigationService
 
-    var customCategories: [UICategoryItem] = []
-    var categories: [BaseCategory] {
-        BaseCategory.allCases + customCategories.map { category in
-            BaseCategory.custom(
-                name: category.categoryName,
-                emoji: category.emoji
-            )
-        }
-    }
+    var categories: [UICategoryItem] = []
 
-    public init(repository: CategoryRepository) {
+    public init(repository: CategoryRepository, navigationService: NavigationService = .shared) {
         self.repository = repository
+        self.navigationService = navigationService
     }
 
     func fetchCategories() async {
         do {
-            let data = try await repository.fetchCategories()
-            customCategories = data
+            let result = try await repository.fetchCategories()
+            categories = result
         } catch {
             print(error)
         }
     }
 
-    func navigateToCategoryDetails(category: BaseCategory) {
-        NavigationService.shared.push(.invoiceList)
+    func navigateToCategoryDetails(category: UICategoryItem) {
+        navigationService.push(.invoiceList)
     }
 }

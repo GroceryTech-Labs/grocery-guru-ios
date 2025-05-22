@@ -4,7 +4,7 @@ import DesignSystem
 public struct CategoryCard: View {
     private var onTapAction: (() -> Void)?
 
-    private let category: BaseCategory
+    private let category: UICategoryItem
     private let isPreview: Bool
     private let emojiSize: CGFloat = 64
 
@@ -14,7 +14,7 @@ public struct CategoryCard: View {
                 Text(category.emoji)
                     .font(.system(size: emojiSize))
 
-                Text(category.localized)
+                Text(category.categoryName)
             }
             .frame(maxWidth: .infinity, alignment: .center)
         }
@@ -29,7 +29,7 @@ public struct CategoryCard: View {
         .accessibilityLabel("Category Card")
     }
 
-    public init(category: BaseCategory, isPreview: Bool = false, onTapAction: (() -> Void)? = nil) {
+    public init(category: UICategoryItem, isPreview: Bool = false, onTapAction: (() -> Void)? = nil) {
         self.onTapAction = onTapAction
         self.category = category
         self.isPreview = isPreview
@@ -37,7 +37,7 @@ public struct CategoryCard: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    CategoryCard(category: .milkEgg) {
+    CategoryCard(category: UICategoryItem(categoryName: "Egg", emoji: "🥚")) {
 
     }
     .padding()

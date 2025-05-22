@@ -1,5 +1,7 @@
 import SwiftUI
 import DesignSystem
+import Routing
+import SwiftData
 
 public struct CategoryCardList: View {
     @Environment(\.dynamicTypeSize)
@@ -21,9 +23,9 @@ public struct CategoryCardList: View {
                 columns: columns,
                 spacing: Constants.Padding.sizeS
             ) {
-                ForEach(viewModel.categories, id: \.hashValue) { category in
+                ForEach(viewModel.categories) { category in
                     CategoryCard(category: category) {
-                        viewModel.navigateToCategoryDetails(category: .bakery)
+                        viewModel.navigateToCategoryDetails(category: category)
                     }
                 }
             }

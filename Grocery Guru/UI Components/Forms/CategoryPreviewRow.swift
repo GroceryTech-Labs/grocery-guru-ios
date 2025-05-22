@@ -3,7 +3,7 @@ import DesignSystem
 import Categories
 
 struct CategoryPreviewRow: View {
-    let category: BaseCategory
+    let category: UICategoryItem
 
     var body: some View {
         SectionHeader("Preview", font: .headline) {
@@ -13,5 +13,5 @@ struct CategoryPreviewRow: View {
 }
 
 #Preview {
-    CategoryPreviewRow(category: .bakery)
+    CategoryPreviewRow(category: UICategoryItem(categoryName: "Egg", emoji: "🥚"))
 }

@@ -41,10 +41,12 @@ struct CategoryCreationView: View {
                     }
 
                     SectionHeader("Preview", font: .headline) {
-                        CategoryCard(category: .custom(
-                            name: viewModel.name,
-                            emoji: viewModel.emoji
-                        ))
+                        CategoryCard(
+                            category: UICategoryItem(
+                                categoryName: viewModel.name,
+                                emoji: viewModel.emoji
+                            )
+                        )
                     }
 
                     Button {
