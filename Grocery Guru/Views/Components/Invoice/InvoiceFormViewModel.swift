@@ -39,10 +39,10 @@ class InvoiceFormViewModel {
         self.product = product
     }
 
-    @MainActor
-    func addInvoice() async {
-        Task {
-            do {
+//    @MainActor
+//    func addInvoice() async {
+//        Task {
+//            do {
 //                try await usedLocalRepository.add(
 //                    InvoiceItem(
 //                        code: product?.code,
@@ -53,9 +53,9 @@ class InvoiceFormViewModel {
 //                    )
 //                )
 //                navigator.dropToRoot()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-    }
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
 }

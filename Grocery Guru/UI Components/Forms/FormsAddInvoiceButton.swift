@@ -17,9 +17,9 @@ struct FormsAddInvoiceButton: View {
                 return
             }
 
-            Task {
-                await viewModel.addInvoice()
-            }
+            //            Task {
+            //                await viewModel.addInvoice()
+            //            }
         } label: {
             Text("Add to inventory")
                 .foregroundStyle(.white)

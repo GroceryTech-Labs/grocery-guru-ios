@@ -18,15 +18,14 @@ final class BarcodeScannerViewModel {
         self.productAPI = productAPI
     }
 
+    @MainActor
     func checkBarcode(for response: Result<ScanResult, ScanError>) async {
         isLoading = true
         switch response {
         case .success(let success):
             do {
-                let response = try await productAPI.fetchProduct(barcode: success.string)
-                let result = UIProductItem(from: response)
-
-                await navigator.push(.invoiceForm)
+                _ = try await productAPI.fetchProduct(barcode: success.string)
+                navigator.push(.invoiceList)
 
                 withAnimation {
                     error = nil

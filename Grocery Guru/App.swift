@@ -25,6 +25,7 @@ struct Grocery_GuruApp: App {
 
 extension NavigationDestination {
     @ViewBuilder
+    @MainActor
     func resolveView() -> some View {
         switch self {
         case .addInvoice:

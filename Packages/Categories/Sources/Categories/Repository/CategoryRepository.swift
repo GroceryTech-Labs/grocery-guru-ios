@@ -1,8 +1,9 @@
 import Foundation
 import SwiftData
 
-public protocol CategoryRepository: ModelActor, Sendable {
+@MainActor
+public protocol CategoryRepository: Sendable {
     func fetchCategories() async throws -> [UICategoryItem]
-    func addCategory(name: String, emoji: String) throws
-    func deleteCategory(_ category: UICategoryItem)
+    func addCategory(name: String, emoji: String) async throws
+    func deleteCategory(_ category: UICategoryItem) async
 }

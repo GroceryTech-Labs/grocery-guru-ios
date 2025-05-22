@@ -9,7 +9,7 @@ let package = Package(
         .library(name: "Categories", targets: ["Categories"])
     ],
     dependencies: [
-        .package(path: "../DesignSystem"),
+        .package(path: "../DesignSystem")
     ],
     targets: [
         .target(name: "Categories", dependencies: ["DesignSystem"]),

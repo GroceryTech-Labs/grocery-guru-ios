@@ -2,16 +2,16 @@ import Foundation
 import SwiftData
 
 @ModelActor
-public actor SwiftDataRepositoryImpl<Element: PersistentModel>: SwiftDataRepository {
-    public typealias Element = Element
+actor SwiftDataRepositoryImpl<Element: PersistentModel>: SwiftDataRepository {
+    typealias Element = Element
 
     // swiftlint:disable force_try
-    public init() {
+    init() {
         self.init(modelContainer: try! ModelContainer(for: Element.self))
     }
     // swiftlint:enable force_try
 
-    public func fetch() async throws -> [Element] {
+    func fetch() throws -> [Element] {
         do {
             return try modelContext.fetch(FetchDescriptor<Element>())
         } catch {
@@ -19,7 +19,7 @@ public actor SwiftDataRepositoryImpl<Element: PersistentModel>: SwiftDataReposit
         }
     }
 
-    public func add(_ element: Element) throws {
+    func add(_ element: Element) throws {
         modelContext.insert(element)
         do {
             try modelContext.save()
@@ -28,7 +28,7 @@ public actor SwiftDataRepositoryImpl<Element: PersistentModel>: SwiftDataReposit
         }
     }
 
-    public func delete(_ element: Element) {
+    func delete(_ element: Element) {
         modelContext.delete(element)
     }
 }

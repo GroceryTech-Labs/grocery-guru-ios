@@ -4,8 +4,7 @@ import DesignSystem
 struct NameRow: View {
     @Binding var name: String
 
-    var body: some View {        
-    }
+    var body: some View { }
 }
 
 #Preview {

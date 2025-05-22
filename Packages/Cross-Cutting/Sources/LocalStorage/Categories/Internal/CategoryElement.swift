@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 @Model
-class CategoryElement {
+class CategoryElement: @unchecked Sendable {
     var categoryName: String
     var emoji: String
 
