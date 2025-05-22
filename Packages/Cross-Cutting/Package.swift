@@ -16,6 +16,7 @@ let package = Package(
         .target(name: "GGAPI", dependencies: ["OpenFoodFacts"]),
         .target(name: "Routing"),
         .target(name: "LocalStorage", dependencies: ["Categories"]),
-        .testTarget(name: "GGAPITests", dependencies: ["GGAPI"])
+        .testTarget(name: "GGAPITests", dependencies: ["GGAPI"]),
+        .testTarget(name: "RoutingTests", dependencies: ["Routing"])
     ]
 )

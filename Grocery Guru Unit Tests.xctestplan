@@ -42,16 +42,16 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Grocery Guru.xcodeproj",
-        "identifier" : "5639A5432BFF95940086857F",
-        "name" : "Grocery GuruTests"
+        "containerPath" : "container:Packages\/Cross-Cutting",
+        "identifier" : "RoutingTests",
+        "name" : "RoutingTests"
       }
     },
     {
       "target" : {
-        "containerPath" : "container:Packages\/Categories",
-        "identifier" : "CategoriesTests",
-        "name" : "CategoriesTests"
+        "containerPath" : "container:Packages\/OpenFoodFacts",
+        "identifier" : "OpenFoodFactsTests",
+        "name" : "OpenFoodFactsTests"
       }
     },
     {
@@ -63,9 +63,9 @@
     },
     {
       "target" : {
-        "containerPath" : "container:Packages\/OpenFoodFacts",
-        "identifier" : "OpenFoodFactsTests",
-        "name" : "OpenFoodFactsTests"
+        "containerPath" : "container:Grocery Guru.xcodeproj",
+        "identifier" : "5639A5432BFF95940086857F",
+        "name" : "Grocery GuruTests"
       }
     }
   ],
