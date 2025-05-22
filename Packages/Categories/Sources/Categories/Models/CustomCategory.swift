@@ -1,13 +1,13 @@
 import Foundation
 import SwiftData
 
-@available(iOS 17, *) @Model
-public final class CustomCategory: @unchecked Sendable {
-    public var name: String
-    public var emoji: String
+public struct UICategoryItem: Identifiable, Equatable, Sendable {
+    public let id: UUID = UUID()
+    public let categoryName: String
+    public let emoji: String
 
-    public init(name: String, emoji: String) {
-        self.name = name
+    public init(categoryName: String, emoji: String) {
+        self.categoryName = categoryName
         self.emoji = emoji
     }
 }

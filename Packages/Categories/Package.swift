@@ -10,10 +10,9 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../DesignSystem"),
-        .package(path: "../LocalStorage")
     ],
     targets: [
-        .target(name: "Categories", dependencies: ["DesignSystem", "LocalStorage"]),
+        .target(name: "Categories", dependencies: ["DesignSystem"]),
         .testTarget(name: "CategoriesTests", dependencies: ["Categories"])
     ]
 )

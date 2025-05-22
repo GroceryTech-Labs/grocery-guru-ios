@@ -30,7 +30,7 @@ extension NavigationDestination {
         case .addInvoice:
             AddInvoiceView(selectedOption: .barcode)
         case .categorySettings:
-            CategorySettingsView()
+            CategorySettingsView(repository: CategoryRepositoryImpl())
         case .invoiceForm:
             InvoiceForm()
         case .invoiceList:

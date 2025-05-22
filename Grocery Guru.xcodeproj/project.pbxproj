@@ -11,6 +11,7 @@
 		560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */; };
 		560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D22C026C9D00365B1F /* HomeViewModel.swift */; };
 		560AA7D62C02756600365B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560AA7D52C02756600365B1F /* Assets.xcassets */; };
+		561BDA342DDF798000AE8A76 /* Cross-Cutting in Frameworks */ = {isa = PBXBuildFile; productRef = 561BDA332DDF798000AE8A76 /* Cross-Cutting */; };
 		5620E1192C1850EC0027655A /* AccessibilityAuditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620E1182C1850EC0027655A /* AccessibilityAuditTests.swift */; };
 		562DCABF2C7E69A0006CBFB6 /* EmojiRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562DCABE2C7E69A0006CBFB6 /* EmojiRow.swift */; };
 		56346D4B2C0E671200454E17 /* AddInvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56346D4A2C0E671200454E17 /* AddInvoiceView.swift */; };
@@ -38,7 +39,6 @@
 		568560E02C15A520003BDAED /* AddItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560DF2C15A520003BDAED /* AddItemTests.swift */; };
 		568560EF2C15AF96003BDAED /* TapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560EE2C15AF96003BDAED /* TapAction.swift */; };
 		568560F12C15B08F003BDAED /* TypeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560F02C15B08F003BDAED /* TypeAction.swift */; };
-		5686D0B22DDE6EA000C85704 /* LocalStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5686D0B12DDE6EA000C85704 /* LocalStorage */; };
 		569FEFBA2DDE8EB600CEA8E1 /* NavigationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569FEFB82DDE8EB600CEA8E1 /* NavigationKey.swift */; };
 		56AAD2FF2C1B83A000BF8030 /* BarcodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD2FE2C1B83A000BF8030 /* BarcodeScannerViewModel.swift */; };
 		56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3022C1B9BB100BF8030 /* OFFError.swift */; };
@@ -47,7 +47,6 @@
 		56B138F12C26C9CF00B35CA4 /* FormsAddInvoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B138F02C26C9CF00B35CA4 /* FormsAddInvoiceButton.swift */; };
 		56B430E02C810E7A000FA774 /* CategoryPreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B430DF2C810E7A000FA774 /* CategoryPreviewRow.swift */; };
 		56CA91722C239DC30018198F /* AddInvoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA91712C239DC30018198F /* AddInvoicePicker.swift */; };
-		56CE7FC62DD61D290006E3B1 /* Cross-Cutting in Frameworks */ = {isa = PBXBuildFile; productRef = 56CE7FC52DD61D290006E3B1 /* Cross-Cutting */; };
 		56CE7FC82DD61D290006E3B1 /* OpenFoodFacts in Frameworks */ = {isa = PBXBuildFile; productRef = 56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */; };
 		56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC782C0C89E800D2D965 /* HomeViewList.swift */; };
 		56FFAC822C0CC82300D2D965 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */; };
@@ -105,7 +104,6 @@
 		568560DF2C15A520003BDAED /* AddItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTests.swift; sourceTree = "<group>"; };
 		568560EE2C15AF96003BDAED /* TapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAction.swift; sourceTree = "<group>"; };
 		568560F02C15B08F003BDAED /* TypeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAction.swift; sourceTree = "<group>"; };
-		5686D0B02DDE6E2E00C85704 /* LocalStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LocalStorage; sourceTree = "<group>"; };
 		569FEFB82DDE8EB600CEA8E1 /* NavigationKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationKey.swift; sourceTree = "<group>"; };
 		56AAD2FE2C1B83A000BF8030 /* BarcodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewModel.swift; sourceTree = "<group>"; };
 		56AAD3022C1B9BB100BF8030 /* OFFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFError.swift; sourceTree = "<group>"; };
@@ -126,8 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5686D0B22DDE6EA000C85704 /* LocalStorage in Frameworks */,
-				56CE7FC62DD61D290006E3B1 /* Cross-Cutting in Frameworks */,
+				561BDA342DDF798000AE8A76 /* Cross-Cutting in Frameworks */,
 				5683BBC62C145E76001EF768 /* CodeScanner in Frameworks */,
 				564AD3412DDCAA3E009D488B /* Categories in Frameworks */,
 				56CE7FC82DD61D290006E3B1 /* OpenFoodFacts in Frameworks */,
@@ -336,7 +333,6 @@
 		56CE7FC12DD5FF420006E3B1 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				5686D0B02DDE6E2E00C85704 /* LocalStorage */,
 				564AD33F2DDCA9A5009D488B /* Categories */,
 				5681ED892DD62BA50089D874 /* DesignSystem */,
 				56CE7FC32DD616CB0006E3B1 /* OpenFoodFacts */,
@@ -402,11 +398,10 @@
 			name = "Grocery Guru";
 			packageProductDependencies = (
 				5683BBC52C145E76001EF768 /* CodeScanner */,
-				56CE7FC52DD61D290006E3B1 /* Cross-Cutting */,
 				56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */,
 				5681ED8A2DD62C4B0089D874 /* DesignSystem */,
 				564AD3402DDCAA3E009D488B /* Categories */,
-				5686D0B12DDE6EA000C85704 /* LocalStorage */,
+				561BDA332DDF798000AE8A76 /* Cross-Cutting */,
 			);
 			productName = "Grocery Guru";
 			productReference = 5639A5322BFF95930086857F /* Grocery Guru.app */;
@@ -930,6 +925,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		561BDA332DDF798000AE8A76 /* Cross-Cutting */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "Cross-Cutting";
+		};
 		564AD3402DDCAA3E009D488B /* Categories */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Categories;
@@ -946,14 +945,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5683BBC42C145E76001EF768 /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
-		};
-		5686D0B12DDE6EA000C85704 /* LocalStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LocalStorage;
-		};
-		56CE7FC52DD61D290006E3B1 /* Cross-Cutting */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = "Cross-Cutting";
 		};
 		56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */ = {
 			isa = XCSwiftPackageProductDependency;

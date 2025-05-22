@@ -13,7 +13,7 @@ public struct CategoryCardList: View {
         return [GridItem(.flexible()), GridItem(.flexible())]
     }
 
-    @State private var viewModel = CategoryCardListViewModel()
+    @State private var viewModel: CategoryCardListViewModel
 
     public var body: some View {
         ScrollView {
@@ -23,7 +23,7 @@ public struct CategoryCardList: View {
             ) {
                 ForEach(viewModel.categories, id: \.hashValue) { category in
                     CategoryCard(category: category) {
-                        viewModel.navigateToCategoryDetails()
+                        viewModel.navigateToCategoryDetails(category: .bakery)
                     }
                 }
             }
@@ -36,11 +36,7 @@ public struct CategoryCardList: View {
         }
     }
 
-    public init() { }
-}
-
-#Preview {
-    ScrollView {
-        CategoryCardList()
+    public init(viewModel: CategoryCardListViewModel) {
+        self.viewModel = viewModel
     }
 }

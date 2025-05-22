@@ -1,6 +1,5 @@
 import SwiftUI
 import DesignSystem
-import LocalStorage
 
 struct CategoryCreationView: View {
     enum Field: Hashable {
@@ -75,11 +74,7 @@ struct CategoryCreationView: View {
         }
     }
 
-    init() {
-        self.viewModel = CategoryCreationViewModel()
+    init(viewModel: CategoryCreationViewModel) {
+        self.viewModel = viewModel
     }
-}
-
-#Preview {
-    CategoryCreationView()
 }

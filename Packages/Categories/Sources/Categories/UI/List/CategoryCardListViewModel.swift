@@ -1,35 +1,34 @@
 import SwiftUI
-import LocalStorage
 import Routing
 
 @Observable @MainActor
-class CategoryCardListViewModel {
-    let repository: CategoryRepository
+public class CategoryCardListViewModel {
+    private let repository: CategoryRepository
 
-    var customCategories: [CustomCategory] = []
+    var customCategories: [UICategoryItem] = []
     var categories: [BaseCategory] {
         BaseCategory.allCases + customCategories.map { category in
             BaseCategory.custom(
-                name: category.name,
+                name: category.categoryName,
                 emoji: category.emoji
             )
         }
     }
 
-    init(repository: CategoryRepository = CategoryRepository()) {
+    public init(repository: CategoryRepository) {
         self.repository = repository
     }
 
     func fetchCategories() async {
         do {
-            let result = try await repository.fetch()
-            customCategories = result
+            let data = try await repository.fetchCategories()
+            customCategories = data
         } catch {
             print(error)
         }
     }
 
     func navigateToCategoryDetails(category: BaseCategory) {
-        NavigationService.shared.push(.)
+        NavigationService.shared.push(.invoiceList)
     }
 }
