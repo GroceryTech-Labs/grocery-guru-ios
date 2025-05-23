@@ -25,6 +25,11 @@
           "containerPath" : "container:Packages\/OpenFoodFacts",
           "identifier" : "OpenFoodFacts",
           "name" : "OpenFoodFacts"
+        },
+        {
+          "containerPath" : "container:Packages\/Categories",
+          "identifier" : "Categories",
+          "name" : "Categories"
         }
       ]
     },
@@ -35,6 +40,13 @@
     }
   },
   "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/Cross-Cutting",
+        "identifier" : "RoutingTests",
+        "name" : "RoutingTests"
+      }
+    },
     {
       "target" : {
         "containerPath" : "container:Packages\/OpenFoodFacts",

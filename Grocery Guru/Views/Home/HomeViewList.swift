@@ -1,21 +1,25 @@
 import SwiftUI
 import SwiftData
 import DesignSystem
+import Categories
+import LocalStorage
 
 struct HomeViewList: View {
     @Environment(\.navigationService)
     private var navigator
     @State private var viewModel: HomeViewModel
 
-    @Query private var items: [InvoiceItem]
-
     var body: some View {
         SectionHeader("Welcome back!", font: .largeTitle) {
             SectionHeader("Categories") {
-                InvoiceCategoryCardList(items: items)
+                CategoryCardList(
+                    viewModel: CategoryCardListViewModel(
+                        repository: CategoryRepositoryImpl()
+                    )
+                )
             } trailing: {
                 Button {
-                    navigator.sheet(.categorySettings)
+                    navigator.push(.categorySettings)
                 } label: {
                     Image(systemName: "gearshape")
                         .imageScale(.large)
@@ -26,15 +30,11 @@ struct HomeViewList: View {
         .padding(.horizontal, Constants.Padding.sizeL)
     }
 
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModel = HomeViewModel()) {
         self.viewModel = viewModel
     }
 }
 
 #Preview {
-    HomeViewList(
-        viewModel: HomeViewModel(
-            repository: LocalStorageRepository()
-        )
-    )
+    HomeViewList()
 }

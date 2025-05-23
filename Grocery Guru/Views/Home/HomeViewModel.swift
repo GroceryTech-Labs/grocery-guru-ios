@@ -1,13 +1,14 @@
 import SwiftUI
+import LocalStorage
 
 @Observable
 final class HomeViewModel {
-    @ObservationIgnored let repository: LocalStorageRepository
-
-    @MainActor
-    init(
-        repository: LocalStorageRepository
-    ) {
-        self.repository = repository
-    }
+//    @ObservationIgnored let category_repository: LocalStorageRepository<
+//
+//    @MainActor
+//    init(
+//        repository: LocalStorageRepository
+//    ) {
+//        self.repository = repository
+//    }
 }

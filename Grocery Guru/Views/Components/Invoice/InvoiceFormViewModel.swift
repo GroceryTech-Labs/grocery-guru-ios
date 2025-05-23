@@ -1,34 +1,33 @@
 import SwiftUI
 import OpenFoodFacts
+import Categories
+import Routing
+import LocalStorage
 
+@MainActor
 @Observable
 class InvoiceFormViewModel {
-    private var navigator = NavigationService.shared
+//    private var repository: InvoiceRepository
+    private let navigationService: NavigationService
 
     var name: String
     var amount: String
     var measureUnit: MeasureUnit
-    var category: InvoiceItemCategory
+    var category: UICategoryItem
     var product: UIProductItem?
     var isPresentingNutriments = false
 
-    @MainActor var usedLocalRepository: LocalStorageRepository {
-        let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
-
-        if testMode {
-            return MockLocalStorageRepository.mockInstance
-        }
-
-        return LocalStorageRepository.shared
-    }
-
     init(
+        //        repository: InvoiceRepository,
+        navigationService: NavigationService,
         name: String = "",
         amount: String = "1",
         measureUnit: MeasureUnit = .item,
-        category: InvoiceItemCategory = .bakery,
+        category: UICategoryItem = UICategoryItem(.bakery),
         product: UIProductItem? = nil
     ) {
+        //        self.repository = repository
+        self.navigationService = navigationService
         self.name = name
         self.amount = amount
         self.measureUnit = measureUnit
@@ -37,21 +36,22 @@ class InvoiceFormViewModel {
     }
 
     func addInvoice() {
-        Task {
-            do {
-                try await usedLocalRepository.addItem(
-                    InvoiceItem(
-                        code: product?.code,
-                        name: name,
-                        amount: Int(amount) ?? 0,
-                        category: category,
-                        measureUnit: measureUnit
-                    )
-                )
-                navigator.dropToRoot()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
+        navigationService.dropToRoot()
+//        Task {
+//            do {
+//                try await usedLocalRepository.add(
+//                    InvoiceItem(
+//                        code: product?.code,
+//                        name: name,
+//                        amount: Int(amount) ?? 0,
+//                        category: category,
+//                        measureUnit: measureUnit
+//                    )
+//                )
+//                navigator.dropToRoot()
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
     }
 }

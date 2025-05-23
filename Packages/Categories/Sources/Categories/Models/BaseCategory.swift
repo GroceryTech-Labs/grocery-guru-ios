@@ -1,26 +1,15 @@
 import SwiftUI
 
-enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
+public enum BaseCategory: Codable, CaseIterable, Hashable {
     case bakery
     case canned
-    case custom(name: String, emoji: String)
     case fish
     case fruits
     case meat
     case milkEgg
     case vegetables
 
-    static var allCases: [Self] = [
-        .bakery,
-        .canned,
-        .fish,
-        .fruits,
-        .meat,
-        .milkEgg,
-        .vegetables
-    ]
-
-    var localized: LocalizedStringKey {
+    public var localized: LocalizedStringKey {
         switch self {
         case .bakery: "Bakery"
         case .canned: "Canned"
@@ -29,12 +18,14 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
         case .meat: "Meat"
         case .milkEgg: "Milk & Egg"
         case .vegetables: "Vegetables"
-        case let .custom(name, _):
-            LocalizedStringKey(name)
         }
     }
 
-    var emoji: String {
+    public var name: String {
+        NSLocalizedString(localized.extractRawString(), comment: "")
+    }
+
+    public var emoji: String {
         switch self {
         case .bakery: "🥖"
         case .canned: "🥫"
@@ -43,8 +34,18 @@ enum InvoiceItemCategory: Codable, CaseIterable, Hashable {
         case .meat: "🥩"
         case .milkEgg: "🥛"
         case .vegetables: "🥕"
-        case let .custom(_, emoji):
-            emoji
         }
+    }
+}
+
+extension LocalizedStringKey {
+    func extractRawString() -> String {
+        let mirror = Mirror(reflecting: self)
+        for child in mirror.children {
+            if child.label == "key", let rawKey = child.value as? String {
+                return rawKey
+            }
+        }
+        return ""
     }
 }

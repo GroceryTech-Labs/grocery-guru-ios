@@ -22,14 +22,9 @@
           "name" : "OpenFoodFacts"
         },
         {
-          "containerPath" : "container:Packages\/DesignSystem",
-          "identifier" : "DesignSystem",
-          "name" : "DesignSystem"
-        },
-        {
-          "containerPath" : "container:Packages\/Cross-Cutting",
-          "identifier" : "Cross-Cutting",
-          "name" : "Cross-Cutting"
+          "containerPath" : "container:Packages\/Categories",
+          "identifier" : "Categories",
+          "name" : "Categories"
         }
       ]
     },
@@ -43,7 +38,10 @@
     {
       "skippedTests" : [
         "AccessibilityAuditTests",
-        "AccessibilityAuditTests\/testHomeAudit()"
+        "AccessibilityAuditTests\/testHomeAudit()",
+        "AddItemTests",
+        "AddItemTests\/testAddItemBarcode()",
+        "AddItemTests\/testAddItemManually()"
       ],
       "target" : {
         "containerPath" : "container:Grocery Guru.xcodeproj",

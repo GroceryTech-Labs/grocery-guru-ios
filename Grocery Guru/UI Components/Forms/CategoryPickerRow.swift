@@ -1,12 +1,17 @@
 import SwiftUI
 import DesignSystem
+import Categories
+import LocalStorage
 
 struct CategoryPickerRow: View {
-    @Binding var category: InvoiceItemCategory
+    @Binding var selectedCategory: UICategoryItem
 
     var body: some View {
         SectionHeader("Category", font: .headline) {
-            InvoiceCategoryPicker(selection: $category)
+            CategoryPicker(
+                viewModel: CategoryPickerViewModel(repository: CategoryRepositoryImpl()),
+                selectedElement: $selectedCategory
+            )
                 .padding(.horizontal, -Constants.Padding.sizeL)
         } trailing: {
             Button("Show all") { }
@@ -15,5 +20,5 @@ struct CategoryPickerRow: View {
 }
 
 #Preview {
-    CategoryPickerRow(category: .constant(.bakery))
+    CategoryPickerRow(selectedCategory: .constant(UICategoryItem(categoryName: "Egg", emoji: "🥚")))
 }

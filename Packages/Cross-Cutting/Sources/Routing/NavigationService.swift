@@ -1,21 +1,23 @@
 import SwiftUI
 
 @Observable
-class NavigationService: NavigationServiceProtocol {
-    static var shared = NavigationService()
+public final class NavigationService: NavigationServiceProtocol {
+    nonisolated(unsafe) public static var shared = NavigationService()
 
-    var path = [NavigationDestination]()
-    var sheet: NavigationDestination?
+    public var path = [NavigationDestination]()
+    public var sheet: NavigationDestination?
 
-    func push(_ destination: NavigationDestination) {
+    public init() { }
+
+    public func push(_ destination: NavigationDestination) {
         path.append(destination)
     }
 
-    func sheet(_ destination: NavigationDestination) {
+    public func sheet(_ destination: NavigationDestination) {
         sheet = destination
     }
 
-    func drop() {
+    public func drop() {
         guard sheet == nil else {
             sheet = nil
             return
@@ -28,7 +30,7 @@ class NavigationService: NavigationServiceProtocol {
         path.removeLast()
     }
 
-    func dropUntil(_ destination: NavigationDestination) {
+    public func dropUntil(_ destination: NavigationDestination) {
         sheet = nil
 
         guard path.contains(destination) else {
@@ -40,7 +42,7 @@ class NavigationService: NavigationServiceProtocol {
         }
     }
 
-    func dropToRoot() {
+    public func dropToRoot() {
         sheet = nil
         path.removeAll()
     }

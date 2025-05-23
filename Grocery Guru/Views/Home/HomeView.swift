@@ -12,21 +12,18 @@ struct HomeView: View {
         HomeViewList(viewModel: viewModel)
             .overlay(alignment: .bottom) {
                 ShowAddInvoiceButton {
-                    navigator.push(.addInvoice())
+                    navigator.push(.addInvoice)
                 }
             }
-            .modelContext(viewModel.repository.modelContext)
     }
 
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModel = HomeViewModel()) {
         self.viewModel = viewModel
     }
 }
 
 #Preview {
     HomeView(
-        viewModel: HomeViewModel(
-            repository: LocalStorageRepository()
-        )
+        viewModel: HomeViewModel()
     )
 }

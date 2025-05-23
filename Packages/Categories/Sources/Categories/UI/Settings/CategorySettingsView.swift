@@ -1,13 +1,15 @@
 import SwiftUI
 import DesignSystem
 
-struct CategorySettingsView: View {
-    var body: some View {
+public struct CategorySettingsView: View {
+    let repository: CategoryRepository
+
+    public var body: some View {
         NavigationView {
             ScrollView {
                 SectionHeader("Category Settings") {
                     NavigationLink {
-                        CategoryCreationView()
+                        CategoryCreationView(viewModel: CategoryCreationViewModel(repository: repository))
                     } label: {
                         Text("Create")
                             .frame(maxWidth: .infinity)
@@ -31,8 +33,8 @@ struct CategorySettingsView: View {
             .scrollIndicators(.hidden)
         }
     }
-}
 
-#Preview {
-    CategorySettingsView()
+    public init(repository: CategoryRepository) {
+        self.repository = repository
+    }
 }

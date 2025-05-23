@@ -1,6 +1,7 @@
 import SwiftUI
 import OpenFoodFacts
 import DesignSystem
+import Categories
 
 struct InvoiceForm: View {
     enum Field: Hashable {
@@ -30,7 +31,7 @@ struct InvoiceForm: View {
                             focusedField = nil
                         }
 
-                    CategoryPickerRow(category: $viewModel.category)
+                    CategoryPickerRow(selectedCategory: $viewModel.category)
 
                     NutrimentsRow(
                         isExpanded: $viewModel.isPresentingNutriments,
@@ -46,15 +47,15 @@ struct InvoiceForm: View {
             .padding(.horizontal, Constants.Padding.sizeL)
         }
         .scrollIndicators(.hidden)
-        .modelContext(viewModel.usedLocalRepository.modelContext)
     }
 
     init(product: UIProductItem? = nil) {
         viewModel = InvoiceFormViewModel(
+            navigationService: .shared,
             name: product?.productName ?? "",
             amount: product == nil ? "" : "1",
             measureUnit: .item,
-            category: .bakery,
+            category: UICategoryItem(.bakery),
             product: product
         )
     }

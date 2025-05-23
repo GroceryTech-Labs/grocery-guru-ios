@@ -1,5 +1,8 @@
 import SwiftUI
 import SwiftData
+import LocalStorage
+import Routing
+import Categories
 
 @main
 struct Grocery_GuruApp: App {
@@ -8,28 +11,31 @@ struct Grocery_GuruApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $navigationService.path) {
-                HomeView(
-                    viewModel: HomeViewModel(
-                        repository: usedLocalRepository
-                    )
-                )
-                .navigationDestination(for: NavigationDestination.self) { destination in
-                    destination.view
-                }
-                .sheet(item: $navigationService.sheet) { destination in
-                    destination.view
-                }
+                HomeView()
+                    .navigationDestination(for: NavigationDestination.self) { destination in
+                        destination.resolveView()
+                    }
+                    .sheet(item: $navigationService.sheet) { destination in
+                        destination.resolveView()
+                    }
             }
         }
     }
+}
 
-    @MainActor var usedLocalRepository: LocalStorageRepository {
-        let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
-
-        if testMode {
-            return MockLocalStorageRepository.mockInstance
+extension NavigationDestination {
+    @ViewBuilder
+    @MainActor
+    func resolveView() -> some View {
+        switch self {
+        case .addInvoice:
+            AddInvoiceView(selectedOption: .barcode)
+        case .categorySettings:
+            CategorySettingsView(repository: CategoryRepositoryImpl())
+        case .invoiceForm:
+            InvoiceForm()
+        case .invoiceList:
+            InvoiceItemList(items: [])
         }
-
-        return LocalStorageRepository.shared
     }
 }
