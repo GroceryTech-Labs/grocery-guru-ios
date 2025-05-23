@@ -1,5 +1,4 @@
 import Foundation
-import SwiftData
 
 public struct UICategoryItem: Identifiable, Equatable, Sendable {
     public let id: UUID = UUID()

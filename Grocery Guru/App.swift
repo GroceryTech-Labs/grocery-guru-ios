@@ -3,6 +3,7 @@ import SwiftData
 import LocalStorage
 import Routing
 import Categories
+import Invoice
 
 @main
 struct Grocery_GuruApp: App {
@@ -32,8 +33,8 @@ extension NavigationDestination {
             AddInvoiceView(selectedOption: .barcode)
         case .categorySettings:
             CategorySettingsView(repository: CategoryRepositoryImpl())
-        case .invoiceForm:
-            InvoiceForm()
+        case .invoiceForm(let invoice):
+            InvoiceForm(code: invoice?.code, name: invoice?.name)
         case .invoiceList:
             InvoiceItemList(items: [])
         }

@@ -25,6 +25,16 @@
           "containerPath" : "container:Packages\/Categories",
           "identifier" : "Categories",
           "name" : "Categories"
+        },
+        {
+          "containerPath" : "container:Packages\/Invoice",
+          "identifier" : "Invoice",
+          "name" : "Invoice"
+        },
+        {
+          "containerPath" : "container:Packages\/Scanner",
+          "identifier" : "Scanner",
+          "name" : "Scanner"
         }
       ]
     },

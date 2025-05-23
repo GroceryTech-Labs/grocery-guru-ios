@@ -7,45 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		560AA7CF2C02627C00365B1F /* DocumentScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7CE2C02627C00365B1F /* DocumentScannerView.swift */; };
-		560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */; };
 		560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D22C026C9D00365B1F /* HomeViewModel.swift */; };
 		560AA7D62C02756600365B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560AA7D52C02756600365B1F /* Assets.xcassets */; };
 		561BDA342DDF798000AE8A76 /* Cross-Cutting in Frameworks */ = {isa = PBXBuildFile; productRef = 561BDA332DDF798000AE8A76 /* Cross-Cutting */; };
 		5620E1192C1850EC0027655A /* AccessibilityAuditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620E1182C1850EC0027655A /* AccessibilityAuditTests.swift */; };
-		562DCABF2C7E69A0006CBFB6 /* EmojiRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562DCABE2C7E69A0006CBFB6 /* EmojiRow.swift */; };
-		56346D4B2C0E671200454E17 /* AddInvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56346D4A2C0E671200454E17 /* AddInvoiceView.swift */; };
-		56346D4D2C0E68E000454E17 /* AddInvoiceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */; };
-		5635E32D2C24AC87000A6628 /* InvoiceFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E32C2C24AC87000A6628 /* InvoiceFormViewModel.swift */; };
-		5635E32F2C24AEE1000A6628 /* MeasureUnitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E32E2C24AEE1000A6628 /* MeasureUnitPicker.swift */; };
-		5635E3342C24E50D000A6628 /* CategoryPickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635E3332C24E50D000A6628 /* CategoryPickerRow.swift */; };
 		5639A5702BFF97BD0086857F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639A5612BFF97BD0086857F /* Assets.xcassets */; };
 		5639A5712BFF97BD0086857F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5632BFF97BD0086857F /* App.swift */; };
 		5639A5722BFF97BD0086857F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639A5652BFF97BD0086857F /* Preview Assets.xcassets */; };
-		5639A5742BFF97BD0086857F /* InvoiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5682BFF97BD0086857F /* InvoiceItem.swift */; };
 		5639A5782BFF97BD0086857F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A56E2BFF97BD0086857F /* HomeView.swift */; };
-		563F2F682C0F70DC005BA713 /* InvoiceForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F2F672C0F70DC005BA713 /* InvoiceForm.swift */; };
-		563F2F6A2C0FC8EA005BA713 /* MeasureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F2F692C0FC8EA005BA713 /* MeasureUnit.swift */; };
 		56415D012C0CCAE100C58D4E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56415D002C0CCAE100C58D4E /* .swiftlint.yml */; };
 		564AD3412DDCAA3E009D488B /* Categories in Frameworks */ = {isa = PBXBuildFile; productRef = 564AD3402DDCAA3E009D488B /* Categories */; };
-		5655F7102C0D2E0100C80708 /* InvoiceItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F70F2C0D2E0100C80708 /* InvoiceItemList.swift */; };
-		5655F7122C0D346C00C80708 /* InvoiceItemListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */; };
-		5655F7142C0D36E300C80708 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5655F7132C0D36E300C80708 /* ErrorView.swift */; };
 		566C92A42DE06DB000D07B74 /* GroceryGuruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566C92A32DE06DA800D07B74 /* GroceryGuruTests.swift */; };
+		566C92A72DE06FB600D07B74 /* Invoice in Frameworks */ = {isa = PBXBuildFile; productRef = 566C92A62DE06FB600D07B74 /* Invoice */; };
+		566C92AA2DE0731E00D07B74 /* Scanner in Frameworks */ = {isa = PBXBuildFile; productRef = 566C92A92DE0731E00D07B74 /* Scanner */; };
 		5681ED8B2DD62C4B0089D874 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 5681ED8A2DD62C4B0089D874 /* DesignSystem */; };
 		5681ED8D2DD689E00089D874 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 5681ED8C2DD689E00089D874 /* DesignSystem */; };
-		5683BBC62C145E76001EF768 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5683BBC52C145E76001EF768 /* CodeScanner */; };
-		5683BBC82C145EA0001EF768 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683BBC72C145EA0001EF768 /* BarcodeScannerView.swift */; };
 		568560E02C15A520003BDAED /* AddItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560DF2C15A520003BDAED /* AddItemTests.swift */; };
 		568560EF2C15AF96003BDAED /* TapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560EE2C15AF96003BDAED /* TapAction.swift */; };
 		568560F12C15B08F003BDAED /* TypeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560F02C15B08F003BDAED /* TypeAction.swift */; };
-		56AAD2FF2C1B83A000BF8030 /* BarcodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD2FE2C1B83A000BF8030 /* BarcodeScannerViewModel.swift */; };
 		56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3022C1B9BB100BF8030 /* OFFError.swift */; };
-		56B138ED2C26C8D700B35CA4 /* AmountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B138EC2C26C8D700B35CA4 /* AmountRow.swift */; };
-		56B138EF2C26C90E00B35CA4 /* NameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B138EE2C26C90E00B35CA4 /* NameRow.swift */; };
-		56B138F12C26C9CF00B35CA4 /* FormsAddInvoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B138F02C26C9CF00B35CA4 /* FormsAddInvoiceButton.swift */; };
-		56B430E02C810E7A000FA774 /* CategoryPreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B430DF2C810E7A000FA774 /* CategoryPreviewRow.swift */; };
-		56CA91722C239DC30018198F /* AddInvoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA91712C239DC30018198F /* AddInvoicePicker.swift */; };
 		56CE7FC82DD61D290006E3B1 /* OpenFoodFacts in Frameworks */ = {isa = PBXBuildFile; productRef = 56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */; };
 		56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC782C0C89E800D2D965 /* HomeViewList.swift */; };
 		56FFAC822C0CC82300D2D965 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */; };
@@ -69,47 +49,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		560AA7CE2C02627C00365B1F /* DocumentScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScannerView.swift; sourceTree = "<group>"; };
-		560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizerService.swift; sourceTree = "<group>"; };
 		560AA7D22C026C9D00365B1F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		560AA7D52C02756600365B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		560AA7D72C02796B00365B1F /* Grocery Guru Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Grocery Guru Unit Tests.xctestplan"; sourceTree = "<group>"; };
 		5620E1182C1850EC0027655A /* AccessibilityAuditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityAuditTests.swift; sourceTree = "<group>"; };
-		562DCABE2C7E69A0006CBFB6 /* EmojiRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRow.swift; sourceTree = "<group>"; };
-		56346D4A2C0E671200454E17 /* AddInvoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceView.swift; sourceTree = "<group>"; };
-		56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoiceOption.swift; sourceTree = "<group>"; };
-		5635E32C2C24AC87000A6628 /* InvoiceFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceFormViewModel.swift; sourceTree = "<group>"; };
-		5635E32E2C24AEE1000A6628 /* MeasureUnitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureUnitPicker.swift; sourceTree = "<group>"; };
-		5635E3332C24E50D000A6628 /* CategoryPickerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerRow.swift; sourceTree = "<group>"; };
 		5639A5322BFF95930086857F /* Grocery Guru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Guru.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5442BFF95940086857F /* Grocery GuruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery GuruTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A5612BFF97BD0086857F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5639A5632BFF97BD0086857F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5639A5652BFF97BD0086857F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5639A5682BFF97BD0086857F /* InvoiceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceItem.swift; sourceTree = "<group>"; };
 		5639A56E2BFF97BD0086857F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		563F2F672C0F70DC005BA713 /* InvoiceForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceForm.swift; sourceTree = "<group>"; };
-		563F2F692C0FC8EA005BA713 /* MeasureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureUnit.swift; sourceTree = "<group>"; };
 		56415D002C0CCAE100C58D4E /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		564AD33F2DDCA9A5009D488B /* Categories */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Categories; sourceTree = "<group>"; };
-		5655F70F2C0D2E0100C80708 /* InvoiceItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemList.swift; sourceTree = "<group>"; };
-		5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemListRow.swift; sourceTree = "<group>"; };
-		5655F7132C0D36E300C80708 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		566C92A32DE06DA800D07B74 /* GroceryGuruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryGuruTests.swift; sourceTree = "<group>"; };
+		566C92A52DE06F8800D07B74 /* Invoice */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Invoice; sourceTree = "<group>"; };
+		566C92A82DE071BF00D07B74 /* Scanner */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Scanner; sourceTree = "<group>"; };
 		567D8FE12C0288DD007C4076 /* Grocery-Guru-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Grocery-Guru-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5681ED892DD62BA50089D874 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignSystem; sourceTree = "<group>"; };
-		5683BBC72C145EA0001EF768 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
 		568560DD2C15A520003BDAED /* Grocery GuruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery GuruUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		568560DF2C15A520003BDAED /* AddItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTests.swift; sourceTree = "<group>"; };
 		568560EE2C15AF96003BDAED /* TapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAction.swift; sourceTree = "<group>"; };
 		568560F02C15B08F003BDAED /* TypeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAction.swift; sourceTree = "<group>"; };
-		56AAD2FE2C1B83A000BF8030 /* BarcodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewModel.swift; sourceTree = "<group>"; };
 		56AAD3022C1B9BB100BF8030 /* OFFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFError.swift; sourceTree = "<group>"; };
-		56B138EC2C26C8D700B35CA4 /* AmountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountRow.swift; sourceTree = "<group>"; };
-		56B138EE2C26C90E00B35CA4 /* NameRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameRow.swift; sourceTree = "<group>"; };
-		56B138F02C26C9CF00B35CA4 /* FormsAddInvoiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsAddInvoiceButton.swift; sourceTree = "<group>"; };
-		56B430DF2C810E7A000FA774 /* CategoryPreviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPreviewRow.swift; sourceTree = "<group>"; };
-		56CA91712C239DC30018198F /* AddInvoicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvoicePicker.swift; sourceTree = "<group>"; };
 		56CE7FC22DD5FFA70006E3B1 /* Cross-Cutting */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "Cross-Cutting"; sourceTree = "<group>"; };
 		56CE7FC32DD616CB0006E3B1 /* OpenFoodFacts */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OpenFoodFacts; sourceTree = "<group>"; };
 		56F51B092DD7951000694E61 /* Grocery Guru UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Grocery Guru UI Tests.xctestplan"; sourceTree = "<group>"; };
@@ -122,9 +83,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				566C92A72DE06FB600D07B74 /* Invoice in Frameworks */,
 				561BDA342DDF798000AE8A76 /* Cross-Cutting in Frameworks */,
-				5683BBC62C145E76001EF768 /* CodeScanner in Frameworks */,
 				564AD3412DDCAA3E009D488B /* Categories in Frameworks */,
+				566C92AA2DE0731E00D07B74 /* Scanner in Frameworks */,
 				56CE7FC82DD61D290006E3B1 /* OpenFoodFacts in Frameworks */,
 				5681ED8B2DD62C4B0089D874 /* DesignSystem in Frameworks */,
 			);
@@ -148,37 +110,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		560AA7D42C026E5B00365B1F /* Scanner */ = {
-			isa = PBXGroup;
-			children = (
-				560AA7CE2C02627C00365B1F /* DocumentScannerView.swift */,
-				5683BBC72C145EA0001EF768 /* BarcodeScannerView.swift */,
-				56AAD2FE2C1B83A000BF8030 /* BarcodeScannerViewModel.swift */,
-			);
-			path = Scanner;
-			sourceTree = "<group>";
-		};
-		56346D492C0E670200454E17 /* Add Invoice */ = {
-			isa = PBXGroup;
-			children = (
-				56346D4A2C0E671200454E17 /* AddInvoiceView.swift */,
-			);
-			path = "Add Invoice";
-			sourceTree = "<group>";
-		};
-		5635E3302C24E427000A6628 /* Forms */ = {
-			isa = PBXGroup;
-			children = (
-				56B138EC2C26C8D700B35CA4 /* AmountRow.swift */,
-				5635E3332C24E50D000A6628 /* CategoryPickerRow.swift */,
-				56B430DF2C810E7A000FA774 /* CategoryPreviewRow.swift */,
-				562DCABE2C7E69A0006CBFB6 /* EmojiRow.swift */,
-				56B138EE2C26C90E00B35CA4 /* NameRow.swift */,
-				56B138F02C26C9CF00B35CA4 /* FormsAddInvoiceButton.swift */,
-			);
-			path = Forms;
-			sourceTree = "<group>";
-		};
 		5639A5292BFF95930086857F = {
 			isa = PBXGroup;
 			children = (
@@ -212,8 +143,6 @@
 				5639A5622BFF97BD0086857F /* Assets */,
 				5639A56A2BFF97BD0086857F /* Models */,
 				5639A5662BFF97BD0086857F /* Preview Content */,
-				5639A5642BFF97BD0086857F /* Services */,
-				56CA916C2C23932D0018198F /* UI Components */,
 				5639A56F2BFF97BD0086857F /* Views */,
 			);
 			path = "Grocery Guru";
@@ -237,14 +166,6 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		5639A5642BFF97BD0086857F /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				560AA7D02C0262BA00365B1F /* TextRecognizerService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		5639A5662BFF97BD0086857F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,9 +177,6 @@
 		5639A56A2BFF97BD0086857F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				56346D4C2C0E68E000454E17 /* AddInvoiceOption.swift */,
-				5639A5682BFF97BD0086857F /* InvoiceItem.swift */,
-				563F2F692C0FC8EA005BA713 /* MeasureUnit.swift */,
 				563F2F662C0F5F8E005BA713 /* Errors */,
 			);
 			path = Models;
@@ -267,8 +185,6 @@
 		5639A56F2BFF97BD0086857F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				56FFAC6B2C0BF15000D2D965 /* Components */,
-				56346D492C0E670200454E17 /* Add Invoice */,
 				56E964352BFFAFF40099ED2F /* Home */,
 			);
 			path = Views;
@@ -301,27 +217,11 @@
 			path = Actions;
 			sourceTree = "<group>";
 		};
-		56CA916C2C23932D0018198F /* UI Components */ = {
-			isa = PBXGroup;
-			children = (
-				5635E3302C24E427000A6628 /* Forms */,
-				56CA91702C239DAD0018198F /* Picker */,
-			);
-			path = "UI Components";
-			sourceTree = "<group>";
-		};
-		56CA91702C239DAD0018198F /* Picker */ = {
-			isa = PBXGroup;
-			children = (
-				56CA91712C239DC30018198F /* AddInvoicePicker.swift */,
-				5635E32E2C24AEE1000A6628 /* MeasureUnitPicker.swift */,
-			);
-			path = Picker;
-			sourceTree = "<group>";
-		};
 		56CE7FC12DD5FF420006E3B1 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				566C92A82DE071BF00D07B74 /* Scanner */,
+				566C92A52DE06F8800D07B74 /* Invoice */,
 				564AD33F2DDCA9A5009D488B /* Categories */,
 				5681ED892DD62BA50089D874 /* DesignSystem */,
 				56CE7FC32DD616CB0006E3B1 /* OpenFoodFacts */,
@@ -347,27 +247,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		56FAFB5E2C0BDAE400370D7F /* Invoice */ = {
-			isa = PBXGroup;
-			children = (
-				5655F70F2C0D2E0100C80708 /* InvoiceItemList.swift */,
-				5655F7112C0D346C00C80708 /* InvoiceItemListRow.swift */,
-				563F2F672C0F70DC005BA713 /* InvoiceForm.swift */,
-				5635E32C2C24AC87000A6628 /* InvoiceFormViewModel.swift */,
-			);
-			path = Invoice;
-			sourceTree = "<group>";
-		};
-		56FFAC6B2C0BF15000D2D965 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				5655F7132C0D36E300C80708 /* ErrorView.swift */,
-				56FAFB5E2C0BDAE400370D7F /* Invoice */,
-				560AA7D42C026E5B00365B1F /* Scanner */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -386,11 +265,12 @@
 			);
 			name = "Grocery Guru";
 			packageProductDependencies = (
-				5683BBC52C145E76001EF768 /* CodeScanner */,
 				56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */,
 				5681ED8A2DD62C4B0089D874 /* DesignSystem */,
 				564AD3402DDCAA3E009D488B /* Categories */,
 				561BDA332DDF798000AE8A76 /* Cross-Cutting */,
+				566C92A62DE06FB600D07B74 /* Invoice */,
+				566C92A92DE0731E00D07B74 /* Scanner */,
 			);
 			productName = "Grocery Guru";
 			productReference = 5639A5322BFF95930086857F /* Grocery Guru.app */;
@@ -468,7 +348,6 @@
 			);
 			mainGroup = 5639A5292BFF95930086857F;
 			packageReferences = (
-				5683BBC42C145E76001EF768 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 5639A5332BFF95930086857F /* Products */;
 			projectDirPath = "";
@@ -536,32 +415,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				563F2F6A2C0FC8EA005BA713 /* MeasureUnit.swift in Sources */,
-				5655F7142C0D36E300C80708 /* ErrorView.swift in Sources */,
-				560AA7CF2C02627C00365B1F /* DocumentScannerView.swift in Sources */,
-				56B138F12C26C9CF00B35CA4 /* FormsAddInvoiceButton.swift in Sources */,
 				560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */,
-				56B138EF2C26C90E00B35CA4 /* NameRow.swift in Sources */,
-				5655F7102C0D2E0100C80708 /* InvoiceItemList.swift in Sources */,
 				56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */,
 				56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */,
 				5639A5712BFF97BD0086857F /* App.swift in Sources */,
-				560AA7D12C0262BA00365B1F /* TextRecognizerService.swift in Sources */,
-				56CA91722C239DC30018198F /* AddInvoicePicker.swift in Sources */,
-				56346D4B2C0E671200454E17 /* AddInvoiceView.swift in Sources */,
-				5635E32D2C24AC87000A6628 /* InvoiceFormViewModel.swift in Sources */,
-				5635E3342C24E50D000A6628 /* CategoryPickerRow.swift in Sources */,
 				5639A5782BFF97BD0086857F /* HomeView.swift in Sources */,
-				56346D4D2C0E68E000454E17 /* AddInvoiceOption.swift in Sources */,
-				5639A5742BFF97BD0086857F /* InvoiceItem.swift in Sources */,
-				5683BBC82C145EA0001EF768 /* BarcodeScannerView.swift in Sources */,
-				5635E32F2C24AEE1000A6628 /* MeasureUnitPicker.swift in Sources */,
-				5655F7122C0D346C00C80708 /* InvoiceItemListRow.swift in Sources */,
-				56AAD2FF2C1B83A000BF8030 /* BarcodeScannerViewModel.swift in Sources */,
-				563F2F682C0F70DC005BA713 /* InvoiceForm.swift in Sources */,
-				562DCABF2C7E69A0006CBFB6 /* EmojiRow.swift in Sources */,
-				56B430E02C810E7A000FA774 /* CategoryPreviewRow.swift in Sources */,
-				56B138ED2C26C8D700B35CA4 /* AmountRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,17 +763,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		5683BBC42C145E76001EF768 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/CodeScanner.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.5.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		561BDA332DDF798000AE8A76 /* Cross-Cutting */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -925,6 +772,14 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Categories;
 		};
+		566C92A62DE06FB600D07B74 /* Invoice */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Invoice;
+		};
+		566C92A92DE0731E00D07B74 /* Scanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Scanner;
+		};
 		5681ED8A2DD62C4B0089D874 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
@@ -932,11 +787,6 @@
 		5681ED8C2DD689E00089D874 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
-		};
-		5683BBC52C145E76001EF768 /* CodeScanner */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5683BBC42C145E76001EF768 /* XCRemoteSwiftPackageReference "CodeScanner" */;
-			productName = CodeScanner;
 		};
 		56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -3,22 +3,20 @@ import DesignSystem
 
 public struct NutrimentsRow: View {
     @Binding public var isExpanded: Bool
-    let nutriments: UINutrimentsItem?
+    let code: String
 
     public var body: some View {
-        if let nutriments {
-            DisclosureGroup(isExpanded: $isExpanded) {
-                NutrimentsView(nutriments: nutriments)
-            } label: {
-                Text("Nutriments (100g)")
-                    .font(.headline)
-                    .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormNutriments)
-            }
+        DisclosureGroup(isExpanded: $isExpanded) {
+            NutrimentsView(code: code)
+        } label: {
+            Text("Nutriments (100g)")
+                .font(.headline)
+                .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormNutriments)
         }
     }
 
-    public init(isExpanded: Binding<Bool>, nutriments: UINutrimentsItem?) {
+    public init(isExpanded: Binding<Bool>, code: String) {
         self._isExpanded = isExpanded
-        self.nutriments = nutriments
+        self.code = code
     }
 }
