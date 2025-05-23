@@ -1,6 +1,7 @@
 import SwiftUI
 
-public enum BaseCategory: Codable, CaseIterable, Hashable {
+public enum BaseCategory: CaseIterable, Hashable {
+
     case bakery
     case canned
     case fish

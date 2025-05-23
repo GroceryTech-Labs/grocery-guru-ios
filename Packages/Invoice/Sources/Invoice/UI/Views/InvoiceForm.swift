@@ -37,10 +37,12 @@ public struct InvoiceForm: View {
                         repository: CategoryRepositoryImpl()
                     )
 
-//                    NutrimentsRow(
-//                        isExpanded: $viewModel.isPresentingNutriments,
-//                        nutriments: viewModel.nutriments
-//                    )
+                    if let code = viewModel.code {
+                        NutrimentsRow(
+                            isExpanded: $viewModel.isPresentingNutriments,
+                            code: code
+                        )
+                    }
 
                     FormsAddInvoiceButton(
                         viewModel: viewModel,

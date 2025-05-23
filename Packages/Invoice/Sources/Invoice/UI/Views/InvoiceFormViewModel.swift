@@ -9,8 +9,8 @@ import LocalStorage
 class InvoiceFormViewModel {
 //    private var repository: InvoiceRepository
     private let navigationService: NavigationService
-    private let code: String?
 
+    let code: String?
     var name: String
     var amount: String
     var measureUnit: MeasureUnit

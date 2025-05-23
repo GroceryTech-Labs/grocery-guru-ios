@@ -14,4 +14,9 @@ public struct UICategoryItem: Identifiable, Equatable, Sendable {
         self.categoryName = baseCategory.name
         self.emoji = baseCategory.emoji
     }
+
+    public static func == (lhs: UICategoryItem, rhs: UICategoryItem) -> Bool {
+        lhs.categoryName == rhs.categoryName &&
+        lhs.emoji == rhs.emoji
+    }
 }

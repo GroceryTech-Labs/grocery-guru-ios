@@ -12,5 +12,10 @@ struct CategoryPreviewRow: View {
 }
 
 #Preview {
-    CategoryPreviewRow(category: UICategoryItem(categoryName: "Egg", emoji: "🥚"))
+    CategoryPreviewRow(
+        category: UICategoryItem(
+            categoryName: "Egg",
+            emoji: "🥚"
+        )
+    )
 }
