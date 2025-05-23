@@ -1,8 +1,10 @@
 import SwiftUI
 import DesignSystem
+import Routing
 
 public struct CategoryCard: View {
-    private var onTapAction: (() -> Void)?
+    @Environment(\.navigationService)
+    private var navigator
 
     private let category: UICategoryItem
     private let isPreview: Bool
@@ -19,9 +21,7 @@ public struct CategoryCard: View {
             .frame(maxWidth: .infinity, alignment: .center)
         }
         .onTapGesture {
-            if let onTapAction {
-                onTapAction()
-            }
+            navigator.push(.invoiceList)
         }
         .accessibilityAddTraits(.isButton)
         .buttonStyle(.plain)
@@ -29,16 +29,18 @@ public struct CategoryCard: View {
         .accessibilityLabel("Category Card")
     }
 
-    public init(category: UICategoryItem, isPreview: Bool = false, onTapAction: (() -> Void)? = nil) {
-        self.onTapAction = onTapAction
+    public init(category: UICategoryItem, isPreview: Bool = false) {
         self.category = category
         self.isPreview = isPreview
     }
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    CategoryCard(category: UICategoryItem(categoryName: "Egg", emoji: "🥚")) {
-
-    }
+    CategoryCard(
+        category: UICategoryItem(
+            categoryName: "Egg",
+            emoji: "🥚"
+        )
+    )
     .padding()
 }

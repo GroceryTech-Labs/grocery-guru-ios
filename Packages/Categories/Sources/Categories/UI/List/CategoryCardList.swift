@@ -24,9 +24,7 @@ public struct CategoryCardList: View {
                 spacing: Constants.Padding.sizeS
             ) {
                 ForEach(viewModel.categories) { category in
-                    CategoryCard(category: category) {
-                        viewModel.navigateToCategoryDetails(category: category)
-                    }
+                    CategoryCard(category: category)
                 }
             }
         }

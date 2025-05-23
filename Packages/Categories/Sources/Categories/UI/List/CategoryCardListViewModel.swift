@@ -4,13 +4,11 @@ import Routing
 @Observable @MainActor
 public class CategoryCardListViewModel {
     private let repository: CategoryRepository
-    private let navigationService: NavigationService
 
     var categories: [UICategoryItem] = []
 
-    public init(repository: CategoryRepository, navigationService: NavigationService = .shared) {
+    public init(repository: CategoryRepository) {
         self.repository = repository
-        self.navigationService = navigationService
     }
 
     func fetchCategories() async {
@@ -20,9 +18,5 @@ public class CategoryCardListViewModel {
         } catch {
             print(error)
         }
-    }
-
-    func navigateToCategoryDetails(category: UICategoryItem) {
-        navigationService.push(.invoiceList)
     }
 }

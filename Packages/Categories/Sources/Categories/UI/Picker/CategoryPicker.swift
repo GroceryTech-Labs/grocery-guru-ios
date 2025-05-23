@@ -36,6 +36,11 @@ public struct CategoryPicker: View {
                 category: category
             )
         }
+        .onAppear {
+            Task {
+                await viewModel.fetchCategories()
+            }
+        }
     }
 
     public init(viewModel: CategoryPickerViewModel, selectedElement: Binding<UICategoryItem>) {

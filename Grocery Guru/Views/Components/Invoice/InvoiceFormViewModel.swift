@@ -1,12 +1,14 @@
 import SwiftUI
 import OpenFoodFacts
 import Categories
-import LocalStorage
 import Routing
+import LocalStorage
 
+@MainActor
 @Observable
 class InvoiceFormViewModel {
-    @MainActor private var navigator = NavigationService.shared
+//    private var repository: InvoiceRepository
+    private let navigationService: NavigationService
 
     var name: String
     var amount: String
@@ -15,23 +17,17 @@ class InvoiceFormViewModel {
     var product: UIProductItem?
     var isPresentingNutriments = false
 
-//    @MainActor var usedLocalRepository: SwiftDataRepositoryImpl<InvoiceItem> {
-////        let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
-//
-////        if testMode {
-////            return MockLocalStorageRepository.mockInstance
-////        }
-//
-//        SwiftDataRepositoryImpl<InvoiceItem>()
-//    }
-
     init(
+        //        repository: InvoiceRepository,
+        navigationService: NavigationService,
         name: String = "",
         amount: String = "1",
         measureUnit: MeasureUnit = .item,
         category: UICategoryItem = UICategoryItem(.bakery),
         product: UIProductItem? = nil
     ) {
+        //        self.repository = repository
+        self.navigationService = navigationService
         self.name = name
         self.amount = amount
         self.measureUnit = measureUnit
@@ -39,8 +35,8 @@ class InvoiceFormViewModel {
         self.product = product
     }
 
-//    @MainActor
-//    func addInvoice() async {
+    func addInvoice() {
+        navigationService.dropToRoot()
 //        Task {
 //            do {
 //                try await usedLocalRepository.add(
@@ -57,5 +53,5 @@ class InvoiceFormViewModel {
 //                print(error.localizedDescription)
 //            }
 //        }
-//    }
+    }
 }

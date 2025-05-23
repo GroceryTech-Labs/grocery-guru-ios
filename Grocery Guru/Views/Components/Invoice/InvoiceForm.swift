@@ -51,6 +51,7 @@ struct InvoiceForm: View {
 
     init(product: UIProductItem? = nil) {
         viewModel = InvoiceFormViewModel(
+            navigationService: .shared,
             name: product?.productName ?? "",
             amount: product == nil ? "" : "1",
             measureUnit: .item,

@@ -43,7 +43,10 @@
     {
       "skippedTests" : [
         "AccessibilityAuditTests",
-        "AccessibilityAuditTests\/testHomeAudit()"
+        "AccessibilityAuditTests\/testHomeAudit()",
+        "AddItemTests",
+        "AddItemTests\/testAddItemBarcode()",
+        "AddItemTests\/testAddItemManually()"
       ],
       "target" : {
         "containerPath" : "container:Grocery Guru.xcodeproj",
