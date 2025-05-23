@@ -22,14 +22,9 @@
           "name" : "OpenFoodFacts"
         },
         {
-          "containerPath" : "container:Packages\/DesignSystem",
-          "identifier" : "DesignSystem",
-          "name" : "DesignSystem"
-        },
-        {
-          "containerPath" : "container:Packages\/Cross-Cutting",
-          "identifier" : "Cross-Cutting",
-          "name" : "Cross-Cutting"
+          "containerPath" : "container:Packages\/Categories",
+          "identifier" : "Categories",
+          "name" : "Categories"
         }
       ]
     },
