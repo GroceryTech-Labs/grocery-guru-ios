@@ -6,15 +6,15 @@ public struct UIInvoiceItem: Identifiable, Equatable, Sendable {
     public let code: String?
     public let name: String
     public let amount: Int
-    public let category: UICategoryItem
     public let measureUnit: MeasureUnit
+    public let category: UICategoryItem
 
     public init(
         code: String? = nil,
         name: String,
         amount: Int,
-        category: UICategoryItem,
-        measureUnit: MeasureUnit
+        measureUnit: MeasureUnit,
+        category: UICategoryItem
     ) {
         self.code = code
         self.name = name

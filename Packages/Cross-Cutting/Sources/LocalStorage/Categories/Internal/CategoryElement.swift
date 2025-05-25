@@ -3,12 +3,13 @@ import SwiftData
 
 @Model
 class CategoryElement: @unchecked Sendable {
-    var id: UUID
-    var categoryName: String
+    @Attribute(.unique, originalName: "name") var categoryName: String
     var emoji: String
 
-    init(id: UUID = UUID(), categoryName: String, emoji: String) {
-        self.id = id
+    @Relationship(deleteRule: .cascade, inverse: \InvoiceElement.category)
+    var invoices = [InvoiceElement]()
+
+    init(categoryName: String, emoji: String) {
         self.categoryName = categoryName
         self.emoji = emoji
     }

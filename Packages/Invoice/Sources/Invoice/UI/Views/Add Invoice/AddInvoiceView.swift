@@ -2,10 +2,15 @@ import SwiftUI
 import Routing
 import Scanner
 import DesignSystem
+import OpenFoodFacts
+import Categories
 
 public struct AddInvoiceView: View {
     @Environment(\.navigationService)
     private var navigator
+
+    private let productAPI: ProductAPI
+    private let categoryRepository: CategoryRepository
 
     @State private var selectedOption: AddInvoiceOption
     @State private var isPresentingIndicator = true
@@ -16,10 +21,10 @@ public struct AddInvoiceView: View {
 
             switch selectedOption {
             case .barcode:
-                BarcodeScannerView()
+                BarcodeScannerView(productAPI: productAPI)
 
             case .manual:
-                InvoiceForm()
+                InvoiceForm(categoryRepository: categoryRepository)
 
             case .document:
                 DocumentScannerView { _ in }
@@ -35,11 +40,9 @@ public struct AddInvoiceView: View {
         )
     }
 
-    public init(selectedOption: AddInvoiceOption) {
+    public init(productAPI: ProductAPI, categoryRepository: CategoryRepository, selectedOption: AddInvoiceOption) {
+        self.productAPI = productAPI
+        self.categoryRepository = categoryRepository
         self.selectedOption = selectedOption
     }
-}
-
-#Preview {
-    AddInvoiceView(selectedOption: .manual)
 }

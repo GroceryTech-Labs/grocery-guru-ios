@@ -10,13 +10,11 @@ let package = Package(
         .library(name: "Invoice", targets: ["Invoice"])
     ],
     dependencies: [
-        .package(path: "../DesignSystem"),
-        .package(path: "../Categories"),
-        .package(path: "../Scanner")
+        .package(path: "../DesignSystem")
     ],
     targets: [
         .target(
-            name: "Invoice", dependencies: ["DesignSystem", "Categories", "Scanner"]
+            name: "Invoice", dependencies: ["DesignSystem"]
         ),
         .testTarget(name: "InvoiceTests", dependencies: ["Invoice"])
     ]

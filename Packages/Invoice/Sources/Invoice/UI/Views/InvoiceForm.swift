@@ -2,7 +2,6 @@ import SwiftUI
 import OpenFoodFacts
 import DesignSystem
 import Categories
-import LocalStorage
 
 public struct InvoiceForm: View {
     enum Field: Hashable {
@@ -34,7 +33,7 @@ public struct InvoiceForm: View {
 
                     CategoryPickerRow(
                         selectedCategory: $viewModel.category,
-                        repository: CategoryRepositoryImpl()
+                        categoryRepository: viewModel.categoryRepository
                     )
 
                     if let code = viewModel.code {
@@ -55,9 +54,9 @@ public struct InvoiceForm: View {
         .scrollIndicators(.hidden)
     }
 
-    public init(code: String? = nil, name: String? = nil) {
+    public init(categoryRepository: CategoryRepository, code: String? = nil, name: String? = nil) {
         viewModel = InvoiceFormViewModel(
-            navigationService: .shared,
+            categoryRepository: categoryRepository,
             code: code,
             name: name ?? ""
         )

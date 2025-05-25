@@ -3,12 +3,12 @@ import DesignSystem
 
 public struct CategoryPickerRow: View {
     @Binding var selectedCategory: UICategoryItem
-    private let repository: CategoryRepository
+    private let categoryRepository: CategoryRepository
 
     public var body: some View {
         SectionHeader("Category", font: .headline) {
             CategoryPicker(
-                viewModel: CategoryPickerViewModel(repository: repository),
+                viewModel: CategoryPickerViewModel(repository: categoryRepository),
                 selectedElement: $selectedCategory
             )
         } trailing: {
@@ -16,8 +16,8 @@ public struct CategoryPickerRow: View {
         }
     }
 
-    public init(selectedCategory: Binding<UICategoryItem>, repository: CategoryRepository) {
+    public init(selectedCategory: Binding<UICategoryItem>, categoryRepository: CategoryRepository) {
         self._selectedCategory = selectedCategory
-        self.repository = repository
+        self.categoryRepository = categoryRepository
     }
 }

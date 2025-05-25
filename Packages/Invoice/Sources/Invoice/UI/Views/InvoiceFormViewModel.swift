@@ -2,13 +2,13 @@ import SwiftUI
 import OpenFoodFacts
 import Categories
 import Routing
-import LocalStorage
 
 @MainActor
 @Observable
 class InvoiceFormViewModel {
 //    private var repository: InvoiceRepository
     private let navigationService: NavigationService
+    let categoryRepository: CategoryRepository
 
     let code: String?
     var name: String
@@ -19,7 +19,8 @@ class InvoiceFormViewModel {
 
     init(
         //        repository: InvoiceRepository,
-        navigationService: NavigationService,
+        categoryRepository: CategoryRepository,
+        navigationService: NavigationService = .shared,
         code: String? = nil,
         name: String = "",
         amount: String = "1",
@@ -27,6 +28,7 @@ class InvoiceFormViewModel {
         category: UICategoryItem = UICategoryItem(.bakery),
     ) {
         //        self.repository = repository
+        self.categoryRepository = categoryRepository
         self.navigationService = navigationService
         self.code = code
         self.name = name

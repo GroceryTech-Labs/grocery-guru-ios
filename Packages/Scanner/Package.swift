@@ -11,12 +11,11 @@ let package = Package(
     dependencies: [
         .package(path: "../DesignSystem"),
         .package(path: "../OpenFoodFacts"),
-        .package(path: "../Cross-Cutting"),
         .package(url: "https://github.com/twostraws/CodeScanner.git", from: "2.5.0")
     ],
     targets: [
         .target(
-            name: "Scanner", dependencies: ["DesignSystem", "OpenFoodFacts", "Cross-Cutting", "CodeScanner"]
+            name: "Scanner", dependencies: ["DesignSystem", "OpenFoodFacts", "CodeScanner"]
         ),
         .testTarget(name: "ScannerTests", dependencies: ["Scanner"])
     ]

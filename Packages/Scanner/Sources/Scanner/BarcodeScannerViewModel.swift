@@ -1,7 +1,7 @@
 import SwiftUI
 import CodeScanner
-import OpenFoodFacts
 import Routing
+import OpenFoodFacts
 
 @Observable
 final class BarcodeScannerViewModel {

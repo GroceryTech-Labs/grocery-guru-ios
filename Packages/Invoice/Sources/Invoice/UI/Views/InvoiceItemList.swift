@@ -39,22 +39,22 @@ public struct InvoiceItemList: View {
             code: "1234",
             name: "Cheddar Cheese",
             amount: 1,
-            category: UICategoryItem(.bakery),
-            measureUnit: .item
+            measureUnit: .item,
+            category: UICategoryItem(.bakery)
         ),
         UIInvoiceItem(
             code: "1234",
             name: "asd sda",
             amount: 2,
-            category: UICategoryItem(.fish),
-            measureUnit: .item
+            measureUnit: .item,
+            category: UICategoryItem(.fish)
         ),
         UIInvoiceItem(
             code: "1234",
             name: "asd sda",
             amount: 3,
-            category: UICategoryItem(.milkEgg),
-            measureUnit: .item
+            measureUnit: .item,
+            category: UICategoryItem(.milkEgg)
         )
     ])
 }

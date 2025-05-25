@@ -1,7 +1,6 @@
 import SwiftUI
 import CodeScanner
 import DesignSystem
-import GGAPI
 import OpenFoodFacts
 
 public struct BarcodeScannerView: View {
@@ -36,14 +35,9 @@ public struct BarcodeScannerView: View {
         }
     }
 
-    public init() {
+    public init(productAPI: ProductAPI) {
         viewModel = BarcodeScannerViewModel(
-            productAPI: ProductAPIImpl(OpenFoodFactsEndpoint.baseURL)
+            productAPI: productAPI
         )
     }
-
-}
-
-#Preview {
-    BarcodeScannerView()
 }

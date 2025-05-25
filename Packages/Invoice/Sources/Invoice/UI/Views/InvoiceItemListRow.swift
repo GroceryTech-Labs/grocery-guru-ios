@@ -42,8 +42,8 @@ struct InvoiceItemListRow: View {
             code: "1234",
             name: "Cheese",
             amount: 200,
-            category: UICategoryItem(.bakery),
-            measureUnit: .item
+            measureUnit: .item,
+            category: UICategoryItem(.bakery)
         )
     )
 }
