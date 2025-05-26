@@ -14,7 +14,6 @@ public struct AddInvoiceView: View {
     private let invoiceRepository: InvoiceRepository
 
     @State private var selectedOption: AddInvoiceOption
-    @State private var isPresentingIndicator = true
 
     public var body: some View {
         VStack(spacing: Constants.Padding.sizeL) {
@@ -23,20 +22,30 @@ public struct AddInvoiceView: View {
             switch selectedOption {
             case .barcode:
                 BarcodeScannerView(productAPI: productAPI)
+                    .transition(
+                        .asymmetric(
+                            insertion: .push(from: .leading),
+                            removal: .move(edge: .leading)
+                        )
+                    )
 
             case .manual:
                 InvoiceForm(
                     categoryRepository: categoryRepository,
                     invoiceRepository: invoiceRepository
                 )
+                .transition(
+                    .asymmetric(
+                        insertion: .push(from: .trailing),
+                        removal: .move(edge: .trailing)
+                    )
+                )
 
             case .document:
                 DocumentScannerView { _ in }
-                    .onAppear {
-                        isPresentingIndicator = true
-                    }
             }
         }
+        .animation(.default, value: selectedOption)
         .frame(
             maxWidth: .infinity,
             maxHeight: .infinity,
