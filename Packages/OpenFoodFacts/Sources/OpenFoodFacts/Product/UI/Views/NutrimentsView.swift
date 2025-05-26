@@ -1,12 +1,18 @@
 import SwiftUI
 import DesignSystem
 
-public struct NutrimentsView: View {
-    public let nutriments: UINutrimentsItem
+@Observable
+final class NutrimentsViewModel {
+    private var code: String
+    var nutriments: UINutrimentsItem?
 
-    public init(nutriments: UINutrimentsItem) {
-        self.nutriments = nutriments
+    init(code: String) {
+        self.code = code
     }
+}
+
+public struct NutrimentsView: View {
+    @State private var viewModel: NutrimentsViewModel
 
     public var body: some View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeL) {
@@ -22,12 +28,16 @@ public struct NutrimentsView: View {
         .padding(Constants.Padding.sizeL)
     }
 
+    public init(code: String) {
+        viewModel = NutrimentsViewModel(code: code)
+    }
+
     private var carbohydratesSection: some View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Carbohydrates",
-                value: nutriments.carbohydrates100g,
-                unit: nutriments.carbohydratesUnit
+                value: viewModel.nutriments?.carbohydrates100g,
+                unit: viewModel.nutriments?.carbohydratesUnit
             )
         }
     }
@@ -36,8 +46,8 @@ public struct NutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Energy (kcal)",
-                value: nutriments.energyKcal100g,
-                unit: nutriments.energyKcalUnit
+                value: viewModel.nutriments?.energyKcal100g,
+                unit: viewModel.nutriments?.energyKcalUnit
             )
         }
     }
@@ -46,8 +56,8 @@ public struct NutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Energy (kJ)",
-                value: nutriments.energyKJ100g,
-                unit: nutriments.energyKJUnit
+                value: viewModel.nutriments?.energyKJ100g,
+                unit: viewModel.nutriments?.energyKJUnit
             )
         }
     }
@@ -56,8 +66,8 @@ public struct NutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Fat",
-                value: nutriments.fat100g,
-                unit: nutriments.fatUnit
+                value: viewModel.nutriments?.fat100g,
+                unit: viewModel.nutriments?.fatUnit
             )
         }
     }
@@ -66,8 +76,8 @@ public struct NutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Proteins",
-                value: nutriments.proteins100g,
-                unit: nutriments.proteinsUnit
+                value: viewModel.nutriments?.proteins100g,
+                unit: viewModel.nutriments?.proteinsUnit
             )
         }
     }
@@ -76,8 +86,8 @@ public struct NutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Salt",
-                value: nutriments.salt100g,
-                unit: nutriments.saltUnit
+                value: viewModel.nutriments?.salt100g,
+                unit: viewModel.nutriments?.saltUnit
             )
         }
     }
@@ -86,8 +96,8 @@ public struct NutrimentsView: View {
         VStack(alignment: .leading, spacing: Constants.Padding.sizeS) {
             valueUnitTextRow(
                 title: "Sugars",
-                value: nutriments.sugars100g,
-                unit: nutriments.sugarsUnit
+                value: viewModel.nutriments?.sugars100g,
+                unit: viewModel.nutriments?.sugarsUnit
             )
         }
     }
@@ -110,8 +120,4 @@ public struct NutrimentsView: View {
             .foregroundStyle(.secondary)
         }
     }
-}
-
-#Preview(traits: .sizeThatFitsLayout) {
-    NutrimentsView(nutriments: .example)
 }

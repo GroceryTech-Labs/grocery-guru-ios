@@ -1,8 +1,7 @@
 import Testing
 @testable import OpenFoodFacts
 
-@Suite("Product tests") struct ProductTests {
-
+@Suite("Product") struct ProductTests {
     var api: ProductAPI
 
     init() async throws {

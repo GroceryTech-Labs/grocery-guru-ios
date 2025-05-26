@@ -11,6 +11,7 @@ struct CategoryPickerLabel: View {
 
             if selectedCategory == category {
                 Text(category.categoryName)
+                    .foregroundStyle(.white)
                     .lineLimit(1)
                     .transition(
                         .asymmetric(

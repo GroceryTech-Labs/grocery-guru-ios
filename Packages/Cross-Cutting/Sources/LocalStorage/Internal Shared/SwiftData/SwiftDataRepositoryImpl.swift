@@ -11,7 +11,7 @@ actor SwiftDataRepositoryImpl<Element: PersistentModel>: SwiftDataRepository {
     }
     // swiftlint:enable force_try
 
-    func fetch() throws -> [Element] {
+    func fetch(descriptor: FetchDescriptor<Element>) throws -> [Element] {
         do {
             return try modelContext.fetch(FetchDescriptor<Element>())
         } catch {

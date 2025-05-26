@@ -4,8 +4,6 @@ import SwiftData
 
 @MainActor
 public class CategoryRepositoryImpl: CategoryRepository {
-    public var categories: [Categories.UICategoryItem] = []
-
     private let repository: any SwiftDataRepository<CategoryElement>
 
     public init() {
@@ -19,12 +17,16 @@ extension CategoryRepositoryImpl {
         do {
             let response = try await repository.fetch()
             let customCategories = response.map {
-                UICategoryItem(categoryName: $0.categoryName, emoji: $0.emoji)
+                UICategoryItem(
+                    categoryName: $0.categoryName,
+                    emoji: $0.emoji,
+                    invoiceCount: $0.invoices.count
+                )
             }
-            let baseCategories = BaseCategory.allCases.map {
+            _ = BaseCategory.allCases.map {
                 UICategoryItem(categoryName: $0.name, emoji: $0.emoji)
             }
-            return baseCategories + customCategories
+            return customCategories
         } catch {
             throw error
         }

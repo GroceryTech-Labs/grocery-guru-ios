@@ -15,10 +15,7 @@ let package = Package(
     targets: [
         .target(
             name: "OpenFoodFacts",
-            dependencies: ["DesignSystem"],
-            resources: [
-                .process("Product/Resources")
-            ]
+            dependencies: ["DesignSystem"]
         ),
         .testTarget(name: "OpenFoodFactsTests", dependencies: ["OpenFoodFacts"])
     ]

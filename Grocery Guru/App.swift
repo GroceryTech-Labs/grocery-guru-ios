@@ -3,6 +3,9 @@ import SwiftData
 import LocalStorage
 import Routing
 import Categories
+import Invoice
+import GGAPI
+import OpenFoodFacts
 
 @main
 struct Grocery_GuruApp: App {
@@ -29,13 +32,26 @@ extension NavigationDestination {
     func resolveView() -> some View {
         switch self {
         case .addInvoice:
-            AddInvoiceView(selectedOption: .barcode)
+            AddInvoiceView(
+                productAPI: ProductAPIImpl(OpenFoodFactsEndpoint.baseURL),
+                categoryRepository: CategoryRepositoryImpl(),
+                invoiceRepository: InvoiceRepositoryImpl(),
+                selectedOption: .barcode
+            )
         case .categorySettings:
             CategorySettingsView(repository: CategoryRepositoryImpl())
-        case .invoiceForm:
-            InvoiceForm()
-        case .invoiceList:
-            InvoiceItemList(items: [])
+        case .invoiceForm(let invoice):
+            InvoiceForm(
+                categoryRepository: CategoryRepositoryImpl(),
+                invoiceRepository: InvoiceRepositoryImpl(),
+                code: invoice?.code,
+                name: invoice?.name
+            )
+        case .invoiceList(let categoryName):
+            InvoiceList(
+                invoiceRepository: InvoiceRepositoryImpl(),
+                categoryName: categoryName
+            )
         }
     }
 }

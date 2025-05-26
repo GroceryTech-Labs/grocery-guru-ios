@@ -22,7 +22,9 @@ public struct AnimatableLabelPicker<Element: Equatable, Label: View>: View {
                                     )
                                 }
                             } label: {
-                                ResponsiveCard(background: background(item.element)) {
+                                ResponsiveCard(
+                                    background: background(item.element)
+                                ) {
                                     label(item.element)
                                 }
                             }

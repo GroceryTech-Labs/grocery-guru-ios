@@ -10,12 +10,13 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../OpenFoodFacts"),
-        .package(path: "../Categories")
+        .package(path: "../Categories"),
+        .package(path: "../Invoice")
     ],
     targets: [
         .target(name: "GGAPI", dependencies: ["OpenFoodFacts"]),
         .target(name: "Routing"),
-        .target(name: "LocalStorage", dependencies: ["Categories"]),
+        .target(name: "LocalStorage", dependencies: ["Categories", "Invoice"]),
         .testTarget(name: "GGAPITests", dependencies: ["GGAPI"]),
         .testTarget(name: "RoutingTests", dependencies: ["Routing"])
     ]

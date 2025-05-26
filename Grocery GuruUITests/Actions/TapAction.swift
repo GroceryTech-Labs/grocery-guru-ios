@@ -35,14 +35,6 @@ extension XCUIApplication {
         button.tap()
     }
 
-    func tapAddInvoiceDocumentSegmentButton() {
-        let button = self.buttons[AccessibilityIdentifier.Button.addInvoiceDocument]
-
-        // Check for existence
-        XCTAssertTrue(button.waitForExistence(timeout: 1))
-        button.tap()
-    }
-
     func tapAddInvoiceBarcodeSegmentButton() {
         let button = self.buttons[AccessibilityIdentifier.Button.addInvoiceBarcode]
 
