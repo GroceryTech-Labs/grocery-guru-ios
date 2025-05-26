@@ -1,7 +1,7 @@
 import SwiftUI
 
 public struct ErrorView: View {
-    private let text: LocalizedStringKey
+    private let text: String
 
     public var body: some View {
         Text(text)
@@ -11,7 +11,7 @@ public struct ErrorView: View {
             .padding(Constants.Padding.sizeL)
     }
 
-    public init(text: LocalizedStringKey) {
+    public init(text: String) {
         self.text = text
     }
 }

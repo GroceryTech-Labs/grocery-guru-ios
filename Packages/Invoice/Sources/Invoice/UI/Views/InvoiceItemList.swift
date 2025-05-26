@@ -2,19 +2,49 @@ import SwiftUI
 import DesignSystem
 import Categories
 
-public struct InvoiceItemList: View {
-    private let items: [UIInvoiceItem]
+@Observable
+class InvoiceListViewModel: ObservableObject {
+    private let invoiceRepository: InvoiceRepository
+    private let categoryName: String?
+
+    var error: Error?
+
+    public init(invoiceRepository: InvoiceRepository, categoryName: String?) {
+        self.invoiceRepository = invoiceRepository
+        self.categoryName = categoryName
+    }
+
+    var invoices: [UIInvoiceItem] = []
+
+    @MainActor
+    func fetchInvoices() async {
+        do {
+            if let categoryName {
+                invoices = try await invoiceRepository.fetchInvoicesByCategory(categoryName)
+            } else {
+                invoices = try await invoiceRepository.fetchInvoices()
+            }
+        } catch {
+            self.error = error
+        }
+    }
+}
+
+public struct InvoiceList: View {
+    @State private var viewModel: InvoiceListViewModel
 
     public var body: some View {
         SectionHeader("Invoice Items") {
             Group {
-                if items.isEmpty {
+                if viewModel.invoices.isEmpty {
                     ErrorView(text: "No items found!")
+                } else if let error = viewModel.error {
+                    ErrorView(text: error.localizedDescription)
                 } else {
                     ScrollView {
                         LazyVStack(spacing: Constants.Padding.sizeM) {
-                            ForEach(items) { item in
-                                InvoiceItemListRow(item: item)
+                            ForEach(viewModel.invoices) { invoice in
+                                InvoiceItemListRow(item: invoice)
                             }
                         }
                         .padding(.horizontal, Constants.Padding.sizeX)
@@ -25,37 +55,17 @@ public struct InvoiceItemList: View {
         }
         .frame(maxHeight: .infinity)
         .padding(.horizontal, Constants.Padding.sizeL)
+        .onAppear {
+            Task {
+                await viewModel.fetchInvoices()
+            }
+        }
     }
 
-    public init(items: [UIInvoiceItem]) {
-        self.items = items
-    }
-}
-
-// swiftlint:disable all
-#Preview {
-    InvoiceItemList(items: [
-        UIInvoiceItem(
-            code: "1234",
-            name: "Cheddar Cheese",
-            amount: 1,
-            measureUnit: .item,
-            category: UICategoryItem(.bakery)
-        ),
-        UIInvoiceItem(
-            code: "1234",
-            name: "asd sda",
-            amount: 2,
-            measureUnit: .item,
-            category: UICategoryItem(.fish)
-        ),
-        UIInvoiceItem(
-            code: "1234",
-            name: "asd sda",
-            amount: 3,
-            measureUnit: .item,
-            category: UICategoryItem(.milkEgg)
+    public init(invoiceRepository: InvoiceRepository, categoryName: String?) {
+        self.viewModel = InvoiceListViewModel(
+            invoiceRepository: invoiceRepository,
+            categoryName: categoryName
         )
-    ])
+    }
 }
-// swiftlint:enable all

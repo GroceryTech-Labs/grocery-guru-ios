@@ -16,12 +16,17 @@ public struct CategoryCard: View {
                 Text(category.emoji)
                     .font(.system(size: emojiSize))
 
-                Text(category.categoryName)
+                VStack(spacing: Constants.Padding.sizeS) {
+                    Text(category.categoryName)
+                    Text("\(category.invoiceCount) Invoices")
+                        .foregroundStyle(.secondary)
+                        .font(.footnote)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .center)
         }
         .onTapGesture {
-            navigator.push(.invoiceList)
+            navigator.push(.invoiceList(categoryName: category.categoryName))
         }
         .accessibilityAddTraits(.isButton)
         .buttonStyle(.plain)

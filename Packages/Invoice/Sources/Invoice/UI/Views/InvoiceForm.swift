@@ -54,9 +54,15 @@ public struct InvoiceForm: View {
         .scrollIndicators(.hidden)
     }
 
-    public init(categoryRepository: CategoryRepository, code: String? = nil, name: String? = nil) {
+    public init(
+        categoryRepository: CategoryRepository,
+        invoiceRepository: InvoiceRepository,
+        code: String? = nil,
+        name: String? = nil
+    ) {
         viewModel = InvoiceFormViewModel(
             categoryRepository: categoryRepository,
+            invoiceRepository: invoiceRepository,
             code: code,
             name: name ?? ""
         )

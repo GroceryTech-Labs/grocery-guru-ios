@@ -11,6 +11,7 @@ public struct AddInvoiceView: View {
 
     private let productAPI: ProductAPI
     private let categoryRepository: CategoryRepository
+    private let invoiceRepository: InvoiceRepository
 
     @State private var selectedOption: AddInvoiceOption
     @State private var isPresentingIndicator = true
@@ -24,7 +25,10 @@ public struct AddInvoiceView: View {
                 BarcodeScannerView(productAPI: productAPI)
 
             case .manual:
-                InvoiceForm(categoryRepository: categoryRepository)
+                InvoiceForm(
+                    categoryRepository: categoryRepository,
+                    invoiceRepository: invoiceRepository
+                )
 
             case .document:
                 DocumentScannerView { _ in }
@@ -40,9 +44,15 @@ public struct AddInvoiceView: View {
         )
     }
 
-    public init(productAPI: ProductAPI, categoryRepository: CategoryRepository, selectedOption: AddInvoiceOption) {
+    public init(
+        productAPI: ProductAPI,
+        categoryRepository: CategoryRepository,
+        invoiceRepository: InvoiceRepository,
+        selectedOption: AddInvoiceOption
+    ) {
         self.productAPI = productAPI
         self.categoryRepository = categoryRepository
+        self.invoiceRepository = invoiceRepository
         self.selectedOption = selectedOption
     }
 }

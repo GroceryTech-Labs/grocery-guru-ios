@@ -10,11 +10,12 @@ let package = Package(
         .library(name: "Invoice", targets: ["Invoice"])
     ],
     dependencies: [
-        .package(path: "../DesignSystem")
+        .package(path: "../DesignSystem"),
+        .package(path: "../Categories")
     ],
     targets: [
         .target(
-            name: "Invoice", dependencies: ["DesignSystem"]
+            name: "Invoice", dependencies: ["DesignSystem", "Categories"]
         ),
         .testTarget(name: "InvoiceTests", dependencies: ["Invoice"])
     ]

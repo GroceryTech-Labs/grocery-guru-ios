@@ -6,9 +6,9 @@ import Routing
 @MainActor
 @Observable
 class InvoiceFormViewModel {
-//    private var repository: InvoiceRepository
     private let navigationService: NavigationService
     let categoryRepository: CategoryRepository
+    private var invoiceRepository: InvoiceRepository
 
     let code: String?
     var name: String
@@ -18,8 +18,8 @@ class InvoiceFormViewModel {
     var isPresentingNutriments = false
 
     init(
-        //        repository: InvoiceRepository,
         categoryRepository: CategoryRepository,
+        invoiceRepository: InvoiceRepository,
         navigationService: NavigationService = .shared,
         code: String? = nil,
         name: String = "",
@@ -27,8 +27,8 @@ class InvoiceFormViewModel {
         measureUnit: MeasureUnit = .item,
         category: UICategoryItem = UICategoryItem(.bakery),
     ) {
-        //        self.repository = repository
         self.categoryRepository = categoryRepository
+        self.invoiceRepository = invoiceRepository
         self.navigationService = navigationService
         self.code = code
         self.name = name
@@ -37,23 +37,18 @@ class InvoiceFormViewModel {
         self.category = category
     }
 
-    func addInvoice() {
-        navigationService.dropToRoot()
-//        Task {
-//            do {
-//                try await usedLocalRepository.add(
-//                    UIInvoiceItem(
-//                        code: product?.code,
-//                        name: name,
-//                        amount: Int(amount) ?? 0,
-//                        category: category,
-//                        measureUnit: measureUnit
-//                    )
-//                )
-//                navigator.dropToRoot()
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        }
+    func addInvoice() async {
+        do {
+            try await invoiceRepository.addInvoice(
+                code: code,
+                name: name,
+                amount: Int(amount) ?? 0,
+                measureUnit: measureUnit,
+                category: category
+            )
+            navigationService.dropToRoot()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
