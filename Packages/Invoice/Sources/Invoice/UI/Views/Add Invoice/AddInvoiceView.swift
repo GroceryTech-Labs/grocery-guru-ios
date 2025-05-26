@@ -1,6 +1,6 @@
 import SwiftUI
 import Routing
-import Scanner
+import ScannerUI
 import DesignSystem
 import OpenFoodFacts
 import Categories
@@ -40,9 +40,6 @@ public struct AddInvoiceView: View {
                         removal: .move(edge: .trailing)
                     )
                 )
-
-            case .document:
-                DocumentScannerView { _ in }
             }
         }
         .animation(.default, value: selectedOption)

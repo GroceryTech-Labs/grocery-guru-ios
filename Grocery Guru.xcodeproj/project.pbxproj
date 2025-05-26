@@ -19,7 +19,6 @@
 		564AD3412DDCAA3E009D488B /* Categories in Frameworks */ = {isa = PBXBuildFile; productRef = 564AD3402DDCAA3E009D488B /* Categories */; };
 		566C92A42DE06DB000D07B74 /* GroceryGuruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566C92A32DE06DA800D07B74 /* GroceryGuruTests.swift */; };
 		566C92A72DE06FB600D07B74 /* Invoice in Frameworks */ = {isa = PBXBuildFile; productRef = 566C92A62DE06FB600D07B74 /* Invoice */; };
-		566C92AA2DE0731E00D07B74 /* Scanner in Frameworks */ = {isa = PBXBuildFile; productRef = 566C92A92DE0731E00D07B74 /* Scanner */; };
 		5681ED8B2DD62C4B0089D874 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 5681ED8A2DD62C4B0089D874 /* DesignSystem */; };
 		5681ED8D2DD689E00089D874 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 5681ED8C2DD689E00089D874 /* DesignSystem */; };
 		568560E02C15A520003BDAED /* AddItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560DF2C15A520003BDAED /* AddItemTests.swift */; };
@@ -27,6 +26,7 @@
 		568560F12C15B08F003BDAED /* TypeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560F02C15B08F003BDAED /* TypeAction.swift */; };
 		56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3022C1B9BB100BF8030 /* OFFError.swift */; };
 		56CE7FC82DD61D290006E3B1 /* OpenFoodFacts in Frameworks */ = {isa = PBXBuildFile; productRef = 56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */; };
+		56D4267A2DE489D7002A5B76 /* ScannerUI in Frameworks */ = {isa = PBXBuildFile; productRef = 56D426792DE489D7002A5B76 /* ScannerUI */; };
 		56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC782C0C89E800D2D965 /* HomeViewList.swift */; };
 		56FFAC822C0CC82300D2D965 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
@@ -63,7 +63,6 @@
 		564AD33F2DDCA9A5009D488B /* Categories */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Categories; sourceTree = "<group>"; };
 		566C92A32DE06DA800D07B74 /* GroceryGuruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryGuruTests.swift; sourceTree = "<group>"; };
 		566C92A52DE06F8800D07B74 /* Invoice */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Invoice; sourceTree = "<group>"; };
-		566C92A82DE071BF00D07B74 /* Scanner */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Scanner; sourceTree = "<group>"; };
 		567D8FE12C0288DD007C4076 /* Grocery-Guru-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Grocery-Guru-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5681ED892DD62BA50089D874 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignSystem; sourceTree = "<group>"; };
 		568560DD2C15A520003BDAED /* Grocery GuruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery GuruUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +72,7 @@
 		56AAD3022C1B9BB100BF8030 /* OFFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFError.swift; sourceTree = "<group>"; };
 		56CE7FC22DD5FFA70006E3B1 /* Cross-Cutting */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "Cross-Cutting"; sourceTree = "<group>"; };
 		56CE7FC32DD616CB0006E3B1 /* OpenFoodFacts */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OpenFoodFacts; sourceTree = "<group>"; };
+		56D426782DE4899F002A5B76 /* ScannerUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ScannerUI; sourceTree = "<group>"; };
 		56F51B092DD7951000694E61 /* Grocery Guru UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Grocery Guru UI Tests.xctestplan"; sourceTree = "<group>"; };
 		56FFAC782C0C89E800D2D965 /* HomeViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewList.swift; sourceTree = "<group>"; };
 		56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 				566C92A72DE06FB600D07B74 /* Invoice in Frameworks */,
 				561BDA342DDF798000AE8A76 /* Cross-Cutting in Frameworks */,
 				564AD3412DDCAA3E009D488B /* Categories in Frameworks */,
-				566C92AA2DE0731E00D07B74 /* Scanner in Frameworks */,
+				56D4267A2DE489D7002A5B76 /* ScannerUI in Frameworks */,
 				56CE7FC82DD61D290006E3B1 /* OpenFoodFacts in Frameworks */,
 				5681ED8B2DD62C4B0089D874 /* DesignSystem in Frameworks */,
 			);
@@ -220,7 +220,7 @@
 		56CE7FC12DD5FF420006E3B1 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				566C92A82DE071BF00D07B74 /* Scanner */,
+				56D426782DE4899F002A5B76 /* ScannerUI */,
 				566C92A52DE06F8800D07B74 /* Invoice */,
 				564AD33F2DDCA9A5009D488B /* Categories */,
 				5681ED892DD62BA50089D874 /* DesignSystem */,
@@ -270,7 +270,7 @@
 				564AD3402DDCAA3E009D488B /* Categories */,
 				561BDA332DDF798000AE8A76 /* Cross-Cutting */,
 				566C92A62DE06FB600D07B74 /* Invoice */,
-				566C92A92DE0731E00D07B74 /* Scanner */,
+				56D426792DE489D7002A5B76 /* ScannerUI */,
 			);
 			productName = "Grocery Guru";
 			productReference = 5639A5322BFF95930086857F /* Grocery Guru.app */;
@@ -776,10 +776,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Invoice;
 		};
-		566C92A92DE0731E00D07B74 /* Scanner */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Scanner;
-		};
 		5681ED8A2DD62C4B0089D874 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
@@ -791,6 +787,10 @@
 		56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OpenFoodFacts;
+		};
+		56D426792DE489D7002A5B76 /* ScannerUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScannerUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

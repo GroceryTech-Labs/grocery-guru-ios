@@ -35,11 +35,6 @@
           "containerPath" : "container:Packages\/Invoice",
           "identifier" : "Invoice",
           "name" : "Invoice"
-        },
-        {
-          "containerPath" : "container:Packages\/Scanner",
-          "identifier" : "Scanner",
-          "name" : "Scanner"
         }
       ]
     },
@@ -59,37 +54,9 @@
     },
     {
       "target" : {
-        "containerPath" : "container:Packages\/Scanner",
-        "identifier" : "ScannerTests",
-        "name" : "ScannerTests"
-      }
-    },
-    {
-      "target" : {
         "containerPath" : "container:Packages\/Cross-Cutting",
         "identifier" : "RoutingTests",
         "name" : "RoutingTests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:Grocery Guru.xcodeproj",
-        "identifier" : "5639A5432BFF95940086857F",
-        "name" : "Grocery GuruTests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:Packages\/Invoice",
-        "identifier" : "InvoiceTests",
-        "name" : "InvoiceTests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:Packages\/Cross-Cutting",
-        "identifier" : "GGAPITests",
-        "name" : "GGAPITests"
       }
     }
   ],

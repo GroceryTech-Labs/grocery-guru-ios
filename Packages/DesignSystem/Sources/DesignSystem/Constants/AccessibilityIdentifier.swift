@@ -3,7 +3,6 @@ import Foundation
 public enum AccessibilityIdentifier {
     public enum Button {
         public static let addInvoice = "button_add_invoice"
-        public static let addInvoiceDocument = "button_add_invoice_document"
         public static let addInvoiceBarcode = "button_add_invoice_barcode"
         public static let addInvoiceManual = "button_add_invoice_manual"
         public static let invoiceFormNutriments = "button_invoice_form_nutriments"

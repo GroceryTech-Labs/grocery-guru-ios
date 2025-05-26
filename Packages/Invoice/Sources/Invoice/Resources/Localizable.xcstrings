@@ -52,6 +52,7 @@
       }
     },
     "Document" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

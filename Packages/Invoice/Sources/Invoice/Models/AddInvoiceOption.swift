@@ -3,7 +3,6 @@ import DesignSystem
 
 public enum AddInvoiceOption: LocalizedStringKey, CaseIterable, Hashable {
     case barcode = "Barcode"
-    case document = "Document"
     case manual = "Manual"
 
     public static var allCases: [Self] {
@@ -17,9 +16,6 @@ public enum AddInvoiceOption: LocalizedStringKey, CaseIterable, Hashable {
 
         case .manual:
             AccessibilityIdentifier.Button.addInvoiceManual
-
-        case .document:
-            AccessibilityIdentifier.Button.addInvoiceDocument
         }
     }
 }

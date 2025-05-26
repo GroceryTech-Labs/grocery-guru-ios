@@ -3,10 +3,10 @@
 import PackageDescription
 
 let package = Package(
-    name: "Scanner",
+    name: "ScannerUI",
     platforms: [.iOS(.v17)],
     products: [
-        .library(name: "Scanner", targets: ["Scanner"])
+        .library(name: "ScannerUI", targets: ["ScannerUI"])
     ],
     dependencies: [
         .package(path: "../DesignSystem"),
@@ -15,8 +15,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Scanner", dependencies: ["DesignSystem", "OpenFoodFacts", "CodeScanner"]
-        ),
-        .testTarget(name: "ScannerTests", dependencies: ["Scanner"])
+            name: "ScannerUI", dependencies: ["DesignSystem", "OpenFoodFacts", "CodeScanner"]
+        )
     ]
 )

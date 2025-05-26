@@ -17,6 +17,6 @@ let package = Package(
         .target(
             name: "Invoice", dependencies: ["DesignSystem", "Categories"]
         ),
-        .testTarget(name: "InvoiceTests", dependencies: ["Invoice"])
+        .testTarget(name: "InvoiceTests", dependencies: ["Invoice", "Categories"])
     ]
 )
