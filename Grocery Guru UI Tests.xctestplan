@@ -32,9 +32,9 @@
           "name" : "Invoice"
         },
         {
-          "containerPath" : "container:Packages\/Scanner",
-          "identifier" : "Scanner",
-          "name" : "Scanner"
+          "containerPath" : "container:Packages\/ScannerUI",
+          "identifier" : "ScannerUI",
+          "name" : "ScannerUI"
         }
       ]
     },

@@ -11,11 +11,12 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../DesignSystem"),
-        .package(path: "../Categories")
+        .package(path: "../Categories"),
+        .package(path: "../ScannerUI")
     ],
     targets: [
         .target(
-            name: "Invoice", dependencies: ["DesignSystem", "Categories"]
+            name: "Invoice", dependencies: ["DesignSystem", "Categories", "ScannerUI"]
         ),
         .testTarget(name: "InvoiceTests", dependencies: ["Invoice", "Categories"])
     ]

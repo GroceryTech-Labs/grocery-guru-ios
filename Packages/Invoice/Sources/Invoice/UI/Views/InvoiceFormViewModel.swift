@@ -25,7 +25,7 @@ class InvoiceFormViewModel {
         name: String = "",
         amount: String = "1",
         measureUnit: MeasureUnit = .item,
-        category: UICategoryItem = UICategoryItem(.bakery),
+        category: UICategoryItem = UICategoryItem(.bakery)
     ) {
         self.categoryRepository = categoryRepository
         self.invoiceRepository = invoiceRepository
