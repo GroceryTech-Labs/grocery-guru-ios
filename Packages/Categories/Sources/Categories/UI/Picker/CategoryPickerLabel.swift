@@ -2,7 +2,7 @@ import SwiftUI
 import DesignSystem
 
 struct CategoryPickerLabel: View {
-    let selectedCategory: UICategoryItem
+    let selectedCategory: UICategoryItem?
     let category: UICategoryItem
 
     var body: some View {

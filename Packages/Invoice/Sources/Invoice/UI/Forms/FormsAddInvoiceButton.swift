@@ -12,8 +12,18 @@ struct FormsAddInvoiceButton: View {
                 return
             }
 
-            guard !viewModel.amount.isEmpty else {
-                focusedField = .amount
+            guard !viewModel.quantity.isEmpty else {
+                focusedField = .quantity
+                return
+            }
+
+            guard !viewModel.unit.isEmpty else {
+                focusedField = .unit
+                return
+            }
+
+            guard viewModel.category != nil else {
+                focusedField = nil
                 return
             }
 

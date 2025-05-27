@@ -11,8 +11,8 @@ public protocol InvoiceRepository: Sendable {
     func addInvoice(
         code: String?,
         name: String,
-        amount: Int,
-        measureUnit: MeasureUnit,
+        quantity: Int,
+        unit: String,
         category: UICategoryItem
     ) async throws
     func deleteInvoice(_ invoice: UIInvoiceItem) async

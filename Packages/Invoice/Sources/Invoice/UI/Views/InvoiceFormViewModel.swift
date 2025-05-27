@@ -8,45 +8,58 @@ import Routing
 class InvoiceFormViewModel {
     private let navigationService: NavigationService
     let categoryRepository: CategoryRepository
-    private var invoiceRepository: InvoiceRepository
+    private let invoiceRepository: InvoiceRepository
+    let productAPI: ProductAPI
 
     let code: String?
-    var name: String
-    var amount: String
-    var measureUnit: MeasureUnit
-    var category: UICategoryItem
-    var isPresentingNutriments = false
+    var name: String = ""
+    var quantity: String = ""
+    var unit: String = ""
+    var category: UICategoryItem?
 
     init(
         categoryRepository: CategoryRepository,
         invoiceRepository: InvoiceRepository,
+        productAPI: ProductAPI,
         navigationService: NavigationService = .shared,
         code: String? = nil,
-        name: String = "",
-        amount: String = "1",
-        measureUnit: MeasureUnit = .item,
-        category: UICategoryItem = UICategoryItem(.bakery)
     ) {
         self.categoryRepository = categoryRepository
         self.invoiceRepository = invoiceRepository
+        self.productAPI = productAPI
         self.navigationService = navigationService
         self.code = code
-        self.name = name
-        self.amount = amount
-        self.measureUnit = measureUnit
-        self.category = category
     }
 
     func addInvoice() async {
         do {
+            guard let category else {
+                return
+            }
+
             try await invoiceRepository.addInvoice(
                 code: code,
                 name: name,
-                amount: Int(amount) ?? 0,
-                measureUnit: measureUnit,
+                quantity: Int(quantity) ?? 0,
+                unit: unit,
                 category: category
             )
             navigationService.dropToRoot()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    @MainActor
+    func fetchProductInformation() async {
+        do {
+            let result = try await productAPI.fetchProduct(
+                barcode: code ?? "",
+                fields: [.productName, .productQuantity, .productUnit]
+            )
+            name = result.productName ?? ""
+            quantity = result.productQuantity ?? ""
+            unit = result.productQuantityUnit ?? ""
         } catch {
             print(error.localizedDescription)
         }

@@ -11,6 +11,7 @@ actor GGAPIImpl: GGAPI {
     func request<T>(_ request: any APIRequest<T>) async throws -> T where T: Decodable, T: Sendable {
         let urlRequest = request.urlRequest(relativeTo: baseURL)
 
+        print("💙:  \(urlRequest.url?.absoluteString ?? "Unknown")")
         do {
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
 

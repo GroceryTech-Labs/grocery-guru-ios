@@ -5,21 +5,21 @@ public struct UIInvoiceItem: Identifiable, Equatable, Sendable {
     public let id: UUID = UUID()
     public let code: String?
     public let name: String
-    public let amount: Int
-    public let measureUnit: MeasureUnit
+    public let quantity: Int
+    public let unit: String
     public let category: UICategoryItem
 
     public init(
         code: String? = nil,
         name: String,
-        amount: Int,
-        measureUnit: MeasureUnit,
+        quantity: Int,
+        unit: String,
         category: UICategoryItem
     ) {
         self.code = code
         self.name = name
-        self.amount = amount
+        self.quantity = quantity
+        self.unit = unit
         self.category = category
-        self.measureUnit = measureUnit
     }
 }

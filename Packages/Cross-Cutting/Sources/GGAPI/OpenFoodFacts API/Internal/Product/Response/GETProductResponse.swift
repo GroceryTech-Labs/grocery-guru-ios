@@ -16,12 +16,16 @@ struct GETProductResponseElement: Decodable, Sendable {
 
 struct ProductDTO: Decodable, Sendable {
     enum CodingKeys: String, CodingKey {
-        case nutriments
         case productName = "product_name"
+        case productQuantity = "product_quantity"
+        case productQuantityUnit = "product_quantity_unit"
+        case nutriments
     }
 
-    let nutriments: NutrimentsDTO
-    let productName: String
+    let productName: String?
+    let productQuantity: String?
+    let productQuantityUnit: String?
+    let nutriments: NutrimentsDTO?
 }
 
 struct NutrimentsDTO: Decodable, Sendable {

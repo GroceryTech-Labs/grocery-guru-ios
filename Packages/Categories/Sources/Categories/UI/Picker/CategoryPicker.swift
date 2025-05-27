@@ -23,7 +23,7 @@ public class CategoryPickerViewModel {
 }
 
 public struct CategoryPicker: View {
-    @Binding var selectedElement: UICategoryItem
+    @Binding var selectedElement: UICategoryItem?
     @State private var viewModel: CategoryPickerViewModel
 
     public var body: some View {
@@ -33,7 +33,7 @@ public struct CategoryPicker: View {
         ) { category in
             CategoryPickerLabel(
                 selectedCategory: selectedElement,
-                category: category
+                category: category ?? .init(categoryName: "", emoji: "")
             )
         }
         .onAppear {
@@ -43,7 +43,7 @@ public struct CategoryPicker: View {
         }
     }
 
-    public init(viewModel: CategoryPickerViewModel, selectedElement: Binding<UICategoryItem>) {
+    public init(viewModel: CategoryPickerViewModel, selectedElement: Binding<UICategoryItem?>) {
         self._selectedElement = selectedElement
         self.viewModel = viewModel
     }

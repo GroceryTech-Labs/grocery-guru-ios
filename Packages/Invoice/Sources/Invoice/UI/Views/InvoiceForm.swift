@@ -5,9 +5,9 @@ import Categories
 
 public struct InvoiceForm: View {
     enum Field: Hashable {
-        case amount
         case name
-        case market
+        case quantity
+        case unit
     }
 
     @State private var viewModel: InvoiceFormViewModel
@@ -21,15 +21,14 @@ public struct InvoiceForm: View {
                         .focused($focusedField, equals: .name)
                         .submitLabel(.next)
                         .onSubmit {
-                            focusedField = .amount
+                            focusedField = .quantity
                         }
 
-                    AmountRow(amount: $viewModel.amount, measureUnit: $viewModel.measureUnit)
-                        .focused($focusedField, equals: .amount)
-                        .submitLabel(.next)
-                        .onSubmit {
-                            focusedField = nil
-                        }
+                    QuantityRow(
+                        focusedField: _focusedField,
+                        quantity: $viewModel.quantity,
+                        unit: $viewModel.unit
+                    )
 
                     CategoryPickerRow(
                         selectedCategory: $viewModel.category,
@@ -38,7 +37,7 @@ public struct InvoiceForm: View {
 
                     if let code = viewModel.code {
                         NutrimentsRow(
-                            isExpanded: $viewModel.isPresentingNutriments,
+                            productAPI: viewModel.productAPI,
                             code: code
                         )
                     }
@@ -52,19 +51,24 @@ public struct InvoiceForm: View {
             .padding(.horizontal, Constants.Padding.sizeL)
         }
         .scrollIndicators(.hidden)
+        .onAppear {
+            Task {
+                await viewModel.fetchProductInformation()
+            }
+        }
     }
 
     public init(
         categoryRepository: CategoryRepository,
         invoiceRepository: InvoiceRepository,
-        code: String? = nil,
-        name: String? = nil
+        productAPI: ProductAPI,
+        code: String? = nil
     ) {
         viewModel = InvoiceFormViewModel(
             categoryRepository: categoryRepository,
             invoiceRepository: invoiceRepository,
-            code: code,
-            name: name ?? ""
+            productAPI: productAPI,
+            code: code
         )
     }
 }

@@ -40,12 +40,12 @@ extension NavigationDestination {
             )
         case .categorySettings:
             CategorySettingsView(repository: CategoryRepositoryImpl())
-        case .invoiceForm(let invoice):
+        case .invoiceForm(let code):
             InvoiceForm(
                 categoryRepository: CategoryRepositoryImpl(),
                 invoiceRepository: InvoiceRepositoryImpl(),
-                code: invoice?.code,
-                name: invoice?.name
+                productAPI: ProductAPIImpl(OpenFoodFactsEndpoint.baseURL),
+                code: code
             )
         case .invoiceList(let categoryName):
             InvoiceList(

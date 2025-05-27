@@ -32,6 +32,7 @@
       }
     },
     "Amount" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -161,6 +162,12 @@
           }
         }
       }
+    },
+    "Quantity" : {
+
+    },
+    "Unit" : {
+
     }
   },
   "version" : "1.0"

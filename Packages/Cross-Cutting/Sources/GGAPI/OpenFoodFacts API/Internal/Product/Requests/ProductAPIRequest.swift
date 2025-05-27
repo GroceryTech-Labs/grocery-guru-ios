@@ -6,7 +6,7 @@ class ProductAPIRequest: APIRequest, @unchecked Sendable {
 
     let decoder: JSONDecoder? = nil
     let path: String
-    let queryItems: [URLQueryItem]
+    var queryItems: [URLQueryItem] = []
 
     var httpMethod: HTTPMethod {
         .get

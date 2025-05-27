@@ -28,7 +28,9 @@ extension InvoiceRepositoryImpl {
         do {
             let response = try await repository.fetch(
                 descriptor: FetchDescriptor<InvoiceElement>(
-                    predicate: #Predicate { $0.category.categoryName == categoryName }
+                    predicate: #Predicate {
+                        $0.category.categoryName == categoryName
+                    }
                 )
             )
             return response
@@ -42,8 +44,8 @@ extension InvoiceRepositoryImpl {
         UIInvoiceItem(
             code: invoice.code,
             name: invoice.name,
-            amount: invoice.amount,
-            measureUnit: invoice.measureUnit,
+            quantity: invoice.quantity,
+            unit: invoice.unit,
             category: UICategoryItem(
                 categoryName: invoice.category.categoryName,
                 emoji: invoice.category.emoji
@@ -57,8 +59,8 @@ extension InvoiceRepositoryImpl {
     public func addInvoice(
         code: String?,
         name: String,
-        amount: Int,
-        measureUnit: MeasureUnit,
+        quantity: Int,
+        unit: String,
         category: UICategoryItem
     ) async throws {
         do {
@@ -66,8 +68,8 @@ extension InvoiceRepositoryImpl {
                 InvoiceElement(
                     code: code,
                     name: name,
-                    amount: amount,
-                    measureUnit: measureUnit,
+                    quantity: quantity,
+                    unit: unit,
                     category: CategoryElement(
                         categoryName: category.categoryName,
                         emoji: category.emoji
@@ -86,8 +88,8 @@ extension InvoiceRepositoryImpl {
         let element = InvoiceElement(
             code: invoice.code,
             name: invoice.name,
-            amount: invoice.amount,
-            measureUnit: invoice.measureUnit,
+            quantity: invoice.quantity,
+            unit: invoice.unit,
             category: CategoryElement(
                 categoryName: invoice.category.categoryName,
                 emoji: invoice.category.emoji

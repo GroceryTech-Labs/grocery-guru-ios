@@ -2,7 +2,7 @@ import SwiftUI
 import DesignSystem
 
 public struct CategoryPickerRow: View {
-    @Binding var selectedCategory: UICategoryItem
+    @Binding var selectedCategory: UICategoryItem?
     private let categoryRepository: CategoryRepository
 
     public var body: some View {
@@ -16,7 +16,7 @@ public struct CategoryPickerRow: View {
         }
     }
 
-    public init(selectedCategory: Binding<UICategoryItem>, categoryRepository: CategoryRepository) {
+    public init(selectedCategory: Binding<UICategoryItem?>, categoryRepository: CategoryRepository) {
         self._selectedCategory = selectedCategory
         self.categoryRepository = categoryRepository
     }
