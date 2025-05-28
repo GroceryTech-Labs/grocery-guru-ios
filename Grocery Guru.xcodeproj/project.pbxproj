@@ -25,10 +25,10 @@
 		568560EF2C15AF96003BDAED /* TapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560EE2C15AF96003BDAED /* TapAction.swift */; };
 		568560F12C15B08F003BDAED /* TypeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560F02C15B08F003BDAED /* TypeAction.swift */; };
 		56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3022C1B9BB100BF8030 /* OFFError.swift */; };
+		56AB11752DE7A92E00937B46 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 56AB11742DE7A92E00937B46 /* Localizable.xcstrings */; };
 		56CE7FC82DD61D290006E3B1 /* OpenFoodFacts in Frameworks */ = {isa = PBXBuildFile; productRef = 56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */; };
 		56D4267A2DE489D7002A5B76 /* ScannerUI in Frameworks */ = {isa = PBXBuildFile; productRef = 56D426792DE489D7002A5B76 /* ScannerUI */; };
 		56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC782C0C89E800D2D965 /* HomeViewList.swift */; };
-		56FFAC822C0CC82300D2D965 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,12 +70,12 @@
 		568560EE2C15AF96003BDAED /* TapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAction.swift; sourceTree = "<group>"; };
 		568560F02C15B08F003BDAED /* TypeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAction.swift; sourceTree = "<group>"; };
 		56AAD3022C1B9BB100BF8030 /* OFFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFError.swift; sourceTree = "<group>"; };
+		56AB11742DE7A92E00937B46 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		56CE7FC22DD5FFA70006E3B1 /* Cross-Cutting */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "Cross-Cutting"; sourceTree = "<group>"; };
 		56CE7FC32DD616CB0006E3B1 /* OpenFoodFacts */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OpenFoodFacts; sourceTree = "<group>"; };
 		56D426782DE4899F002A5B76 /* ScannerUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ScannerUI; sourceTree = "<group>"; };
 		56F51B092DD7951000694E61 /* Grocery Guru UI Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Grocery Guru UI Tests.xctestplan"; sourceTree = "<group>"; };
 		56FFAC782C0C89E800D2D965 /* HomeViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewList.swift; sourceTree = "<group>"; };
-		56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +160,8 @@
 		5639A5622BFF97BD0086857F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				56AB11742DE7A92E00937B46 /* Localizable.xcstrings */,
 				5639A5612BFF97BD0086857F /* Assets.xcassets */,
-				56FFAC812C0CC82300D2D965 /* Localizable.xcstrings */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -367,8 +367,8 @@
 			files = (
 				56415D012C0CCAE100C58D4E /* .swiftlint.yml in Resources */,
 				5639A5722BFF97BD0086857F /* Preview Assets.xcassets in Resources */,
+				56AB11752DE7A92E00937B46 /* Localizable.xcstrings in Resources */,
 				5639A5702BFF97BD0086857F /* Assets.xcassets in Resources */,
-				56FFAC822C0CC82300D2D965 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +597,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Grocery-Guru-Info.plist";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "By approving you'll allow us to scan your invoices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -630,6 +631,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Grocery-Guru-Info.plist";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "By approving you'll allow us to scan your invoices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

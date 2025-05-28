@@ -31,7 +31,7 @@ struct FormsAddInvoiceButton: View {
                 await viewModel.addInvoice()
             }
         } label: {
-            Text("Add to inventory")
+            Text("Add to inventory", bundle: .module)
                 .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
         }

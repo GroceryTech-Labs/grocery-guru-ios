@@ -12,13 +12,13 @@ struct CategoryCreationView: View {
 
     var body: some View {
         ScrollView {
-            SectionHeader("Create Category") {
+            SectionHeader(String(localized: "Create Category", bundle: .module)) {
                 VStack(spacing: Constants.Padding.sizeXL) {
                     SectionHeader("Name", font: .headline) {
                         TextField(
                             "Name",
                             text: $viewModel.name,
-                            prompt: Text("Pringles")
+                            prompt: Text("Pringles", bundle: .main)
                         )
                         .textFieldStyle(.roundedBorder)
                         .accessibilityIdentifier(
@@ -40,7 +40,7 @@ struct CategoryCreationView: View {
                         focusedField = nil
                     }
 
-                    SectionHeader("Preview", font: .headline) {
+                    SectionHeader(String(localized: "Preview", bundle: .module), font: .headline) {
                         CategoryCard(
                             category: UICategoryItem(
                                 categoryName: viewModel.name,
@@ -54,7 +54,7 @@ struct CategoryCreationView: View {
                             await viewModel.addCategory()
                         }
                     } label: {
-                        Text("Create")
+                        Text("Create", bundle: .main)
                             .frame(maxWidth: .infinity)
                     }
                     .disabled(viewModel.emoji.isEmpty || viewModel.name.isEmpty)
@@ -65,7 +65,7 @@ struct CategoryCreationView: View {
                     viewModel.resetToInitialState()
                 } label: {
                     Image(systemName: "eraser")
-                        .accessibilityLabel("Reset")
+                        .accessibilityLabel(String(localized: "Reset", bundle: .module))
                 }
             }
             .padding(Constants.Padding.sizeL)

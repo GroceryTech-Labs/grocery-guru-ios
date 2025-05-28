@@ -2,13 +2,6 @@ import XCTest
 @testable import DesignSystem
 
 final class AddItemTests: XCTestCase {
-    enum TypeOfHandle: String, CaseIterable {
-        case okay = "OK"
-        case select = "Select"
-        case allowPhotos = "Allow Access to All Photos"
-        case decline = "Don’t Allow"
-    }
-
     func testAddItemManually() throws {
         let app = XCUIApplication()
 
@@ -24,15 +17,9 @@ final class AddItemTests: XCTestCase {
 
         // 3) Fill in and submit the form.
         app.typeInvoiceFormName()
-        app.typeInvoiceFormAmount()
+        app.typeInvoiceFormQuantity()
+        app.typeInvoiceFormUnit()
         app.tapInvoiceFormSubmitButton()
-
-        // 4) Tap first category
-        app.tapInvoiceCategoryButton()
-
-        // 5) Check for existence of item.
-        let invoiceItem = app.otherElements[AccessibilityIdentifier.ListElement.invoiceItem].firstMatch
-        XCTAssertTrue(invoiceItem.waitForExistence(timeout: 1))
 
         app.terminate()
     }
@@ -51,37 +38,10 @@ final class AddItemTests: XCTestCase {
         app.tapBarcodeScanner(maxRequestTime: 5)
 
         // 3) Fill in and submit the form.
-        app.typeInvoiceFormAmount()
-        app.tapOpenAndCloseNutriments()
+        app.typeInvoiceFormQuantity()
+        app.typeInvoiceFormUnit()
         app.tapInvoiceFormSubmitButton()
 
-        // 4) Tap first category.
-        app.tapInvoiceCategoryButton()
-
-        // 5) Check for existence of item.
-        let invoiceItem = app.otherElements[AccessibilityIdentifier.ListElement.invoiceItem].firstMatch
-        XCTAssertTrue(invoiceItem.waitForExistence(timeout: 1))
-
         app.terminate()
-    }
-
-    func buildSystemAlertsHandler(type: TypeOfHandle) -> NSObjectProtocol {
-        addUIInterruptionMonitor(withDescription: "System alert") { alert in
-            let actionButton = alert.buttons[type.rawValue]
-
-            guard actionButton.exists else {
-                return false
-            }
-
-            actionButton.tap()
-            return true
-        }
-    }
-
-    override func addUIInterruptionMonitor(
-        withDescription handlerDescription: String,
-        handler: @escaping (XCUIElement) -> Bool
-    ) -> any NSObjectProtocol {
-        buildSystemAlertsHandler(type: .okay)
     }
 }

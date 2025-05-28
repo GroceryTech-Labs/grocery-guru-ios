@@ -9,7 +9,7 @@ import Testing
     }
 
     @Test func fetchProduct() async throws {
-        let result = try await api.fetchProduct(barcode: "")
+        let result = try await api.fetchProduct(barcode: "", fields: [])
         #expect(result.productName == "Spezi")
     }
 

@@ -6,13 +6,13 @@ public struct CategoryPickerRow: View {
     private let categoryRepository: CategoryRepository
 
     public var body: some View {
-        SectionHeader("Category", font: .headline) {
+        SectionHeader(String(localized: "Category", bundle: .module), font: .headline) {
             CategoryPicker(
                 viewModel: CategoryPickerViewModel(repository: categoryRepository),
                 selectedElement: $selectedCategory
             )
         } trailing: {
-            Button("Show all") { }
+            Button(String(localized: "Show all", bundle: .module)) { }
         }
     }
 

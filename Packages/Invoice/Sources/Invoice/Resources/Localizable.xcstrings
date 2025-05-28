@@ -31,34 +31,12 @@
         }
       }
     },
-    "Amount" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anzahl"
-          }
-        }
-      }
-    },
     "Barcode" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Barcode"
-          }
-        }
-      }
-    },
-    "Document" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dokument"
           }
         }
       }
@@ -73,16 +51,6 @@
         }
       }
     },
-    "g" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "g"
-          }
-        }
-      }
-    },
     "Invoice Items" : {
       "localizations" : {
         "de" : {
@@ -93,32 +61,12 @@
         }
       }
     },
-    "Item" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stück"
-          }
-        }
-      }
-    },
     "Manual" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Manuell"
-          }
-        }
-      }
-    },
-    "Measure Unit" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Maßeinheit"
           }
         }
       }
@@ -164,10 +112,24 @@
       }
     },
     "Quantity" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anzahl"
+          }
+        }
+      }
     },
     "Unit" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einheit"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

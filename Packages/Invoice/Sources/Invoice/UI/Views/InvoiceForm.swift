@@ -15,7 +15,7 @@ public struct InvoiceForm: View {
 
     public var body: some View {
         ScrollView {
-            SectionHeader("Add Item") {
+            SectionHeader(String(localized: "Add Item", bundle: .module)) {
                 VStack(spacing: Constants.Padding.sizeXL) {
                     NameRow(name: $viewModel.name)
                         .focused($focusedField, equals: .name)

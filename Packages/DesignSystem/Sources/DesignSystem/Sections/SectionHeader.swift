@@ -1,7 +1,7 @@
 import SwiftUI
 
 public struct SectionHeader<Content: View, Trailing: View>: View {
-    private let text: LocalizedStringKey
+    private let text: String
     private let font: Font
     private let content: Content
     private let trailing: Trailing?
@@ -28,7 +28,7 @@ public struct SectionHeader<Content: View, Trailing: View>: View {
     }
 
     public init(
-        _ text: LocalizedStringKey,
+        _ text: String,
         font: Font = .title,
         @ViewBuilder _ content: () -> Content,
         @ViewBuilder trailing: () -> Trailing? = { EmptyView() }

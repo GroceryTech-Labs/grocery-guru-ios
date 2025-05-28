@@ -7,11 +7,11 @@ public struct CategorySettingsView: View {
     public var body: some View {
         NavigationView {
             ScrollView {
-                SectionHeader("Category Settings") {
+                SectionHeader(String(localized: "Category Settings", bundle: .module)) {
                     NavigationLink {
                         CategoryCreationView(viewModel: CategoryCreationViewModel(repository: repository))
                     } label: {
-                        Text("Create")
+                        Text("Create", bundle: .module)
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.secondary)
@@ -23,7 +23,7 @@ public struct CategorySettingsView: View {
                         // Update category (also update items category)
                         // CategoryCreationView(viewModel: CategoryCreationViewModel(repository: .shared))
                     } label: {
-                        Text("Manage")
+                        Text("Manage", bundle: .module)
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.secondary)

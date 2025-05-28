@@ -7,6 +7,11 @@ public struct CategoryCard: View {
     private var navigator
 
     private let category: UICategoryItem
+
+    private var invoiceCount: Int {
+        category.invoiceCount
+    }
+
     private let isPreview: Bool
     private let emojiSize: CGFloat = 64
 
@@ -18,9 +23,12 @@ public struct CategoryCard: View {
 
                 VStack(spacing: Constants.Padding.sizeS) {
                     Text(category.categoryName)
-                    Text("\(category.invoiceCount) Invoices")
-                        .foregroundStyle(.secondary)
-                        .font(.footnote)
+                    Text(
+                        "\(invoiceCount) Invoices",
+                        bundle: .module
+                    )
+                    .foregroundStyle(.secondary)
+                    .font(.footnote)
                 }
             }
             .frame(maxWidth: .infinity, alignment: .center)
@@ -31,7 +39,12 @@ public struct CategoryCard: View {
         .accessibilityAddTraits(.isButton)
         .buttonStyle(.plain)
         .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceCategory)
-        .accessibilityLabel("Category Card")
+        .accessibilityLabel(
+            String(
+                localized: "Category Card",
+                bundle: .module
+            )
+        )
     }
 
     public init(category: UICategoryItem, isPreview: Bool = false) {
