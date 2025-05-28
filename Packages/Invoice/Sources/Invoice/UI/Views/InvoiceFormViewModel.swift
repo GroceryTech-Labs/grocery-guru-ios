@@ -53,10 +53,18 @@ class InvoiceFormViewModel {
     @MainActor
     func fetchProductInformation() async {
         do {
+            guard let code else {
+                name = ""
+                quantity = ""
+                unit = ""
+                return
+            }
+
             let result = try await productAPI.fetchProduct(
-                barcode: code ?? "",
+                barcode: code,
                 fields: [.productName, .productQuantity, .productUnit]
             )
+
             name = result.productName ?? ""
             quantity = result.productQuantity ?? ""
             unit = result.productQuantityUnit ?? ""
