@@ -47,10 +47,10 @@ extension NavigationDestination {
                 productAPI: ProductAPIImpl(OpenFoodFactsEndpoint.baseURL),
                 code: code
             )
-        case .invoiceList(let categoryName):
+        case .invoiceList(let categoryId):
             InvoiceList(
                 invoiceRepository: InvoiceRepositoryImpl(),
-                categoryName: categoryName
+                categoryId: categoryId
             )
         }
     }

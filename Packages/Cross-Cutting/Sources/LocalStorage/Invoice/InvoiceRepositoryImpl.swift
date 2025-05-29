@@ -24,12 +24,12 @@ extension InvoiceRepositoryImpl {
         }
     }
 
-    public func fetchInvoicesByCategory(_ categoryName: String) async throws -> [UIInvoiceItem] {
+    public func fetchInvoicesByCategory(_ categoryId: UUID) async throws -> [UIInvoiceItem] {
         do {
             let response = try await repository.fetch(
                 descriptor: FetchDescriptor<InvoiceElement>(
                     predicate: #Predicate {
-                        $0.category.categoryName == categoryName
+                        $0.category.id == categoryId
                     }
                 )
             )
@@ -47,8 +47,10 @@ extension InvoiceRepositoryImpl {
             quantity: invoice.quantity,
             unit: invoice.unit,
             category: UICategoryItem(
+                id: invoice.category.id,
                 categoryName: invoice.category.categoryName,
-                emoji: invoice.category.emoji
+                emoji: invoice.category.emoji,
+                invoiceCount: invoice.category.invoices.count
             )
         )
     }
@@ -71,8 +73,9 @@ extension InvoiceRepositoryImpl {
                     quantity: quantity,
                     unit: unit,
                     category: CategoryElement(
+                        id: category.id,
                         categoryName: category.categoryName,
-                        emoji: category.emoji
+                        emoji: category.emoji,
                     )
                 )
             )
@@ -91,6 +94,7 @@ extension InvoiceRepositoryImpl {
             quantity: invoice.quantity,
             unit: invoice.unit,
             category: CategoryElement(
+                id: invoice.category.id,
                 categoryName: invoice.category.categoryName,
                 emoji: invoice.category.emoji
             )

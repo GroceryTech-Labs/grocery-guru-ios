@@ -13,6 +13,7 @@ actor SwiftDataRepositoryImpl<Element: PersistentModel>: SwiftDataRepository {
 
     func fetch(descriptor: FetchDescriptor<Element>) throws -> [Element] {
         do {
+            print("fetch, descriptor: \(descriptor)")
             return try modelContext.fetch(descriptor)
         } catch {
             throw SwiftDataError.fetch

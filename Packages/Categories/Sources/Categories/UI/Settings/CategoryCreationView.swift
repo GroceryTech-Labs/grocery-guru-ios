@@ -40,14 +40,12 @@ struct CategoryCreationView: View {
                         focusedField = nil
                     }
 
-                    SectionHeader(String(localized: "Preview", bundle: .module), font: .headline) {
-                        CategoryCard(
-                            category: UICategoryItem(
-                                categoryName: viewModel.name,
-                                emoji: viewModel.emoji
-                            )
+                    CategoryPreviewRow(
+                        category: UICategoryItem(
+                            categoryName: viewModel.name,
+                            emoji: viewModel.emoji
                         )
-                    }
+                    )
 
                     Button {
                         Task {

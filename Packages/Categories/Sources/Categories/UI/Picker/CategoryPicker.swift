@@ -33,7 +33,7 @@ public struct CategoryPicker: View {
         ) { category in
             CategoryPickerLabel(
                 selectedCategory: selectedElement,
-                category: category ?? .init(categoryName: "", emoji: "")
+                category: category ?? UICategoryItem(categoryName: "", emoji: "")
             )
         }
         .onAppear {

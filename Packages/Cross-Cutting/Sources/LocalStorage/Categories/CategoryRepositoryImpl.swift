@@ -18,13 +18,14 @@ extension CategoryRepositoryImpl {
             let response = try await repository.fetch()
             let customCategories = response.map {
                 UICategoryItem(
+                    id: $0.id,
                     categoryName: $0.categoryName,
                     emoji: $0.emoji,
                     invoiceCount: $0.invoices.count
                 )
             }
             _ = BaseCategory.allCases.map {
-                UICategoryItem(categoryName: $0.name, emoji: $0.emoji)
+                UICategoryItem($0)
             }
             return customCategories
         } catch {
@@ -37,7 +38,9 @@ extension CategoryRepositoryImpl {
 extension CategoryRepositoryImpl {
     public func addCategory(name: String, emoji: String) async throws {
         do {
-            try await repository.add(CategoryElement(categoryName: name, emoji: emoji))
+            try await repository.add(
+                CategoryElement(categoryName: name, emoji: emoji)
+            )
         } catch {
             throw SwiftDataError.adding
         }
@@ -48,6 +51,7 @@ extension CategoryRepositoryImpl {
 extension CategoryRepositoryImpl {
     public func deleteCategory(_ category: UICategoryItem) async {
         let element = CategoryElement(
+            id: category.id,
             categoryName: category.categoryName,
             emoji: category.emoji
         )

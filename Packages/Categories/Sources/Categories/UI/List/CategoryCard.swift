@@ -6,11 +6,7 @@ public struct CategoryCard: View {
     @Environment(\.navigationService)
     private var navigator
 
-    private let category: UICategoryItem
-
-    private var invoiceCount: Int {
-        category.invoiceCount
-    }
+    @Binding private var category: UICategoryItem
 
     private let isPreview: Bool
     private let emojiSize: CGFloat = 64
@@ -24,7 +20,7 @@ public struct CategoryCard: View {
                 VStack(spacing: Constants.Padding.sizeS) {
                     Text(category.categoryName)
                     Text(
-                        "\(invoiceCount) Invoices",
+                        "\(category.invoiceCount) Invoices",
                         bundle: .module
                     )
                     .foregroundStyle(.secondary)
@@ -34,7 +30,7 @@ public struct CategoryCard: View {
             .frame(maxWidth: .infinity, alignment: .center)
         }
         .onTapGesture {
-            navigator.push(.invoiceList(categoryName: category.categoryName))
+            navigator.push(.invoiceList(categoryId: category.id))
         }
         .accessibilityAddTraits(.isButton)
         .buttonStyle(.plain)
@@ -47,18 +43,8 @@ public struct CategoryCard: View {
         )
     }
 
-    public init(category: UICategoryItem, isPreview: Bool = false) {
-        self.category = category
+    public init(category: Binding<UICategoryItem>, isPreview: Bool = false) {
+        self._category = category
         self.isPreview = isPreview
     }
-}
-
-#Preview(traits: .sizeThatFitsLayout) {
-    CategoryCard(
-        category: UICategoryItem(
-            categoryName: "Egg",
-            emoji: "🥚"
-        )
-    )
-    .padding()
 }
