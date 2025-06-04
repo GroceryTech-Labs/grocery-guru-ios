@@ -59,3 +59,20 @@ extension CategoryRepositoryImpl {
         await repository.delete(element)
     }
 }
+
+// MARK: editCategory()
+extension CategoryRepositoryImpl {
+    public func editCategory(_ category: UICategoryItem) async throws {
+        do {
+            try await repository.edit(
+                CategoryElement(
+                    id: category.id,
+                    categoryName: category.categoryName,
+                    emoji: category.emoji
+                )
+            )
+        } catch {
+            throw SwiftDataError.adding
+        }
+    }
+}

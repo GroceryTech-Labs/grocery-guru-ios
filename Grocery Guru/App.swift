@@ -38,8 +38,11 @@ extension NavigationDestination {
                 invoiceRepository: InvoiceRepositoryImpl(),
                 selectedOption: .barcode
             )
-        case .categorySettings:
-            CategorySettingsView(repository: CategoryRepositoryImpl())
+        case .categorySettings(let categoryId):
+            CategorySettingsView(
+                repository: CategoryRepositoryImpl(),
+                categoryId: categoryId
+            )
         case .invoiceForm(let code):
             InvoiceForm(
                 categoryRepository: CategoryRepositoryImpl(),

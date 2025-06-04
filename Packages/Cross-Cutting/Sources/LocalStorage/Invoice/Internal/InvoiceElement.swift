@@ -28,3 +28,15 @@ class InvoiceElement: @unchecked Sendable {
         self.category = category
     }
 }
+
+extension InvoiceElement: UpdatableBy {
+    typealias Source = InvoiceElement
+    func update(from source: InvoiceElement) {
+        self.code = source.code
+        self.name = source.name
+        self.quantity = source.quantity
+        self.unit = source.unit
+        self.category = source.category
+        // Do not update id
+    }
+}

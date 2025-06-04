@@ -7,10 +7,10 @@ struct QuantityRow: View {
     @Binding var unit: String
 
     var body: some View {
-        SectionHeader(String(localized: "Quantity", bundle: .module), font: .headline) {
+        SectionHeader("Quantity".localized, font: .headline) {
             HStack {
                 TextField(
-                    String(localized: "Quantity", bundle: .module),
+                    "Quantity".localized,
                     text: $quantity
                 )
                 .focused($focusedField, equals: .quantity)
@@ -23,7 +23,7 @@ struct QuantityRow: View {
                 .accessibilityIdentifier(AccessibilityIdentifier.TextField.invoiceFormQuantity)
 
                 TextField(
-                    String(localized: "Unit", bundle: .module),
+                    "Unit".localized,
                     text: $unit
                 )
                 .focused($focusedField, equals: .unit)

@@ -34,14 +34,11 @@ public struct InvoiceList: View {
     @State private var viewModel: InvoiceListViewModel
 
     public var body: some View {
-        SectionHeader(String(localized: "Invoice Items", bundle: .module)) {
+        SectionHeader("Invoice Items".localized) {
             Group {
                 if viewModel.invoices.isEmpty {
                     ErrorView(
-                        text: String(
-                            localized: "No items found!",
-                            bundle: .module
-                        )
+                        text: "No items found!".localized
                     )
                 } else if let error = viewModel.error {
                     ErrorView(text: error.localizedDescription)

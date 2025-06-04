@@ -22,12 +22,7 @@ struct InvoiceItemListRow: View {
                 Spacer()
 
                 Image(systemName: "chevron.right")
-                    .accessibilityLabel(
-                        String(
-                            localized: "Open Invoice Item",
-                            bundle: .module
-                        )
-                    )
+                    .accessibilityLabel("Open Invoice Item".localized)
             }
         }
         .accessibilityElement()

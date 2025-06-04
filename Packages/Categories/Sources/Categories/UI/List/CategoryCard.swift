@@ -19,10 +19,7 @@ public struct CategoryCard: View {
 
                 VStack(spacing: Constants.Padding.sizeS) {
                     Text(category.categoryName)
-                    Text(
-                        "\(category.invoiceCount) Invoices",
-                        bundle: .module
-                    )
+                    Text("\(category.invoiceCount) Invoices".localized)
                     .foregroundStyle(.secondary)
                     .font(.footnote)
                 }
@@ -35,12 +32,7 @@ public struct CategoryCard: View {
         .accessibilityAddTraits(.isButton)
         .buttonStyle(.plain)
         .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceCategory)
-        .accessibilityLabel(
-            String(
-                localized: "Category Card",
-                bundle: .module
-            )
-        )
+        .accessibilityLabel("Category Card".localized)
     }
 
     public init(category: Binding<UICategoryItem>, isPreview: Bool = false) {

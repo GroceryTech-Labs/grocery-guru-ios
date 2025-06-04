@@ -32,13 +32,15 @@ private extension String {
 public struct EmojiTextFieldWrapper: UIViewRepresentable {
     @Binding var text: String
 
+    @Environment(\.editMode) var editMode
+
     public init(text: Binding<String>) {
         self._text = text
     }
 
     public func makeUIView(context: Context) -> EmojiTextField {
         let textField = EmojiTextField()
-        textField.borderStyle = .roundedRect
+        textField.borderStyle = editMode?.wrappedValue.isEditing ?? false ? .roundedRect : .none
         textField.placeholder = "e.g 🛒"
         textField.delegate = context.coordinator
         textField.addDoneButton()

@@ -12,13 +12,13 @@ struct CategoryCreationView: View {
 
     var body: some View {
         ScrollView {
-            SectionHeader(String(localized: "Create Category", bundle: .module)) {
+            SectionHeader("Create Category".localized) {
                 VStack(spacing: Constants.Padding.sizeXL) {
-                    SectionHeader("Name", font: .headline) {
+                    SectionHeader("Name".localized, font: .headline) {
                         TextField(
-                            "Name",
+                            "Name".localized,
                             text: $viewModel.name,
-                            prompt: Text("Pringles", bundle: .main)
+                            prompt: Text("Pringles".localized)
                         )
                         .textFieldStyle(.roundedBorder)
                         .accessibilityIdentifier(
@@ -31,7 +31,7 @@ struct CategoryCreationView: View {
                         focusedField = .emoji
                     }
 
-                    SectionHeader("Emoji", font: .headline) {
+                    SectionHeader("Emoji".localized, font: .headline) {
                         EmojiTextFieldWrapper(text: $viewModel.emoji)
                     }
                     .focused($focusedField, equals: .emoji)
@@ -52,7 +52,7 @@ struct CategoryCreationView: View {
                             await viewModel.addCategory()
                         }
                     } label: {
-                        Text("Create", bundle: .main)
+                        Text("Create".localized)
                             .frame(maxWidth: .infinity)
                     }
                     .disabled(viewModel.emoji.isEmpty || viewModel.name.isEmpty)
@@ -63,7 +63,7 @@ struct CategoryCreationView: View {
                     viewModel.resetToInitialState()
                 } label: {
                     Image(systemName: "eraser")
-                        .accessibilityLabel(String(localized: "Reset", bundle: .module))
+                        .accessibilityLabel("Reset".localized)
                 }
             }
             .padding(Constants.Padding.sizeL)

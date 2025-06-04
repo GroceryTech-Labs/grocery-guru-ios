@@ -19,7 +19,7 @@ struct HomeViewList: View {
                 )
             } trailing: {
                 Button {
-                    navigator.push(.categorySettings)
+                    navigator.push(.categorySettings(categoryId: UUID()))
                 } label: {
                     Image(systemName: "gearshape")
                         .imageScale(.large)

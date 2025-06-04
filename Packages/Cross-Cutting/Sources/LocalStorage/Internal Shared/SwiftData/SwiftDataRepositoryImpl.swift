@@ -32,4 +32,12 @@ actor SwiftDataRepositoryImpl<Element: PersistentModel>: SwiftDataRepository {
     func delete(_ element: Element) {
         modelContext.delete(element)
     }
+
+    func edit(_ element: Element) throws {
+        do {
+            try add(element)
+        } catch {
+            throw SwiftDataError.edit
+        }
+    }
 }

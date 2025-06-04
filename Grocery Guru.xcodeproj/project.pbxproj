@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		560AA7D32C026C9D00365B1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AA7D22C026C9D00365B1F /* HomeViewModel.swift */; };
 		560AA7D62C02756600365B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560AA7D52C02756600365B1F /* Assets.xcassets */; };
-		561BDA342DDF798000AE8A76 /* Cross-Cutting in Frameworks */ = {isa = PBXBuildFile; productRef = 561BDA332DDF798000AE8A76 /* Cross-Cutting */; };
 		5620E1192C1850EC0027655A /* AccessibilityAuditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620E1182C1850EC0027655A /* AccessibilityAuditTests.swift */; };
 		5639A5702BFF97BD0086857F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639A5612BFF97BD0086857F /* Assets.xcassets */; };
 		5639A5712BFF97BD0086857F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A5632BFF97BD0086857F /* App.swift */; };
@@ -28,6 +27,9 @@
 		56AB11752DE7A92E00937B46 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 56AB11742DE7A92E00937B46 /* Localizable.xcstrings */; };
 		56CE7FC82DD61D290006E3B1 /* OpenFoodFacts in Frameworks */ = {isa = PBXBuildFile; productRef = 56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */; };
 		56D4267A2DE489D7002A5B76 /* ScannerUI in Frameworks */ = {isa = PBXBuildFile; productRef = 56D426792DE489D7002A5B76 /* ScannerUI */; };
+		56F8B6542DE9E88D00EC0228 /* GGAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 56F8B6532DE9E88D00EC0228 /* GGAPI */; };
+		56F8B6562DE9E88D00EC0228 /* LocalStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 56F8B6552DE9E88D00EC0228 /* LocalStorage */; };
+		56F8B6582DE9E89100EC0228 /* Routing in Frameworks */ = {isa = PBXBuildFile; productRef = 56F8B6572DE9E89100EC0228 /* Routing */; };
 		56FFAC792C0C89E800D2D965 /* HomeViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FFAC782C0C89E800D2D965 /* HomeViewList.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,12 +85,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F8B6562DE9E88D00EC0228 /* LocalStorage in Frameworks */,
 				566C92A72DE06FB600D07B74 /* Invoice in Frameworks */,
-				561BDA342DDF798000AE8A76 /* Cross-Cutting in Frameworks */,
 				564AD3412DDCAA3E009D488B /* Categories in Frameworks */,
 				56D4267A2DE489D7002A5B76 /* ScannerUI in Frameworks */,
+				56F8B6542DE9E88D00EC0228 /* GGAPI in Frameworks */,
 				56CE7FC82DD61D290006E3B1 /* OpenFoodFacts in Frameworks */,
 				5681ED8B2DD62C4B0089D874 /* DesignSystem in Frameworks */,
+				56F8B6582DE9E89100EC0228 /* Routing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,9 +272,11 @@
 				56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */,
 				5681ED8A2DD62C4B0089D874 /* DesignSystem */,
 				564AD3402DDCAA3E009D488B /* Categories */,
-				561BDA332DDF798000AE8A76 /* Cross-Cutting */,
 				566C92A62DE06FB600D07B74 /* Invoice */,
 				56D426792DE489D7002A5B76 /* ScannerUI */,
+				56F8B6532DE9E88D00EC0228 /* GGAPI */,
+				56F8B6552DE9E88D00EC0228 /* LocalStorage */,
+				56F8B6572DE9E89100EC0228 /* Routing */,
 			);
 			productName = "Grocery Guru";
 			productReference = 5639A5322BFF95930086857F /* Grocery Guru.app */;
@@ -766,10 +772,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		561BDA332DDF798000AE8A76 /* Cross-Cutting */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = "Cross-Cutting";
-		};
 		564AD3402DDCAA3E009D488B /* Categories */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Categories;
@@ -793,6 +795,18 @@
 		56D426792DE489D7002A5B76 /* ScannerUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ScannerUI;
+		};
+		56F8B6532DE9E88D00EC0228 /* GGAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GGAPI;
+		};
+		56F8B6552DE9E88D00EC0228 /* LocalStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LocalStorage;
+		};
+		56F8B6572DE9E89100EC0228 /* Routing */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Routing;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

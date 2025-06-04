@@ -93,12 +93,26 @@
         }
       }
     },
+    "Category Name" : {
+
+    },
     "Category Settings" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kategorieeinstellungen"
+          }
+        }
+      }
+    },
+    "Change name" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "asdasdasdasd"
           }
         }
       }
@@ -154,6 +168,7 @@
       }
     },
     "Manage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

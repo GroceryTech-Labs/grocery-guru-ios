@@ -12,6 +12,9 @@ public protocol SwiftDataRepository<Element>: ModelActor, Sendable {
 
     /// Remove element from the repository.
     func delete(_ element: Element)
+
+    /// Edit element within the repository.
+    func edit(_ element: Element) throws
 }
 
 extension SwiftDataRepository {

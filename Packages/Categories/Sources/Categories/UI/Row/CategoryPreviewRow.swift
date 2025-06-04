@@ -6,10 +6,7 @@ struct CategoryPreviewRow: View {
 
     var body: some View {
         SectionHeader(
-            String(
-                localized: "Preview",
-                bundle: .module
-            ),
+            "Preview".localized,
             font: .headline
         ) {
             CategoryCard(category: .constant(category))
