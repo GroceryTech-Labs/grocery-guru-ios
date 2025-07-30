@@ -75,7 +75,7 @@ extension InvoiceRepositoryImpl {
                     category: CategoryElement(
                         id: category.id,
                         categoryName: category.categoryName,
-                        emoji: category.emoji,
+                        emoji: category.emoji
                     )
                 )
             )
