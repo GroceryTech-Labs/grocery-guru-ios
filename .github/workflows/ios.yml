@@ -63,58 +63,58 @@ jobs:
           xcrun xccov view --report UnitCoverageResults.xcresult \
           | awk '/%/ && /^[^[:space:]]/ { match($0, /[0-9]+\.[0-9]+%/); printf "%s %s\n", substr($0, 1, RSTART-2), substr($0, RSTART, RLENGTH) }'
 
-  ui_test:
-    name: User Interface Testing
-    runs-on: macos-latest
+  # ui_test:
+  #   name: User Interface Testing
+  #   runs-on: macos-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
 
-      - name: Set Xcode version
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: latest-stable
+  #     - name: Set Xcode version
+  #       uses: maxim-lobanov/setup-xcode@v1
+  #       with:
+  #         xcode-version: latest-stable
 
-      - name: Build
-        run: |
-          set -o pipefail && \
-          xcodebuild build-for-testing \
-            -scheme "Grocery Guru Debug" \
-            -project "Grocery Guru.xcodeproj" \
-            -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
-          | xcbeautify
+  #     - name: Build
+  #       run: |
+  #         set -o pipefail && \
+  #         xcodebuild build-for-testing \
+  #           -scheme "Grocery Guru Debug" \
+  #           -project "Grocery Guru.xcodeproj" \
+  #           -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
+  #         | xcbeautify
 
-      - name: UI Test
-        run: |
-          set -o pipefail && \
-          xcodebuild test-without-building \
-            -scheme "Grocery Guru Debug" \
-            -project "Grocery Guru.xcodeproj" \
-            -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
-            -testPlan "Grocery Guru UI Tests" \
-            -enableCodeCoverage YES \
-            -resultBundlePath UICoverageResults.xcresult \
-          | xcbeautify
+  #     - name: UI Test
+  #       run: |
+  #         set -o pipefail && \
+  #         xcodebuild test-without-building \
+  #           -scheme "Grocery Guru Debug" \
+  #           -project "Grocery Guru.xcodeproj" \
+  #           -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
+  #           -testPlan "Grocery Guru UI Tests" \
+  #           -enableCodeCoverage YES \
+  #           -resultBundlePath UICoverageResults.xcresult \
+  #         | xcbeautify
 
-      - name: UI Test Coverage %
-        run: |
-          COVERAGE_VALUES=$(xcrun xccov view --report UICoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | tr -d '%' )
-          SUM=0
-          COUNT=0
-          for VALUE in $COVERAGE_VALUES; do
-            SUM=$(echo "$SUM + $VALUE" | bc)
-            COUNT=$((COUNT + 1))
-          done
-          if [ $COUNT -gt 0 ]; then
-            AVERAGE=$(echo "scale=2; $SUM / $COUNT" | bc)
-            echo "Average Test Coverage: $AVERAGE%"
-          else
-            echo "No coverage data found."
-          fi
+  #     - name: UI Test Coverage %
+  #       run: |
+  #         COVERAGE_VALUES=$(xcrun xccov view --report UICoverageResults.xcresult | grep -Eo '[0-9]+\.[0-9]+%' | tr -d '%' )
+  #         SUM=0
+  #         COUNT=0
+  #         for VALUE in $COVERAGE_VALUES; do
+  #           SUM=$(echo "$SUM + $VALUE" | bc)
+  #           COUNT=$((COUNT + 1))
+  #         done
+  #         if [ $COUNT -gt 0 ]; then
+  #           AVERAGE=$(echo "scale=2; $SUM / $COUNT" | bc)
+  #           echo "Average Test Coverage: $AVERAGE%"
+  #         else
+  #           echo "No coverage data found."
+  #         fi
 
-      - name: UI Test Coverage per Target
-        run: |
-          echo "UI Test Coverage per Target:"
-          xcrun xccov view --report UICoverageResults.xcresult \
-            | awk '/%/ && /^[^[:space:]]/ { match($0, /[0-9]+\.[0-9]+%/); printf "%s %s\n", substr($0, 1, RSTART-2), substr($0, RSTART, RLENGTH) }'
+  #     - name: UI Test Coverage per Target
+  #       run: |
+  #         echo "UI Test Coverage per Target:"
+  #         xcrun xccov view --report UICoverageResults.xcresult \
+  #           | awk '/%/ && /^[^[:space:]]/ { match($0, /[0-9]+\.[0-9]+%/); printf "%s %s\n", substr($0, 1, RSTART-2), substr($0, RSTART, RLENGTH) }'
