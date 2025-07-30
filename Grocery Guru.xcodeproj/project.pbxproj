@@ -23,6 +23,7 @@
 		568560E02C15A520003BDAED /* AddItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560DF2C15A520003BDAED /* AddItemTests.swift */; };
 		568560EF2C15AF96003BDAED /* TapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560EE2C15AF96003BDAED /* TapAction.swift */; };
 		568560F12C15B08F003BDAED /* TypeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568560F02C15B08F003BDAED /* TypeAction.swift */; };
+		56A7BD262E3A511300199B41 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 56A7BD252E3A511300199B41 /* ComposableArchitecture */; };
 		56AAD3032C1B9BB100BF8030 /* OFFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAD3022C1B9BB100BF8030 /* OFFError.swift */; };
 		56AB11752DE7A92E00937B46 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 56AB11742DE7A92E00937B46 /* Localizable.xcstrings */; };
 		56CE7FC82DD61D290006E3B1 /* OpenFoodFacts in Frameworks */ = {isa = PBXBuildFile; productRef = 56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */; };
@@ -87,6 +88,7 @@
 			files = (
 				56F8B6562DE9E88D00EC0228 /* LocalStorage in Frameworks */,
 				566C92A72DE06FB600D07B74 /* Invoice in Frameworks */,
+				56A7BD262E3A511300199B41 /* ComposableArchitecture in Frameworks */,
 				564AD3412DDCAA3E009D488B /* Categories in Frameworks */,
 				56D4267A2DE489D7002A5B76 /* ScannerUI in Frameworks */,
 				56F8B6542DE9E88D00EC0228 /* GGAPI in Frameworks */,
@@ -277,6 +279,7 @@
 				56F8B6532DE9E88D00EC0228 /* GGAPI */,
 				56F8B6552DE9E88D00EC0228 /* LocalStorage */,
 				56F8B6572DE9E89100EC0228 /* Routing */,
+				56A7BD252E3A511300199B41 /* ComposableArchitecture */,
 			);
 			productName = "Grocery Guru";
 			productReference = 5639A5322BFF95930086857F /* Grocery Guru.app */;
@@ -354,6 +357,7 @@
 			);
 			mainGroup = 5639A5292BFF95930086857F;
 			packageReferences = (
+				56A7BD242E3A511300199B41 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 5639A5332BFF95930086857F /* Products */;
 			projectDirPath = "";
@@ -771,6 +775,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		56A7BD242E3A511300199B41 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture?tab=readme-ov-file#basic-usage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.20.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		564AD3402DDCAA3E009D488B /* Categories */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -787,6 +802,11 @@
 		5681ED8C2DD689E00089D874 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
+		};
+		56A7BD252E3A511300199B41 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56A7BD242E3A511300199B41 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 		56CE7FC72DD61D290006E3B1 /* OpenFoodFacts */ = {
 			isa = XCSwiftPackageProductDependency;

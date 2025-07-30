@@ -22,7 +22,7 @@ class InvoiceFormViewModel {
         invoiceRepository: InvoiceRepository,
         productAPI: ProductAPI,
         navigationService: NavigationService = .shared,
-        code: String? = nil,
+        code: String? = nil
     ) {
         self.categoryRepository = categoryRepository
         self.invoiceRepository = invoiceRepository
