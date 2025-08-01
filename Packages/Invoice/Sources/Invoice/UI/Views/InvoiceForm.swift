@@ -51,10 +51,8 @@ public struct InvoiceForm: View {
             .padding(.horizontal, Constants.Padding.sizeL)
         }
         .scrollIndicators(.hidden)
-        .onAppear {
-            Task {
-                await viewModel.fetchProductInformation()
-            }
+        .task {
+            await viewModel.fetchProductInformation()
         }
     }
 

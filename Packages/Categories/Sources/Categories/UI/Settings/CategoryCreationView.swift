@@ -1,7 +1,7 @@
 import SwiftUI
 import DesignSystem
 
-struct CategoryCreationView: View {
+public struct CategoryCreationView: View {
     enum Field: Hashable {
         case name
         case emoji
@@ -10,7 +10,7 @@ struct CategoryCreationView: View {
     @FocusState private var focusedField: Field?
     @State private var viewModel: CategoryCreationViewModel
 
-    var body: some View {
+    public var body: some View {
         ScrollView {
             SectionHeader("Create Category".localized) {
                 VStack(spacing: Constants.Padding.sizeXL) {
@@ -74,7 +74,7 @@ struct CategoryCreationView: View {
         }
     }
 
-    init(viewModel: CategoryCreationViewModel) {
+    public init(viewModel: CategoryCreationViewModel) {
         self.viewModel = viewModel
     }
 }

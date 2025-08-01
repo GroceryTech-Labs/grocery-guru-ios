@@ -29,10 +29,8 @@ public struct CategoryCardList: View {
             }
         }
         .scrollIndicators(.hidden)
-        .onAppear {
-            Task {
-                await viewModel.fetchCategories()
-            }
+        .task {
+            await viewModel.fetchCategories()
         }
     }
 

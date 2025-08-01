@@ -5,7 +5,8 @@ public enum NavigationDestination: Hashable, Identifiable, Sendable, Equatable {
     case invoiceForm(code: String? = nil)
     case invoiceList(categoryId: UUID? = nil)
 
-    case categorySettings(categoryId: UUID)
+    case addCategory
+    case categorySettings
 
     public var id: UUID {
         UUID()

@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%lld Invoices" : {
       "localizations" : {
         "de" : {
@@ -92,9 +95,6 @@
           }
         }
       }
-    },
-    "Category Name" : {
-
     },
     "Category Settings" : {
       "localizations" : {

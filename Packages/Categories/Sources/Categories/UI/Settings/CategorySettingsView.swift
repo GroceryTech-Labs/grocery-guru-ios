@@ -2,67 +2,74 @@ import SwiftUI
 import DesignSystem
 import Routing
 
-public struct CategorySettingsView: View {
-    @Environment(\.editMode) var editMode
-
+@Observable
+public class CategorySettingsViewModel {
     let repository: CategoryRepository
-    let categoryId: UUID
 
-    @State var text = "Drinks"
-    @State var emoji = "🍹"
+    var categories: [UICategoryItem] = []
+    var isCategoryCreationShown = false
+
+    @MainActor
+    init(repository: CategoryRepository) {
+        self.repository = repository
+    }
+
+    @MainActor
+    func fetchCategories() async {
+        do {
+            categories = try await repository.fetchCategories()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+}
+
+public struct CategorySettingsView: View {
+    @Environment(\.navigationService) var navigator
+
+    @State private var viewModel: CategorySettingsViewModel
 
     public var body: some View {
-        NavigationView {
+        ScrollView {
             SectionHeader("Category Settings".localized) {
-
+                    ForEach(viewModel.categories) { category in
+                        Text(category.emoji + " " + category.categoryName)
+                    }
                 // CategoryList
                 // Edit display order
                 // Delete category
                 // Update category (also update items category)
-                List {
-                    Group {
-                        SectionHeader("Name".localized, font: .headline) {
-                            ToggleTextField(
-                                label: "Category Name".localized,
-                                text: $text,
-                                prompt: "Drinks"
-                            )
-                        }
-
-                        SectionHeader("Emoji".localized, font: .headline) {
-                            EmojiTextFieldWrapper(text: $emoji)
-                                .textFieldStyle(
-                                    .toggleTextField(
-                                        text: $emoji,
-                                        editMode: editMode?.wrappedValue
-                                    )
-                                )
-                        }
-                    }
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets(.zero))
-                }
-                .scrollBounceBehavior(.basedOnSize)
-                .listStyle(.inset)
-                .listRowSpacing(Constants.Padding.sizeM)
-                .scrollIndicators(.hidden)
             } trailing: {
                 EditButton()
             }
             .padding(Constants.Padding.sizeL)
         }
+        .task {
+            await viewModel.fetchCategories()
+        }
+        .scrollIndicators(.hidden)
+        .scrollBounceBehavior(.basedOnSize)
+        .sheet(isPresented: $viewModel.isCategoryCreationShown) {
+            CategoryCreationView(
+                viewModel: CategoryCreationViewModel(
+                    repository: viewModel.repository
+                )
+            )
+        }
     }
 
-    public init(repository: CategoryRepository, categoryId: UUID) {
-        self.repository = repository
-        self.categoryId = categoryId
+    public init(repository: CategoryRepository) {
+        self._viewModel = State(
+            initialValue: CategorySettingsViewModel(
+                repository: repository
+            )
+        )
     }
 }
 
 #Preview {
     CategorySettingsView(
-        repository: MockCategoryRepositoryImpl(),
-        categoryId: UUID()
+        repository: MockCategoryRepositoryImpl()
     )
 }
 

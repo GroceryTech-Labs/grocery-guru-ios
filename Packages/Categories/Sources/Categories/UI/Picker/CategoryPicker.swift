@@ -36,10 +36,8 @@ public struct CategoryPicker: View {
                 category: category ?? UICategoryItem(categoryName: "", emoji: "")
             )
         }
-        .onAppear {
-            Task {
-                await viewModel.fetchCategories()
-            }
+        .task {
+            await viewModel.fetchCategories()
         }
     }
 

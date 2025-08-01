@@ -38,11 +38,19 @@ extension NavigationDestination {
                 invoiceRepository: InvoiceRepositoryImpl(),
                 selectedOption: .barcode
             )
-        case .categorySettings(let categoryId):
-            CategorySettingsView(
-                repository: CategoryRepositoryImpl(),
-                categoryId: categoryId
+
+        case .addCategory:
+            CategoryCreationView(
+                viewModel: CategoryCreationViewModel(
+                    repository: CategoryRepositoryImpl()
+                )
             )
+
+        case .categorySettings:
+            CategorySettingsView(
+                repository: CategoryRepositoryImpl()
+            )
+
         case .invoiceForm(let code):
             InvoiceForm(
                 categoryRepository: CategoryRepositoryImpl(),
@@ -50,6 +58,7 @@ extension NavigationDestination {
                 productAPI: ProductAPIImpl(OpenFoodFactsEndpoint.baseURL),
                 code: code
             )
+
         case .invoiceList(let categoryId):
             InvoiceList(
                 invoiceRepository: InvoiceRepositoryImpl(),

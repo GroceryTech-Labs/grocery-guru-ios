@@ -6,7 +6,7 @@ import OpenFoodFacts
 @MainActor
 @Observable
 class BarcodeScannerViewModel {
-    private var navigator = NavigationService.shared
+    private let navigator = NavigationService.shared
 
     var error: Error?
 

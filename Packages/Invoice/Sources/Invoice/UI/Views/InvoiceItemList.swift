@@ -57,10 +57,8 @@ public struct InvoiceList: View {
         }
         .frame(maxHeight: .infinity)
         .padding(.horizontal, Constants.Padding.sizeL)
-        .onAppear {
-            Task {
-                await viewModel.fetchInvoices()
-            }
+        .task {
+            await viewModel.fetchInvoices()
         }
     }
 
