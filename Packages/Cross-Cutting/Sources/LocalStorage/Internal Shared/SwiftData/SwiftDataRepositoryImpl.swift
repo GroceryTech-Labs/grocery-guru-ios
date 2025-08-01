@@ -13,7 +13,7 @@ actor SwiftDataRepositoryImpl<Element: PersistentModel>: SwiftDataRepository {
 
     func fetch(descriptor: FetchDescriptor<Element>) throws -> [Element] {
         do {
-            return try modelContext.fetch(FetchDescriptor<Element>())
+            return try modelContext.fetch(descriptor)
         } catch {
             throw SwiftDataError.fetch
         }
@@ -30,5 +30,13 @@ actor SwiftDataRepositoryImpl<Element: PersistentModel>: SwiftDataRepository {
 
     func delete(_ element: Element) {
         modelContext.delete(element)
+    }
+
+    func edit(_ element: Element) throws {
+        do {
+            try add(element)
+        } catch {
+            throw SwiftDataError.edit
+        }
     }
 }

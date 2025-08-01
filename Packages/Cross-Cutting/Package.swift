@@ -6,7 +6,9 @@ let package = Package(
     name: "Cross-Cutting",
     platforms: [.iOS(.v17)],
     products: [
-        .library(name: "Cross-Cutting", targets: ["GGAPI", "Routing", "LocalStorage"])
+        .library(name: "GGAPI", targets: ["GGAPI"]),
+        .library(name: "Routing", targets: ["Routing"]),
+        .library(name: "LocalStorage", targets: ["LocalStorage"])
     ],
     dependencies: [
         .package(path: "../OpenFoodFacts"),

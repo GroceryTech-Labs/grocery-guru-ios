@@ -23,16 +23,14 @@ public struct CategoryCardList: View {
                 columns: columns,
                 spacing: Constants.Padding.sizeS
             ) {
-                ForEach(viewModel.categories) { category in
+                ForEach($viewModel.categories, id: \.id) { category in
                     CategoryCard(category: category)
                 }
             }
         }
         .scrollIndicators(.hidden)
-        .onAppear {
-            Task {
-                await viewModel.fetchCategories()
-            }
+        .task {
+            await viewModel.fetchCategories()
         }
     }
 

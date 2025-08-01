@@ -16,7 +16,8 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Invoice", dependencies: ["DesignSystem", "Categories", "ScannerUI"]
+            name: "Invoice",
+            dependencies: ["DesignSystem", "Categories", "ScannerUI"]
         ),
         .testTarget(name: "InvoiceTests", dependencies: ["Invoice", "Categories"])
     ]

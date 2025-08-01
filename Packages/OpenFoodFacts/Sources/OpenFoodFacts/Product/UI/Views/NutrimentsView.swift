@@ -1,16 +1,6 @@
 import SwiftUI
 import DesignSystem
 
-@Observable
-final class NutrimentsViewModel {
-    private var code: String
-    var nutriments: UINutrimentsItem?
-
-    init(code: String) {
-        self.code = code
-    }
-}
-
 public struct NutrimentsView: View {
     @State private var viewModel: NutrimentsViewModel
 
@@ -28,8 +18,8 @@ public struct NutrimentsView: View {
         .padding(Constants.Padding.sizeL)
     }
 
-    public init(code: String) {
-        viewModel = NutrimentsViewModel(code: code)
+    public init(productAPI: ProductAPI, code: String) {
+        viewModel = NutrimentsViewModel(productAPI: productAPI, code: code)
     }
 
     private var carbohydratesSection: some View {

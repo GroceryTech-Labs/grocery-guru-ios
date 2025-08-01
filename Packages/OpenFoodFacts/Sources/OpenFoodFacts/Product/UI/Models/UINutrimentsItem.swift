@@ -20,21 +20,21 @@ public struct UINutrimentsItem: Hashable, Equatable, Identifiable, Sendable {
 }
 
 extension UINutrimentsItem {
-    init(from apiItem: APINutrimentsItem) {
-        carbohydrates100g = apiItem.carbohydrates100g
-        carbohydratesUnit = apiItem.carbohydratesUnit
-        energyKcal100g = apiItem.energyKcal100g
-        energyKcalUnit = apiItem.energyKcalUnit
-        energyKJ100g = apiItem.energyKJ100g
-        energyKJUnit = apiItem.energyKJUnit
-        fat100g = apiItem.fat100g
-        fatUnit = apiItem.fatUnit
-        proteins100g = apiItem.proteins100g
-        proteinsUnit = apiItem.proteinsUnit
-        salt100g = apiItem.salt100g
-        saltUnit = apiItem.saltUnit
-        sugars100g = apiItem.sugars100g
-        sugarsUnit = apiItem.sugarsUnit
+    init(from apiItem: APINutrimentsItem?) {
+        carbohydrates100g = apiItem?.carbohydrates100g
+        carbohydratesUnit = apiItem?.carbohydratesUnit
+        energyKcal100g = apiItem?.energyKcal100g
+        energyKcalUnit = apiItem?.energyKcalUnit
+        energyKJ100g = apiItem?.energyKJ100g
+        energyKJUnit = apiItem?.energyKJUnit
+        fat100g = apiItem?.fat100g
+        fatUnit = apiItem?.fatUnit
+        proteins100g = apiItem?.proteins100g
+        proteinsUnit = apiItem?.proteinsUnit
+        salt100g = apiItem?.salt100g
+        saltUnit = apiItem?.saltUnit
+        sugars100g = apiItem?.sugars100g
+        sugarsUnit = apiItem?.sugarsUnit
     }
 }
 

@@ -4,7 +4,7 @@ import DesignSystem
 import OpenFoodFacts
 
 public struct BarcodeScannerView: View {
-    @State private var viewModel: BarcodeScannerViewModel
+    @State private var viewModel: BarcodeScannerViewModel = BarcodeScannerViewModel()
 
     public var body: some View {
         CodeScannerView(
@@ -35,9 +35,5 @@ public struct BarcodeScannerView: View {
         }
     }
 
-    public init(productAPI: ProductAPI) {
-        viewModel = BarcodeScannerViewModel(
-            productAPI: productAPI
-        )
-    }
+    public init() { }
 }

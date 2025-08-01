@@ -1,7 +1,7 @@
 import SwiftUI
 import DesignSystem
 
-struct CategoryCreationView: View {
+public struct CategoryCreationView: View {
     enum Field: Hashable {
         case name
         case emoji
@@ -10,15 +10,15 @@ struct CategoryCreationView: View {
     @FocusState private var focusedField: Field?
     @State private var viewModel: CategoryCreationViewModel
 
-    var body: some View {
+    public var body: some View {
         ScrollView {
-            SectionHeader("Create Category") {
+            SectionHeader("Create Category".localized) {
                 VStack(spacing: Constants.Padding.sizeXL) {
-                    SectionHeader("Name", font: .headline) {
+                    SectionHeader("Name".localized, font: .headline) {
                         TextField(
-                            "Name",
+                            "Name".localized,
                             text: $viewModel.name,
-                            prompt: Text("Pringles")
+                            prompt: Text("Pringles".localized)
                         )
                         .textFieldStyle(.roundedBorder)
                         .accessibilityIdentifier(
@@ -31,7 +31,7 @@ struct CategoryCreationView: View {
                         focusedField = .emoji
                     }
 
-                    SectionHeader("Emoji", font: .headline) {
+                    SectionHeader("Emoji".localized, font: .headline) {
                         EmojiTextFieldWrapper(text: $viewModel.emoji)
                     }
                     .focused($focusedField, equals: .emoji)
@@ -40,21 +40,19 @@ struct CategoryCreationView: View {
                         focusedField = nil
                     }
 
-                    SectionHeader("Preview", font: .headline) {
-                        CategoryCard(
-                            category: UICategoryItem(
-                                categoryName: viewModel.name,
-                                emoji: viewModel.emoji
-                            )
+                    CategoryPreviewRow(
+                        category: UICategoryItem(
+                            categoryName: viewModel.name,
+                            emoji: viewModel.emoji
                         )
-                    }
+                    )
 
                     Button {
                         Task {
                             await viewModel.addCategory()
                         }
                     } label: {
-                        Text("Create")
+                        Text("Create".localized)
                             .frame(maxWidth: .infinity)
                     }
                     .disabled(viewModel.emoji.isEmpty || viewModel.name.isEmpty)
@@ -65,7 +63,7 @@ struct CategoryCreationView: View {
                     viewModel.resetToInitialState()
                 } label: {
                     Image(systemName: "eraser")
-                        .accessibilityLabel("Reset")
+                        .accessibilityLabel("Reset".localized)
                 }
             }
             .padding(Constants.Padding.sizeL)
@@ -76,7 +74,7 @@ struct CategoryCreationView: View {
         }
     }
 
-    init(viewModel: CategoryCreationViewModel) {
+    public init(viewModel: CategoryCreationViewModel) {
         self.viewModel = viewModel
     }
 }

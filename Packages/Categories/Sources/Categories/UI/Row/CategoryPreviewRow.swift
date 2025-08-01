@@ -5,8 +5,11 @@ struct CategoryPreviewRow: View {
     let category: UICategoryItem
 
     var body: some View {
-        SectionHeader("Preview", font: .headline) {
-            CategoryCard(category: category)
+        SectionHeader(
+            "Preview".localized,
+            font: .headline
+        ) {
+            CategoryCard(category: .constant(category))
         }
     }
 }
@@ -14,6 +17,7 @@ struct CategoryPreviewRow: View {
 #Preview {
     CategoryPreviewRow(
         category: UICategoryItem(
+            id: UUID(),
             categoryName: "Egg",
             emoji: "🥚"
         )

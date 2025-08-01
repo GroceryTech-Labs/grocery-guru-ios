@@ -2,15 +2,15 @@ import SwiftUI
 import Routing
 
 @Observable
-class CategoryCreationViewModel {
-    @ObservationIgnored private let repository: CategoryRepository
-    @ObservationIgnored private let navigationService: NavigationService
+public class CategoryCreationViewModel {
+    private let repository: CategoryRepository
+    private let navigationService: NavigationService
 
     var name: String = ""
     var emoji: String = ""
 
     @MainActor
-    init(repository: any CategoryRepository, navigationService: NavigationService = NavigationService.shared) {
+    public init(repository: any CategoryRepository, navigationService: NavigationService = NavigationService.shared) {
         self.repository = repository
         self.navigationService = navigationService
     }
@@ -27,7 +27,6 @@ class CategoryCreationViewModel {
                 name: name,
                 emoji: emoji
             )
-            navigationService.dropToRoot()
         } catch {
             print(error.localizedDescription)
         }

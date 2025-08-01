@@ -21,7 +21,7 @@ public struct AddInvoiceView: View {
 
             switch selectedOption {
             case .barcode:
-                BarcodeScannerView(productAPI: productAPI)
+                BarcodeScannerView()
                     .transition(
                         .asymmetric(
                             insertion: .push(from: .leading),
@@ -32,7 +32,8 @@ public struct AddInvoiceView: View {
             case .manual:
                 InvoiceForm(
                     categoryRepository: categoryRepository,
-                    invoiceRepository: invoiceRepository
+                    invoiceRepository: invoiceRepository,
+                    productAPI: productAPI
                 )
                 .transition(
                     .asymmetric(

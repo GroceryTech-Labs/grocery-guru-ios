@@ -24,11 +24,13 @@ extension InvoiceRepositoryImpl {
         }
     }
 
-    public func fetchInvoicesByCategory(_ categoryName: String) async throws -> [UIInvoiceItem] {
+    public func fetchInvoicesByCategory(_ categoryId: UUID) async throws -> [UIInvoiceItem] {
         do {
             let response = try await repository.fetch(
                 descriptor: FetchDescriptor<InvoiceElement>(
-                    predicate: #Predicate { $0.category.categoryName == categoryName }
+                    predicate: #Predicate {
+                        $0.category.id == categoryId
+                    }
                 )
             )
             return response
@@ -42,11 +44,13 @@ extension InvoiceRepositoryImpl {
         UIInvoiceItem(
             code: invoice.code,
             name: invoice.name,
-            amount: invoice.amount,
-            measureUnit: invoice.measureUnit,
+            quantity: invoice.quantity,
+            unit: invoice.unit,
             category: UICategoryItem(
+                id: invoice.category.id,
                 categoryName: invoice.category.categoryName,
-                emoji: invoice.category.emoji
+                emoji: invoice.category.emoji,
+                invoiceCount: invoice.category.invoices.count
             )
         )
     }
@@ -57,8 +61,8 @@ extension InvoiceRepositoryImpl {
     public func addInvoice(
         code: String?,
         name: String,
-        amount: Int,
-        measureUnit: MeasureUnit,
+        quantity: Int,
+        unit: String,
         category: UICategoryItem
     ) async throws {
         do {
@@ -66,9 +70,10 @@ extension InvoiceRepositoryImpl {
                 InvoiceElement(
                     code: code,
                     name: name,
-                    amount: amount,
-                    measureUnit: measureUnit,
+                    quantity: quantity,
+                    unit: unit,
                     category: CategoryElement(
+                        id: category.id,
                         categoryName: category.categoryName,
                         emoji: category.emoji
                     )
@@ -86,9 +91,10 @@ extension InvoiceRepositoryImpl {
         let element = InvoiceElement(
             code: invoice.code,
             name: invoice.name,
-            amount: invoice.amount,
-            measureUnit: invoice.measureUnit,
+            quantity: invoice.quantity,
+            unit: invoice.unit,
             category: CategoryElement(
+                id: invoice.category.id,
                 categoryName: invoice.category.categoryName,
                 emoji: invoice.category.emoji
             )

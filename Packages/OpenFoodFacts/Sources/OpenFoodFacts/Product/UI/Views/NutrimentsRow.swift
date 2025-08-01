@@ -2,21 +2,20 @@ import SwiftUI
 import DesignSystem
 
 public struct NutrimentsRow: View {
-    @Binding public var isExpanded: Bool
-    let code: String
+    private let productAPI: ProductAPI
+    private let code: String
 
     public var body: some View {
-        DisclosureGroup(isExpanded: $isExpanded) {
-            NutrimentsView(code: code)
-        } label: {
-            Text("Nutriments (100g)")
-                .font(.headline)
-                .accessibilityIdentifier(AccessibilityIdentifier.Button.invoiceFormNutriments)
+        SectionHeader("Nutriments (100g)", font: .headline) {
+            NutrimentsView(
+                productAPI: productAPI,
+                code: code
+            )
         }
     }
 
-    public init(isExpanded: Binding<Bool>, code: String) {
-        self._isExpanded = isExpanded
+    public init(productAPI: ProductAPI, code: String) {
+        self.productAPI = productAPI
         self.code = code
     }
 }

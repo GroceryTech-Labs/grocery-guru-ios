@@ -38,19 +38,31 @@ extension NavigationDestination {
                 invoiceRepository: InvoiceRepositoryImpl(),
                 selectedOption: .barcode
             )
+
+        case .addCategory:
+            CategoryCreationView(
+                viewModel: CategoryCreationViewModel(
+                    repository: CategoryRepositoryImpl()
+                )
+            )
+
         case .categorySettings:
-            CategorySettingsView(repository: CategoryRepositoryImpl())
-        case .invoiceForm(let invoice):
+            CategorySettingsView(
+                repository: CategoryRepositoryImpl()
+            )
+
+        case .invoiceForm(let code):
             InvoiceForm(
                 categoryRepository: CategoryRepositoryImpl(),
                 invoiceRepository: InvoiceRepositoryImpl(),
-                code: invoice?.code,
-                name: invoice?.name
+                productAPI: ProductAPIImpl(OpenFoodFactsEndpoint.baseURL),
+                code: code
             )
-        case .invoiceList(let categoryName):
+
+        case .invoiceList(let categoryId):
             InvoiceList(
                 invoiceRepository: InvoiceRepositoryImpl(),
-                categoryName: categoryName
+                categoryId: categoryId
             )
         }
     }

@@ -12,12 +12,21 @@ extension XCUIApplication {
         self.typeText(name)
     }
 
-    /// Search and tap the "Amount" textfield on the invoice form and fill in text.
-    func typeInvoiceFormAmount(name: String = "100") {
-        tapInvoiceFormAmountTextfield()
+    /// Search and tap the "Quantity" textfield on the invoice form and fill in text.
+    func typeInvoiceFormQuantity(quantity: String = "100") {
+        tapInvoiceFormQuantityTextfield()
 
         // Clear field and type new text
         self.typeText(XCUIKeyboardKey.delete.rawValue)
-        self.typeText(name)
+        self.typeText(quantity)
+    }
+
+    /// Search and tap the "Unit" textfield on the invoice form and fill in text.
+    func typeInvoiceFormUnit(unit: String = "g") {
+        tapInvoiceFormQuantityTextfield()
+
+        // Clear field and type new text
+        self.typeText(XCUIKeyboardKey.delete.rawValue)
+        self.typeText(unit)
     }
 }

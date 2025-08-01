@@ -5,11 +5,11 @@ struct NameRow: View {
     @Binding var name: String
 
     var body: some View {
-        SectionHeader("Name", font: .headline) {
+        SectionHeader("Name".localized, font: .headline) {
             TextField(
-                "Name",
+                "Name".localized,
                 text: $name,
-                prompt: Text("Pringles")
+                prompt: Text("Pringles".localized)
             )
             .textFieldStyle(.roundedBorder)
             .accessibilityIdentifier(

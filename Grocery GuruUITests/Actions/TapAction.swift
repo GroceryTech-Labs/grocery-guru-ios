@@ -80,23 +80,12 @@ extension XCUIApplication {
         textField.tap()
     }
 
-    func tapInvoiceFormAmountTextfield() {
-        let textField = self.textFields[AccessibilityIdentifier.TextField.invoiceFormAmount]
+    func tapInvoiceFormQuantityTextfield() {
+        let textField = self.textFields[AccessibilityIdentifier.TextField.invoiceFormQuantity]
 
         // Check for existence
         XCTAssertTrue(textField.waitForExistence(timeout: 1))
         textField.tap()
-    }
-
-    func tapOpenAndCloseNutriments() {
-        let disclosureGroup = self.staticTexts[AccessibilityIdentifier.Button.invoiceFormNutriments]
-
-        // Check for existence
-        XCTAssertTrue(disclosureGroup.waitForExistence(timeout: 1))
-        disclosureGroup.tap()
-
-        XCTAssertTrue(disclosureGroup.waitForExistence(timeout: 1))
-        disclosureGroup.tap()
     }
 
     // MARK: General

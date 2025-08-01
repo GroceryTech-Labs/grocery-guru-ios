@@ -5,14 +5,14 @@ public enum AccessibilityIdentifier {
         public static let addInvoice = "button_add_invoice"
         public static let addInvoiceBarcode = "button_add_invoice_barcode"
         public static let addInvoiceManual = "button_add_invoice_manual"
-        public static let invoiceFormNutriments = "button_invoice_form_nutriments"
         public static let invoiceFormSubmit = "button_invoice_form_submit"
         public static let invoiceCategory = "button_invoice_category"
     }
 
     public enum TextField {
         public static let invoiceFormName = "textfield_invoice_form_name"
-        public static let invoiceFormAmount = "textfield_invoice_form_amount"
+        public static let invoiceFormQuantity = "textfield_invoice_form_quantity"
+        public static let invoiceFormUnit = "textfield_invoice_form_unit"
     }
 
     public enum Scanner {

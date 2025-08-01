@@ -6,13 +6,13 @@ import Categories
 public protocol InvoiceRepository: Sendable {
     func fetchInvoices() async throws -> [UIInvoiceItem]
     func fetchInvoicesByCategory(
-        _ categoryName: String
+        _ categoryId: UUID
     ) async throws -> [UIInvoiceItem]
     func addInvoice(
         code: String?,
         name: String,
-        amount: Int,
-        measureUnit: MeasureUnit,
+        quantity: Int,
+        unit: String,
         category: UICategoryItem
     ) async throws
     func deleteInvoice(_ invoice: UIInvoiceItem) async

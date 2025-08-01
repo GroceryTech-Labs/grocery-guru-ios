@@ -11,6 +11,7 @@ public class CategoryCardListViewModel {
         self.repository = repository
     }
 
+    @MainActor
     func fetchCategories() async {
         do {
             let result = try await repository.fetchCategories()

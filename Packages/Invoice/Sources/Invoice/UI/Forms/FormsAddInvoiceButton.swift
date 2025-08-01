@@ -12,8 +12,18 @@ struct FormsAddInvoiceButton: View {
                 return
             }
 
-            guard !viewModel.amount.isEmpty else {
-                focusedField = .amount
+            guard !viewModel.quantity.isEmpty else {
+                focusedField = .quantity
+                return
+            }
+
+            guard !viewModel.unit.isEmpty else {
+                focusedField = .unit
+                return
+            }
+
+            guard viewModel.category != nil else {
+                focusedField = nil
                 return
             }
 
@@ -21,7 +31,7 @@ struct FormsAddInvoiceButton: View {
                 await viewModel.addInvoice()
             }
         } label: {
-            Text("Add to inventory")
+            Text("Add to inventory".localized)
                 .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
         }

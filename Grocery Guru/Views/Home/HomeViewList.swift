@@ -10,8 +10,8 @@ struct HomeViewList: View {
     @State private var viewModel: HomeViewModel
 
     var body: some View {
-        SectionHeader("Welcome back!", font: .largeTitle) {
-            SectionHeader("Categories") {
+        SectionHeader(String(localized: "Welcome back!", bundle: .main), font: .largeTitle) {
+            SectionHeader(String(localized: "Categories", bundle: .main)) {
                 CategoryCardList(
                     viewModel: CategoryCardListViewModel(
                         repository: CategoryRepositoryImpl()
@@ -23,7 +23,7 @@ struct HomeViewList: View {
                 } label: {
                     Image(systemName: "gearshape")
                         .imageScale(.large)
-                        .accessibilityLabel("Settings")
+                        .accessibilityLabel(String(localized: "Settings", bundle: .main))
                 }
             }
         }

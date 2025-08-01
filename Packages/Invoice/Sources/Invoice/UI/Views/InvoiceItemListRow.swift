@@ -12,9 +12,8 @@ struct InvoiceItemListRow: View {
                     Text(item.name)
 
                     Group {
-                        Text(verbatim: "\(item.amount)") +
-                        Text(verbatim: " ") +
-                        Text(item.measureUnit.localized)
+                        Text(verbatim: "\(item.quantity)") +
+                        Text(verbatim: item.unit)
                     }
                     .font(.caption)
                     .foregroundStyle(.secondary)
@@ -23,7 +22,7 @@ struct InvoiceItemListRow: View {
                 Spacer()
 
                 Image(systemName: "chevron.right")
-                    .accessibilityLabel("Open Invoice Item")
+                    .accessibilityLabel("Open Invoice Item".localized)
             }
         }
         .accessibilityElement()
@@ -41,8 +40,8 @@ struct InvoiceItemListRow: View {
         item: UIInvoiceItem(
             code: "1234",
             name: "Cheese",
-            amount: 200,
-            measureUnit: .item,
+            quantity: 200,
+            unit: "g",
             category: UICategoryItem(.bakery)
         )
     )

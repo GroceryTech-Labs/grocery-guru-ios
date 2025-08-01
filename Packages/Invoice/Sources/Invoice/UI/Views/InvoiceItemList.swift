@@ -5,13 +5,13 @@ import Categories
 @Observable
 class InvoiceListViewModel: ObservableObject {
     private let invoiceRepository: InvoiceRepository
-    private let categoryName: String?
+    private let categoryId: UUID?
 
     var error: Error?
 
-    public init(invoiceRepository: InvoiceRepository, categoryName: String?) {
+    public init(invoiceRepository: InvoiceRepository, categoryId: UUID?) {
         self.invoiceRepository = invoiceRepository
-        self.categoryName = categoryName
+        self.categoryId = categoryId
     }
 
     var invoices: [UIInvoiceItem] = []
@@ -19,8 +19,8 @@ class InvoiceListViewModel: ObservableObject {
     @MainActor
     func fetchInvoices() async {
         do {
-            if let categoryName {
-                invoices = try await invoiceRepository.fetchInvoicesByCategory(categoryName)
+            if let categoryId {
+                invoices = try await invoiceRepository.fetchInvoicesByCategory(categoryId)
             } else {
                 invoices = try await invoiceRepository.fetchInvoices()
             }
@@ -34,10 +34,12 @@ public struct InvoiceList: View {
     @State private var viewModel: InvoiceListViewModel
 
     public var body: some View {
-        SectionHeader("Invoice Items") {
+        SectionHeader("Invoice Items".localized) {
             Group {
                 if viewModel.invoices.isEmpty {
-                    ErrorView(text: "No items found!")
+                    ErrorView(
+                        text: "No items found!".localized
+                    )
                 } else if let error = viewModel.error {
                     ErrorView(text: error.localizedDescription)
                 } else {
@@ -55,17 +57,15 @@ public struct InvoiceList: View {
         }
         .frame(maxHeight: .infinity)
         .padding(.horizontal, Constants.Padding.sizeL)
-        .onAppear {
-            Task {
-                await viewModel.fetchInvoices()
-            }
+        .task {
+            await viewModel.fetchInvoices()
         }
     }
 
-    public init(invoiceRepository: InvoiceRepository, categoryName: String?) {
+    public init(invoiceRepository: InvoiceRepository, categoryId: UUID?) {
         self.viewModel = InvoiceListViewModel(
             invoiceRepository: invoiceRepository,
-            categoryName: categoryName
+            categoryId: categoryId
         )
     }
 }
